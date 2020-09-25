@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('person', 'App\Http\Controllers\PersonController');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
