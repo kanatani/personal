@@ -1,0 +1,28 @@
+/* トップページ */
+.header {
+   background-image: url("/images/768013045-huge.jpg");
+   background-size: cover;
+   height: 600px;
+}
+
+.back-font h1 {
+    float: left;
+}
+
+.top_nav {
+    
+    float: right;
+}
+
+.top_nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top_nav ul li{
+    float: left;
+    text-align: center;
+    padding: 20px;
+}
+
