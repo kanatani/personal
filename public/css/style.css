@@ -1,6 +1,6 @@
 /* トップページ */
 .header {
-   background-image: url("/images/768013045-huge.jpg");
+   background-image: url("/images/shutterstock_762804607.jpg");
    background-size: cover;
    height: 600px;
 }
@@ -10,7 +10,6 @@
 }
 
 .top_nav {
-    
     float: right;
 }
 
@@ -24,5 +23,75 @@
     float: left;
     text-align: center;
     padding: 20px;
+}
+
+.top_nav ul li a{
+    color: white;
+}
+
+.top_intro {
+    margin: auto;
+    height: 600px;
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(250, 248, 248, 0) 100%);
+    background-blend-mode: screen;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.box {
+    text-align: center;
+    margin: auto;
+    width: 300px;
+}
+
+.box h3 {
+    padding-top: 20px;
+}
+
+.top_intro h1 {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.top_text {
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.top_text h3 {
+    padding: 10px;
+}
+.top_text h1 {
+    padding-bottom: 10px;
+}
+
+footer {
+    height: 100px;
+    text-align: center;
+}
+
+.footer_nav {
+    height: 100px;
+    background: #EEEEEE;
+}
+
+.footer_nav ul {
+    list-style: none;
+   
+}
+
+.footer_nav ul li {
+    text-align: center;
+   display: inline;
+   padding: 20px;
+}
+
+.footer_nav ul li a{
+    color: white;
 }
 
