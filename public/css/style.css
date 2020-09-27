@@ -1,12 +1,20 @@
 /* トップページ */
+a {
+    text-decoration: none;
+}
+
 .header {
    background-image: url("/images/shutterstock_762804607.jpg");
    background-size: cover;
-   height: 600px;
+   height: 650px;
 }
 
 .back-font h1 {
     float: left;
+    color: white;
+    font-size: 80px;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
 }
 
 .top_nav {
@@ -27,19 +35,34 @@
 
 .top_nav ul li a{
     color: white;
+    font-family: 'Zilla Slab', serif;
+    letter-spacing: 4px;
+    text-decoration: none;
 }
 
 .top_intro {
     margin: auto;
-    height: 600px;
+    height: 500px;
     background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(250, 248, 248, 0) 100%);
     background-blend-mode: screen;
+    position: relative;
+}
+
+
+.top_intro h1 {
+    padding-top: 40px;
+    text-align: center;
 }
 
 .boxes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .box {
@@ -52,46 +75,59 @@
     padding-top: 20px;
 }
 
-.top_intro h1 {
-    padding-top: 20px;
-    text-align: center;
-}
-
 .top_text {
+    height: 600px;
     margin-top: 30px;
     text-align: center;
     letter-spacing: 2px;
+    position: relative;
+}
+
+.text_means {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
 .top_text h3 {
     padding: 10px;
+    font-family: 'Pacifico', cursive;
 }
+
 .top_text h1 {
     padding-bottom: 10px;
+    padding-top: 20px;
 }
 
 footer {
     height: 100px;
+    line-height: 100px;
     text-align: center;
 }
 
 .footer_nav {
     height: 100px;
-    background: #EEEEEE;
+    background: #C0C0C0;
+    position: relative;
 }
 
 .footer_nav ul {
     list-style: none;
-   
+    margin: 0;
+    padding: 0;
 }
 
 .footer_nav ul li {
-    text-align: center;
-   display: inline;
-   padding: 20px;
+    display: inline;
 }
 
 .footer_nav ul li a{
-    color: white;
+   color: white;
+   padding: 0px 10px;
+   font-family: 'Zilla Slab', serif;
+   text-decoration: none;
 }
 
