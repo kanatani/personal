@@ -4,6 +4,7 @@ a {
 }
 
 .header {
+     width: 100%;
    background-image: url("/images/shutterstock_762804607.jpg");
    background-size: cover;
    height: 650px;
@@ -129,5 +130,10 @@ footer {
    padding: 0px 10px;
    font-family: 'Zilla Slab', serif;
    text-decoration: none;
+   
 }
 
+a:hover {
+    border-bottom: solid 2px white;
+    transition-duration: 0.5s;
+  }
