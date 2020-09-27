@@ -3,7 +3,7 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="header col-xs-12">
+      <div class="header col-sm-12">
       <div class="back-font">
         <h1>person</h1>
         <nav class=top_nav>
@@ -22,7 +22,8 @@
       </div>
       </div>
       </div>
-      <div class="top_intro">
+      <div class="row">
+      <div class="top_intro col-sm-12">
         <h1 class="intro_title">無料診断テスト</h1>
         <div class="boxes">
           <div class="box">
@@ -43,6 +44,7 @@
         </div>
       </div>
     </div>
+    </div>
 
     <div class="top_text">
       <div class="text_means">
@@ -57,23 +59,25 @@
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
       <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="recommend" data-size="small" data-share="false"></div>
-  
+
+      <div class="row">
+        <footer class="col-sm-12">
+          <nav class="footer_nav">
+          <ul>
+                <li>
+                  <a href="">top</a>
+                </li>
+                <li>
+                  <a href="">sign up</a>
+                </li>
+                <li>
+                  <a href="">お問い合わせ</a>
+                </li>
+              </ul>
+          </nav>
+        </footer>
+      </div>
   </div>
-  <footer>
-    <nav class="footer_nav">
-    <ul>
-          <li>
-            <a href="">top</a>
-          </li>
-          <li>
-            <a href="">sign up</a>
-          </li>
-          <li>
-            <a href="">お問い合わせ</a>
-          </li>
-        </ul>
-    </nav>
-  </footer>
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v8.0&appId=2731799030261565&autoLogAppEvents=1" nonce="ykDF24Cg"></script>
 @endsection

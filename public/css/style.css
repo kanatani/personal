@@ -4,7 +4,7 @@ a {
 }
 
 .header {
-     width: 100%;
+    width: 100%;
    background-image: url("/images/shutterstock_762804607.jpg");
    background-size: cover;
    height: 650px;
@@ -43,12 +43,11 @@ a {
 
 .top_intro {
     margin: auto;
-    height: 500px;
+    height: 600px;
     background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(250, 248, 248, 0) 100%);
     background-blend-mode: screen;
     position: relative;
 }
-
 
 .top_intro h1 {
     padding-top: 40px;
@@ -136,4 +135,32 @@ footer {
 a:hover {
     border-bottom: solid 2px white;
     transition-duration: 0.5s;
+  }
+
+  @media screen and (max-width : 768px) {
+      .header {
+        background-repeat: no-repeat;
+        background-position: center center;
+       background-image: url("/images/shutterstock_762804607.jpg");
+       background-size: cover;
+      }
+
+      .back-font h1 {
+       text-align: center;
+       margin-left: 75px;
+        color: white;
+        font-size: 80px;
+        font-family: 'Pacifico', cursive;
+        letter-spacing: 3px;
+    }
+
+    .top_intro {
+        height: 500px;
+    }
+
+    .boxes {
+        position: static;
+        margin-bottom: 30px;
+    }
+
   }
