@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('person/contact', function () {
+    return view('person/contact');
+});
+
 Route::resource('person', 'App\Http\Controllers\PersonController');
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 

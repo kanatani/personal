@@ -9,10 +9,10 @@
         <nav class=top_nav>
           <ul>
             <li>
-              <a href="">top</a>
+              <a href=" {{ url('/person/create') }} ">top</a>
             </li>
             <li>
-              <a href="">sign up</a>
+              <a href=" {{ url('/person/contact') }} ">sign up</a>
             </li>
             <li>
               <a href="">お問い合わせ</a>
