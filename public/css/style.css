@@ -137,6 +137,10 @@ a:hover {
     transition-duration: 0.5s;
   }
 
+  /* お問い合わせ機能 */
+
+
+
   @media screen and (max-width : 768px) {
       .header {
         background-repeat: no-repeat;
