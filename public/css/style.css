@@ -139,7 +139,57 @@ a:hover {
 
   /* お問い合わせ機能 */
 
+  .hamburger_btn {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 70px;
+      height: 72px;
+      cursor: pointer;
+      z-index:50;
+  }
 
+  .hamburger_btn .line {
+      position: absolute;
+      top: 0px;
+      left: 20px;
+      width: 32px;
+      height: 2px;
+      background: #333333;
+      text-align: center;
+  }
+
+  .hamburger_btn .line_01 {
+      top: 16px;
+      transition: 0.4s ease;
+  }
+
+  .hamburger_btn .line_02 {
+      top: 26px;
+      transition: 0.4s ease;
+  }
+
+  .hamburger_btn .line_03 {
+      top: 36px;
+      transition: 0.4s ease;
+  }
+  
+  .btn_line01 {
+      transform: translateY(10px) rotate(-45deg);
+      transition: 0.4s ease;
+  }
+
+  .btn_line02 {
+      opacity: 0;
+      transition: 0.4s ease;
+  }
+
+  .btn_line03 {
+      transform: translateY(-10px) rotate(45deg);
+      transition: 0.4s ease;
+  }
+  
+  
 
   @media screen and (max-width : 768px) {
       .header {

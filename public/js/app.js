@@ -49742,8 +49742,15 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app',
-  data: {
-    color_bind: true
+  data: function data() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    toggleButton: function toggleButton() {
+      this.isActive = !this.isActive;
+    }
   }
 });
 
