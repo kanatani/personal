@@ -139,57 +139,43 @@ a:hover {
 
   /* お問い合わせ機能 */
 
-  .hamburger_btn {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 70px;
-      height: 72px;
-      cursor: pointer;
-      z-index:50;
+  .btn-humburger {
+    position: fixed; 
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 56px;
+    cursor: pointer;
+    z-index: 50;
   }
 
-  .hamburger_btn .line {
+  .btn-humburger > div {
       position: absolute;
-      top: 0px;
-      left: 20px;
-      width: 32px;
-      height: 2px;
-      background: #333333;
-      text-align: center;
+      width: 56px;
+      height: 3px;
+      transition: all 0.2s;
+      background-color: #000;
   }
 
-  .hamburger_btn .line_01 {
-      top: 16px;
-      transition: 0.4s ease;
+  .btn-humburger > div:first-child {
+      top: 15px;
+      left: 0;
   }
 
-  .hamburger_btn .line_02 {
-      top: 26px;
-      transition: 0.4s ease;
+  .btn-humburger > div:last-child {
+      bottom: 15px;
+      left: 0;
   }
 
-  .hamburger_btn .line_03 {
-      top: 36px;
-      transition: 0.4s ease;
-  }
-  
-  .btn_line01 {
-      transform: translateY(10px) rotate(-45deg);
-      transition: 0.4s ease;
-  }
+  .btn-humburger .is-active > div:first-child {
+    -webkit-transform: translateY(11px) rotate(45deg);
+    transform: translateY(11px) rotate(45deg);
+}
 
-  .btn_line02 {
-      opacity: 0;
-      transition: 0.4s ease;
-  }
-
-  .btn_line03 {
-      transform: translateY(-10px) rotate(45deg);
-      transition: 0.4s ease;
-  }
-  
-  
+  .btn-humburger .is-active > div:last-child {
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
+}
 
   @media screen and (max-width : 768px) {
       .header {

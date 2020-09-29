@@ -29,7 +29,14 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
-    data: {
-          ActiveBtn: false
+    data() {
+        return {
+            isActive: false
+        };
+    },
+    methods: {
+        toggleButton() {
+            this.isActive = !this.isActive
         }
-    })
+    }
+});
