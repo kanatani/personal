@@ -1,9 +1,20 @@
 /* トップページ */
+html {
+    font-size: 14px;
+}
+
 a {
     text-decoration: none;
 }
 
+a:hover {
+    border-bottom: solid 2px white;
+    transition-duration: 0.5s;
+    text-decoration: none;
+  }
+
 .header {
+   
     width: 100%;
    background-image: url("/images/shutterstock_762804607.jpg");
    background-size: cover;
@@ -129,16 +140,13 @@ footer {
    padding: 0px 10px;
    font-family: 'Zilla Slab', serif;
    text-decoration: none;
-
 }
 
-a:hover {
-    border-bottom: solid 2px white;
-    transition-duration: 0.5s;
-    text-decoration: none;
-  }
-
   /* お問い合わせ機能 */
+
+  .content_head { 
+     background-color: #444444;
+  }
 
   .btn-humburger {
     position: fixed; 
@@ -191,7 +199,6 @@ a:hover {
 }
 
 .navi {
-    
     background-color: rgba(197, 197, 197, 0.671);
     z-index: 30;
     padding: 2rem 1rem;
@@ -215,9 +222,40 @@ a:hover {
 
 .navi a{
     color: rgb(66, 66, 66);
-    text-decoration: none;
 }
 
+.navi a:hover {
+    text-emphasis: none;
+    color: rgb(66, 66, 66);
+}
+
+.content_message_title {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.content_message {
+    font-size: 1.6rem;
+}
+
+.content_input {
+    margin-bottom: 40px;
+}
+
+.input_title h2 {
+    text-align: center;
+}
+
+.content_form {
+    margin: auto;
+    text-align: center;
+}
+
+.content_footer {
+    border-top: medium solid #EEEEEE;
+}
+
+/* レスポンシブ */
   @media screen and (max-width : 768px) {
       .header {
         background-repeat: no-repeat;

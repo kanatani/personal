@@ -32,12 +32,17 @@ const app = new Vue({
     data() {
         return {
             isActive: false,
+            name: 'name'
         };
     },
     methods: {
         toggleButton() {
             this.isActive = !this.isActive;
-            this.navi = !this.navi;
+        }
+    },
+    computed: {
+        isInvalidName() {
+            return this.name.length < 1;
         }
     }
 });
