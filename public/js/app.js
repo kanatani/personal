@@ -49744,12 +49744,18 @@ var app = new Vue({
   el: '#app',
   data: function data() {
     return {
-      isActive: false
+      isActive: false,
+      name: 'name'
     };
   },
   methods: {
     toggleButton: function toggleButton() {
       this.isActive = !this.isActive;
+    }
+  },
+  computed: {
+    isInValidName: function isInValidName() {
+      return this.name.length < 1;
     }
   }
 });

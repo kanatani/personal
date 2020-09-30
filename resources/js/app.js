@@ -41,7 +41,7 @@ const app = new Vue({
         }
     },
     computed: {
-        isInvalidName() {
+        isInValidName() {
             return this.name.length < 1;
         }
     }

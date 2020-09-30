@@ -2,18 +2,17 @@
 @section('content')
 <body>
 <div class="container-fluid">
+    <div id="app">
       <div class="row fixed-top">
         <header class="content_head col-sm-12">
             <div>
                 <div class="header_title">
                     <h1>person</h1>
                 </div>
-                <div id="app">
                     <div :class="{'is-active':isActive}" class="btn-humburger" @click="toggleButton">
                         <div></div>
                         <div></div>
                     </div>
-
                     <transition name="navi">
                     <nav class="navi" v-show="isActive">
                             <ul>
@@ -23,7 +22,6 @@
                             </ul>
                         </nav>
                     </transition>
-                </div>
             </div>
         </header>
     </div>
@@ -46,9 +44,10 @@
         <form class="content_form">
              <div class="form-group">
                 <label for="simei">name</label>
-                <input class="form-control" id="simei" name="name" v-model="name" type="text" placeholder="Default input">
+                <input v-model="name" class="form-control" id="simei" name="name"  type="text" placeholder="name@example.com">
+                <p v-if="isInValidName">名前を入力してください</p>
             </div>
-            <p v-if="isInvalidName" class="error">名前を入力してください</p>
+            
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="name@example.com">
@@ -63,5 +62,6 @@
     <footer class="content_footer col-sm-12">
         <p>© person 2020</p>
     </footer>
+    </div>
   </div>
 @endsection
