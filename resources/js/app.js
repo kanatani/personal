@@ -31,12 +31,13 @@ const app = new Vue({
     el: '#app',
     data() {
         return {
-            isActive: false
+            isActive: false,
         };
     },
     methods: {
         toggleButton() {
-            this.isActive = !this.isActive
+            this.isActive = !this.isActive;
+            this.navi = !this.navi;
         }
     }
 });

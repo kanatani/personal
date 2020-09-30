@@ -129,12 +129,13 @@ footer {
    padding: 0px 10px;
    font-family: 'Zilla Slab', serif;
    text-decoration: none;
-   
+
 }
 
 a:hover {
     border-bottom: solid 2px white;
     transition-duration: 0.5s;
+    text-decoration: none;
   }
 
   /* お問い合わせ機能 */
@@ -167,14 +168,54 @@ a:hover {
       left: 0;
   }
 
-  .btn-humburger .is-active > div:first-child {
+ .is-active > div:first-child {
     -webkit-transform: translateY(11px) rotate(45deg);
     transform: translateY(11px) rotate(45deg);
 }
 
-  .btn-humburger .is-active > div:last-child {
-    -webkit-transform: translateY(-10px) rotate(-45deg);
-    transform: translateY(-10px) rotate(-45deg);
+ .is-active > div:last-child {
+    -webkit-transform: translateY(-11px) rotate(-45deg);
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.navi-enter-active, .navi-leave-active {
+    transition: opacity 0.4s;
+}
+
+.navi-enter, .navi-leave-to {
+    opacity: 0;
+}
+
+.navi-leave, .navi-enter-to {
+    opacity: 1;
+}
+
+.navi {
+    
+    background-color: rgba(197, 197, 197, 0.671);
+    z-index: 30;
+    padding: 2rem 1rem;
+    position: fixed;
+    width: 20rem;
+    height: 80rem;
+    top: 0;
+    right: 0;
+}
+
+.navi ul{
+    margin: 1rem;
+    padding: 0;
+}
+
+.navi li {
+    list-style: none;
+    line-height: 1;
+    padding: 1rem;
+}
+
+.navi a{
+    color: rgb(66, 66, 66);
+    text-decoration: none;
 }
 
   @media screen and (max-width : 768px) {
@@ -204,3 +245,6 @@ a:hover {
     }
 
   }
+
+
+  
