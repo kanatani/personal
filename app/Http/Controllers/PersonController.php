@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Request as PostRequest;
 use App\Models\Person;
+use App\Models\Contact;
 
 
 
@@ -39,7 +40,11 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+        $user->name = $request->name; 
+        $user->mail = $request->mail; 
+        $user->content = $request->content; 
+        return redirect('peeson/')
     }
 
     /**

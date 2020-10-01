@@ -2,8 +2,8 @@
 @section('content')
 <body>
 <div class="container-fluid">
-    <div id="app">
-      <div class="row fixed-top">
+  <div id="app">
+    <div class="row fixed-top">
         <header class="content_head col-sm-12">
             <div>
                 <div class="header_title">
@@ -45,10 +45,9 @@
             @csrf
              <div class="form-group">
                 <label for="simei">name</label>
-                <input v-model="name" class="form-control" id="simei" name="name"  type="text" placeholder="name@example.com">
+                <input v-model="name" class="form-control" id="simei" name="name"  type="text" placeholder="name">
                 <p v-if="isInValidName">名前を入力してください</p>
             </div>
-            
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>
                 <input v-model="email" type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="email@example.com">

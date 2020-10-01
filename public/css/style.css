@@ -14,7 +14,6 @@ a:hover {
   }
 
 .header {
-   
     width: 100%;
    background-image: url("/images/shutterstock_762804607.jpg");
    background-size: cover;
@@ -145,7 +144,8 @@ footer {
   /* お問い合わせ機能 */
 
   .content_head { 
-     background-color: #444444;
+     background-color: 	#DDDDDD	;
+     height: 50px;
   }
 
   .btn-humburger {
@@ -253,6 +253,17 @@ footer {
 
 .content_footer {
     border-top: medium solid #EEEEEE;
+}
+
+/* 内容確認 */
+.main_check {
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.main_check h3 {
+    padding-top: 20px;
 }
 
 /* レスポンシブ */
