@@ -49745,7 +49745,8 @@ var app = new Vue({
   data: function data() {
     return {
       isActive: false,
-      name: 'name'
+      name: '',
+      email: ''
     };
   },
   methods: {
@@ -49756,6 +49757,9 @@ var app = new Vue({
   computed: {
     isInValidName: function isInValidName() {
       return this.name.length < 1;
+    },
+    isInValidEmail: function isInValidEmail() {
+      return this.email.length < 1;
     }
   }
 });

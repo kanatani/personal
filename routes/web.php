@@ -17,7 +17,11 @@ Route::get('person/contact', function () {
     return view('person/contact');
 });
 
+Route::post('/person/check','App\Http\Controllers\PersonController@content');
+
 Route::resource('person', 'App\Http\Controllers\PersonController');
+
+
 
 Route::get('/', function () {
     return view('welcome');

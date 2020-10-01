@@ -32,7 +32,8 @@ const app = new Vue({
     data() {
         return {
             isActive: false,
-            name: 'name'
+            name: '',
+            email: ''
         };
     },
     methods: {
@@ -43,6 +44,9 @@ const app = new Vue({
     computed: {
         isInValidName() {
             return this.name.length < 1;
+        },
+        isInValidEmail() {
+            return this.email.length < 1;
         }
     }
 });

@@ -41,7 +41,8 @@
         <div class="input_title">
             <h2>お問い合わせ入力</h2>
         </div>
-        <form class="content_form">
+        <form class="content_form" action="/person/check" method="post">
+            @csrf
              <div class="form-group">
                 <label for="simei">name</label>
                 <input v-model="name" class="form-control" id="simei" name="name"  type="text" placeholder="name@example.com">
@@ -50,7 +51,8 @@
             
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="name@example.com">
+                <input v-model="email" type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="email@example.com">
+                <p v-if="isInValidEmail">メールアドレスを入力してください</p>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Example textarea</label>

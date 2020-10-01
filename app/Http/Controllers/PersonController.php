@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Request as PostRequest;
 use App\Models\Person;
 
 
@@ -85,5 +86,11 @@ class PersonController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function content(PostRequest  $result)
+    {
+        $data1 = $result::all();
+        return view('person.check',compact('data1'));
     }
 }
