@@ -15,7 +15,7 @@ a:hover {
 
 .header {
     width: 100%;
-   background-image: url("/images/shutterstock_762804607.jpg");
+   background-image: url('/images/shutterstock_1043723578.jpg');
    background-size: cover;
    height: 650px;
 }
@@ -266,8 +266,20 @@ footer {
     padding-top: 20px;
 }
 
+/* 内容保存ページ */
+
+.thank_page {
+    text-align: center;
+    margin-top: 10px;
+}
+
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
+      /* ハンバーガー */
+       .navi {
+            width: 200px;
+        }
+      /* トップページ */
       .header {
         background-repeat: no-repeat;
         background-position: center center;
@@ -293,6 +305,18 @@ footer {
         margin-bottom: 30px;
     }
 
+    /* お問い合わせ入力 */
+
+
+
+
+    /* サンクスページ */
+    .display-4 {
+        padding-top: 30px;
+    } 
+
+    
+    
   }
 
 

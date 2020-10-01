@@ -4,22 +4,22 @@
   <div class="container-fluid">
     <div class="row">
       <div class="header col-sm-12">
-      <div class="back-font">
-        <h1>person</h1>
-        <nav class=top_nav>
-          <ul>
-            <li>
-              <a href=" {{ url('/person/create') }} ">top</a>
-            </li>
-            <li>
-              <a href=" {{ url('/person/contact') }} ">sign up</a>
-            </li>
-            <li>
-              <a href="">お問い合わせ</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <div class="back-font">
+          <h1>person</h1>
+          <nav class=top_nav>
+            <ul>
+              <li>
+                <a href=" {{ url('/person/create') }} ">top</a>
+              </li>
+              <li>
+                <a href="">sign up</a>
+              </li>
+              <li>
+                <a href="{{ url('/person/contact') }}">お問い合わせ</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
       </div>
       <div class="row">
@@ -80,6 +80,9 @@
   </div>
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v8.0&appId=2731799030261565&autoLogAppEvents=1" nonce="ykDF24Cg"></script>
+<script>
+    
+</script>
 @endsection
 
 

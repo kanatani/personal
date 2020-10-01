@@ -25,24 +25,13 @@
                 </div>
             </header>
         </div>
-        <div class="main_check">
-            <div class="card">
-                <h3>お問い合わせ内容確認</h3>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                    <p>内容{{ $data1['name'] }}</p>
-                    <p>内容{{ $data1['mail'] }}</p>
-                    <p>内容{{ $data1['content'] }}</p>
-                    </blockquote>
-                    <form action="/person/content_input" method="post">
-                       @csrf
-                        <input type="hidden" name="name" value="{{ $data1['name'] }}">
-                        <input type="hidden" name="mail" value="{{ $data1['mail'] }}">
-                        <input type="hidden" name="content" value="{{ $data1['content'] }}">
-                        <button type="button" onclick="history.back()" class="btn btn-primary">戻る</button>
-                        <button type="submit" class="btn btn-info">Info</button>
-                    </form>
-                </div>
+        <div class="row thank_page">
+            <div class="jumbotron col-sm-12">
+                <h1 class="display-4">Thank you!</h1>
+                <p class="lead">ご意見ありがとうございます。本アプリの改善に向けて全力で取り組んでいきます。</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <a class="btn btn-primary btn-lg" href="/person" role="button">トップページ</a>
             </div>
         </div>
     </div>

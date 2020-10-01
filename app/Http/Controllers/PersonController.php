@@ -40,11 +40,12 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User;
-        $user->name = $request->name; 
-        $user->mail = $request->mail; 
-        $user->content = $request->content; 
-        return redirect('peeson/')
+        $contact = new Contact;
+        $contact->name = $request->name; 
+        $contact->mail = $request->mail; 
+        $contact->content = $request->content; 
+        $contact->save(); 
+        return view('/person/content_input');
     }
 
     /**
