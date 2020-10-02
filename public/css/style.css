@@ -15,7 +15,6 @@ a:hover {
 
 .header {
     width: 100%;
-   background-image: url('/images/shutterstock_1043723578.jpg');
    background-size: cover;
    height: 650px;
 }
@@ -283,7 +282,6 @@ footer {
       .header {
         background-repeat: no-repeat;
         background-position: center center;
-       background-image: url("/images/shutterstock_762804607.jpg");
        background-size: cover;
       }
 

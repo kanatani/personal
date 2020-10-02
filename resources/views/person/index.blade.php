@@ -36,7 +36,6 @@
             <i class="fas fa-user-circle"></i>
             <p>気になっている相手の性格をみて分析してみよう</p>
           </div>
-          
           <div class="box">
           <h3>見つけよう</h3>
           <i class="fas fa-male"></i>
@@ -80,8 +79,19 @@
   </div>
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v8.0&appId=2731799030261565&autoLogAppEvents=1" nonce="ykDF24Cg"></script>
-<script>
-    
+<script src="{{ asset('/assets/js/jquery.bgswitcher.js') }}"></script>
+  <script>
+    jQuery(function($)  {
+        $('.header').bgSwitcher({
+          image:['/images/shutterstock_622200797.jpg','/images/shutterstock_762804607.jpg','/images/shutterstock_1043723578.jpg'],
+          interval: 3000, // 背景画像を切り替える間隔を指定 3000=3秒
+          loop: true, // 切り替えを繰り返すか指定 true=繰り返す　false=繰り返さない
+          shuffle: true, // 背景画像の順番をシャッフルするか指定 true=する　false=しない
+          effect: "blind", // エフェクトの種類をfade,blind,clip,slide,drop,hideから指定
+          duration: 500, // エフェクトの時間を指定します。
+          easing: "swing"
+        });
+    });
 </script>
 @endsection
 
