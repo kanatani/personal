@@ -95,7 +95,7 @@
 
 jQuery(function ($) {
   $('.header').bgSwitcher({
-    image: ['/images/shutterstock_622200797.jpg', '/images/shutterstock_762804607.jpg', '/images/shutterstock_1043723578.jpg'],
+    image: ["{{ asset('/images/shutterstock_622200797.jpg') }}", '/images/shutterstock_762804607.jpg', '/images/shutterstock_1043723578.jpg'],
     interval: 3000,
     // 背景画像を切り替える間隔を指定 3000=3秒
     loop: true,
