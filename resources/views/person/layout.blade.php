@@ -11,7 +11,6 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   
-  
 </head>
 @yield('content')
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

@@ -1,7 +1,7 @@
 @extends('person/layout')
 @section('content')
 <body>
-  <div id="app">
+ 
     <div class="container-fluid">
       <div class="row">
         <div class="header col-sm-12">
@@ -23,10 +23,8 @@
           </div>
         </div>
         </div>
-        <fadein-component>
-          <div class="row">
-          <div class="top_intro col-sm-12">
-        
+          <div class="row fadeIn">
+          <div class="top_intro col-sm-12 data-delighter">
             <h1 class="intro_title">無料診断テスト</h1>
             <div class="boxes">
               <div class="box">
@@ -47,9 +45,8 @@
           </div>
         </div>
         </div>
-</fadein-component>
   
-      <div class="top_text">
+      <div class="top_text detail">
         <div class="text_means">
           <h1>素の自分を探してみませんか</h1>
           <p>人生を生きていく上で自分の性格を知ることは重要なこと</p>
@@ -62,7 +59,6 @@
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="recommend" data-size="small" data-share="false"></div>
-        
         <div class="row">
           <footer class="col-sm-12">
             <nav class="footer_nav">
@@ -81,12 +77,8 @@
           </footer>
         </div>
     </div>
-  </div>
-  <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v8.0&appId=2731799030261565&autoLogAppEvents=1" nonce="ykDF24Cg"></script>
-
-<link src="{{ asset('/js/jquery.bgswitcher.js') }}">
-<script src="{{ asset('/js/head.js') }}"></script>
+    <script src="{{ asset('/js/jquery.bgswitcher.js') }}"></script>
+    <script src="{{ asset('/js/head.js') }}"></script>
 @endsection
 
 

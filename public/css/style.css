@@ -16,7 +16,7 @@ a:hover {
 .header {
     width: 100%;
    background-size: cover;
-   height: 650px;
+   height: 600px;
 }
 
 .back-font h1 {
@@ -49,6 +49,28 @@ a:hover {
     letter-spacing: 4px;
     text-decoration: none;
 }
+
+ .fadein {
+    opacity : 0;
+    transform : translate(0, 100px);
+    transition : all 0.5s;
+  }
+   
+  .fadein.active{
+    opacity : 1;
+    transform : translate(0, 0);
+  }
+
+  .detail {
+    opacity : 0;
+    transform : translate(0, 100px);
+    transition : all 1s;
+  }
+   
+  .detail.active{
+    opacity : 1;
+    transform : translate(0, 0);
+  }
 
 .top_intro {
     margin: auto;
