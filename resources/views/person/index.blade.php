@@ -1,28 +1,27 @@
 @extends('person/layout')
 @section('content')
 <body>
- 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="header col-sm-12">
-          <div class="back-font">
-            <h1>person</h1>
-            <nav class=top_nav>
-              <ul>
-                <li>
-                  <a href=" {{ url('/person/create') }} ">top</a>
-                </li>
-                <li>
-                  <a href="">sign up</a>
-                </li>
-                <li>
-                  <a href="{{ url('/person/contact') }}">お問い合わせ</a>
-                </li>
-              </ul>
-            </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="header col-sm-12">
+            <div class="back-font">
+              <h1>person</h1>
+              <nav class=top_nav>
+                <ul>
+                  <li>
+                    <a href=" {{ url('/person/create') }} ">top</a>
+                  </li>
+                  <li>
+                    <a href="">sign up</a>
+                  </li>
+                  <li>
+                    <a href="{{ url('/person/contact') }}">お問い合わせ</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
-        </div>
+          </div>
           <div class="row fadeIn">
           <div class="top_intro col-sm-12 data-delighter">
             <h1 class="intro_title">無料診断テスト</h1>
@@ -45,7 +44,36 @@
           </div>
         </div>
         </div>
-  
+
+        <div class="row">
+          <div class="big5">
+            <div class="big5_text">
+              <h1>big5テスト</h1>
+              <p>bog5とは、人間を５つのパーソナリティ特性で把握するという理論です。</p>
+            </div>
+            <div>
+             <h3>5つの特性</h3> 
+             <div>
+               <div class="big5_detail">
+                 <h4>外向性</h4>
+               </div>
+               <div class="big5_detail">
+                 <h4>勤勉性</h4>
+               </div>
+               <div class="big5_detail">
+                 <h4>協調性</h4>
+               </div>
+               <div class="big5_detail">
+                 <h4>開放性</h4>
+               </div>
+               <div class="big5_detail">
+                 <h4>神経症的傾向</h4>
+               </div>
+             </div>
+            </div>
+          </div>
+        </div>
+
       <div class="top_text detail">
         <div class="text_means">
           <h1>素の自分を探してみませんか</h1>
@@ -55,7 +83,8 @@
           <p>このアプリはそのようなお客様をサポートするアプリ</p>
         </div>
       </div>
-      <div class="">
+
+      <div class="social_button">
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="recommend" data-size="small" data-share="false"></div>
@@ -78,6 +107,22 @@
         </div>
     </div>
     <script src="{{ asset('/js/jquery.bgswitcher.js') }}"></script>
+    
+    <script>
+      jQuery(function($) {
+  $('.header').bgSwitcher({
+    images: ['images/shutterstock_622200797.jpg','images/768013045-huge.jpg','images/shutterstock_1043723578.jpg'], // 切り替え画像
+      Interval: 5000, //切り替えの間隔 1000=1秒
+      start: true, //$.fn.bgswitcher(config)をコールした時に切り替えを開始する
+      loop: true, //切り替えをループする
+      shuffle: false, //背景画像の順番をシャッフルする
+      effect: "fade", //エフェクトの種類 "fade" "blind" "clip" "slide" "drop" "hide"
+      duration: 3000, //エフェクトの時間 1000=1秒
+      easing: "swing", //エフェクトのイージング "swing" "linear"
+  });
+});
+
+    </script>
     <script src="{{ asset('/js/head.js') }}"></script>
 @endsection
 
