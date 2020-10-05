@@ -54,19 +54,19 @@
             <div>
              <h3>5つの特性</h3> 
              <div>
-               <div class="big5_detail">
+               <div class="big5_detail detail1">
                  <h4>外向性</h4>
                </div>
-               <div class="big5_detail">
+               <div class="big5_detail detail2">
                  <h4>勤勉性</h4>
                </div>
-               <div class="big5_detail">
+               <div class="big5_detail detail3">
                  <h4>協調性</h4>
                </div>
-               <div class="big5_detail">
+               <div class="big5_detail detail4">
                  <h4>開放性</h4>
                </div>
-               <div class="big5_detail">
+               <div class="big5_detail detail5">
                  <h4>神経症的傾向</h4>
                </div>
              </div>
@@ -109,18 +109,19 @@
     <script src="{{ asset('/js/jquery.bgswitcher.js') }}"></script>
     
     <script>
+    
       jQuery(function($) {
-  $('.header').bgSwitcher({
-    images: ['images/shutterstock_622200797.jpg','images/768013045-huge.jpg','images/shutterstock_1043723578.jpg'], // 切り替え画像
-      Interval: 5000, //切り替えの間隔 1000=1秒
-      start: true, //$.fn.bgswitcher(config)をコールした時に切り替えを開始する
-      loop: true, //切り替えをループする
-      shuffle: false, //背景画像の順番をシャッフルする
-      effect: "fade", //エフェクトの種類 "fade" "blind" "clip" "slide" "drop" "hide"
-      duration: 3000, //エフェクトの時間 1000=1秒
-      easing: "swing", //エフェクトのイージング "swing" "linear"
-  });
-});
+        $('.header').bgSwitcher({
+          images: ['images/shutterstock_622200797.jpg','images/768013045-huge.jpg','images/shutterstock_1043723578.jpg'], // 切り替え画像
+            Interval: 5000, //切り替えの間隔 1000=1秒
+            start: true, //$.fn.bgswitcher(config)をコールした時に切り替えを開始する
+            loop: true, //切り替えをループする
+            shuffle: false, //背景画像の順番をシャッフルする
+            effect: "fade", //エフェクトの種類 "fade" "blind" "clip" "slide" "drop" "hide"
+            duration: 3000, //エフェクトの時間 1000=1秒
+            easing: "swing", //エフェクトのイージング "swing" "linear"
+        });
+      });
 
     </script>
     <script src="{{ asset('/js/head.js') }}"></script>

@@ -18,3 +18,38 @@ $(function(){
       });
   });
 });
+
+ScrollReveal().reveal('.detail1', { 
+  duration: 1600, 
+  opacity: 0.8,
+  origin: 'left', 
+  distance: '50px',
+  reset: false   
+});
+ScrollReveal().reveal('.detail2', { 
+  duration: 1600, 
+  origin: 'left', 
+  distance: '50px',
+  reset: false 
+});
+ScrollReveal().reveal('.detail3', { 
+  duration: 1600, 
+  origin: 'left', 
+  distance: '50px',
+  reset: false   
+});
+ScrollReveal().reveal('.detail4', { 
+  duration: 1600, 
+  origin: 'left', 
+  distance: '50px',
+  reset: false   
+});
+ScrollReveal().reveal('.detail5', { 
+  duration: 1600, 
+  origin: 'left', 
+  distance: '50px',
+  reset: false   
+});
+
+
+
