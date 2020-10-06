@@ -117,7 +117,7 @@
     
       jQuery(function($) {
         $('.header').bgSwitcher({
-          images: ['images/shutterstock_622200797.jpg','images/768013045-huge.jpg','images/shutterstock_1043723578.jpg'], // 切り替え画像
+          images: ['images/shutterstock_622200797.jpg','images/768013045-huge.jpg','images/shutterstock_762804607.jpg'], // 切り替え画像
             Interval: 5000, //切り替えの間隔 1000=1秒
             start: true, //$.fn.bgswitcher(config)をコールした時に切り替えを開始する
             loop: true, //切り替えをループする
