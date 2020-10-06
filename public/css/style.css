@@ -116,6 +116,45 @@ a:hover {
     padding-top: 40px;
 }
 
+.big5_detail {
+    display: table;
+    height: 150px;
+    width: 100%;
+    margin: 50px;
+}
+
+.big5_detail h4 {
+    margin-top: 30px;
+}
+
+.detail1 {
+    background-color: yellow;
+    border-radius: 3px;
+    margin: auto;
+}
+
+.detail2 {
+    background-color: rgb(18, 172, 233);
+    border-radius: 3px;
+    
+    margin: auto;
+}
+.detail3 {
+    background-color: rgb(176, 232, 176);
+    border-radius: 3px;
+   
+    margin: auto;
+}
+.detail4 {
+    background-color: red;
+    border-radius: 3px;
+    margin: auto;
+}
+.detail5 {
+    background-color: rgb(170, 38, 170);
+    border-radius: 3px;
+    margin: auto;
+}
 
 /* 診断テスト説明 */
 .top_text {
@@ -231,8 +270,11 @@ footer {
     opacity: 1;
 }
 
-.navi {
+footer {
     background-color: rgba(197, 197, 197, 0.671);
+}
+
+.navi {
     z-index: 30;
     padding: 2rem 1rem;
     position: fixed;

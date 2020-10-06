@@ -9,7 +9,7 @@
               <nav class=top_nav>
                 <ul>
                   <li>
-                    <a href=" {{ url('/person/create') }} ">top</a>
+                    <a href=" {{ url('/person/test') }} ">test</a>
                   </li>
                   <li>
                     <a href="">sign up</a>
@@ -51,23 +51,28 @@
               <h1>big5テスト</h1>
               <p>bog5とは、人間を５つのパーソナリティ特性で把握するという理論です。</p>
             </div>
-            <div>
+            <div class="big5_content">
              <h3>5つの特性</h3> 
-             <div>
+             <div class="big5_point">
                <div class="big5_detail detail1">
                  <h4>外向性</h4>
+                 <p>外の刺激に大してポジティブな反応、外に関心があるのかを示す性質</p>
                </div>
                <div class="big5_detail detail2">
                  <h4>勤勉性</h4>
+                 <p>衝動や欲望をうまくコントロールすること、物事に大して真面目に取り組む性質</p>
                </div>
                <div class="big5_detail detail3">
                  <h4>協調性</h4>
+                 <p>他人に大しての思いやり、集団行動でどれだけ他の人たちと協力できるのかを示す性質</p>
                </div>
                <div class="big5_detail detail4">
                  <h4>開放性</h4>
+                 <p>知的好奇心の高さ、新しいことに対しての興味、勉学などにどれだけ興味があるのかを表す性質</p>
                </div>
                <div class="big5_detail detail5">
                  <h4>神経症的傾向</h4>
+                 <p>感情の安定さやストレスに大しての感受性を表す性質</p>
                </div>
              </div>
             </div>

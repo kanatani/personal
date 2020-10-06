@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('person/contact', function () {
     return view('person/contact');
 });
+
+Route::get('person/test', function () {
+    return view('person/test');
+});
+
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
 Route::post('/person/check','App\Http\Controllers\PersonController@content');
 
