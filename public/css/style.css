@@ -356,15 +356,19 @@ footer {
  }
 
 .test_message{
-    height: 1000px;
-    background: rgb(230,254,251);
-    background: linear-gradient(0deg, rgba(230,254,251,1) 21%, rgba(189,249,249,1) 66%, rgba(132,241,246,1) 89%);
+    position: relative;
+    height: 600px;
 }
 
 .test_title{
     color: white;
-    margin:  auto;
-    padding-bottom: 200px;
+    width: 100%;
+}
+
+.test_title h1 {
+    padding-top: 100px;
+    margin: auto;
+    text-align: center;
 }
 
 .test_boxes {
@@ -372,13 +376,14 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     position: absolute;
-    top: 0;
+    top: 150;
     right: 0;
     bottom: 50px;
     left: 0;
 }
 
 .test_box {
+    margin-top: 30px;
     background-color:rgba(255,255,255,0.9);
     border-radius: 20px;
     height: 250px;
@@ -393,7 +398,18 @@ footer {
      margin-bottom: 30px;
  }
 
+ .test_start {
+     text-align: center;
+     background-color: white;
+ }
  
+ .test_footer {
+     height: 125px;
+ }
+ 
+ .kindtest {
+     padding-top: 100px;
+ }
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
@@ -436,8 +452,22 @@ footer {
         padding-top: 30px;
     } 
 
+    /* テスト説明 */
+
+    .test_message {
+        height: 900px;
+    }
     
-    
+    .test_boxes {
+        position: flex;
+    }
+
+    .test_box {
+        margin-top: 30px;
+        height: 200px;
+    }
+
+
   }
 
 

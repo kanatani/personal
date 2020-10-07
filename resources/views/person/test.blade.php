@@ -25,7 +25,7 @@
                     </div>
                 </header>
             </div>
-            <div class="row test_message">
+            <div class="row test_message" style="background:url({{ asset('/images/shutterstock_1471472060.jpg') }} ); background-size:cover;">
                 <div class="test_title">
                     <h1>無料診断テスト</h1>
                 </div>
@@ -52,8 +52,22 @@
                     </div>
                 </div>
             </div>
+            <div class="row test_start">
+                <div class="jumbotron col-sm-12 bg-white">
+                    <h1 class="display-4">Test start!</h1>
+                    <p class="lead">big5に基づいたテストを受けてみよう！自分の性格をより客観的にみることができるよ！</p>
+                    <hr class="my-4">
+                    <form action="/person/kind" method="get">
+                        <button type="submit" class="btn btn-primary w-25">start</button>
+                    </form>
+                    <button type="button" class="btn btn-info w-25">back</button>
+                </div>
+            </div>
         </div>
     </div>
+    <footer class="test_footer col-sm-12">
+        <p>© person 2020</p>
+    </footer>
 @endsection
 
 
