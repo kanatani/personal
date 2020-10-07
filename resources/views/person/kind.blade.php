@@ -25,21 +25,45 @@
                     </div>
                 </header>
             </div>
-            <div class="kindtest">
-                <div>
+            <div class="row kind">
+                <div class="kindtest">
                     <div class="kindtest_title">
                         <h2>協調性テスト</h2>
                     </div>
-                    <div class="kindtest_check">
-                        <div class="kind_check_list">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                    <form action="">
+                        <div class="kindtest_check">
+                            <div class="kind_check_question">
+                                <div class="kind_check_font">
+                                    <h2>1.他人を助けるのが得意ですか?</h2>
+                                </div>
+                                <div class="kind_check_list">
+                                    <p>同意する</p>
+                                    <input type="radio" class="checklist" name="q1" value="1"　style="width:50px;height:50px;" >
+                                    <input type="radio" class="checklist" name="q1" value="1"　style="width:50px;height:50px;" >
+                                    <input type="radio" class="checklist" name="q1" value="1"　style="width:50px;height:50px;" >
+                                    <input type="radio" class="checklist" name="q1" value="1"　style="width:50px;height:50px;" >
+                                    <input type="radio" class="checklist" name="q1" value="1"　style="width:50px;height:50px;" >
+                                    <p>同意しない</p>
+                                </div>
+                                <div class="testborder"></div>
+                            </div>
+                            <div class="kind_check_question">
+                                <div class="kind_check_font">
+                                    <h2>1.他人を助けるのが得意ですか?</h2>
+                                </div>
+                                <div class="kind_check_list">
+                                    <p>同意する</p>
+                                    <input type="radio" class="checklist" name="q1" value="1">
+                                    <input type="radio" class="checklist" name="q1" value="1">
+                                    <input type="radio" class="checklist" name="q1" value="1">
+                                    <input type="radio" class="checklist" name="q1" value="1">
+                                    <input type="radio" class="checklist" name="q1" value="1">
+                                    <p>同意しない</p>
+                                </div>
+                                <div class="testborder"></div>
+                            </div>
                         </div>
-                       
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

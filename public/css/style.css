@@ -407,9 +407,34 @@ footer {
      height: 125px;
  }
  
+.kind {
+    padding-top: 100px;
+}
+
  .kindtest {
-     padding-top: 100px;
+     margin: auto;
+     text-align: center;
  }
+
+.kind_check_list {
+    display: flex;
+    margin-left: 70px;
+    padding-top: 10px;
+}
+
+.checklist {
+    margin: 5px 40px;
+}
+
+.testborder {
+    padding-top: 30px;
+    border-bottom: 1px solid #EADFDF;
+}
+
+.kind_check_question {
+   margin-top: 50px;
+}
+
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
