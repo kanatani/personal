@@ -99,4 +99,10 @@ class PersonController extends Controller
         $data1 = $result::all();
         return view('person.check',compact('data1'));
     }
+
+    public function kind(PostRequest  $result)
+    {
+        $kind = $result::all();
+        return view('person.kind_result',compact('kind'));
+    }
 }

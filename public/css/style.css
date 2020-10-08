@@ -409,6 +409,8 @@ footer {
  
 .kind {
     padding-top: 100px;
+    background: rgb(246,249,193);
+background: linear-gradient(0deg, rgba(246,249,193,1) 0%, rgba(237,247,15,1) 100%);
 }
 
  .kindtest {
@@ -418,12 +420,13 @@ footer {
 
 .kind_check_list {
     display: flex;
-    margin-left: 70px;
+    
     padding-top: 10px;
 }
 
 .checklist {
     margin: 5px 40px;
+    cursor: pointer;
 }
 
 .testborder {
@@ -435,7 +438,11 @@ footer {
    margin-top: 50px;
 }
 
-
+#next-button {
+    margin: 20px;
+    border-radius: 30px;
+    height: 50px;
+}
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
       /* ハンバーガー */
