@@ -31,7 +31,7 @@
                         <h2>協調性テスト</h2>
                     </div>
                     <form action="/person/kind_result" method="post">
-                    {{ csrf_field() }}
+                    @csrf
                     <?php for($i = 1; $i<=6; $i++) { 
                         switch ($i) {
                             case 1:
@@ -61,6 +61,7 @@
                                 </div>
                                 <div class="kind_check_list">
                                     <p>同意する</p>
+                                    
                                     <input type="radio" class="checklist" name="q<?php echo $i ?>" value="5"　style="width:50px;height:50px;" >
                                     <input type="radio" class="checklist" name="q<?php echo $i ?>" value="4"　style="width:50px;height:50px;" >
                                     <input type="radio" class="checklist" name="q<?php echo $i ?>" value="3"　style="width:50px;height:50px;" 　checked/>
@@ -101,11 +102,11 @@
                                 </div>
                                 <div class="kind_check_list">
                                     <p>同意する</p>
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>" value="1"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="2"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="3"　style="width:50px;height:50px;" checked/>
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>" value="5"　style="width:50px;height:50px;" >
                                     <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="4"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="5"　style="width:50px;height:50px;" >
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="3"　style="width:50px;height:50px;" checked/>
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="2"　style="width:50px;height:50px;" >
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="1"　style="width:50px;height:50px;" >
                                     <p>同意しない</p>
                                 </div>
                                 <div class="testborder"></div>

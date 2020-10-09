@@ -1,4 +1,6 @@
-@extends('person/kind')
+@extends('person/kind_result')
 @section('test')
-
-                        @endsection
+<div>
+    <p>hello</p>
+</div>
+@endsection

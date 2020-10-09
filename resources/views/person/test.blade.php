@@ -25,7 +25,7 @@
                     </div>
                 </header>
             </div>
-            <div class="row test_message" style="background:url({{ asset('/images/shutterstock_1471472060.jpg') }} ); background-size:cover;">
+            <div class="row test_message" style="background:url( ); background-size:cover;">
                 <div class="test_title">
                     <h1>無料診断テスト</h1>
                 </div>
