@@ -109,7 +109,10 @@
                                     <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="1"　style="width:50px;height:50px;" >
                                     <p>同意しない</p>
                                 </div>
-                                <div class="testborder"></div>
+                                <div class="testborder">
+
+                                
+                                </div>
                             </div>
                         </div>
                     <?php } ?>
