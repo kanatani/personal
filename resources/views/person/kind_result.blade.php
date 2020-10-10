@@ -2,10 +2,8 @@
 @section('content')
 <body>
     <?php 
-        $high = $kind['q1'] + $kind['q2']+ $kind['q3']+ $kind['q4']+ $kind['q5']+ $kind['q6'];
-        $row = $kind['q7'] + $kind['q8']+ $kind['q9']+ $kind['q10']+ $kind['q11']+ $kind['q12'];
-        $sum = $high - $row;
-
+       
+        
         switch (true) {
             case $sum >= 13.6;
                $msg = 'キリストタイプ';

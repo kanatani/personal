@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Request as PostRequest;
 use App\Models\Person;
 use App\Models\Contact;
+use App\Models\test;
 
 
 
@@ -102,7 +103,14 @@ class PersonController extends Controller
 
     public function kind(PostRequest  $result)
     {
-        $kind = $result::all();
-        return view('person.kind_result',compact('kind'));
+        $kind =$result::all();
+        $high = $kind['q1'] + $kind['q2']+ $kind['q3']+ $kind['q4']+ $kind['q5']+ $kind['q6'];
+        $row = $kind['q7'] + $kind['q8']+ $kind['q9']+ $kind['q10']+ $kind['q11']+ $kind['q12'];
+        $sum = $high - $row;
+        $test = new Contact;
+        $test->kind = $sum; 
+        $test->timestamps = false;
+        $test->save(); 
+        return view('person.kind_result',compact('kind','sum'));
     }
 }
