@@ -107,10 +107,11 @@ class PersonController extends Controller
         $high = $kind['q1'] + $kind['q2']+ $kind['q3']+ $kind['q4']+ $kind['q5']+ $kind['q6'];
         $row = $kind['q7'] + $kind['q8']+ $kind['q9']+ $kind['q10']+ $kind['q11']+ $kind['q12'];
         $sum = $high - $row;
-        $test = new Contact;
+
+        $test = new test;
         $test->kind = $sum; 
-        $test->timestamps = false;
         $test->save(); 
+        
         return view('person.kind_result',compact('kind','sum'));
     }
 }
