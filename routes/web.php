@@ -31,8 +31,6 @@ Route::post('/person/kind_result','App\Http\Controllers\PersonController@kind');
 
 Route::resource('person', 'App\Http\Controllers\PersonController');
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });

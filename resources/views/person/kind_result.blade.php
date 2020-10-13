@@ -162,7 +162,6 @@
                $boxdetail6='競争を元にした環境では、その独自性をはっきできるでしょう。';
                 break;
         }
-
     ?>
 
     <div class="container-fluid">

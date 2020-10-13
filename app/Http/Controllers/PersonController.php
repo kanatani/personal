@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Request as PostRequest;
+use Illuminate\Support\Facades\DB;
 use App\Models\Person;
 use App\Models\Contact;
 use App\Models\test;
-
 
 
 class PersonController extends Controller
@@ -112,6 +111,10 @@ class PersonController extends Controller
         $test->kind = $sum; 
         $test->save(); 
         
-        return view('person.kind_result',compact('kind','sum'));
+        $user = DB::table('test')->latest()->first();
+        $users= $user->id;
+        session()->put(['id' => $users]);
+        $id = session()->get('id');
+        return view('person.kind_result',compact('kind','sum','id'));
     }
 }
