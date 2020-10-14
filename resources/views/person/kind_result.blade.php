@@ -7,7 +7,7 @@
         switch (true) {
             case $sum >= 13.6;
                $msg = 'キリストタイプ';
-               $img = "/images/shutterstock_1033414606 (1).jpg";
+               $img = "/images/shutterstock_1586081839.jpg";
                 $ssg = '他人を愛してやまない';
                $detail1 = '利他性の鏡';
                $sbmsg1 = '協調性がとても高いあなたは他人を助けるのに躊躇せず、とても良い対人関係を築くことができる人です。周りの人たちからは優しい人と思われているかもしれません。グループ活動の時も周りの意見を尊重できるので、とてもスムーズに活動することができます。また、周囲の人たちからとても好かれやすい傾向があるので、もしものときに助けてくれる人たちが多い傾向があります。';
@@ -39,7 +39,7 @@
 
             case $sum >= 4.9 && $sum <= 13.5;
                  $msg = 'ボランティアタイプ';
-                 $img = "/images/shutterstock_1033414606 (1).jpg";
+                 $img = "/images/shutterstock_1692488656.jpg";
                  $ssg = '第一印象から良い';
                 $detail1 = 'チームワーク';
                 $sbmsg1 = '協調性がかなり高いあなたは他人を助けるのが好きでグループ活動もかなり得意なタイプです。しかし、他人を助けすぎて自分を犠牲にするまで貢献するタイプではなく、自分の状態を客観的にみることもできます。自分に余裕があれば他人を助けられるタイプなのでバランスよく生活を送ることができます。';
@@ -71,7 +71,7 @@
 
             case $sum >= -4.8 && $sum <= 4.8;
                 $msg = 'バランスタイプ';
-                $img = "/images/shutterstock_1080828530.jpg";
+                $img = "/images/shutterstock_478518385.jpg";
                 $ssg = '共感と客観を兼ね備えた';
                $detail1 = '合理性を重視する';
                $sbmsg1 = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
@@ -102,7 +102,7 @@
 
                 case $sum >= -13.5 && $sum <= -4.9;
                 $msg = '客観性重視タイプ';
-                $img = "/images/shutterstock_1080828530.jpg";
+                $img = "/images/shutterstock_603829727.jpg";
                 $ssg = '合理的な答えを見つけやすい';
                $detail1 = '合理性を重視する';
                $sbmsg1 = '協調性が少し低いあなたは他人に流されにくく、自分の意見を持てるタイプです。自分で合理的な判断を行うことができるので、共感力が高い人に比べて客観的に物事を行う事ができます。なので、他人よりも早く正解や成功にたどり着くことができます。';
@@ -190,12 +190,16 @@
             </div>
             <div class="row">
                 <div class="character_result kind_result">
-                    <div class="character_bigcontent kind_bigcontent">
-                        <img  src="{{ $img }}" alt="">
-                        <div class="character_text bigcontent_text">
-                            <h3>{{ $ssg }}</h3>
-                            <h1>{{ $msg }}</h1>
-                        </div>
+                    <div class="row">
+                            <div class="character_bigcontent kind_bigcontent">
+                                <img  src="{{ $img }}" alt="">
+                                <div class="character_text bigcontent_text">
+                                    <div class="col-sm-12">
+                                        <h3>{{ $ssg }}</h3>
+                                        <h1>{{ $msg }}</h1>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                     <div class="col-sm-12 character_good">
                         <div class="character_subcontent kind_subcontent">
@@ -241,7 +245,9 @@
                                 </div>
                             </div>
                             <div class="submit">
-                            <button type="button" class="btn btn-outline-info w-50" id="kind_button">勤勉性テスト</button>
+                                <form action="/person/serious" method="get">
+                                <button type="submit" class="btn btn-outline-info w-50" id="kind_button">勤勉性テスト</button>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div id="app">
             <div class="row fixed-top">
-                <header class="content_head col-sm-12">
+                <header class="content_head">
                     <div>
                         <div class="header_title">
                             <h1>person</h1>
@@ -25,7 +25,8 @@
                     </div>
                 </header>
             </div>
-            <div class="row kind">
+            <div class="row">
+            <div class="kind col-sm-12">
                 <div class="kindtest">
                     <div class="kindtest_title">
                         <h2>協調性テスト</h2>
@@ -54,23 +55,26 @@
                                 break;
                         }
                         ?>
-                        <div class="kindtest_check">
-                            <div class="kind_check_question">
+                        <div class="row">
+                        <div class="kindtest_check col-sm-12">
+                            <div class="kind_check_question col-sm-12">
                                 <div class="kind_check_font">
                                     <h2><?php echo $msg ?></h2>
                                 </div>
                                 <div class="kind_check_list">
                                     <p>同意する</p>
-                                    
-                                    <input type="radio" class="checklist" name="q<?php echo $i ?>" value="5"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $i ?>" value="4"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $i ?>" value="3"　style="width:50px;height:50px;" 　checked/>
-                                    <input type="radio" class="checklist" name="q<?php echo $i ?>" value="2"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $i ?>" value="1"　style="width:50px;height:50px;" >
+                                    <div class="check">
+                                        <input type="radio" class="checklist" name="q<?php echo $i ?>" value="5">
+                                        <input type="radio" class="checklist" name="q<?php echo $i ?>" value="4">
+                                        <input type="radio" class="checklist" name="q<?php echo $i ?>" value="3"　checked/>
+                                        <input type="radio" class="checklist" name="q<?php echo $i ?>" value="2">
+                                        <input type="radio" class="checklist" name="q<?php echo $i ?>" value="1">
+                                    </div>
                                     <p>同意しない</p>
                                 </div>
                                 <div class="testborder"></div>
                             </div>
+                        </div>
                         </div>
                     <?php } ?>
                     <?php for($a = 7; $a<=12; $a++) { 
@@ -102,11 +106,11 @@
                                 </div>
                                 <div class="kind_check_list">
                                     <p>同意する</p>
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>" value="5"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="4"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="3"　style="width:50px;height:50px;" checked/>
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="2"　style="width:50px;height:50px;" >
-                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="1"　style="width:50px;height:50px;" >
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>" value="5">
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="4">
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="3"checked/>
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="2">
+                                    <input type="radio" class="checklist" name="q<?php echo $a ?>"  value="1">
                                     <p>同意しない</p>
                                 </div>
                                 <div class="testborder">
@@ -119,6 +123,7 @@
                     <input type="submit" class="btn btn-info w-50"  id="next-button" value="送信">
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     </div>

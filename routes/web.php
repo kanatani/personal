@@ -25,8 +25,16 @@ Route::get('person/kind', function () {
     return view('person/kind');
 });
 
+Route::get('person/serious', function () {
+    return view('person/serious');
+});
+
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
+
 Route::post('/person/check','App\Http\Controllers\PersonController@content');
+
+Route::post('/person/serious_result','App\Http\Controllers\PersonController@content');
+
 Route::post('/person/kind_result','App\Http\Controllers\PersonController@kind');
 
 Route::resource('person', 'App\Http\Controllers\PersonController');

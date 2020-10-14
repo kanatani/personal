@@ -405,10 +405,8 @@ footer {
  .test_footer {
      height: 125px;
  }
- 
+
 .kind {
-    padding-top: 100px;
-    background: rgb(246,249,193);
     background: linear-gradient(0deg, rgba(246,249,193,1) 0%, rgba(237,247,15,1) 100%);
 }
 
@@ -417,14 +415,21 @@ footer {
      text-align: center;
  }
 
+ .kindtest {
+     margin: auto;
+     text-align: center;
+ }
+
 .kind_check_list {
     display: flex;
-    
+    justify-content: center;
     padding-top: 10px;
 }
 
 .checklist {
     margin: 5px 40px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -442,6 +447,9 @@ footer {
     border-radius: 30px;
     height: 50px;
 }
+
+/* 勤勉テスト */
+
 
 /* テスト結果 */
 .character_result {
@@ -600,11 +608,33 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
         height: 200px;
     }
 
+   .kind {
+       width: 200px;
+   }
+   
+   .kind_check_list {
+       width: 100%;
+       align-items: center;
+   }
 
+   .check {
+       width: 100%;
+   }
+
+   .checklist {
+       margin: 0px;
+       width: 40px;
+       align-items: center;
+   }
+   
     /* テストページ */
     .character_box {
         height: 150px;
         width: 49%;
+    }
+
+    .character_result {
+        margin: auto;
     }
 
   }
