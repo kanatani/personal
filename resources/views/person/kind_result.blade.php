@@ -164,7 +164,7 @@
         }
     ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid result">
         <div id="app">
          <div class="row fixed-top">
                 <header class="content_head col-sm-12">
@@ -190,7 +190,6 @@
             </div>
             <div class="row">
                 <div class="character_result kind_result">
-                    <div class="row">
                             <div class="character_bigcontent kind_bigcontent">
                                 <img  src="{{ $img }}" alt="">
                                 <div class="character_text bigcontent_text">
@@ -200,7 +199,6 @@
                                     </div>
                                 </div>
                             </div>
-                    </div>
                     <div class="col-sm-12 character_good">
                         <div class="character_subcontent kind_subcontent">
                             <div class="character_msg">

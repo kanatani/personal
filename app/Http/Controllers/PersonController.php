@@ -117,4 +117,18 @@ class PersonController extends Controller
         $id = session()->get('id');
         return view('person.kind_result',compact('kind','sum','id'));
     }
+
+    public function serious(PostRequest  $result)
+    {
+        $serious=$result::all();
+        $high = $serious['q1'] + $serious['q2']+ $serious['q3']+ $serious['q4']+ $serious['q5']+ $serious['q6'];
+        $row = $serious['q7'] + $serious['q8']+ $serious['q9']+ $serious['q10']+ $serious['q11']+ $serious['q12'];
+        $sum = $high - $row;
+
+        $id = session()->get('id');
+        \DB::table('test')->where('id', $id) ->update([
+        'conscientiousness' => $sum
+    ]);
+        return view('person.serious_result',compact('serious','sum'));
+    }
 }

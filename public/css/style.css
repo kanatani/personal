@@ -449,7 +449,11 @@ footer {
 }
 
 /* 勤勉テスト */
-
+.serious {
+    padding-top: 70px;
+    background: rgb(24,183,246);
+    background: linear-gradient(0deg, rgba(24,183,246,1) 0%, rgba(255,255,255,1) 81%);
+}
 
 /* テスト結果 */
 .character_result {
@@ -633,8 +637,11 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
         width: 49%;
     }
 
-    .character_result {
-        margin: auto;
+    .special_text {
+        background-color:rgba(255,255,255,0.8);
+        border-radius: 20px;
+        width: 100%;
+        color: rgb(247, 227, 55);
     }
 
   }

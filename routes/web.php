@@ -37,6 +37,8 @@ Route::post('/person/serious_result','App\Http\Controllers\PersonController@cont
 
 Route::post('/person/kind_result','App\Http\Controllers\PersonController@kind');
 
+Route::post('/person/serious_result','App\Http\Controllers\PersonController@serious');
+
 Route::resource('person', 'App\Http\Controllers\PersonController');
 
 Route::get('/', function () {
