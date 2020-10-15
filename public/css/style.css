@@ -455,7 +455,7 @@ footer {
     background: linear-gradient(0deg, rgba(24,183,246,1) 0%, rgba(255,255,255,1) 81%);
 }
 
-/* テスト結果 */
+/* 協調性テスト結果 */
 .character_result {
     padding-top: 70px;
     margin: auto;
@@ -552,9 +552,30 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     text-align: center;
 }
 
-#kind_button {
+#next_button {
     border-radius: 20px;
 }
+
+/* 勤勉性結果 */
+.seriouscontent_text h1{
+    font-size: 50px;
+    color: rgb(14, 144, 250);
+}
+
+.seriouscontent_text h3{
+    color: rgb(66, 205, 243);
+}
+
+.serious_good {
+    background: rgb(24,183,246);
+    background: linear-gradient(0deg, rgba(24,183,246,1) 0%, rgba(255,255,255,1) 81%);
+}
+
+.serious_text {
+    color: rgb(66, 205, 243);
+}
+
+
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
@@ -641,7 +662,6 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
         background-color:rgba(255,255,255,0.8);
         border-radius: 20px;
         width: 100%;
-        color: rgb(247, 227, 55);
     }
 
   }
