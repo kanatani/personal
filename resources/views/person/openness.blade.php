@@ -25,32 +25,32 @@
                     </div>
                 </header>
             </div>
-            <div class="row serious">
+            <div class="row openness">
                 <div class="kindtest">
                     <div class="kindtest_title">
-                        <h2>勤勉性テスト</h2>
+                        <h2>開放性テスト</h2>
                     </div>
                     <form action="/person/serious_result" method="post">
                     @csrf
                     <?php for($i = 1; $i<=6; $i++) { 
                         switch ($i) {
                             case 1:
-                                $msg='1.自分は欲求や不満に強い方ですか?';
+                                $msg='1.新しいことには敏感な方ですか?';
                                 break;
                             case 2:
-                                $msg='2.何かを始める時は計画を立ててからはじめますか?';
+                                $msg='2.あらゆる分野の知識を知っていますか?';
                                 break;
                             case 3:
-                                $msg='3.目標を達成することに喜びを感じますか・?';
+                                $msg='3.既存の手段より新しい方法で物事を取組みますか?';
                                 break;
                             case 4:
-                                $msg='4.何事に大しても誠実に取り組むことを意識していますか?';
+                                $msg='4.価値観を柔軟に変えることができますか?';
                                 break;
                             case 5:
-                                $msg='5.自分は人より真面目であると考えていますか?';
+                                $msg='5.よく空想や想像に浸る事はありますか?';
                                 break;
                             case 6:
-                                $msg='6.論理的に考えてコツコツと活動ができますか?';
+                                $msg='6.芸術や音楽、想像的な物に興味を引かれますか?';
                                 break;
                         }
                         ?>
@@ -76,22 +76,22 @@
                     <?php for($a = 7; $a<=12; $a++) { 
                         switch ($a) {
                             case 7:
-                                $ms='7.いつも気分で物事を判断してしまいがちですか?';
+                                $ms='7.状況が変化すると戸惑ってしまいますか?';
                                 break;
                             case 8:
-                                $ms='8.物事を取り組むときに、考える前に行動してしまいますか?';
+                                $ms='8.他人がした事を真似るのは得意ですか?';
                                 break;
                             case 9:
-                                $ms='9.飽きっぽい性格ですか?';
+                                $ms='9.既存のルールで行動することは得意ですか?';
                                 break;
                             case 10:
-                                $ms='10.複数のことを同時にやることは得意ですか?';
+                                $ms='10.視野が狭くなってしまうことはありませんか?';
                                 break;
                             case 11:
-                                $ms='11.欲しいものがあった場合、すぐに手をつけますか?';
+                                $ms='11.空想より論理の方が好きですか?';
                                 break;
                             case 12:
-                                $ms='12.物事を続けるのは苦手ですか?';
+                                $ms='12.新しいことに抵抗を感じることはありますか?';
                                 break;
                         }
                         ?>
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                     <?php } ?>
-                    <input type="hidden" name="serious" value="serious">
+                    <input type="hidden" name="openness" value="openness">
                     <input type="submit" class="btn btn-info w-50"  id="next-button" value="送信">
                     </form>
                 </div>

@@ -29,6 +29,10 @@ Route::get('person/serious', function () {
     return view('person/serious');
 });
 
+Route::get('person/openness', function () {
+    return view('person/openness');
+});
+
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
 
 Route::post('/person/check','App\Http\Controllers\PersonController@content');

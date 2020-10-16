@@ -455,6 +455,13 @@ footer {
     background: linear-gradient(0deg, rgba(24,183,246,1) 0%, rgba(255,255,255,1) 81%);
 }
 
+/* 開放性テスト */
+.openness {
+    padding-top: 70px;
+    background: rgb(151,247,200);
+    background: linear-gradient(0deg, rgba(151,247,200,1) 37%, rgba(255,255,255,1) 72%);
+}
+
 /* 協調性テスト結果 */
 .character_result {
     padding-top: 70px;

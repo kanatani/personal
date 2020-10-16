@@ -126,9 +126,11 @@ class PersonController extends Controller
         $sum = $high - $row;
 
         $id = session()->get('id');
-        \DB::table('test')->where('id', $id) ->update([
-        'conscientiousness' => $sum
-    ]);
-        return view('person.serious_result',compact('serious','sum'));
+        if ($result->has($serious['serious'])) {
+            \DB::table('test')->where('id', $id) ->update([
+                'conscientiousness' => $sum
+            ]);
+            return view('person.serious_result',compact('serious','sum'));
+        }
     }
 }
