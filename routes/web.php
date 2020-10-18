@@ -33,6 +33,10 @@ Route::get('person/openness', function () {
     return view('person/openness');
 });
 
+Route::get('person/extraversion', function () {
+    return view('person/openness');
+});
+
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
 
 Route::post('/person/check','App\Http\Controllers\PersonController@content');
@@ -41,7 +45,9 @@ Route::post('/person/serious_result','App\Http\Controllers\PersonController@cont
 
 Route::post('/person/kind_result','App\Http\Controllers\PersonController@kind');
 
-Route::post('/person/serious_result','App\Http\Controllers\PersonController@serious');
+Route::post('/person/serious_result','App\Http\Controllers\PersonController@insert');
+
+Route::post('/person/openness_result','App\Http\Controllers\PersonController@insert');
 
 Route::resource('person', 'App\Http\Controllers\PersonController');
 

@@ -30,7 +30,7 @@
                     <div class="kindtest_title">
                         <h2>開放性テスト</h2>
                     </div>
-                    <form action="/person/serious_result" method="post">
+                    <form action="/person/openness_result" method="post">
                     @csrf
                     <?php for($i = 1; $i<=6; $i++) { 
                         switch ($i) {

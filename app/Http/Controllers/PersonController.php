@@ -118,19 +118,28 @@ class PersonController extends Controller
         return view('person.kind_result',compact('kind','sum','id'));
     }
 
-    public function serious(PostRequest  $result)
+    public function insert(PostRequest  $result)
     {
-        $serious=$result::all();
-        $high = $serious['q1'] + $serious['q2']+ $serious['q3']+ $serious['q4']+ $serious['q5']+ $serious['q6'];
-        $row = $serious['q7'] + $serious['q8']+ $serious['q9']+ $serious['q10']+ $serious['q11']+ $serious['q12'];
+        $insert=$result::all();
+        $high = $insert['q1'] + $insert['q2']+ $insert['q3']+ $insert['q4']+ $insert['q5']+ $insert['q6'];
+        $row = $insert['q7'] + $insert['q8']+ $insert['q9']+ $insert['q10']+ $insert['q11']+ $insert['q12'];
         $sum = $high - $row;
 
         $id = session()->get('id');
-        if ($result->has($serious['serious'])) {
+
+        if(isset($insert['serious']))  {
             \DB::table('test')->where('id', $id) ->update([
                 'conscientiousness' => $sum
             ]);
-            return view('person.serious_result',compact('serious','sum'));
+            return view('person.serious_result',compact('sum'));
         }
+
+        if(isset($insert['openness']))  {
+            \DB::table('test')->where('id', $id) ->update([
+                'openness' => $sum
+            ]);
+            return view('person.openness_result',compact('sum'));
+        }
+
     }
 }

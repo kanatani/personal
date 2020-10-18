@@ -581,7 +581,10 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 .serious_text {
     color: rgb(66, 205, 243);
 }
-
+/* 開放性結果 */
+.openness_good {
+    
+}
 
 
 /* レスポンシブ */
