@@ -141,5 +141,12 @@ class PersonController extends Controller
             return view('person.openness_result',compact('sum'));
         }
 
+        if(isset($insert['extraversion']))  {
+            \DB::table('test')->where('id', $id) ->update([
+                'extraversion' => $sum
+            ]);
+            return view('person.extraversion_result',compact('sum'));
+        }
+
     }
 }

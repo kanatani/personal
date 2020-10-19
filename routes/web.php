@@ -34,7 +34,7 @@ Route::get('person/openness', function () {
 });
 
 Route::get('person/extraversion', function () {
-    return view('person/openness');
+    return view('person/extraversion');
 });
 
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
@@ -48,6 +48,8 @@ Route::post('/person/kind_result','App\Http\Controllers\PersonController@kind');
 Route::post('/person/serious_result','App\Http\Controllers\PersonController@insert');
 
 Route::post('/person/openness_result','App\Http\Controllers\PersonController@insert');
+
+Route::post('/person/extraversion_result','App\Http\Controllers\PersonController@insert');
 
 Route::resource('person', 'App\Http\Controllers\PersonController');
 
