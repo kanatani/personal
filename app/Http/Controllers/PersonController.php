@@ -148,5 +148,12 @@ class PersonController extends Controller
             return view('person.extraversion_result',compact('sum'));
         }
 
+        if(isset($insert['neuroticism']))  {
+            \DB::table('test')->where('id', $id) ->update([
+                'extraversion' => $sum
+            ]);
+            return view('person.neuroticism_result',compact('sum'));
+        }
+
     }
 }
