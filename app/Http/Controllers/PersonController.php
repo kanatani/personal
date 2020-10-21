@@ -156,4 +156,9 @@ class PersonController extends Controller
         }
 
     }
+    public function result (PostRequest  $result)
+    {
+
+        return view('person.sum_result');
+    }
 }

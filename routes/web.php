@@ -57,6 +57,8 @@ Route::post('/person/extraversion_result','App\Http\Controllers\PersonController
 
 Route::post('/person/neuroticism_result','App\Http\Controllers\PersonController@insert');
 
+Route::post('/person/sum_result','App\Http\Controllers\PersonController@result');
+
 Route::resource('person', 'App\Http\Controllers\PersonController');
 
 Route::get('/', function () {

@@ -632,6 +632,19 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     color: rgb(244,104,104);
 }
 
+/* 神経症結果 */
+.neuroticism_good {
+    background: rgb(177,104,244);
+    background: linear-gradient(0deg, rgba(177,104,244,1) 0%, rgba(191,131,246,1) 7%, rgba(255,255,255,1) 96%);
+}
+
+.neuroticism_text {
+    color: rgb(177,104,244);
+}
+
+.neuroticism_text h3{
+    color: rgb(206, 180, 231);
+}
 
 
 /* レスポンシブ */
