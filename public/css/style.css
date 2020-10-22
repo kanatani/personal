@@ -19,6 +19,10 @@ a:hover {
    height: 600px;
 }
 
+.header_title {
+    padding-left: 20px;
+}
+
 .back-font h1 {
     float: left;
     color: white;
@@ -644,6 +648,20 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 
 .neuroticism_text h3{
     color: rgb(206, 180, 231);
+}
+
+/* トータル結果 */
+.total{
+    padding-top: 70px;
+}
+
+.total_title {
+    text-align: center;
+}
+
+.totalchart {
+    width: 50%;
+    margin: auto;
 }
 
 

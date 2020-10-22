@@ -150,15 +150,15 @@ class PersonController extends Controller
 
         if(isset($insert['neuroticism']))  {
             \DB::table('test')->where('id', $id) ->update([
-                'extraversion' => $sum
+                'neuroticism' => $sum
             ]);
             return view('person.neuroticism_result',compact('sum'));
         }
 
     }
-    public function result (PostRequest  $result)
-    {
 
+    public function result (PostRequest  $request)
+    {
         return view('person.sum_result');
     }
 }

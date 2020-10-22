@@ -182,7 +182,7 @@
                             <transition name="navi">
                             <nav class="navi" v-show="isActive">
                                     <ul>
-                                        <li><a href="">トップページ</a></li>
+                                        <li><a href="/person/">トップページ</a></li>
                                         <li><a href="">お問い合わせ</a></li>
                                         <li><a href="">ログイン</a></li>
                                     </ul>
@@ -246,8 +246,9 @@
                                 </div>
                             </div>
                             <div class="submit">
-                                <form action="/person/serious" method="post">
-                                <button type="submit" class="btn btn-outline-info w-50" id="kind_button">テスト結果</button>
+                                <form action="/person/sum_result" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-light w-50" id="next_button">テスト結果</button>
                                 </form>
                             </div>
                         </div>
