@@ -2,11 +2,9 @@
 @section('content')
 <body>
     <?php 
-       
-        
         switch (true) {
             case $sum >= 13.6;
-               $$msg = '芸術家タイプ';
+               $msg = '芸術家タイプ';
                $img = "/images/shutterstock_1080828530.jpg";
                $ssg = '周りの刺激を表現に変える';
                $detail1 = '芸術家のの素質';

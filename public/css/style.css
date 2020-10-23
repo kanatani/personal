@@ -411,13 +411,9 @@ footer {
  }
 
 .kind {
-    background: linear-gradient(0deg, rgba(246,249,193,1) 0%, rgba(237,247,15,1) 100%);
+    background: rgb(247,249,126);
+    background: linear-gradient(0deg, rgba(247,249,126,1) 0%, rgba(239,246,131,1) 7%, rgba(255,255,255,1) 96%);
 }
-
- .kindtest {
-     margin: auto;
-     text-align: center;
- }
 
  .kindtest {
      margin: auto;
@@ -614,9 +610,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     color: rgb(151,247,200);
 }
 
-.openness {
-    color: rgb(66, 205, 243);
-}
+
 
 .opennesses_text {
     color: rgb(122, 255, 191);
@@ -662,6 +656,17 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 .totalchart {
     width: 50%;
     margin: auto;
+}
+
+
+/* 全体結果 */
+.serious_result {
+    background-color: skyblue;
+}
+
+#bigfive_detail{
+    margin: 30px auto;
+    border-bottom: 2px silver solid;
 }
 
 

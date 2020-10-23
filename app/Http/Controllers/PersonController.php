@@ -159,6 +159,13 @@ class PersonController extends Controller
 
     public function result (PostRequest  $request)
     {
-        return view('person.sum_result');
+
+        $user = DB::table('test')->latest()->first();
+        $users= $user->id;
+        session()->put(['id' => $users]);
+        $id = session()->get('id');
+        $item = test::find($id);
+        echo $id;
+        return view('person.sum_result',compact('item'));
     }
 }

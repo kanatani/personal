@@ -2,8 +2,6 @@
 @section('content')
 <body>
     <?php 
-       
-        
         switch (true) {
             case $sum >= 13.6;
                $msg = 'カリスマタイプ';
