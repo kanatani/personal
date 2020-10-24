@@ -124,7 +124,7 @@ a:hover {
     display: table;
     height: 150px;
     width: 100%;
-    margin: 50px;
+    color: white;
 }
 
 .big5_detail h4 {
@@ -132,32 +132,33 @@ a:hover {
 }
 
 .detail1 {
-    background-color: yellow;
-    border-radius: 3px;
-    margin: auto;
+    padding: 2px 5px;
+    margin: 2em 0;
+    background: #f3f319;
+    border-radius: 20px;
+    margin: 20px auto;
 }
 
 .detail2 {
-    background-color: rgb(18, 172, 233);
-    border-radius: 3px;
-    
-    margin: auto;
+    background-color: rgb(122, 211, 247);
+    border-radius: 20px;
+    margin: 20px auto;
 }
 .detail3 {
-    background-color: rgb(176, 232, 176);
-    border-radius: 3px;
-   
-    margin: auto;
+    background-color: rgb(147, 247, 147);
+    border-radius: 20px;
+    margin: 20px auto;
 }
 .detail4 {
-    background-color: red;
-    border-radius: 3px;
-    margin: auto;
+    background-color: rgb(250, 109, 109);
+    border-radius: 20px;
+    padding: 0px 20px;
+    margin:20px  auto;
 }
 .detail5 {
-    background-color: rgb(170, 38, 170);
-    border-radius: 3px;
-    margin: auto;
+    background-color: rgb(240, 135, 240);
+    border-radius: 20px;
+    margin:20px  auto;
 }
 
 /* 診断テスト説明 */
@@ -172,10 +173,13 @@ a:hover {
 .text_means {
     width: 100%;
     position: absolute;
-    top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
+    top: 40%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+}
+.text_means h3{
+    
 }
 
 .top_text h3 {
@@ -610,8 +614,6 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     color: rgb(151,247,200);
 }
 
-
-
 .opennesses_text {
     color: rgb(122, 255, 191);
 }
@@ -658,15 +660,47 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     margin: auto;
 }
 
-
 /* 全体結果 */
-.serious_result {
-    background-color: skyblue;
+.serious_result p{
+    color: white;
+    padding: 0.5em;
+    background: rgba(104, 250, 235, 0.6);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+}
+
+.kind_results p{
+    color: white;
+    padding: 0.5em;
+    background: rgb(244, 247, 84);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+}
+
+.openness_results p{
+    color: white;
+    padding: 0.5em;
+    background: rgb(151,247,200,0.6);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+}
+
+.extra_results p{
+    color: white;
+    padding: 0.5em;
+    background: rgb(244,104,104,0.6);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+}
+
+.neuroticism_results p{
+    color: white;
+    padding: 0.5em;
+    background: rgb(177,104,244,0.6);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
 }
 
 #bigfive_detail{
-    margin: 30px auto;
-    border-bottom: 2px silver solid;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    margin: auto;
+    text-align: center;
+    padding: 30px 0px;
 }
 
 

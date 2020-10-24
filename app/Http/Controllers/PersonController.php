@@ -18,8 +18,8 @@ class PersonController extends Controller
      */
     public function index()
     {
-        $persons = Person::all();
-        return view('person/index', compact('persons'));
+        session()->flush();
+        return view('person/index');
     }
 
     /**

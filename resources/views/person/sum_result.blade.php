@@ -193,7 +193,7 @@
                                 <transition name="navi">
                                 <nav class="navi" v-show="isActive">
                                         <ul>
-                                            <li><a href="">トップページ</a></li>
+                                            <li><a href=" {{ url('/person') }} ">トップページ</a></li>
                                             <li><a href="">お問い合わせ</a></li>
                                             <li><a href="">ログイン</a></li>
                                         </ul>
@@ -215,33 +215,33 @@
                     <h1>big5 detail</h1>
                     <div class="serious_result col-sm-12" id="bigfive_detail">
                         <p>勤勉性</p>
-                        <div>
+                        <div class="serious_msg">
                             <h3>{{ $serioussm }}</h3>
                             <h1>{{ $serious }}</h1>
                         </div>
                     </div>
-                    <div class="kind_result col-sm-12" id="bigfive_detail">
+                    <div class="kind_results col-sm-12" id="bigfive_detail">
                         <p>協調性</p>
                         <div>
                             <h3>{{ $kindsm }}</h3>
                             <h1>{{ $kind }}</h1>
                         </div>
                     </div>
-                    <div class="openness_result col-sm-12" id="bigfive_detail">
+                    <div class="openness_results col-sm-12" id="bigfive_detail">
                         <p>開放性</p>
                         <div>
                             <h3>{{ $opennesssm }}</h3>
                             <h1>{{ $openness }}</h1>
                         </div>
                     </div>
-                    <div class="extra_result col-sm-12" id="bigfive_detail">
+                    <div class="extra_results col-sm-12" id="bigfive_detail">
                         <p>外交性</p>
                         <div>
                             <h3>{{ $extraversionsm }}</h3>
                             <h1>{{ $extraversion }}</h1>
                         </div>
                     </div>
-                    <div class="neuroticism_result col-sm-12" id="bigfive_detail">
+                    <div class="neuroticism_results col-sm-12" id="bigfive_detail">
                         <p>神経症的傾向</p>
                         <div>
                             <h3>{{ $neuroticismsm }}</h3>
@@ -249,6 +249,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="/person">戻る</a>
             </div>
         </div>
     </div>

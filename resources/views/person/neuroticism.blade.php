@@ -16,7 +16,7 @@
                             <transition name="navi">
                             <nav class="navi" v-show="isActive">
                                     <ul>
-                                        <li><a href="">トップページ</a></li>
+                                        <li><a href="/person">トップページ</a></li>
                                         <li><a href="">お問い合わせ</a></li>
                                         <li><a href="">ログイン</a></li>
                                     </ul>
