@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="jumbotron jumbotron-fluid col-sm-12">
                     <div class="container">
-                        <h1 class="display-4 content_message_title">お問い合わせ</h1>
+                        <h2 class="display-4 content_message_title">お問い合わせ</h2>
                         <p class="lead content_message">こちらのアプリに関してのご質問、ご意見やご感想を気軽にお伝えください。頂いたご意見はこれからのアプリ開発の参考とさせていただきます。ご協力の程、よろしくお願いします。</p>
                     </div>
                 </div>
@@ -57,12 +57,14 @@
                 <label for="exampleFormControlTextarea1">Example textarea</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="content"  rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary w-25" id="contact_submit">Submit</button>
         </form>
     </div>
-    <footer class="content_footer col-sm-12">
-        <p>© person 2020</p>
-    </footer>
+    <div class="row">
+        <footer class="test_footer col-sm-12">
+            <p>© person 2020</p>
+        </footer>
     </div>
   </div>
+</div>
 @endsection

@@ -58,16 +58,18 @@
                     <p class="lead">big5に基づいたテストを受けてみよう！自分の性格をより客観的にみることができるよ！</p>
                     <hr class="my-4">
                     <form action="/person/kind" method="get">
-                        <button type="submit" class="btn btn-primary w-25">start</button>
+                        <button type="button" class="btn btn-primary w-25">start</button>
                     </form>
                     <button type="button" class="btn btn-info w-25">back</button>
                 </div>
             </div>
+            <div class="row">
+                <footer class="test_footer col-sm-12">
+                        <p>© person 2020</p>
+                </footer>
+            </div>
         </div>
     </div>
-    <footer class="test_footer col-sm-12">
-        <p>© person 2020</p>
-    </footer>
 @endsection
 
 

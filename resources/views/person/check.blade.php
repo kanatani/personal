@@ -27,20 +27,32 @@
         </div>
         <div class="main_check">
             <div class="card">
-                <h3>お問い合わせ内容確認</h3>
+                <div class="card_title">
+                    <h3>Content Check</h3>
+                </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
-                    <p>内容{{ $data1['name'] }}</p>
-                    <p>内容{{ $data1['mail'] }}</p>
-                    <p>内容{{ $data1['content'] }}</p>
+                        <div class="check_detail">
+                            <p class="check_detail_parts">お名前</p>
+                            <p>{{ $data1['name'] }}</p>
+                        </div>
+                        <div class="check_detail">
+                            <p class="check_detail_parts">メールアドレス</p>
+                            <p>{{ $data1['mail'] }}</p>
+                        </div>
+                        <div class="check_detail">
+                            <p class="check_detail_parts">お問い合わせ内容</p>
+                            <p>{{ $data1['content'] }}</p>
+                        </div>
                     </blockquote>
                     <form action="/person/content_input" method="post">
                        @csrf
                         <input type="hidden" name="name" value="{{ $data1['name'] }}">
                         <input type="hidden" name="mail" value="{{ $data1['mail'] }}">
                         <input type="hidden" name="content" value="{{ $data1['content'] }}">
-                        <button type="button" onclick="history.back()" class="btn btn-primary">戻る</button>
-                        <button type="submit" class="btn btn-info">Info</button>
+                        <button type="button" onclick="history.back()" class="btn btn-primary w-50" id="content_submit">戻る</button>
+                        <br>
+                        <button type="submit" class="btn btn-info w-50" id="content_submit">送信</button>
                     </form>
                 </div>
             </div>

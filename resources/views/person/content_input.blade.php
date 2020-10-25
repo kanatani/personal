@@ -27,10 +27,10 @@
         </div>
         <div class="row thank_page">
             <div class="jumbotron col-sm-12">
-                <h1 class="display-4">Thank you!</h1>
+                <h1 class="display-4 thanks_title">Thank you!</h1>
                 <p class="lead">ご意見ありがとうございます。本アプリの改善に向けて全力で取り組んでいきます。</p>
                 <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p>Thank you for submitnig your opinion. In order to your opition,This application will be changed for gest including you.</p>
                 <a class="btn btn-primary btn-lg" href="/person" role="button">トップページ</a>
             </div>
         </div>
