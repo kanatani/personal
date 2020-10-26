@@ -6,8 +6,8 @@
         switch (true) {
             // 勤勉性
             case $item['conscientiousness'] >= 13.6;
-            $serious = '計画タイプ';
-            $seriousimg = "/images/shutterstock_1586081839.jpg";
+                $serious = '計画タイプ';
+                $seriousimg = "/images/shutterstock_403187164.jpg";
                 $serioussm = '自分の計画を乱さない';
                 break;
 
@@ -211,45 +211,53 @@
                 <div class="totalchart">
                     <canvas id="myChart"></canvas>
                 </div>
-                <div class="big5_text row">
-                    <h1>big5 detail</h1>
+                <div class="big5_result_text row">
+                    <h1 id="big5_detail_title">big5 detail</h1>
                     <div class="serious_result col-sm-12" id="bigfive_detail">
                         <p>勤勉性</p>
-                        <div class="serious_msg">
+                        <div class="total_msg">
+                            <img  src="{{ $seriousimg }}" alt="">
                             <h3>{{ $serioussm }}</h3>
                             <h1>{{ $serious }}</h1>
                         </div>
                     </div>
                     <div class="kind_results col-sm-12" id="bigfive_detail">
                         <p>協調性</p>
-                        <div>
+                        <div class="total_msg">
+                            <img  src="{{ $kindimg }}" alt="">
                             <h3>{{ $kindsm }}</h3>
                             <h1>{{ $kind }}</h1>
                         </div>
                     </div>
                     <div class="openness_results col-sm-12" id="bigfive_detail">
                         <p>開放性</p>
-                        <div>
+                        <div class="total_msg">
+                        <img  src="{{ $opennessimg }}" alt="">
                             <h3>{{ $opennesssm }}</h3>
                             <h1>{{ $openness }}</h1>
                         </div>
                     </div>
                     <div class="extra_results col-sm-12" id="bigfive_detail">
                         <p>外交性</p>
-                        <div>
+                        <div class="total_msg">
+                            <img  src="{{ $extraversionimg }}" alt="">
                             <h3>{{ $extraversionsm }}</h3>
                             <h1>{{ $extraversion }}</h1>
                         </div>
                     </div>
                     <div class="neuroticism_results col-sm-12" id="bigfive_detail">
                         <p>神経症的傾向</p>
-                        <div>
+                        <div class="total_msg">
+                            <img  src="{{ $neuroticismimg }}" alt="">
                             <h3>{{ $neuroticismsm }}</h3>
                             <h1>{{ $neuroticism }}</h1>
                         </div>
                     </div>
                 </div>
-                <a href="/person">戻る</a>
+                <div class="select_area">
+                    <a href="/person" class="badge badge-info">戻る</a>
+                    <a href="/person" class="badge badge-dark">Dark</a>
+                </div>
             </div>
         </div>
     </div>

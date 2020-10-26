@@ -238,9 +238,18 @@ footer {
       padding-top: 70px;
   }
 
+  #content_message {
+    border-bottom-left-radius: 2000px 100px;
+    border-bottom-right-radius: 2000px 100px;
+    background: rgb(219,255,255);
+    background: linear-gradient(0deg, rgba(219,255,255,1) 16%, rgba(165,255,244,1) 52%, rgba(134,243,247,1) 90%);
+    color: white;
+  }
 
   .content_head { 
-     height: 40px;
+     width: 100%;
+     height: 70px;
+     background: rgb(248, 250, 250,0.6);
   }
 
   .btn-humburger {
@@ -329,7 +338,7 @@ footer {
 }
 
 .content_message_title {
-    padding-top: 30px;
+    padding: 40px 0px;
     text-align: center;
 }
 
@@ -409,22 +418,24 @@ footer {
 
 /* テスト説明 */
 .test_head { 
-    background-color: white;
+    background-color: rgb(255, 254, 254,0.6);
     height: 60px;
  }
 
 .test_message{
+    padding-top: 70px;
     position: relative;
     height: 600px;
 }
 
-.test_title{
+.test_title {
     color: white;
     width: 100%;
 }
 
 .test_title h1 {
     padding-top: 100px;
+    padding-bottom: 40px;
     margin: auto;
     text-align: center;
 }
@@ -434,7 +445,7 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     position: absolute;
-    top: 150;
+    top: 200;
     right: 0;
     bottom: 50px;
     left: 0;
@@ -470,6 +481,20 @@ footer {
      padding-bottom: 0px;
      margin-bottom: 0px;
  }
+
+ .footer_title {
+     background-color: rgb(53, 51, 51);
+     height: 45px;
+     width: 100%;
+ }
+
+ .footer_title p{
+     padding-top: 7px;
+     text-align: center;
+     color: white;
+ }
+
+
 
 .kind {
     padding-top: 70px;
@@ -579,7 +604,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 .character_bigcontent img{
     object-fit: cover;
     width: 100%;
-    height: 400px;
+    height: 600px;
     border-bottom-left-radius: 2000px 100px;
     border-bottom-right-radius: 2000px 100px;
 }
@@ -618,7 +643,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 
 .character_box {
     margin: auto;
-    height: 100px;
+    height: 150px;
     width: 40%;
     box-sizing: border-box;
     margin-top: 30px;
@@ -627,8 +652,16 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     border-radius: 20px;
 }
 
+.character_box h3{
+    padding: 10px 0px;
+}
+
+.character_box p{
+   text-align: left;
+}
+
 .special_text {
-    background-color:rgba(255,255,255,0.8);
+    background-color:rgba(255,255,255,0.6);
     border-radius: 20px;
     width: 500px;
     color: rgb(247, 227, 55);
@@ -718,6 +751,11 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     text-align: center;
 }
 
+#big5_detail_title{
+    text-align: center;
+}
+
+
 .totalchart {
     width: 50%;
     margin: auto;
@@ -729,6 +767,14 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     padding: 0.5em;
     background: rgba(104, 250, 235, 0.6);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.23);
+}
+
+.total_msg img {
+    margin: 20px 0px;
+    height: 80px;
+    border-radius: 20px;
+    width: 80px;
+    object-fit: cover;
 }
 
 .kind_results p{
@@ -766,6 +812,11 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     padding: 30px 0px;
 }
 
+.select_area {
+    margin: auto;
+    text-align: center;
+}
+
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
@@ -790,7 +841,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     }
 
     .fadeIn {
-        height: 900px;
+        height: 950px;
         background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(250, 248, 248, 0) 100%);
         background-blend-mode: screen;
     }
@@ -821,7 +872,11 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     /* テスト説明 */
 
     .test_message {
-        height: 900px;
+        height: 1000px;
+    }
+
+    .test_title h1 {
+        padding-top: 50px;
     }
     
     .test_boxes {
@@ -858,7 +913,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     }
 
     .character_box {
-        height: 200px;
+        height: 250px;
         width: 49%;
     }
 

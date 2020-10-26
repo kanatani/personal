@@ -244,7 +244,7 @@
                             </div>
                             <div class="submit">
                                 <form action="/person/serious" method="get">
-                                <button type="submit" class="btn btn-outline-info w-50" id="kind_button">勤勉性テスト</button>
+                                <button type="submit" class="btn btn-outline-info w-50" id="next_button">勤勉性テスト</button>
                                 </form>
                             </div>
                         </div>

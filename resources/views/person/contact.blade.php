@@ -28,7 +28,7 @@
     <div class="content">
         <div class="content_title">
             <div class="row">
-                <div class="jumbotron jumbotron-fluid col-sm-12">
+                <div class="jumbotron jumbotron-fluid col-sm-12" id="content_message">
                     <div class="container">
                         <h2 class="display-4 content_message_title">お問い合わせ</h2>
                         <p class="lead content_message">こちらのアプリに関してのご質問、ご意見やご感想を気軽にお伝えください。頂いたご意見はこれからのアプリ開発の参考とさせていただきます。ご協力の程、よろしくお願いします。</p>
@@ -62,8 +62,23 @@
     </div>
     <div class="row">
         <footer class="test_footer col-sm-12">
-            <p>© person 2020</p>
+            <nav class="footer_nav">
+                <ul>
+                    <li>
+                        <a href="">top</a>
+                    </li>
+                    <li>
+                        <a href="">sign up</a>
+                    </li>
+                    <li>
+                        <a href="">お問い合わせ</a>
+                    </li>
+                </ul>
+            </nav> 
         </footer>
+            <div class="footer_title col-sm-12" id="footer_titles">
+                <p>© person 2020</p>
+            </div>
     </div>
   </div>
 </div>
