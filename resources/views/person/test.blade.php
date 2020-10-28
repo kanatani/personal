@@ -34,19 +34,22 @@
                         <div class="test_box">
                             <div class="icon_text">
                                 <i class="fab fa-facebook-messenger fa-4x"></i>
-                                <p>できるだけ率直に答えてください</p>
+                                <p>できるだけ率直に答えてください。</p>
+                                <p>より</p>
                             </div>
                         </div>
                         <div class="test_box">
                             <div  class="icon_text">
                                 <i class="fas fa-user-circle  fa-4x"></i>
-                                <p>自分の直感で決めてもらっても大丈夫です</p>
+                                <p>自分の直感で決めてもらっても大丈夫です。</p>
+                                <p>あまり深く考えないで答えてください。</p>
                             </div>
                         </div>
                         <div class="test_box">
                             <div  class="icon_text">
                                 <i class="fas fa-times-circle  fa-4x"></i>
-                                <p>できるだけ中立の答えはやめましょう</p>
+                                <p>できるだけ中立の答えはやめましょう。</p>
+                                <p></p>
                             </div>
                         </div>
                     </div>

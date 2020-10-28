@@ -9,30 +9,35 @@
                 $serious = '計画タイプ';
                 $seriousimg = "/images/shutterstock_403187164.jpg";
                 $serioussm = '自分の計画を乱さない';
+                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
                 break;
 
             case $item['conscientiousness'] >= 4.9 && $item['conscientiousness'] <= 13.5;
                 $serious = 'コツコツタイプ';
                 $seriousimg = "/images/shutterstock_1692488656.jpg";
                 $serioussm = '積み上げ型';
+                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
                 break;
 
             case $item['conscientiousness'] >= -4.8 && $item['conscientiousness'] <= 4.8;
                 $serious = 'スイッチタイプ';
-                $seriousimg = "/images/shutterstock_478518385.jpg";
+                $seriousimg = "/images/shutterstock_1716129895.jpg";
                 $serioussm = 'ON/OFF切替できる';
+                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
                 break;
 
                 case $item['conscientiousness'] >= -13.5 && $item['conscientiousness'] <= -4.9;
                 $serious = '素直タイプ';
                 $seriousimg = "/images/shutterstock_603829727.jpg";
                 $serioussm = '自分の本能に素直な';
+                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
                 break;
 
             case $item['conscientiousness'] <= -13.6;
                 $serious = '速攻行動力タイプ';
                 $seriousimg = "/images/shutterstock_1080828530.jpg";
                 $serioussm = '思い立ったら即行動';
+                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
                 break;
          
         }
@@ -56,6 +61,7 @@
                  $kind = 'バランスタイプ';
                  $kindimg = "/images/shutterstock_478518385.jpg";
                  $kindsm = '共感と客観を兼ね備えた';
+                 $kindmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                 
                  break;
  
@@ -90,8 +96,9 @@
 
             case $item['openness'] >= -4.8 && $item['openness'] <= 4.8;
                 $openness= '器用タイプ';
-                $opennessimg= "/images/shutterstock_478518385.jpg";
+                $opennessimg= "/images/shutterstock_670192495.jpg";
                 $opennesssm = 'ルールと刺激をコントロールする';
+                $opennessmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                  break;
 
                 case $item['openness'] >= -13.5 && $item['openness'] <= -4.9;
@@ -127,6 +134,7 @@
                 $extraversion = '八方美人タイプ';
                 $extraversionimg = "/images/shutterstock_478518385.jpg";
                $extraversionsm = '内向と外向を使い分ける';
+               $extraversionmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                 break;
 
                 case $item['extraversion'] >= -13.5 && $item['extraversion'] <= -4.9;
@@ -161,6 +169,7 @@
                 $neuroticism = 'コントロールタイプ';
                 $neuroticismimg= "/images/shutterstock_478518385.jpg";
                 $neuroticismsm = '弱さと強さを兼ね備える';
+                $neuroticismmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                 break;
 
                 case $item['neuroticism'] >= -13.5 && $item['neuroticism'] <= -4.9;
@@ -215,47 +224,63 @@
                     <h1 id="big5_detail_title">big5 detail</h1>
                     <div class="serious_result col-sm-12" id="bigfive_detail">
                         <p>勤勉性</p>
-                        <div class="total_msg">
+                        <div class="total_msg serious_message">
                             <img  src="{{ $seriousimg }}" alt="">
-                            <h3>{{ $serioussm }}</h3>
-                            <h1>{{ $serious }}</h1>
+                            <div class="">
+                                <h3>{{ $serioussm }}</h3>
+                                <h1>{{ $serious }}</h1>
+                                <p>{{ $seriousmsg }}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="kind_results col-sm-12" id="bigfive_detail">
                         <p>協調性</p>
-                        <div class="total_msg">
+                        <div class="total_msg kind_message">
                             <img  src="{{ $kindimg }}" alt="">
-                            <h3>{{ $kindsm }}</h3>
-                            <h1>{{ $kind }}</h1>
+                            <div>
+                                <h3>{{ $kindsm }}</h3>
+                                <h1>{{ $kind }}</h1>
+                                <p>{{ $kindmsg }}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="openness_results col-sm-12" id="bigfive_detail">
                         <p>開放性</p>
-                        <div class="total_msg">
+                        <div class="total_msg openness_message">
                         <img  src="{{ $opennessimg }}" alt="">
+                        <div>
                             <h3>{{ $opennesssm }}</h3>
                             <h1>{{ $openness }}</h1>
+                            <p>{{ $opennessmsg }}</p>
+                        </div>
                         </div>
                     </div>
                     <div class="extra_results col-sm-12" id="bigfive_detail">
                         <p>外交性</p>
-                        <div class="total_msg">
+                        <div class="total_msg extraversion_message">
                             <img  src="{{ $extraversionimg }}" alt="">
-                            <h3>{{ $extraversionsm }}</h3>
-                            <h1>{{ $extraversion }}</h1>
+                            <div>
+                                <h3>{{ $extraversionsm }}</h3>
+                                <h1>{{ $extraversion }}</h1>
+                                <p>{{ $extraversionmsg }}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="neuroticism_results col-sm-12" id="bigfive_detail">
                         <p>神経症的傾向</p>
-                        <div class="total_msg">
+                        <div class="total_msg neuroticism_message">
                             <img  src="{{ $neuroticismimg }}" alt="">
-                            <h3>{{ $neuroticismsm }}</h3>
-                            <h1>{{ $neuroticism }}</h1>
+                            <div>
+                                <h3>{{ $neuroticismsm }}</h3>
+                                <h1>{{ $neuroticism }}</h1>
+                                <p>{{ $neuroticismmsg }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="select_area">
                     <a href="/person" class="badge badge-info">戻る</a>
+                    <br>
                     <a href="/person" class="badge badge-dark">Dark</a>
                 </div>
             </div>

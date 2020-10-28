@@ -49746,6 +49746,7 @@ var app = new Vue({
   data: function data() {
     return {
       isActive: false,
+      showContent: true,
       name: '',
       email: ''
     };
@@ -49753,6 +49754,12 @@ var app = new Vue({
   methods: {
     toggleButton: function toggleButton() {
       this.isActive = !this.isActive;
+    },
+    openModal: function openModal() {
+      this.showContent = true;
+    },
+    closeModal: function closeModal() {
+      this.showContent = false;
     }
   },
   computed: {

@@ -2,25 +2,55 @@
 @section('content')
 <body>
       <div class="container-fluid">
-        <div class="row">
-          <div class="header col-sm-12">
-            <div class="back-font">
-              <h1>person</h1>
-              <nav class=top_nav>
-                <ul>
-                  <li>
-                    <a href=" {{ url('/person/test') }} ">test</a>
-                  </li>
-                  <li>
-                    <a href="">sign up</a>
-                  </li>
-                  <li>
-                    <a href="{{ url('/person/contact') }}">お問い合わせ</a>
-                  </li>
-                </ul>
-              </nav>
+        <div id="app">
+          <div class="row">
+            <div class="header col-sm-12">
+              <div class="back-font">
+                <h1>person</h1>
+                <nav class=top_nav>
+                  <ul>
+                    <li>
+                      <a href=" {{ url('/person/test') }}">test</a>
+                    </li>
+                    <li>
+                      <a href="" v-on:click.prevent.stop="openModal">sign up</a>
+                    </li>
+                    <li>
+                      <a href="{{ url('/person/contact') }}">お問い合わせ</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
-          </div>
+            <div id="overlay" v-show="showContent">
+              <div class="login_form">
+                <form action="top_blade_php" method="post">
+                  <div>
+                      <div class="login_title"><h3>login</h3></div>
+                        <div>
+                          <div class="email_form">
+                            <p class="form_text">email</p>
+                            <input type="text" name="login_mail" class="login_mail" placeholder="your@emal">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                          <div class="pass_form">
+                            <p class="form_text">password</p>
+                            <span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
+                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
+                          </svg></span>
+                            <input type="text" name="login_pass" class="login_pass" placeholder="password">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+                          </div>
+                        </div>
+                  </div>
+                  <button  type="submit" class="btn btn-primary" id="login_submit" >submit</button>
+                </form>
+                <button class="btn btn-info"id="login_submit" v-on:click="closeModal">close</button>
+              </div>
+              <p></p>
+            </div>
+            </div>
           </div>
           <div class="row fadeIn">
           <div class="top_intro col-sm-12 data-delighter">
