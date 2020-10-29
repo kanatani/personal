@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Person;
 use App\Models\Contact;
 use App\Models\test;
+use App\Models\loginuser;
 
 
 class PersonController extends Controller
@@ -159,7 +160,6 @@ class PersonController extends Controller
 
     public function result (PostRequest  $request)
     {
-
         $user = DB::table('test')->latest()->first();
         $users= $user->id;
         session()->put(['id' => $users]);
@@ -167,5 +167,16 @@ class PersonController extends Controller
         $item = test::find($id);
         echo $id;
         return view('person.sum_result',compact('item'));
+    }
+
+    public function signup (PostRequest  $request)
+    {
+        $loginuser = new loginuser;
+        $loginuser->userid = rand(); 
+        $loginuser->name = $request->login_name; 
+        $loginuser->password = $request->login_pass; 
+        $loginuser->email = $request->login_mail; 
+        $loginuser->save(); 
+        return view('person.top');
     }
 }

@@ -24,22 +24,24 @@
             </div>
             <div id="overlay" v-show="showContent">
               <div class="login_form">
-                <form action="top_blade_php" method="post">
+                <form  method="POST" action="/person/top">
+                @csrf
                   <div>
-                      <div class="login_title"><h3>login</h3></div>
+                      <div class="login_title"><h3>sign up</h3></div>
                         <div>
+                          <div class="name_form">
+                             <p class="form_text">name</p>
+                            <input type="text" name="login_name" class="login_name" placeholder="&#xf007; yourname">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
                           <div class="email_form">
                             <p class="form_text">email</p>
-                            <input type="text" name="login_mail" class="login_mail" placeholder="your@emal">
+                            <input type="email" name="login_mail" class="login_mail" placeholder="&#xf0e0; your@emal">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                           </div>
                           <div class="pass_form">
                             <p class="form_text">password</p>
-                            <span><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
-                            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
-                          </svg></span>
-                            <input type="text" name="login_pass" class="login_pass" placeholder="password">
+                            <input type="password" name="login_pass" class="login_pass" placeholder="&#xf3c1; password">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
                           </div>
                         </div>

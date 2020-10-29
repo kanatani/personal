@@ -59,6 +59,8 @@ Route::post('/person/neuroticism_result','App\Http\Controllers\PersonController@
 
 Route::post('/person/sum_result','App\Http\Controllers\PersonController@result');
 
+Route::post('/person/top','App\Http\Controllers\PersonController@signup');
+
 Route::resource('person', 'App\Http\Controllers\PersonController');
 
 Route::get('/', function () {
