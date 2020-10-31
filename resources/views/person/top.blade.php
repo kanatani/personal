@@ -1,7 +1,12 @@
 @extends('person/layout')
 @section('content')
 <body>
-<p>こんにちわ</p>
+    <div>
+    <p>こんにちわ</p>
+    </div>
+
+    <script>
+    </script>
 @endsection
 
 

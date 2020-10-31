@@ -49746,7 +49746,7 @@ var app = new Vue({
   data: function data() {
     return {
       isActive: false,
-      showContent: true,
+      showContent: false,
       name: '',
       email: ''
     };

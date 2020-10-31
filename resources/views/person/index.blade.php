@@ -13,7 +13,7 @@
                       <a href=" {{ url('/person/test') }}">test</a>
                     </li>
                     <li>
-                      <a href="" v-on:click.prevent.stop="openModal">sign up</a>
+                      <a href=" {{ url('/person/login') }}">sign up & login</a>
                     </li>
                     <li>
                       <a href="{{ url('/person/contact') }}">お問い合わせ</a>
@@ -22,38 +22,8 @@
                 </nav>
               </div>
             </div>
-            <div id="overlay" v-show="showContent">
-              <div class="login_form">
-                <form  method="POST" action="/person/top">
-                @csrf
-                  <div>
-                      <div class="login_title"><h3>sign up</h3></div>
-                        <div>
-                          <div class="name_form">
-                             <p class="form_text">name</p>
-                            <input type="text" name="login_name" class="login_name" placeholder="&#xf007; yourname">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                          </div>
-                          <div class="email_form">
-                            <p class="form_text">email</p>
-                            <input type="email" name="login_mail" class="login_mail" placeholder="&#xf0e0; your@emal">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                          </div>
-                          <div class="pass_form">
-                            <p class="form_text">password</p>
-                            <input type="password" name="login_pass" class="login_pass" placeholder="&#xf3c1; password">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
-                          </div>
-                        </div>
-                  </div>
-                  <button  type="submit" class="btn btn-primary" id="login_submit" >submit</button>
-                </form>
-                <button class="btn btn-info"id="login_submit" v-on:click="closeModal">close</button>
-              </div>
-              <p></p>
-            </div>
-            </div>
-          </div>
+           </div>
+         </div>
           <div class="row fadeIn">
           <div class="top_intro col-sm-12 data-delighter">
             <h1 class="intro_title">基本機能</h1>
@@ -150,6 +120,10 @@
                 </ul>
             </nav>
           </footer>
+          <form action="/person/top" method="post">
+          @csrf
+        <input type="submit" value="送信">
+      </form>
           <div class="footer_title col-sm-12" id="footer_titles">
               <p>© person 2020</p>
           </div>
@@ -158,7 +132,6 @@
     <script src="{{ asset('/js/jquery.bgswitcher.js') }}"></script>
     
     <script>
-    
       jQuery(function($) {
         $('.header').bgSwitcher({
           images: ['images/shutterstock_622200797.jpg','images/768013045-huge.jpg','images/shutterstock_762804607.jpg'], // 切り替え画像
@@ -171,7 +144,6 @@
             easing: "swing", //エフェクトのイージング "swing" "linear"
         });
       });
-
     </script>
     <script src="{{ asset('/js/head.js') }}"></script>
 @endsection

@@ -33,6 +33,10 @@ Route::get('person/openness', function () {
     return view('person/openness');
 });
 
+Route::get('person/login', function () {
+    return view('person/login');
+});
+
 Route::get('person/extraversion', function () {
     return view('person/extraversion');
 });
@@ -40,6 +44,12 @@ Route::get('person/extraversion', function () {
 Route::get('/person/neuroticism', function () {
     return view('/person/neuroticism');
 });
+
+Route::get('/person', function () {
+       session()->flush();
+        return view('person.index');
+});
+
 
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
 

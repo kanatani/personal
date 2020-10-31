@@ -165,11 +165,10 @@ class PersonController extends Controller
         session()->put(['id' => $users]);
         $id = session()->get('id');
         $item = test::find($id);
-        echo $id;
         return view('person.sum_result',compact('item'));
     }
 
-    public function signup (PostRequest  $request)
+    public function signup (Request  $request)
     {
         $loginuser = new loginuser;
         $loginuser->userid = rand(); 
@@ -178,5 +177,11 @@ class PersonController extends Controller
         $loginuser->email = $request->login_mail; 
         $loginuser->save(); 
         return view('person.top');
+    }
+
+    public function delete (Request  $request)
+    {
+        session()->flush();
+        return view('person.good');
     }
 }

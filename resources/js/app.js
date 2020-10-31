@@ -33,7 +33,8 @@ const app = new Vue({
     data() {
         return {
             isActive: false,
-            showContent: true,
+            showContent: false,
+            Loginactive: true,
             name: '',
             email: ''
         };
@@ -47,6 +48,9 @@ const app = new Vue({
         },
         closeModal: function(){
             this.showContent = false
+        },
+        active: function() {
+            this.Loginactive = !this.Loginactive;
         }
     },
     computed: {
