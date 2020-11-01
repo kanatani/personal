@@ -49,7 +49,7 @@ const app = new Vue({
         closeModal: function(){
             this.showContent = false
         },
-        active: function() {
+        good: function() {
             this.Loginactive = !this.Loginactive;
         }
     },

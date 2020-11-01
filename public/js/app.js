@@ -49747,6 +49747,7 @@ var app = new Vue({
     return {
       isActive: false,
       showContent: false,
+      Loginactive: true,
       name: '',
       email: ''
     };
@@ -49760,6 +49761,9 @@ var app = new Vue({
     },
     closeModal: function closeModal() {
       this.showContent = false;
+    },
+    good: function good() {
+      this.Loginactive = !this.Loginactive;
     }
   },
   computed: {

@@ -8,6 +8,8 @@ use App\Models\Person;
 use App\Models\Contact;
 use App\Models\test;
 use App\Models\loginuser;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 
 class PersonController extends Controller
@@ -173,10 +175,16 @@ class PersonController extends Controller
         $loginuser = new loginuser;
         $loginuser->userid = rand(); 
         $loginuser->name = $request->login_name; 
-        $loginuser->password = $request->login_pass; 
+        $loginuser->password = Hash::make($request->login_pass);
         $loginuser->email = $request->login_mail; 
         $loginuser->save(); 
         return view('person.top');
+    }
+
+    public function login (Request  $request)
+    {
+        
+
     }
 
     public function delete (Request  $request)
