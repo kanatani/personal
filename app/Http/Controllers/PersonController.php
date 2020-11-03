@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Request as PostRequest;
 use Illuminate\Support\Facades\DB;
+// model
 use App\Models\Person;
 use App\Models\Contact;
 use App\Models\test;
 use App\Models\loginuser;
+// hash
 use Illuminate\Support\Facades\Hash;
+// auth
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class PersonController extends Controller
 {
@@ -183,8 +186,15 @@ class PersonController extends Controller
 
     public function login (Request  $request)
     {
-        
-
+        $email = $request->login_mail;  
+        $password = $request->login_pass;
+        if(Auth::attempt(['password' => $password, 'email' => $email])) {
+            return view('person.mypage');
+            echo 'uhh';
+        }
+        else {
+            return view('person.loguin');
+        }
     }
 
     public function delete (Request  $request)
@@ -192,4 +202,21 @@ class PersonController extends Controller
         session()->flush();
         return view('person.good');
     }
+
+
+
+    //  public function __construct()
+    // {
+    //      $this->middleware('auth');
+    // }
+
+    // /**
+    //  * Show the application dashboard.
+    //  *
+    //  * @return \Illuminate\Contracts\Support\Renderable
+    //  */
+    // public function loginpage()
+    // {
+    //     return view('home');
+    // }
 }

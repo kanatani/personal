@@ -30,6 +30,7 @@
                    </form> 
                    <button @click="good" class="btn btn-outline-info w-50">login</button>                 
               </div>
+              
               <div class="login_main" v-else>
                   <h2>login</h2>
                   <form  action="/person/mypage" method="post">

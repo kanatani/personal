@@ -1,11 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
+use Request as PostRequest;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use App\Model\loginuser;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /*
@@ -33,6 +37,19 @@ class LoginController extends Controller
      *
      * @return void
      */
+    public function  login(Request $request)
+    {
+        $email = $request->login_mail;  
+        $password = $request->login_pass;
+        if(Auth::attempt(['password' => $password, 'email' => $email])) {
+            return view('person.mypage');
+            echo 'uhh';
+        }
+        else {
+            return view('person.loguin');
+        }
+    }
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

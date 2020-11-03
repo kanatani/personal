@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'user',
     ],
 
     /*
@@ -38,12 +38,15 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'user',
         ],
-
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'user',
+        ],
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'user',
             'hash' => false,
         ],
     ],
@@ -70,13 +73,16 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'user' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\loginuser::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-    ],
-
+],
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
@@ -96,6 +102,12 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'user' => [
+            'provider' => 'user',
+            'table' => 'user',
             'expire' => 60,
             'throttle' => 60,
         ],

@@ -3,7 +3,7 @@
 <body>
     <div class="container-fluid">
         <div id="app">
-         <p>ようこそ</p>
+         <p>mypageだや</p>
         </div>
     </div>
 @endsection
