@@ -120,10 +120,6 @@
                 </ul>
             </nav>
           </footer>
-          <form action="/person/top" method="post">
-          @csrf
-        <input type="submit" value="送信">
-      </form>
           <div class="footer_title col-sm-12" id="footer_titles">
               <p>© person 2020</p>
           </div>

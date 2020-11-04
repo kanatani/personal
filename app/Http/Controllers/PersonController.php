@@ -177,6 +177,7 @@ class PersonController extends Controller
     {
         $loginuser = new loginuser;
         $loginuser->userid = rand(); 
+        $loginuser->sessionid = session()->get('id');; 
         $loginuser->name = $request->login_name; 
         $loginuser->password = Hash::make($request->login_pass);
         $loginuser->email = $request->login_mail; 
@@ -184,17 +185,33 @@ class PersonController extends Controller
         return view('person.top');
     }
 
-    public function login (Request  $request)
+    public function  login(Request $request)
     {
         $email = $request->login_mail;  
         $password = $request->login_pass;
+
         if(Auth::attempt(['password' => $password, 'email' => $email])) {
-            return view('person.mypage');
-            echo 'uhh';
+            if(session()->exists('id')) {
+                return view('person.mypage');
+            }
+            else
+            {
+                $user =  \DB::table('user')->where('password', $password)->first();
+                session()->put('id', $user['sessionid']);
+                return view('person.mypage');
+            }
         }
-        else {
+        else 
+        {
             return view('person.loguin');
         }
+    }
+
+    public function  logout(Request $request)
+    {
+        Auth::logout();
+        session()->flush();
+        return view('person.loguin');
     }
 
     public function delete (Request  $request)

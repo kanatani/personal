@@ -71,11 +71,14 @@ Route::post('/person/sum_result','App\Http\Controllers\PersonController@result')
 
 Route::post('/person/top','App\Http\Controllers\PersonController@signup');
 
-//Route::post('/person/mypage', 'App\Http\Controllers\PersonController@login');
+Route::post('/person/mypage', 'App\Http\Controllers\PersonController@login');
 
-Route::post('/person/mypage', 'App\Http\Controllers\Auth\LoginController@login');
+//Route::post('/person/mypage', 'App\Http\Controllers\Auth\LoginController@login');
 
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+//Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/person/logout', 'App\Http\Controllers\PersonController@logout');
+
+
 
 
 Route::resource('person', 'App\Http\Controllers\PersonController');

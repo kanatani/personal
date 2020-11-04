@@ -279,7 +279,7 @@
                     </div>
                 </div>
                 <div class="select_area">
-                    <a href="/person" class="badge badge-info">戻る</a>
+                    <a href="/person/loguin" class="badge badge-info">loguin</a>
                     <br>
                     <a href="/person" class="badge badge-dark">Dark</a>
                 </div>

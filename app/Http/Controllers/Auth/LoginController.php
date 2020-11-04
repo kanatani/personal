@@ -37,18 +37,6 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function  login(Request $request)
-    {
-        $email = $request->login_mail;  
-        $password = $request->login_pass;
-        if(Auth::attempt(['password' => $password, 'email' => $email])) {
-            return view('person.mypage');
-            echo 'uhh';
-        }
-        else {
-            return view('person.loguin');
-        }
-    }
 
     public function __construct()
     {
