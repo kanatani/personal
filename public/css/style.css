@@ -10,14 +10,8 @@ p {
     letter-spacing: 2px;
 }
 
-a:hover {
-    border-bottom: solid 2px white;
-    transition-duration: 0.5s;
-    text-decoration: none;
-  }
-
 .header {
-    width: 100%;
+   width: 100%;
    background-size: cover;
    height: 600px;
 }
@@ -57,6 +51,12 @@ a:hover {
     letter-spacing: 4px;
     text-decoration: none;
 }
+
+.top_nav ul li a:hover {
+    border-bottom: solid 2px white;
+    transition-duration: 0.5s;
+    text-decoration: none;
+  }
 
 /* ログイン画面 */
 
@@ -951,6 +951,80 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     margin: auto;
     text-align: center;
 }
+
+/* ログイン後のheader */
+.page_header{
+    height: 300px;
+}
+
+.login_header_title {
+    float: left;
+    position: fixed;
+}
+
+.login_header_title h1{
+   font-size: 60px;
+}
+
+#global_navi {
+    float: left;
+}
+
+#global_navi ul{
+    list-style: none;
+    margin-top: 35px;
+    margin-left: 300px;
+}
+
+#global_navi ul li{
+    width: 150px;
+    float: left;
+    text-align: center;
+}
+
+
+#global_navi ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Zilla Slab', serif;
+    letter-spacing: 4px;
+    padding-bottom: 20px;
+}
+
+#global_navi ul li a:hover{
+    opacity: 0.7;
+}
+
+.current {
+    border-bottom: 2px solid rgb(115, 227, 247);
+}
+
+.myaccount {
+    width: 500px;
+    float: right;
+}
+
+.myaccount_name {
+    height: 40px;
+    margin-top: 30px;
+   text-align: center;
+    border-left: 2px solid gray;
+}
+
+.out_form {
+    float: right;
+    margin-top: 25px;
+    margin-right: 30px;
+}
+
+#out_button{
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    
+}
+
+/* mypage */
 
 
 /* レスポンシブ */

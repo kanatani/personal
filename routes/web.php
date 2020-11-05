@@ -37,6 +37,11 @@ Route::get('person/loguin', function () {
     return view('person/loguin');
 });
 
+// Route::get('person/logout', function () {
+//     Auth::logout();
+//     return view('person.index');
+// });
+
 Route::get('person/extraversion', function () {
     return view('person/extraversion');
 });
@@ -76,7 +81,7 @@ Route::post('/person/mypage', 'App\Http\Controllers\PersonController@login');
 //Route::post('/person/mypage', 'App\Http\Controllers\Auth\LoginController@login');
 
 //Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-Route::get('/person/logout', 'App\Http\Controllers\PersonController@logout');
+
 
 
 

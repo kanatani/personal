@@ -192,14 +192,17 @@ class PersonController extends Controller
 
         if(Auth::attempt(['password' => $password, 'email' => $email])) {
             if(session()->exists('id')) {
-                return view('person.mypage');
+                $user =  \DB::table('user')->where('email', $email)->first();
+                $name= $user->name;
+                //$users = session()->put('id', $user->sessionid);
             }
             else
             {
-                $user =  \DB::table('user')->where('password', $password)->first();
-                session()->put('id', $user['sessionid']);
-                return view('person.mypage');
+                $user =  \DB::table('user')->where('email', $email)->first();
+                $users = session()->put('id', $user->sessionid);
+                $name= $user->name;
             }
+            return view('person.mypage',compact('name'));
         }
         else 
         {
@@ -211,7 +214,7 @@ class PersonController extends Controller
     {
         Auth::logout();
         session()->flush();
-        return view('person.loguin');
+        return view('person');
     }
 
     public function delete (Request  $request)
