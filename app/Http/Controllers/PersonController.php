@@ -124,6 +124,7 @@ class PersonController extends Controller
         return view('person.kind_result',compact('kind','sum','id'));
     }
 
+    
     public function insert(PostRequest  $result)
     {
         $insert=$result::all();

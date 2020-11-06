@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/head.js": "/js/head.js",
-    "/js/jquery.bgswitcher.js": "/js/jquery.bgswitcher.js"
+    "/js/jquery.bgswitcher.js": "/js/jquery.bgswitcher.js",
+    "/js/mypage.js": "/js/mypage.js"
 }

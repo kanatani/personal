@@ -243,7 +243,7 @@ p {
 .detail1 {
     padding: 2px 5px;
     margin: 2em 0;
-    background: #f3f319;
+    background-color: rgb(250, 109, 109);
     border-radius: 20px;
     margin: 20px auto;
 }
@@ -254,12 +254,13 @@ p {
     margin: 20px auto;
 }
 .detail3 {
-    background-color: rgb(147, 247, 147);
+    
+    background-color: rgb(236, 224, 83);
     border-radius: 20px;
     margin: 20px auto;
 }
 .detail4 {
-    background-color: rgb(250, 109, 109);
+    background-color: rgb(147, 247, 147);
     border-radius: 20px;
     padding: 0px 20px;
     margin:20px  auto;
@@ -899,6 +900,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 .serious_message {
     color: skyblue;
 }
+
 .kind_message {
     color: rgb(244, 247, 84);
 }
@@ -953,8 +955,15 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 }
 
 /* ログイン後のheader */
+.responsive_navi {
+    display: none;
+}
+
 .page_header{
-    height: 300px;
+    height: 100px;
+    background-color: white;
+    position: fixed;
+    z-index: 30;
 }
 
 .login_header_title {
@@ -1025,7 +1034,104 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 }
 
 /* mypage */
+#mypage {
+    width: 100%;
+    height: 100%;
+}
 
+.mypage_head {
+    padding-top: 200px;
+}
+
+.your_page {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.mypage_type {
+    float: left;
+    width: 50%;
+    padding-top: 30px;
+}
+
+.mypage_type p{
+   text-align: center;
+}
+
+.personal_mypage {
+    border-radius: 15px;
+    color: white;
+}
+
+.extraversion_mypage {
+    background-color: rgb(247, 105, 105);
+}
+
+.kind_mypage {
+    background-color: rgb(236, 224, 83);
+}
+
+.serious_mypage {
+    background-color: rgb(122, 211, 247);
+}
+
+.openness_mypage {
+    background-color: rgb(147, 247, 147);
+}
+
+.neuroticism_mypage {
+    background-color: rgb(240, 135, 240);
+}
+
+.mytpage_chart {
+    float: right;
+    width: 50%;
+}
+
+.mypage_main {
+    clear: both;
+    margin-top: 40px;
+    padding-top: 40px;
+}
+
+#sub_mypage {
+    margin-top: 30px;
+}
+
+#kind_subpage{
+    background-color: rgb(236, 224, 83);
+    color: white;
+}
+
+#extraversion_subpage{
+    background-color: rgb(247, 105, 105);
+    color: white;
+}
+
+#serious_subpage{
+    background-color: rgb(122, 211, 247);
+    color: white;
+}
+
+#openness_subpage{
+    background-color: rgb(147, 247, 147);
+    color: white;
+}
+
+#neuroticism_subpage{
+    background-color: rgb(240, 135, 240);
+    color: white;
+}
+
+#neuroticism_button {
+    color: rgb(240, 135, 240);
+    border-color: rgb(240, 135, 240);
+}
+
+#neuroticism_button:hover {
+    background-color: rgb(240, 135, 240);
+    color: white;
+}
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
@@ -1137,6 +1243,28 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
         width: 100%;
     }
 
+    /* ログイン後のヘッダー */
+    #global_navi,.myaccount {
+        display: none;
+    }
+   
+    .responsive_navi {
+        display: flex;
+    }
+
+    .mypage_type {
+        width: 100%;
+    }
+
+    .mytpage_chart{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    .responsive {
+        background-color: black;
+    }
   }
 
 
