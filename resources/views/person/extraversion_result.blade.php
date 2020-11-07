@@ -241,11 +241,20 @@
                                     <p>{{ $boxdetail6 }}</p>
                                 </div>
                             </div>
+                            @if( Auth::check() )
+                            <div class="submit">
+                                <form action="/person/mypage" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-info w-50" id="next_button">mypage</button>
+                                </form>
+                            </div>
+                            @else
                             <div class="submit">
                                 <form action="/person/neuroticism" method="get">
                                 <button type="submit" class="btn btn-outline-light w-50" id="next_button">神経症的傾向テスト</button>
                                 </form>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>

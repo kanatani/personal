@@ -243,11 +243,20 @@
                                     <p>{{ $boxdetail6 }}</p>
                                 </div>
                             </div>
+                            @if( Auth::check() )
                             <div class="submit">
-                                <form action="/person/openness" method="get">
-                                <button type="submit" class="btn btn-outline-light w-50" id="next_button">開放性</button>
+                                <form action="/person/mypage" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-info w-50" id="next_button">mypage</button>
                                 </form>
                             </div>
+                            @else
+                            <div class="submit">
+                                <form action="/person/openness" method="get">
+                                <button type="submit" class="btn btn-outline-light w-50" id="next_button">開放性テスト</button>
+                                </form>
+                            </div>
+                            @endif                        
                         </div>
                     </div>
                 </div>

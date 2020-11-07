@@ -55,6 +55,11 @@ Route::get('/person', function () {
         return view('person.index');
 });
 
+Route::get('/person/mypage', function () {
+        return view('/person/mypage');
+});
+
+
 
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
 
@@ -62,7 +67,7 @@ Route::post('/person/check','App\Http\Controllers\PersonController@content');
 
 Route::post('/person/serious_result','App\Http\Controllers\PersonController@content');
 
-Route::post('/person/kind_result','App\Http\Controllers\PersonController@kind');
+Route::post('/person/kind_result','App\Http\Controllers\PersonController@insert');
 
 Route::post('/person/serious_result','App\Http\Controllers\PersonController@insert');
 

@@ -243,12 +243,21 @@
                                     <p>{{ $boxdetail6 }}</p>
                                 </div>
                             </div>
+                            @if( Auth::check() )
+                            <div class="submit">
+                                <form action="/person/mypage" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-info w-50" id="next_button">mypage</button>
+                                </form>
+                            </div>
+                            @else
                             <div class="submit">
                                 <form action="/person/sum_result" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-outline-light w-50" id="next_button">テスト結果</button>
                                 </form>
                             </div>
+                            @endif                           
                         </div>
                     </div>
                 </div>

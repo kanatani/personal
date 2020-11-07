@@ -106,62 +106,108 @@ class PersonController extends Controller
         return view('person.check',compact('data1'));
     }
 
-    public function kind(PostRequest  $result)
-    {
-        $kind =$result::all();
-        $high = $kind['q1'] + $kind['q2']+ $kind['q3']+ $kind['q4']+ $kind['q5']+ $kind['q6'];
-        $row = $kind['q7'] + $kind['q8']+ $kind['q9']+ $kind['q10']+ $kind['q11']+ $kind['q12'];
-        $sum = $high - $row;
+    // public function kind(PostRequest  $result)
+    // {
+    //     $kind =$result::all();
+    //     $high = $kind['q1'] + $kind['q2']+ $kind['q3']+ $kind['q4']+ $kind['q5']+ $kind['q6'];
+    //     $row = $kind['q7'] + $kind['q8']+ $kind['q9']+ $kind['q10']+ $kind['q11']+ $kind['q12'];
+    //     $sum = $high - $row;
 
-        $test = new test;
-        $test->kind = $sum; 
-        $test->save(); 
+    //     $test = new test;
+    //     $test->kind = $sum; 
+    //     $test->save(); 
         
-        $user = DB::table('test')->latest()->first();
-        $users= $user->id;
-        session()->put(['id' => $users]);
-        $id = session()->get('id');
-        return view('person.kind_result',compact('kind','sum','id'));
-    }
+    //     $user = DB::table('test')->latest()->first();
+    //     $users= $user->id;
+    //     session()->put(['id' => $users]);
+    //     $id = session()->get('id');
+    //     return view('person.kind_result',compact('kind','sum','id'));
+    // }
 
     
     public function insert(PostRequest  $result)
     {
         $insert=$result::all();
-        $high = $insert['q1'] + $insert['q2']+ $insert['q3']+ $insert['q4']+ $insert['q5']+ $insert['q6'];
-        $row = $insert['q7'] + $insert['q8']+ $insert['q9']+ $insert['q10']+ $insert['q11']+ $insert['q12'];
-        $sum = $high - $row;
+        if(Auth::check()) {
+            $id = session()->get('id');
+            $user =  \DB::table('test')->where('id', $id)->first();
+            switch(true) {
+                case isset($insert['kind']):
+                    $sum = $user->kind;
+                    return view('person.kind_result',compact('sum'));
+                    break;
 
-        $id = session()->get('id');
+                case isset($insert['serious']):
+                    $sum = $user->conscientiousness;
+                    return view('person.serious_result',compact('sum'));
+                    break;
 
-        if(isset($insert['serious']))  {
-            \DB::table('test')->where('id', $id) ->update([
-                'conscientiousness' => $sum
-            ]);
-            return view('person.serious_result',compact('sum'));
+                case isset($insert['openness']):
+                    $sum = $user->openness;
+                    return view('person.openness_result',compact('sum'));
+                    break;
+
+                case isset($insert['extraversion']):
+                    $sum = $user->extraversion;
+                    return view('person.extraversion_result',compact('sum'));
+                    break;
+
+                case isset($insert['neuroticism']):
+                    $sum = $user->neuroticism;
+                    return view('person.neuroticism_result',compact('sum'));
+                    break;
+            }
         }
+        else
+        {
+            $high = $insert['q1'] + $insert['q2']+ $insert['q3']+ $insert['q4']+ $insert['q5']+ $insert['q6'];
+            $row = $insert['q7'] + $insert['q8']+ $insert['q9']+ $insert['q10']+ $insert['q11']+ $insert['q12'];
+            $sum = $high - $row;
 
-        if(isset($insert['openness']))  {
-            \DB::table('test')->where('id', $id) ->update([
-                'openness' => $sum
-            ]);
-            return view('person.openness_result',compact('sum'));
+            if(isset($insert['kind']))  {
+                $test = new test;
+                $test->kind = $sum; 
+                $test->save(); 
+                
+                $user = DB::table('test')->latest()->first();
+                $users= $user->id;
+                session()->put(['id' => $users]);
+                $id = session()->get('id');
+                return view('person.kind_result',compact('sum'));
+            }
+
+            if(isset($insert['serious']))  {
+                $id = session()->get('id');
+                \DB::table('test')->where('id', $id) ->update([
+                    'conscientiousness' => $sum
+                ]);
+                return view('person.serious_result',compact('sum'));
+            }
+
+            if(isset($insert['openness']))  {
+                $id = session()->get('id');
+                \DB::table('test')->where('id', $id) ->update([
+                    'openness' => $sum
+                ]);
+                return view('person.openness_result',compact('sum'));
+            }
+
+            if(isset($insert['extraversion']))  {
+                $id = session()->get('id');
+                \DB::table('test')->where('id', $id) ->update([
+                    'extraversion' => $sum
+                ]);
+                return view('person.extraversion_result',compact('sum'));
+            }
+
+            if(isset($insert['neuroticism']))  {
+                $id = session()->get('id');
+                \DB::table('test')->where('id', $id) ->update([
+                    'neuroticism' => $sum
+                ]);
+                return view('person.neuroticism_result',compact('sum'));
+            }
         }
-
-        if(isset($insert['extraversion']))  {
-            \DB::table('test')->where('id', $id) ->update([
-                'extraversion' => $sum
-            ]);
-            return view('person.extraversion_result',compact('sum'));
-        }
-
-        if(isset($insert['neuroticism']))  {
-            \DB::table('test')->where('id', $id) ->update([
-                'neuroticism' => $sum
-            ]);
-            return view('person.neuroticism_result',compact('sum'));
-        }
-
     }
 
     public function result (PostRequest  $request)
@@ -188,26 +234,38 @@ class PersonController extends Controller
 
     public function  login(Request $request)
     {
-        $email = $request->login_mail;  
-        $password = $request->login_pass;
-
-        if(Auth::attempt(['password' => $password, 'email' => $email])) {
-            if(session()->exists('id')) {
-                $user =  \DB::table('user')->where('email', $email)->first();
-                $name= $user->name;
-                //$users = session()->put('id', $user->sessionid);
-            }
-            else
-            {
-                $user =  \DB::table('user')->where('email', $email)->first();
-                $users = session()->put('id', $user->sessionid);
-                $name= $user->name;
-            }
-            return view('person.mypage',compact('name'));
+        // ログインチェック
+        if(Auth::check()) {
+            $id = session()->get('id');
+            $user =  \DB::table('user')->where('sessionid', $id)->first();
+            $name= $user->name;
+            $item = test::find($id);
+            return view('person.mypage',compact('name','item','id'));
         }
-        else 
+        else
         {
-            return view('person.loguin');
+            $email = $request->login_mail;  
+            $password = $request->login_pass;
+            // アカウントチェック
+            if(Auth::attempt(['password' => $password, 'email' => $email])) {
+                if(session()->exists('id')) {
+                    $user =  \DB::table('user')->where('email', $email)->first();
+                    $id = session()->get('id');
+                }
+                else
+                {
+                    $user =  \DB::table('user')->where('email', $email)->first();
+                    $users = session()->put('id', $user->sessionid);
+                    $id = session()->get('id');
+                }
+                $item = test::find($id);
+                $name= $user->name;
+                return view('person.mypage',compact('name','item','id'));
+            }
+            else 
+            {
+                return view('person.loguin');
+            }
         }
     }
 

@@ -1046,6 +1046,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 .your_page {
     text-align: center;
     padding-bottom: 40px;
+    font-size: 60px;
 }
 
 .mypage_type {
@@ -1060,6 +1061,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 
 .personal_mypage {
     border-radius: 15px;
+    margin-top: 30px;
     color: white;
 }
 
@@ -1262,9 +1264,43 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
         width: 100%;
     }
 
-    .responsive {
-        background-color: black;
+    .responsive{
+        background-color: rgba(34, 31, 31, 0.671);
+        z-index: 30;
+        padding: 2rem 1rem;
+        position: fixed;
+        width: 100%;
+        height: 80rem;
+        top: 0;
+        right: 0;
     }
+    
+    .responsive ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+    }
+    
+    .responsive li {
+        list-style: none;
+       text-align: center;
+       margin: 50px 0;
+    }
+    
+    .responsive a{
+        color: white;
+        text-align: center;
+        letter-spacing: 3px;
+    }
+    
+    .responsive a:hover {
+        text-decoration: none;
+        opacity: 0.6;
+        color: rgb(154, 235, 227);
+    }
+    
   }
 
 
