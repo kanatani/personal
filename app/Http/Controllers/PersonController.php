@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use App\library\common;
+use library;
+
 class PersonController extends Controller
 {
     /**
