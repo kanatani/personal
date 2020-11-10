@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 // auth
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 use App\library\common;
 use library;
@@ -225,13 +226,16 @@ class PersonController extends Controller
 
     public function signup (Request  $request)
     {
+        $id = session()->get('id');
         $loginuser = new loginuser;
         $loginuser->userid = rand(); 
-        $loginuser->sessionid = session()->get('id');; 
+        $loginuser->sessionid = $id;
         $loginuser->name = $request->login_name; 
         $loginuser->password = Hash::make($request->login_pass);
         $loginuser->email = $request->login_mail; 
         $loginuser->save(); 
+        $user =  loginuser::find($id);
+        Auth::loginUsingId($id);
         return view('person.top');
     }
 

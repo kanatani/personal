@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('fadein-component', require('./components/FadeInComponent.vue').default);
+Vue.component('image-component', require('./components/ImageComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -36,7 +37,9 @@ const app = new Vue({
             showContent: false,
             Loginactive: true,
             name: '',
-            email: ''
+            email: '',
+            uploadedmage: '',
+            img_name: '',
         };
     },
     methods: {
@@ -51,7 +54,11 @@ const app = new Vue({
         },
         good: function() {
             this.Loginactive = !this.Loginactive;
+        },
+        onFileChange(e) {
+            
         }
+
     },
     computed: {
         isInValidName() {
