@@ -340,7 +340,7 @@ switch (true) {
                     labels: ['開放性', '神経症的傾向', '社交性', '勤勉性', '協調性'],
                     datasets: [{
                         label: '性格分析',
-                        data:[<?php echo $item['openness']; ?>,<?php echo $item['neuroticism']; ?>,<?php echo $item['extraversion']; ?>,-<?php echo $item['conscientiousness']; ?>,<?php echo $item['kind']; ?>],
+                        data:[<?php echo $item['openness']; ?>,<?php echo $item['neuroticism']; ?>,<?php echo $item['extraversion']; ?>,<?php echo $item['conscientiousness']; ?>,<?php echo $item['kind']; ?>],
                         backgroundColor: 'RGBA(225,95,150, 0.5)',
                         borderColor: 'RGBA(225,95,150, 0.5)',
                         borderWidth: 1,

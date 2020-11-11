@@ -997,6 +997,25 @@ input[type="file"] {
     display: none;
 }
 
+.preview-item img{
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.x_button {
+    cursor: pointer;
+}
+
+/* テキスト */
+#self-introduction{
+   margin: auto;
+    width: 80%;
+    background-color: #EADFDF;
+    border: none;
+}
+
 /* ログイン後のheader */
 .responsive_navi {
     display: none;

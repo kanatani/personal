@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Contracts\Auth\Authenticatable;
 
-use App\library\common;
-use library;
-
 class PersonController extends Controller
 {
     /**
@@ -237,6 +234,28 @@ class PersonController extends Controller
         $user =  loginuser::find($id);
         Auth::loginUsingId($id);
         return view('person.top');
+    }
+
+    public function start (Request  $request)
+    {
+        $id = session()->get('id');
+        $item = test::find($id);
+        $user =  \DB::table('user')->where('sessionid', $id)->first();
+        $name = $user->name;
+        $file =  $request->file;
+        if($file =  $request->file) {
+            $fileName = time() . $file->getClientOriginalName();
+            $target_path = public_path('uploads');
+            $file->move($target_path, $fileName);
+            \DB::table('user')->where('sessionid', $id) ->update([
+                'image' => $file
+            ]);
+        }
+        else {
+            $fileName="";
+        }
+        
+        return view('person.mypage', compact('item','name'));
     }
 
     public function  login(Request $request)

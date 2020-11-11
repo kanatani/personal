@@ -83,6 +83,8 @@ Route::post('/person/top','App\Http\Controllers\PersonController@signup');
 
 Route::post('/person/mypage', 'App\Http\Controllers\PersonController@login');
 
+Route::post('/person/newmypage', 'App\Http\Controllers\PersonController@start');
+
 //Route::post('/person/mypage', 'App\Http\Controllers\Auth\LoginController@login');
 
 //Route::get('logout', 'Auth\LoginController@logout')->name('logout');

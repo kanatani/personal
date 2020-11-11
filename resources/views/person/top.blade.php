@@ -30,12 +30,15 @@
                         <div>
                             <h1>プロフィール作成</h1>
                         </div>
-                        <form action="/person/mypage" method="post" class="new_form">
+                        <form action="/person/newmypage" method="post" class="new_form" enctype="multipart/form-data">
                         @csrf
-                            <image-component></image-component>
+                        <div class="top-self-introduction">
+                            <h2>self-introduction</h2>
+                        </div>
+                        <image-component></image-component>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">free space</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                                <textarea class="form-control" id="self-introduction" rows="2" name="self-introduction" placeholder="Message" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-outline-info w-25" id="new_submit">mypage!</button>
                         </form>
@@ -43,9 +46,6 @@
                 </div>
         </div>
     </div>
-    <script>
-
-    </script>
 @endsection
 
 

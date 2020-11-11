@@ -38,8 +38,6 @@ const app = new Vue({
             Loginactive: true,
             name: '',
             email: '',
-            uploadedmage: '',
-            img_name: '',
         };
     },
     methods: {
@@ -55,10 +53,6 @@ const app = new Vue({
         good: function() {
             this.Loginactive = !this.Loginactive;
         },
-        onFileChange(e) {
-            
-        }
-
     },
     computed: {
         isInValidName() {
