@@ -238,24 +238,24 @@ class PersonController extends Controller
 
     public function start (Request  $request)
     {
+        // アップロード
         $id = session()->get('id');
         $item = test::find($id);
         $user =  \DB::table('user')->where('sessionid', $id)->first();
         $name = $user->name;
         $file =  $request->file;
-        if($file =  $request->file) {
+        if($request->file->isValid()) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads');
             $file->move($target_path, $fileName);
             \DB::table('user')->where('sessionid', $id) ->update([
-                'image' => $file
+                'image' => $fileName
             ]);
         }
         else {
-            $fileName="";
+            $fileName="rtrt";
         }
-        
-        return view('person.mypage', compact('item','name'));
+        return view('person.mypage', compact('item','name','fileName'));
     }
 
     public function  login(Request $request)
@@ -265,8 +265,9 @@ class PersonController extends Controller
             $id = session()->get('id');
             $user =  \DB::table('user')->where('sessionid', $id)->first();
             $name= $user->name;
+            $fileName= $user->image;
             $item = test::find($id);
-            return view('person.mypage',compact('name','item','id'));
+            return view('person.mypage',compact('name','item','id','fileName'));
         }
         else
         {
@@ -284,9 +285,10 @@ class PersonController extends Controller
                     $users = session()->put('id', $user->sessionid);
                     $id = session()->get('id');
                 }
+                $fileName= $user->image;
                 $item = test::find($id);
                 $name= $user->name;
-                return view('person.mypage',compact('name','item','id'));
+                return view('person.mypage',compact('name','item','id','fileName'));
             }
             else 
             {

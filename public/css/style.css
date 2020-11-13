@@ -1044,7 +1044,7 @@ input[type="file"] {
 #global_navi ul{
     list-style: none;
     margin-top: 35px;
-    margin-left: 300px;
+    margin-left: 250px;
 }
 
 #global_navi ul li{
@@ -1071,7 +1071,7 @@ input[type="file"] {
 }
 
 .myaccount {
-    width: 500px;
+    width: 550px;
     float: right;
 }
 
@@ -1080,6 +1080,19 @@ input[type="file"] {
     margin-top: 30px;
    text-align: center;
     border-left: 2px solid gray;
+}
+
+.myaccount_img{
+    margin-left: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.myaccount_img img{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
 }
 
 .out_form {

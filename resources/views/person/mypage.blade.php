@@ -177,17 +177,16 @@ switch (true) {
                                     </li>
                                 </ul>
                             </nav>
-                            <div class="myaccount">
+                        <div class="myaccount">
                             <div class="out_form">
                                 <form action="/person" method="get">
                                 <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
                                 </form>
                             </div>
                             <div>
-                                <img src="" alt="">
-                            </div>
-                            <div>
-                                <h3 class="myaccount_name">{{ $name }}</h3>
+                                <h3 class="myaccount_name">{{ $name }}
+                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                </h3>
                             </div>
                         </div>
                         <div class="responsive_navi">
