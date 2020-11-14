@@ -39,8 +39,8 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         },
-        "files": [
-            "app/library/common.php"
+        "classmap": [
+            "app/library"
         ]
     },
     "autoload-dev": {

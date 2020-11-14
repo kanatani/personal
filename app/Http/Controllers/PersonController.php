@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Contracts\Auth\Authenticatable;
+use app\library\BaseClass;
 
 class PersonController extends Controller
 {
@@ -125,6 +126,8 @@ class PersonController extends Controller
     //     return view('person.kind_result',compact('kind','sum','id'));
     // }
 
+   
+    
     
     public function insert(PostRequest  $result)
     {
@@ -243,8 +246,9 @@ class PersonController extends Controller
         $item = test::find($id);
         $user =  \DB::table('user')->where('sessionid', $id)->first();
         $name = $user->name;
-        $file =  $request->file;
-        if($request->file->isValid()) {
+        $file =  $request->file('image');
+
+        if($file->isValid()) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads');
             $file->move($target_path, $fileName);
@@ -310,6 +314,15 @@ class PersonController extends Controller
         return view('person.good');
     }
 
+    public function search (Request  $request)
+    {
+        list($name,$fileName) = BaseClass::header();
+        return view('person.search',compact('name','fileName'));
+    }
+
+    
+
+    
 
 
     //  public function __construct()

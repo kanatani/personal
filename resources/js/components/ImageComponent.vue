@@ -2,7 +2,7 @@
 <div class="new_file">
     <h3 class="profile_image_text">プロフィール画像</h3>
       <label class="file">
-        <input type="file" ref="preview" name="file" @change="uploadFile">
+        <input type="file" ref="preview" name="image" @change="uploadFile">
             ファイルを選択
         </label>
         <br>

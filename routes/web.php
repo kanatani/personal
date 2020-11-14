@@ -59,6 +59,8 @@ Route::get('/person/mypage', function () {
         return view('/person/mypage');
 });
 
+Route::get('/person/search','App\Http\Controllers\PersonController@search');
+
 
 
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
