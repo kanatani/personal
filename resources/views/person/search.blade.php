@@ -13,7 +13,7 @@
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="search">mypage</a>
+                                        <a href="mypage">mypage</a>
                                     </li>
                                     <li>
                                         <a href="search">community</a>
@@ -69,15 +69,55 @@
                 <div>
                     <h1>search</h1>
                     <div class="border_line"></div>
-                    <div>
+                    <div class="search_title">
                         <h1>気になる人の性格を調べてみよう!</h1>
                         <p>検索機能を使って相手の性格を知ることができます。知りたいと思った相手のことを理解することができます.</p>
                         <p>試しに相手のuseridを使って検索してみましょう.</p>
                     </div>
                 </div>
+                <div>
+                    <h3>検索</h3>
+                      <input type="text" name="search" class="searchtext" placeholder="&#xf002; userid">
+                      <button type="button" class="btn btn-primary" id="search_submit">検索</button>
+                </div>
+            </div>
+            <div class="userlist">
+
             </div>
         </div>
     </div>
+    <script language="javascript" type="text/javascript">
+    $(function() {
+        $('#search_submit').on('click', function() {
+            $('.searchtext').empty();
+            let userid = $('.searchtext').val();
+            if(!userid) {
+                return false;
+            }
+            $.ajax({
+                headers: {
+                       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                  },
+                type:'GET',
+                url: '/person/search/' + userid,
+                data: {
+                    'userid' : userid,
+                },
+                dataType: 'json',
+            }).done(function (data) {
+                console.log('seikou');
+                let html = '';
+                console.log(data);
+                $.each(data, function (index, value) {
+                    let id = value.userid;
+                    console.log(id);
+                })
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                console.log('なくね');
+            });
+        });
+    });
+    </script>
 @endsection
 
 

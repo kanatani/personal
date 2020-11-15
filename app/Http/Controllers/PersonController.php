@@ -236,7 +236,7 @@ class PersonController extends Controller
         $loginuser->save(); 
         $user =  loginuser::find($id);
         Auth::loginUsingId($id);
-        return view('person.top');
+        return view('person.top' , compact('userid'));
     }
 
     public function start (Request  $request)
@@ -246,6 +246,7 @@ class PersonController extends Controller
         $item = test::find($id);
         $user =  \DB::table('user')->where('sessionid', $id)->first();
         $name = $user->name;
+        $userid = $user->userid;
         $file =  $request->file('image');
 
         if($file->isValid()) {
@@ -259,7 +260,7 @@ class PersonController extends Controller
         else {
             $fileName="rtrt";
         }
-        return view('person.mypage', compact('item','name','fileName'));
+        return view('person.mypage', compact('item','name','fileName','userid'));
     }
 
     public function  login(Request $request)
@@ -270,8 +271,9 @@ class PersonController extends Controller
             $user =  \DB::table('user')->where('sessionid', $id)->first();
             $name= $user->name;
             $fileName= $user->image;
+            $userid = $user->userid;
             $item = test::find($id);
-            return view('person.mypage',compact('name','item','id','fileName'));
+            return view('person.mypage',compact('name','item','userid','fileName'));
         }
         else
         {
@@ -292,7 +294,8 @@ class PersonController extends Controller
                 $fileName= $user->image;
                 $item = test::find($id);
                 $name= $user->name;
-                return view('person.mypage',compact('name','item','id','fileName'));
+                $userid = $user->userid;
+                return view('person.mypage',compact('name','item','id','fileName','userid'));
             }
             else 
             {
@@ -319,6 +322,14 @@ class PersonController extends Controller
         list($name,$fileName) = BaseClass::header();
         return view('person.search',compact('name','fileName'));
     }
+
+    public function look ($userid)
+    {
+        $user =  \DB::table('user')->where('userid', $userid)->first();
+        return response()->json($user);
+    }
+
+
 
     
 

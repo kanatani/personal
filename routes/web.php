@@ -55,13 +55,11 @@ Route::get('/person', function () {
         return view('person.index');
 });
 
-Route::get('/person/mypage', function () {
-        return view('/person/mypage');
-});
+Route::get('/person/mypage', 'App\Http\Controllers\PersonController@login');
 
 Route::get('/person/search','App\Http\Controllers\PersonController@search');
 
-
+Route::get('/person/search/{userid}','App\Http\Controllers\PersonController@look');
 
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
 

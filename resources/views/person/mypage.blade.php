@@ -218,6 +218,10 @@ switch (true) {
             </div>
             <div>
                 <div class="mypage_head">
+                    <div class="userid">
+                        <h4>userid</h4>
+                        <p>{{ $userid }}</p>
+                    </div>
                     <div>
                         <h1 class="your_page">your page</h1>
                     </div>
