@@ -107,27 +107,6 @@ class PersonController extends Controller
         $data1 = $result::all();
         return view('person.check',compact('data1'));
     }
-
-    // public function kind(PostRequest  $result)
-    // {
-    //     $kind =$result::all();
-    //     $high = $kind['q1'] + $kind['q2']+ $kind['q3']+ $kind['q4']+ $kind['q5']+ $kind['q6'];
-    //     $row = $kind['q7'] + $kind['q8']+ $kind['q9']+ $kind['q10']+ $kind['q11']+ $kind['q12'];
-    //     $sum = $high - $row;
-
-    //     $test = new test;
-    //     $test->kind = $sum; 
-    //     $test->save(); 
-        
-    //     $user = DB::table('test')->latest()->first();
-    //     $users= $user->id;
-    //     session()->put(['id' => $users]);
-    //     $id = session()->get('id');
-    //     return view('person.kind_result',compact('kind','sum','id'));
-    // }
-
-   
-    
     
     public function insert(PostRequest  $result)
     {
@@ -224,6 +203,16 @@ class PersonController extends Controller
         return view('person.sum_result',compact('item'));
     }
 
+    public function userview ( $userid)
+    {
+        $user =  \DB::table('user')->where('userid', $userid)->first();
+        $id = $user->userid;
+        $name = $user->name;
+        $fileName = $user->image;
+        $item = test::find($userid);
+        return view('person.user',compact('name','item','fileName','userid'));
+    }
+
     public function signup (Request  $request)
     {
         $id = session()->get('id');
@@ -236,7 +225,7 @@ class PersonController extends Controller
         $loginuser->save(); 
         $user =  loginuser::find($id);
         Auth::loginUsingId($id);
-        return view('person.top' , compact('userid'));
+        return view('person.top');
     }
 
     public function start (Request  $request)
@@ -328,6 +317,8 @@ class PersonController extends Controller
         $user =  \DB::table('user')->where('userid', $userid)->first();
         return response()->json($user);
     }
+
+    
 
 
 

@@ -82,8 +82,15 @@
                 </div>
             </div>
             <div class="userlist">
+                <div class="userlist_detail">
 
+                </div>
             </div>
+            <!-- <div class="row">
+                <div class="footer_title col-sm-12" id="footer_titles">
+                    <p>© person 2020</p>
+                </div>
+            </div> -->
         </div>
     </div>
     <script language="javascript" type="text/javascript">
@@ -106,12 +113,21 @@
                 dataType: 'json',
             }).done(function (data) {
                 console.log('seikou');
-                let html = '';
-                console.log(data);
-                $.each(data, function (index, value) {
-                    let id = value.userid;
-                    console.log(id);
-                })
+                console.log(data.image);
+                let name=data.name;
+                let image = data.image;
+                let id = data.userid;
+
+                let username = $(`<p class="username">${name}</p>`);
+               let userimage = $(`<a href="/person/user/${userid}" class="userimage" ><img src="/uploads/${image}" alt=""></a>`);
+                if(data.name === undefined) {
+                    $('.userlist').append('<p>useridが見つからなかったです</p>');
+                }
+                else {
+                    $('.userlist').empty();
+                    $('.userlist').append(userimage);
+                    $('.userlist').append(username);
+                }
             }).fail(function(jqXHR, textStatus, errorThrown) {
                 console.log('なくね');
             });

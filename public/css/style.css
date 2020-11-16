@@ -1249,6 +1249,17 @@ input[type="file"] {
     width: 100px;
 }
 
+.userlist {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.userlist img{
+    border-radius: 30px;
+    width: 200px;
+    height: 150px;
+
+}
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {

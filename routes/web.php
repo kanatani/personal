@@ -61,6 +61,8 @@ Route::get('/person/search','App\Http\Controllers\PersonController@search');
 
 Route::get('/person/search/{userid}','App\Http\Controllers\PersonController@look');
 
+Route::get('/person/user/{userid}','App\Http\Controllers\PersonController@userview');
+
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
 
 Route::post('/person/check','App\Http\Controllers\PersonController@content');
