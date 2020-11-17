@@ -244,12 +244,21 @@
                                 </div>
                             </div>
                             @if( Auth::check() )
-                            <div class="submit">
-                                <form action="/person/mypage" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-info w-50" id="next_button">mypage</button>
-                                </form>
-                            </div>
+                              @if( isset($youid ) )
+                                <div class="submit">
+                                    <form action="/person/user/<?php echo $youid; ?>" method="get">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-info w-50" id="next_button">userpage</button>
+                                    </form>
+                                </div>
+                                @else
+                                <div class="submit">
+                                    <form action="/person/mypage" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-info w-50" id="next_button">mypage</button>
+                                    </form>
+                                </div>
+                              @endif
                             @else
                             <div class="submit">
                                 <form action="/person/sum_result" method="post">

@@ -1249,7 +1249,7 @@ input[type="file"] {
     width: 100px;
 }
 
-.userlist {
+.user_detail {
     margin-top: 30px;
     text-align: center;
 }
@@ -1259,6 +1259,11 @@ input[type="file"] {
     width: 200px;
     height: 150px;
 
+}
+
+.userlist {
+    margin-top: 30px;
+    text-align: center;
 }
 
 /* レスポンシブ */

@@ -217,8 +217,13 @@ switch (true) {
             </div>
             <div>
                 <div class="mypage_head">
-                    <div class="userid">
-                    <p><?php  ?></p>
+                    <div class="user_detail">
+                        <div>
+                            <h4>userid</h4>
+                            <p>{{ $userid }}</p>
+                            <h4>username</h4>
+                            <p>{{ $yourname}}</p>
+                        </div>
                         <h4>userid</h4>
                         <p>{{ $userid }}</p>
                     </div>
@@ -263,9 +268,10 @@ switch (true) {
                     <div class="card-body">
                         <h5 class="card-title">{{ $extraversion }}</h5>
                         <p class="card-text">{{ $extraversionsm }}</p>
-                        <form action="/person/extraversion_result" method="post">
+                        <form action="/person/your_result/{$userid}"  method="post">
                         @csrf
-                        <input type="hidden" name="extraversion" value="extraversion">
+                            <input type="hidden" name="extraversion" value="extraversion">
+                            <input type="hidden" name="userid" value="<?php echo $userid; ?>">
                             <button type="submit" class="btn btn-outline-danger w-25">sub detail</button>
                         </form>
                     </div>
@@ -277,9 +283,10 @@ switch (true) {
                     <div class="card-body">
                         <h5 class="card-title">{{ $kind }}</h5>
                         <p class="card-text">{{ $kindsm }}</p>
-                        <form action="/person/kind_result" method="post">
+                        <form action="/person/your_result/{$userid}"  method="post">
                         @csrf
                             <input type="hidden" name="kind" value="kind">
+                            <input type="hidden" name="userid" value="<?php echo $userid; ?>">
                             <button type="submit" class="btn btn-outline-warning w-25">sub detail</button>
                         </form>
                     </div>
@@ -291,9 +298,10 @@ switch (true) {
                     <div class="card-body">
                         <h5 class="card-title">{{ $serious }}</h5>
                         <p class="card-text">{{ $serioussm }}</p>
-                        <form action="/person/serious_result" method="post">
+                        <form action="/person/your_result/{$userid}" method="post">
                         @csrf
                             <input type="hidden" name="serious" value="serious">
+                            <input type="hidden" name="userid" value="<?php echo $userid; ?>">
                             <button type="submit" class="btn btn-outline-info w-25">sub detail</button>
                         </form>
                     </div>
@@ -305,9 +313,10 @@ switch (true) {
                     <div class="card-body">
                         <h5 class="card-title">{{ $openness }}</h5>
                         <p class="card-text">{{ $opennesssm }}</p>
-                        <form action="/person/openness_result" method="post">
+                        <form action="/person/your_result/{$userid}"  method="post">
                         @csrf
                             <input type="hidden" name="openness" value="openness">
+                            <input type="hidden" name="userid" value="<?php echo $userid; ?>">
                           <button type="submit" class="btn btn-outline-success w-25">sub detail</button>
                         </form>
                     </div>
@@ -319,9 +328,10 @@ switch (true) {
                     <div class="card-body">
                         <h5 class="card-title">{{ $neuroticism }}</h5>
                         <p class="card-text">{{ $neuroticismsm }}</p>
-                        <form action="/person/neuroticism_result" method="post">
+                        <form action="/person/your_result/{$userid}"  method="post">
                         @csrf
                             <input type="hidden" name="neuroticism" value="neuroticism">
+                            <input type="hidden" name="userid" value="<?php echo $userid; ?>">
                         <button type="submit" class="btn btn-outline-dark w-25" id="neuroticism_button">sub detail</button>
                         </form>
                     </div>

@@ -108,36 +108,76 @@ class PersonController extends Controller
         return view('person.check',compact('data1'));
     }
     
+
     public function insert(PostRequest  $result)
     {
         $insert=$result::all();
         if(Auth::check()) {
-            $id = session()->get('id');
+            if(isset($insert['userid']))
+            {
+                $youid = $insert['userid'];
+                $youruser =  \DB::table('user')->where('userid', $youid)->first();
+                $id = $youruser->sessionid;
+            }
+            else
+            {
+                $id = session()->get('id');
+            }
             $user =  \DB::table('test')->where('id', $id)->first();
             switch(true) {
                 case isset($insert['kind']):
                     $sum = $user->kind;
-                    return view('person.kind_result',compact('sum'));
+                    if(isset($insert['userid'])){
+                        return view('person.kind_result',compact('sum','youid'));
+                    }
+                    else 
+                    {
+                        return view('person.kind_result',compact('sum'));
+                    }
                     break;
 
                 case isset($insert['serious']):
                     $sum = $user->conscientiousness;
-                    return view('person.serious_result',compact('sum'));
+                    if(isset($insert['userid'])){
+                        return view('person.serious_result',compact('sum','youid'));
+                    }
+                    else 
+                    {
+                        return view('person.serious_result',compact('sum'));
+                    }
                     break;
 
                 case isset($insert['openness']):
                     $sum = $user->openness;
-                    return view('person.openness_result',compact('sum'));
+                    if(isset($insert['userid'])){
+                        return view('person.openness_result',compact('sum','youid'));
+                    }
+                    else 
+                    {
+                        return view('person.openness_result',compact('sum'));
+                    }
                     break;
 
                 case isset($insert['extraversion']):
                     $sum = $user->extraversion;
-                    return view('person.extraversion_result',compact('sum'));
+                    if(isset($insert['userid'])){
+                        return view('person.extraversion_result',compact('sum','youid'));
+                    }
+                    else 
+                    {
+                        return view('person.extraversion_result',compact('sum'));
+                    }
                     break;
 
                 case isset($insert['neuroticism']):
                     $sum = $user->neuroticism;
-                    return view('person.neuroticism_result',compact('sum'));
+                    if(isset($insert['userid'])){
+                        return view('person.neuroticism_result',compact('sum','youid'));
+                    }
+                    else 
+                    {
+                        return view('person.neuroticism_result',compact('sum'));
+                    }
                     break;
             }
         }
@@ -193,6 +233,7 @@ class PersonController extends Controller
         }
     }
 
+
     public function result (PostRequest  $request)
     {
         $user = DB::table('test')->latest()->first();
@@ -203,16 +244,7 @@ class PersonController extends Controller
         return view('person.sum_result',compact('item'));
     }
 
-    public function userview ( $userid)
-    {
-        $user =  \DB::table('user')->where('userid', $userid)->first();
-        $id = $user->userid;
-        $name = $user->name;
-        $fileName = $user->image;
-        $item = test::find($userid);
-        return view('person.user',compact('name','item','fileName','userid'));
-    }
-
+    // サインアップ
     public function signup (Request  $request)
     {
         $id = session()->get('id');
@@ -228,6 +260,7 @@ class PersonController extends Controller
         return view('person.top');
     }
 
+    // newuser登録画面
     public function start (Request  $request)
     {
         // アップロード
@@ -252,6 +285,7 @@ class PersonController extends Controller
         return view('person.mypage', compact('item','name','fileName','userid'));
     }
 
+    // ログイン
     public function  login(Request $request)
     {
         // ログインチェック
@@ -293,17 +327,12 @@ class PersonController extends Controller
         }
     }
 
+    // ログアウト
     public function  logout(Request $request)
     {
         Auth::logout();
         session()->flush();
         return view('person');
-    }
-
-    public function delete (Request  $request)
-    {
-        session()->flush();
-        return view('person.good');
     }
 
     public function search (Request  $request)
@@ -312,21 +341,27 @@ class PersonController extends Controller
         return view('person.search',compact('name','fileName'));
     }
 
+    // ajax
     public function look ($userid)
     {
         $user =  \DB::table('user')->where('userid', $userid)->first();
         return response()->json($user);
     }
 
-    
+    public function userview ($userid)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
+        return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage'));
+    }
 
 
-
-    
-
-    
-
-
+    public function user ($userid)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
+        return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage'));
+    }
     //  public function __construct()
     // {
     //      $this->middleware('auth');
