@@ -81,82 +81,49 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/head.js":
-/*!******************************!*\
-  !*** ./resources/js/head.js ***!
-  \******************************/
+/***/ "./resources/js/index.js":
+/*!*******************************!*\
+  !*** ./resources/js/index.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(function () {
-  $(window).scroll(function () {
-    $('.fadein').each(function () {
-      var position = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
+jQuery(function ($) {
+  $('.header').bgSwitcher({
+    images: ['images/shutterstock_622200797.jpg', 'images/768013045-huge.jpg', 'images/shutterstock_762804607.jpg'],
+    // 切り替え画像
+    Interval: 5000,
+    //切り替えの間隔 1000=1秒
+    start: true,
+    //$.fn.bgswitcher(config)をコールした時に切り替えを開始する
+    loop: true,
+    //切り替えをループする
+    shuffle: false,
+    //背景画像の順番をシャッフルする
+    effect: "fade",
+    //エフェクトの種類 "fade" "blind" "clip" "slide" "drop" "hide"
+    duration: 3000,
+    //エフェクトの時間 1000=1秒
+    easing: "swing" //エフェクトのイージング "swing" "linear"
 
-      if (scroll > position - windowHeight + 200) {
-        $(this).addClass('active');
-      }
-    });
-    $('.detail').each(function () {
-      var position = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-
-      if (scroll > position - windowHeight + 100) {
-        $(this).addClass('active');
-      }
-    });
   });
-});
-ScrollReveal().reveal('.detail1', {
-  duration: 1600,
-  opacity: 0.8,
-  origin: 'left',
-  distance: '200px',
-  reset: false
-});
-ScrollReveal().reveal('.detail2', {
-  duration: 1600,
-  origin: 'left',
-  distance: '200px',
-  reset: false
-});
-ScrollReveal().reveal('.detail3', {
-  duration: 1600,
-  origin: 'left',
-  distance: '200px',
-  reset: false
-});
-ScrollReveal().reveal('.detail4', {
-  duration: 1600,
-  origin: 'left',
-  distance: '200px',
-  reset: false
-});
-ScrollReveal().reveal('.detail5', {
-  duration: 1600,
-  origin: 'left',
-  distance: '200px',
-  reset: false
 });
 
 /***/ }),
 
-/***/ 3:
-/*!************************************!*\
-  !*** multi ./resources/js/head.js ***!
-  \************************************/
+/***/ 2:
+/*!*************************************!*\
+  !*** multi ./resources/js/index.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/head.js */"./resources/js/head.js");
+module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/index.js */"./resources/js/index.js");
 
 
 /***/ })

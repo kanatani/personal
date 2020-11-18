@@ -164,7 +164,7 @@ switch (true) {
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="search" class="current">mypage</a>
+                                        <a href="mypage" class="current">mypage</a>
                                     </li>
                                     <li>
                                         <a href="search">community</a>

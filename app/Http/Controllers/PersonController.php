@@ -9,6 +9,7 @@ use App\Models\Person;
 use App\Models\Contact;
 use App\Models\test;
 use App\Models\loginuser;
+use App\Models\like;
 // hash
 use Illuminate\Support\Facades\Hash;
 // auth
@@ -356,12 +357,36 @@ class PersonController extends Controller
     }
 
 
+    // 相手ユーザーの表示
     public function user ($userid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
         return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage'));
     }
+
+    public function like ($userid)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        $user =  \DB::table('like')->where('user_id', $userid)->first();
+        if(isset($user)) 
+        {
+            \App\Models\like::where('user_id' , $userid)->delete();
+        }
+        else
+        {
+            $like = new like;
+            $like->user_id = $userid;
+            $like->reply_id = $myid;
+            $like->save();
+        }
+        return response()->json($user);
+    }
+
+    
+
+
+
     //  public function __construct()
     // {
     //      $this->middleware('auth');

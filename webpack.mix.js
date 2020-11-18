@@ -14,5 +14,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 mix.js('resources/js/jquery.bgswitcher.js', 'public/js');
+mix.js('resources/js/index.js', 'public/js');
 mix.js('resources/js/head.js', 'public/js'); 
+mix.js('resources/js/ajax.js', 'public/js'); 
 

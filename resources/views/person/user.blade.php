@@ -223,9 +223,13 @@ switch (true) {
                             <p>{{ $userid }}</p>
                             <h4>username</h4>
                             <p>{{ $yourname}}</p>
+                            <img src="/uploads/<?php echo $yourimage; ?>" alt="" class="youraccount_img">
                         </div>
-                        <h4>userid</h4>
-                        <p>{{ $userid }}</p>
+                        <div class="like_data">
+                            <input type="hidden" name="userid" value="<?php echo $userid; ?>" class="userid">
+                            <input type="hidden" class="myid" value="<?php echo Session::get('id');  ?>">
+                            <button type="button" class="btn btn-outline-info" id="like_button">いいね</button>
+                        </div>                
                     </div>
                     <div>
                         <h1 class="your_page">your page</h1>
@@ -271,7 +275,7 @@ switch (true) {
                         <form action="/person/your_result/{$userid}"  method="post">
                         @csrf
                             <input type="hidden" name="extraversion" value="extraversion">
-                            <input type="hidden" name="userid" value="<?php echo $userid; ?>">
+                            <input type="hidden" name="userid" value="<?php echo $userid; ?>" class="userid">
                             <button type="submit" class="btn btn-outline-danger w-25">sub detail</button>
                         </form>
                     </div>
@@ -337,6 +341,9 @@ switch (true) {
                     </div>
                 </div>
             </div>
+            <div class="remainder">
+
+            </div>
             <div class="row">
                 <div class="footer_title col-sm-12" id="footer_titles">
                     <p>© person 2020</p>
@@ -374,6 +381,38 @@ switch (true) {
                     }
                 }
             });
+            $('#like_button').on('click',function() {
+                let userid = $('.userid').val();
+                let myid = $('.myid').val();
+                $.ajax({
+                    headers: {
+                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                    },
+                    type:'POST',
+                    url: '/person/user/' + userid,
+                    data: {
+                        'userid' : userid,
+                    },
+                    dataType: 'json',
+                }).done(function(data) {
+                    console.log('成功');
+                    console.log(data['id']);
+                    if(data['id'] == undefined)
+                    {
+                        $('#like_button').text('解除');
+                        $('#like_button').addClass('active');
+                    }
+                    else 
+                    {
+                        $('#like_button').text('いいね');
+                        $('#like_button').removeClass('active');
+                    }
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    console.log(userid);
+                    console.log('失敗');
+                    console.log(myid);
+                });
+            })
         }
      </script>
     

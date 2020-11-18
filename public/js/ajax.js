@@ -81,82 +81,69 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/head.js":
+/***/ "./resources/js/ajax.js":
 /*!******************************!*\
-  !*** ./resources/js/head.js ***!
+  !*** ./resources/js/ajax.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 $(function () {
-  $(window).scroll(function () {
-    $('.fadein').each(function () {
-      var position = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
+  $('#search_submit').on('click', function () {
+    $('.searchtext').empty();
+    var userid = $('.searchtext').val();
 
-      if (scroll > position - windowHeight + 200) {
-        $(this).addClass('active');
-      }
-    });
-    $('.detail').each(function () {
-      var position = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
+    if (!userid) {
+      return false;
+    }
 
-      if (scroll > position - windowHeight + 100) {
-        $(this).addClass('active');
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      type: 'GET',
+      url: '/person/search/' + userid,
+      data: {
+        'userid': userid
+      },
+      dataType: 'json'
+    }).done(function (data) {
+      console.log('seikou');
+      console.log(data.image);
+      var name = data.name;
+      var image = data.image;
+      var id = data.userid;
+      var username = $("<p class=\"username\">".concat(name, "</p>"));
+      var userimage = $("<a href=\"/person/user/".concat(userid, "\" class=\"userimage\" ><img src=\"/uploads/").concat(image, "\" alt=\"\"></a>"));
+
+      if (data.name === undefined) {
+        $('.userlist').append('<p>useridが見つからなかったです</p>');
+      } else {
+        $('.userlist').empty();
+        $('.userlist').append(userimage);
+        $('.userlist').append(username);
       }
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+      console.log('なくね');
     });
   });
-});
-ScrollReveal().reveal('.detail1', {
-  duration: 1600,
-  opacity: 0.8,
-  origin: 'left',
-  distance: '200px',
-  reset: false
-});
-ScrollReveal().reveal('.detail2', {
-  duration: 1600,
-  origin: 'left',
-  distance: '200px',
-  reset: false
-});
-ScrollReveal().reveal('.detail3', {
-  duration: 1600,
-  origin: 'left',
-  distance: '200px',
-  reset: false
-});
-ScrollReveal().reveal('.detail4', {
-  duration: 1600,
-  origin: 'left',
-  distance: '200px',
-  reset: false
-});
-ScrollReveal().reveal('.detail5', {
-  duration: 1600,
-  origin: 'left',
-  distance: '200px',
-  reset: false
 });
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!************************************!*\
-  !*** multi ./resources/js/head.js ***!
+  !*** multi ./resources/js/ajax.js ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/head.js */"./resources/js/head.js");
+module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/ajax.js */"./resources/js/ajax.js");
 
 
 /***/ })
