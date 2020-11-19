@@ -1,5 +1,6 @@
 $(function() {
     $('#like_button').on('click',function() {
+        // 状態保持
         let userid = $('.userid').val();
         let myid = $('.myid').val();
         $.ajax({
