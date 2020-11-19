@@ -17,4 +17,5 @@ mix.js('resources/js/jquery.bgswitcher.js', 'public/js');
 mix.js('resources/js/index.js', 'public/js');
 mix.js('resources/js/head.js', 'public/js'); 
 mix.js('resources/js/ajax.js', 'public/js'); 
+mix.js('resources/js/like.js', 'public/js'); 
 

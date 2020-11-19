@@ -1291,7 +1291,7 @@ input[type="file"] {
     border-radius: 30px;
 }
 
-.active {
+.actives {
     background-color: aquamarine;
 }
 
@@ -1299,6 +1299,16 @@ input[type="file"] {
     height: 150px;
 }
 
+/* チャットページ */
+.chat_header {
+    padding-top: 200px;
+    margin: auto;
+    text-align: center;
+}
+
+.chat_header_text {
+    letter-spacing: 2px;
+}
 
 
 /* レスポンシブ */
@@ -1465,6 +1475,12 @@ input[type="file"] {
         text-decoration: none;
         opacity: 0.6;
         color: rgb(154, 235, 227);
+    }
+
+    #like_button {
+        width: 200px;
+        left: 110;
+        bottom: 30;
     }
     
   }

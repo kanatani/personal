@@ -173,7 +173,7 @@ switch (true) {
                                         <a href="search">search</a>
                                     </li>
                                     <li>
-                                        <a href="search">contact</a>
+                                        <a href="person/chat">chat</a>
                                     </li>
                                 </ul>
                             </nav>

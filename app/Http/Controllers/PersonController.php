@@ -10,6 +10,7 @@ use App\Models\Contact;
 use App\Models\test;
 use App\Models\loginuser;
 use App\Models\like;
+use App\Models\chat;
 // hash
 use Illuminate\Support\Facades\Hash;
 // auth
@@ -365,10 +366,12 @@ class PersonController extends Controller
         return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage'));
     }
 
+    // like機能
     public function like ($userid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         $user =  \DB::table('like')->where('user_id', $userid)->first();
+        $mylike =  \DB::table('like')->where('user_id', $myid)->get();
         if(isset($user)) 
         {
             \App\Models\like::where('user_id' , $userid)->delete();
@@ -379,10 +382,22 @@ class PersonController extends Controller
             $like->user_id = $userid;
             $like->reply_id = $myid;
             $like->save();
+
         }
+
+
         return response()->json($user);
     }
 
+    // チャットページ移動
+
+    public function chat (Request  $request)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        $chatroom = chat::find(1);
+        
+        return view('person.chat',compact('name','fileName','chatroom'));
+    }
     
 
 

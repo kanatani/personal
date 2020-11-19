@@ -22,7 +22,7 @@
                                         <a href="search" class="current">search</a>
                                     </li>
                                     <li>
-                                        <a href="search">contact</a>
+                                        <a href="chat">chat</a>
                                     </li>
                                 </ul>
                             </nav>

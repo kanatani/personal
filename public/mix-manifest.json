@@ -4,5 +4,6 @@
     "/css/app.css": "/css/app.css",
     "/js/head.js": "/js/head.js",
     "/js/index.js": "/js/index.js",
-    "/js/jquery.bgswitcher.js": "/js/jquery.bgswitcher.js"
+    "/js/jquery.bgswitcher.js": "/js/jquery.bgswitcher.js",
+    "/js/like.js": "/js/like.js"
 }

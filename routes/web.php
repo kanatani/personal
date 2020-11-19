@@ -55,6 +55,8 @@ Route::get('/person', function () {
         return view('person.index');
 });
 
+Route::get('/person/chat', 'App\Http\Controllers\PersonController@chat');
+
 Route::get('/person/mypage', 'App\Http\Controllers\PersonController@login');
 
 Route::get('/person/search','App\Http\Controllers\PersonController@search');
@@ -71,6 +73,7 @@ Route::post('/person/check','App\Http\Controllers\PersonController@content');
 
 Route::post('/person/serious_result','App\Http\Controllers\PersonController@content');
 
+// テスト結果
 Route::post('/person/kind_result','App\Http\Controllers\PersonController@insert');
 
 Route::post('/person/serious_result','App\Http\Controllers\PersonController@insert');
@@ -87,6 +90,7 @@ Route::post('/person/top','App\Http\Controllers\PersonController@signup');
 
 Route::post('/person/mypage', 'App\Http\Controllers\PersonController@login');
 
+// 新規登録
 Route::post('/person/newmypage', 'App\Http\Controllers\PersonController@start');
 
 Route::post('/person/your_result/{$userid}', 'App\Http\Controllers\PersonController@insert');
