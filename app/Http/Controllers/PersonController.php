@@ -367,7 +367,7 @@ class PersonController extends Controller
     }
 
 
-    // like機能
+    // like機能good
     public function like ($userid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
