@@ -350,42 +350,39 @@ class PersonController extends Controller
         return response()->json($user);
     }
 
+    // 相手ユーザーの表示
     public function userview ($userid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
-        return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage'));
+        $likes =  \App\Models\like::where('user_id' , $myid)->where('reply_id',$userid)->first();
+        if(!empty($likes))
+        {
+            return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage','likes'));
+        }
+        else
+        {
+            return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage'));
+        }
     }
 
 
-    // 相手ユーザーの表示
-    public function user ($userid)
-    {
-        list($name,$fileName,$myid) = BaseClass::look_myuser();
-        list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
-        return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage'));
-    }
-
-    // like機能
+    // like機能good
     public function like ($userid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
-        $user =  \DB::table('like')->where('user_id', $userid)->first();
-        $mylike =  \DB::table('like')->where('user_id', $myid)->get();
+        $user =  \DB::table('like')->where('reply_id', $userid)->first();
         if(isset($user)) 
         {
-            \App\Models\like::where('user_id' , $userid)->delete();
+            \App\Models\like::where('user_id' , $myid)->where('reply_id',$userid)->delete();
         }
         else
         {
             $like = new like;
-            $like->user_id = $userid;
-            $like->reply_id = $myid;
+            $like->user_id = $myid;
+            $like->reply_id = $userid;
             $like->save();
-
         }
-
-
         return response()->json($user);
     }
 
@@ -395,7 +392,6 @@ class PersonController extends Controller
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         $chatroom = chat::find(1);
-        
         return view('person.chat',compact('name','fileName','chatroom'));
     }
     
