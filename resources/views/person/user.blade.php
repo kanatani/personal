@@ -149,7 +149,6 @@ switch (true) {
         $neuroticismsm = '鋼のメンタルの持ち主';
         break;
 }
-
 ?>
     <div class="container-fluid">
         <div id="app">       
@@ -218,17 +217,25 @@ switch (true) {
             <div>
                 <div class="mypage_head">
                     <div class="user_detail">
+
                         <div>
                             <h4>userid</h4>
                             <p>{{ $userid }}</p>
+                            <h4>myid</h4>
+                            <p>{{ $myid }}</p>
                             <h4>username</h4>
                             <p>{{ $yourname}}</p>
+
                             <img src="/uploads/<?php echo $yourimage; ?>" alt="" class="youraccount_img">
                         </div>
                         <div class="like_data">
                             <input type="hidden" name="userid" value="<?php echo $userid; ?>" class="userid">
                             <input type="hidden" class="myid" value="<?php echo Session::get('id');  ?>">
+                           @if(!empty($likes))
+                            <button type="button" class="btn btn-outline-info" id="like_button">解除</button>
+                            @else
                             <button type="button" class="btn btn-outline-info" id="like_button">いいね</button>
+                            @endif
                         </div>                
                     </div>
                     <div>
@@ -382,43 +389,8 @@ switch (true) {
                 }
             });
         }
-        $(function() {
-    
-    $('#like_button').on('click',function() {
-        let userid = $('.userid').val();
-        let myid = $('.myid').val();
-        $.ajax({
-            headers: {
-           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-            },
-            type:'POST',
-            url: '/person/user/' + userid,
-            data: {
-                'userid' : userid,
-            },
-            dataType: 'json',
-        }).done(function(data) {
-            console.log('成功');
-            console.log(data['id']);
-            if(data['id'] == undefined)
-            {
-                $('#like_button').text('解除');
-                $('#like_button').addClass('actives');
-            }
-            else 
-            {
-                $('#like_button').text('いいね');
-                $('#like_button').removeClass('actives');
-            }
-        }).fail(function(jqXHR, textStatus, errorThrown) {
-            console.log(userid);
-            console.log('失敗');
-            console.log(myid);
-        });
-    })
-});
      </script>
-     <!-- <script src="{{ asset('/js/like.js') }}"></script> -->
+     <script src="{{ asset('/js/like.js') }}"></script>
     
 @endsection
 

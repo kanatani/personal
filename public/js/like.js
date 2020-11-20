@@ -95,6 +95,7 @@
 
 $(function () {
   $('#like_button').on('click', function () {
+    // 状態保持
     var userid = $('.userid').val();
     var myid = $('.myid').val();
     $.ajax({
@@ -113,10 +114,10 @@ $(function () {
 
       if (data['id'] == undefined) {
         $('#like_button').text('解除');
-        $('#like_button').addClass('active');
+        $('#like_button').addClass('actives');
       } else {
         $('#like_button').text('いいね');
-        $('#like_button').removeClass('active');
+        $('#like_button').removeClass('actives');
       }
     }).fail(function (jqXHR, textStatus, errorThrown) {
       console.log(userid);
