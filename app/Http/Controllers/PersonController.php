@@ -115,6 +115,7 @@ class PersonController extends Controller
     {
         $insert=$result::all();
         if(Auth::check()) {
+            // すでにログインしているユーザー
             if(isset($insert['userid']))
             {
                 $youid = $insert['userid'];
@@ -329,6 +330,16 @@ class PersonController extends Controller
         }
     }
 
+    // mypage
+    public function  mypage(Request $request)
+    {
+        $id = session()->get('id');
+        $item = test::find($id);
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        $userid = $myid;
+        return view('person.mypage',compact('name','item','userid','fileName'));
+    }
+
     // ログアウト
     public function  logout(Request $request)
     {
@@ -355,10 +366,22 @@ class PersonController extends Controller
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
+        // 自分のいいね
         $likes =  \App\Models\like::where('user_id' , $myid)->where('reply_id',$userid)->first();
+        // 相手のいいね
+        $yourlike = \App\Models\like::where('user_id' , $userid)->where('reply_id',$myid)->first();
         if(!empty($likes))
         {
-            return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage','likes'));
+            // 互いにいいねでチャットルーム作成
+            if(isset($yourlike) && isset($likes))
+            {
+                $chat = new chat;
+                $chat->chatroom = rand();
+                $chat->user_id = $myid;
+                $chat->reply_id = $userid;
+                $chat->save();
+            }
+            return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage','likes','yourlike'));
         }
         else
         {
@@ -367,11 +390,12 @@ class PersonController extends Controller
     }
 
 
-    // like機能good
+    // like機能
     public function like ($userid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
-        $user =  \DB::table('like')->where('reply_id', $userid)->first();
+        $user =  \App\Models\like::where('user_id' , $myid)->where('reply_id',$userid)->first();
+        $yourlike = \App\Models\like::where('user_id' , $userid)->where('reply_id',$myid)->first();
         if(isset($user)) 
         {
             \App\Models\like::where('user_id' , $myid)->where('reply_id',$userid)->delete();
@@ -382,6 +406,14 @@ class PersonController extends Controller
             $like->user_id = $myid;
             $like->reply_id = $userid;
             $like->save();
+            if(isset($yourlike) && isset($user))
+            {
+                $chat = new chat;
+                $chat->chatroom = rand();
+                $chat->user_id = $myid;
+                $chat->reply_id = $userid;
+                $chat->save();
+            }
         }
         return response()->json($user);
     }
@@ -391,8 +423,16 @@ class PersonController extends Controller
     public function chat (Request  $request)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
-        $chatroom = chat::find(1);
-        return view('person.chat',compact('name','fileName','chatroom'));
+        $chatrooms = \DB::table('chat')->select('chatroom','user_id','reply_id')->where('user_id', $myid)->get();
+        var_dump($chatrooms);
+
+        $chatroom = $chatrooms->chatroom;
+        $yourinfo = \DB::table('user')->where('userid', $chatrooms->reply_id)->first();
+        $yourname = $yourinfo->name;
+        $yourimage = $yourinfo->image;
+        
+
+        return view('person.chat',compact('name','fileName'));
     }
     
 

@@ -35,6 +35,15 @@ class BaseClass {
         return [$item,$yourname,$yourimage];
     }
 
+    public static function chat_yourinfo($myid) {
+        $chatrooms = \DB::table('chat')->where('user_id', $myid)->get();
+        $chatroom = $chatrooms->chatroom;
+        $yourinfo = \DB::table('user')->where('userid', $chatrooms->reply_id)->get();
+        $yourname = $yourinfo->name;
+        $yourimage = $yourinfo->image;
+        return [$chatroom,$yourname,$yourimage];
+    }
+
 
 }
 

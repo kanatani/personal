@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(userSeeder::class);
         $this->call(LikeTableSeeder::class);
         $this->call(ChatTableSeeder::class);
+        
+        
     }
 }

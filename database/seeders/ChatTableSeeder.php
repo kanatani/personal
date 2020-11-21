@@ -16,9 +16,9 @@ class ChatTableSeeder extends Seeder
     {
         DB::table('chat')->insert([
             [
+                'chatroom' => 1,
                 'user_id' => 1,
-                'reply_id' => 1,
-                'message' => 'よろしく'
+                'reply_id' => 1
             ],
         ]);
     }

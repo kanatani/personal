@@ -57,7 +57,7 @@ Route::get('/person', function () {
 
 Route::get('/person/chat', 'App\Http\Controllers\PersonController@chat');
 
-Route::get('/person/mypage', 'App\Http\Controllers\PersonController@login');
+Route::get('/person/mypage', 'App\Http\Controllers\PersonController@mypage');
 
 Route::get('/person/search','App\Http\Controllers\PersonController@search');
 
@@ -86,6 +86,7 @@ Route::post('/person/neuroticism_result','App\Http\Controllers\PersonController@
 
 Route::post('/person/sum_result','App\Http\Controllers\PersonController@result');
 
+// 新規登録とログイン
 Route::post('/person/top','App\Http\Controllers\PersonController@signup');
 
 Route::post('/person/mypage', 'App\Http\Controllers\PersonController@login');

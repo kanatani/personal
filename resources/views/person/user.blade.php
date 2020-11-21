@@ -149,6 +149,15 @@ switch (true) {
         $neuroticismsm = '鋼のメンタルの持ち主';
         break;
 }
+if(isset($yourlike))
+{
+    echo 'あるよ';
+    echo $yourlike;
+}
+else
+{
+    echo 'naiyo';
+}
 ?>
     <div class="container-fluid">
         <div id="app">       
@@ -217,15 +226,11 @@ switch (true) {
             <div>
                 <div class="mypage_head">
                     <div class="user_detail">
-
                         <div>
                             <h4>userid</h4>
                             <p>{{ $userid }}</p>
-                            <h4>myid</h4>
-                            <p>{{ $myid }}</p>
                             <h4>username</h4>
                             <p>{{ $yourname}}</p>
-
                             <img src="/uploads/<?php echo $yourimage; ?>" alt="" class="youraccount_img">
                         </div>
                         <div class="like_data">

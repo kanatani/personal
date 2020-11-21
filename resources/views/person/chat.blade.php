@@ -19,10 +19,10 @@
                                         <a href="search">community</a>
                                     </li>
                                     <li>
-                                        <a href="search" class="current">search</a>
+                                        <a href="search">search</a>
                                     </li>
                                     <li>
-                                        <a href="search">contact</a>
+                                        <a href="chat" class="current">chat</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -69,7 +69,7 @@
                 <div class="chat_header_text">
                     <h1>chatroom</h1>
                     <div class="border_line"></div>
-                    <div>{{ $chatroom['id'] }}</div>
+                    <div>{{ $chatroom }}</div>
                 </div>
             </div>
         </div>

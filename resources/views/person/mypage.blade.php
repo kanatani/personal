@@ -173,7 +173,7 @@ switch (true) {
                                         <a href="search">search</a>
                                     </li>
                                     <li>
-                                        <a href="person/chat">chat</a>
+                                        <a href="chat">chat</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -221,6 +221,7 @@ switch (true) {
                     <div class="userid">
                         <h4>userid</h4>
                         <p>{{ $userid }}</p>
+                        <p> <?php echo Session::get('id');  ?></p>
                     </div>
                     <div>
                         <h1 class="your_page">your page</h1>
