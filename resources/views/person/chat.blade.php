@@ -69,7 +69,12 @@
                 <div class="chat_header_text">
                     <h1>chatroom</h1>
                     <div class="border_line"></div>
-                    <div>{{ $chatroom }}</div>
+                    <div>{{ $chatrooms }}</div>
+                    <div>
+                                <h3 class="myaccount_name">{{ $yourname }}
+                                <img src="/uploads/<?php echo $yourimage; ?>" alt="" class="myaccount_img">
+                                </h3>
+                            </div>
                 </div>
             </div>
         </div>
