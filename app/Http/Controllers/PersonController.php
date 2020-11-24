@@ -428,19 +428,10 @@ class PersonController extends Controller
     public function chat (Request  $request)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
-        $chatrooms =  \App\Models\chat::select('chatroom','user_id','reply_id')->where('user_id', $myid)->get();
-        echo $chatrooms;
-        foreach ($chatrooms as $chatroom) {
-            $userid = $chatroom->reply_id;
-            \DB::table('user')->where('userid', $userid)->first();
-        }
-        
-        
-        $loginuser = \DB::table('user')->where('userid', $userid)->get();
-        $yourname = $loginuser->name;
-        $yourimage = $loginuser->image;
-        
-        return view('person.chat',compact('name','fileName','yourname','yourimage'));
+        $chatrooms =  \DB::table('chat')
+        ->join('user','chat.reply_id','=','user.userid')
+        ->where('chat.user_id',$myid)->get();
+        return view('person.chat',compact('name','fileName','chatrooms'));
     }
     
 

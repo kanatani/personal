@@ -1303,11 +1303,46 @@ input[type="file"] {
 .chat_header {
     padding-top: 200px;
     margin: auto;
-    text-align: center;
+}
+
+.chat_header_title {
+   text-align: center;
 }
 
 .chat_header_text {
     letter-spacing: 2px;
+}
+
+.chat_room{
+    margin-left: 100px;
+}
+
+.chat_room_info{
+    padding: 20px 0px;
+    clear: both;
+}
+
+.chat_user_name {
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+.chat_room_enter
+{
+    display: block;
+}
+
+.chat_room_enter:hover
+{
+    text-decoration: none;
+}
+
+.chat_room_img{
+    margin-right: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 30px;
+    float: left;
 }
 
 

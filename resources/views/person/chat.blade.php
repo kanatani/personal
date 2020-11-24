@@ -13,7 +13,7 @@
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="/person/mypage">mypage</a>
+                                        <a href="mypage">mypage</a>
                                     </li>
                                     <li>
                                         <a href="search">community</a>
@@ -67,14 +67,20 @@
             </div>
             <div class="chat_header">
                 <div class="chat_header_text">
-                    <h1>chatroom</h1>
+                    <h1 class="chat_header_title">chatroom</h1>
                     <div class="border_line"></div>
-                    <div>{{ $chatrooms }}</div>
                     <div>
-                                <h3 class="myaccount_name">{{ $yourname }}
-                                <img src="/uploads/<?php echo $yourimage; ?>" alt="" class="myaccount_img">
-                                </h3>
+                        <div class="chat_room">
+                            @foreach ($chatrooms as $chatroom)
+                            <div class="chat_room_info">
+                                <a href="chatroom/{{ $chatroom->chatroom }}" class="chat_room_enter">
+                                    <img src="/uploads/<?php echo $chatroom->image; ?>" alt="" class="chat_room_img">
+                                    <h4 class="chat_user_name">{{ $chatroom->name }}</h4>
+                                </a>
                             </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
