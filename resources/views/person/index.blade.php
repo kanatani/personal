@@ -88,7 +88,6 @@
             </div>
           </div>
         </div>
-
       <div class="top_text detail">
         <div class="text_means">
           <h1>素の自分を探してみませんか?</h1>
