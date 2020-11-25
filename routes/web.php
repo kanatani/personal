@@ -65,6 +65,8 @@ Route::get('/person/search/{userid}','App\Http\Controllers\PersonController@look
 
 Route::get('/person/user/{userid}','App\Http\Controllers\PersonController@userview');
 
+Route::get('/person/chatroom/{chatroomid}','App\Http\Controllers\PersonController@talkroom');
+
 Route::post('/person/user/{userid}','App\Http\Controllers\PersonController@like');
 
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');

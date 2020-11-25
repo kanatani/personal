@@ -1261,7 +1261,6 @@ input[type="file"] {
     border-radius: 30px;
     width: 200px;
     height: 150px;
-
 }
 
 .userlist {
@@ -1288,7 +1287,7 @@ input[type="file"] {
 .youraccount_img {
     width: 100px;
     height: 100px;
-    border-radius: 30px;
+    border-radius: 50px;
 }
 
 .actives {
@@ -1344,6 +1343,102 @@ input[type="file"] {
     border-radius: 30px;
     float: left;
 }
+
+
+/* 個別チャットルーム */
+
+.top_chat {
+    z-index: 1;
+    position: fixed;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 100px;
+    background-color: rgb(207, 247, 250);
+    height: 220px;
+}
+
+.talkroom {
+    height: 1000px;
+    background-color: rgb(184, 247, 252);
+    padding-top: 250px;
+}
+
+.your_info_region {
+    width: 200px;
+    margin: auto;
+    text-align: center;
+}
+
+.top_chat_name {
+    padding-top: 35px;
+    width: 30px;
+   float: left;
+}
+
+.your_chat_img{
+    margin-top: 20px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    float: right;
+}
+
+/* 自分のトーク */
+.mytalk {
+    margin: 0px 100px;
+    float: right;
+}
+
+.mytalk_img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    float: right;
+}
+
+.mytalk_space {
+    float: left;
+}
+
+.mytalk_text_space {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 15px 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #fff;
+    border: solid 3px #555;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.mytalk_text_space:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -24px;
+    margin-top: -12px;
+    border: 12px solid transparent;
+    border-left: 12px solid #FFF;
+    z-index: 2;
+  }
+
+.mytalk_text_space:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    margin-top: -14px;
+    border: 14px solid transparent;
+    border-left: 14px solid #555;
+    z-index: 1;
+  }
+
+
 
 
 /* レスポンシブ */

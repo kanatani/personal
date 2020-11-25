@@ -372,7 +372,6 @@ class PersonController extends Controller
         $yourlike = \App\Models\like::where('user_id' , $userid)->where('reply_id',$myid)->first();
         if(!empty($likes))
         {
-            
             return view('person.user',compact('name','item','fileName','myid','userid','yourname','yourimage','likes','yourlike'));
         }
         else
@@ -423,8 +422,7 @@ class PersonController extends Controller
         return response()->json($user);
     }
 
-    // チャットページ移動
-
+    // チャットルーム一覧
     public function chat (Request  $request)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
@@ -432,6 +430,15 @@ class PersonController extends Controller
         ->join('user','chat.reply_id','=','user.userid')
         ->where('chat.user_id',$myid)->get();
         return view('person.chat',compact('name','fileName','chatrooms'));
+    }
+
+    public function talkroom (Request  $request,$chatroomid)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        $yourchat =  \App\Models\chat::where('chatroom' , $chatroomid)->where('user_id', $myid)->first();
+        $userid = $yourchat->reply_id;
+        list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
+        return view('person.chatroom',compact('name','fileName','chatroomid','yourname','yourimage'));
     }
     
 

@@ -65,23 +65,28 @@
                     </header>
                 </div>
             </div>
-            <div class="chat_header">
-                <div class="chat_header_text">
-                    <h1 class="chat_header_title">chatroom</h1>
-                    <div class="border_line"></div>
-                    <div>
-                        <div class="chat_room">
-                            @foreach ($chatrooms as $chatroom)
-                            <?php $chatroomid = $chatroom->chatroom; ?>
-                            <div class="chat_room_info">
-                                <a href="chatroom/<?php echo $chatroomid; ?>" class="chat_room_enter">
-                                    <img src="/uploads/<?php echo $chatroom->image; ?>" alt="" class="chat_room_img">
-                                    <h4 class="chat_user_name">{{ $chatroom->name }}</h4>
-                                </a>
-                            </div>
-                            @endforeach
-                        </div>
+            <div class="row">
+                <div class="top_chat">
+                    <div class="your_info_region">
+                        <h2 class="top_chat_name">{{ $yourname }}</h2>
+                        <img src="/uploads/{{ $yourimage }}" alt="" class="your_chat_img">
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="talkroom col-sm-12">
+                   <div>
+                       <div class="mytalk">
+                           <div class="mytalk_image_space">
+                                <img src="/uploads/{{ $yourimage }}" alt="" class="mytalk_img">
+                           </div>
+                           <div class="mytalk_space">
+                            <div class=mytalk_text_space>
+                                <p>例</p>
+                            </div>
+                           </div>
+                       </div>
+                   </div>
                 </div>
             </div>
         </div>
