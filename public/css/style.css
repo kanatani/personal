@@ -1384,61 +1384,97 @@ input[type="file"] {
     float: right;
 }
 
+
 /* 自分のトーク */
-.mytalk {
-    margin: 0px 100px;
-    float: right;
+.messages {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
 }
 
-.mytalk_img {
-    width: 75px;
-    height: 75px;
-    border-radius: 50px;
-    float: right;
+.messages li{
+   display: flex;
 }
 
-.mytalk_space {
-    float: left;
+.messages li + li {
+    margin-top: 13px;
 }
 
-.mytalk_text_space {
-    position: relative;
-    display: inline-block;
-    margin: 1.5em 15px 1.5em 0;
-    padding: 7px 10px;
-    min-width: 120px;
-    max-width: 100%;
-    color: #555;
-    font-size: 16px;
+.pic {
+    width: 80px;
+    text-align: center;
+}
+
+.left-side .pic{
+    margin-left: 60px;
+}
+
+.right-side .pic{
+    margin-right: 60px;
+}
+
+.chat_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+li.right-side {
+    flex-direction: row-reverse;
+}
+
+.text {
     background: #fff;
-    border: solid 3px #555;
-    box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 8px;
+    padding: 16px 24px;
+    max-width: 60%;
+    line-height: 1.8;
+    position: relative;
 }
 
-.mytalk_text_space:before {
-    content: "";
+.left-side .text::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
     position: absolute;
-    top: 50%;
-    right: -24px;
-    margin-top: -12px;
-    border: 12px solid transparent;
-    border-left: 12px solid #FFF;
-    z-index: 2;
+    top: 12px;
+    left: -14px;
+    border-right-color: #fff;
   }
 
-.mytalk_text_space:after {
-    content: "";
+.right-side .text::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
     position: absolute;
-    top: 50%;
-    right: -30px;
-    margin-top: -14px;
-    border: 14px solid transparent;
-    border-left: 14px solid #555;
-    z-index: 1;
+    top: 12px;
+    right: -16px;
+    border-left-color: #fff;
   }
 
 
+  .chat_submit {
+    z-index: 50;
+  }
+
+  #chat_submit_text {
+      width: 80%;
+      border-radius: 10px;
+      position: fixed;
+      bottom: 3;
+      left: 30;
+  }
+
+  #chat_submit_button{
+      width: 15%;
+      height: 60px;
+      border-radius: 10px;
+      position: fixed;
+      right: 20;
+      bottom: 3;
+  }
 
 
 /* レスポンシブ */

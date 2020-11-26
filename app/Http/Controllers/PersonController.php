@@ -435,10 +435,14 @@ class PersonController extends Controller
     public function talkroom (Request  $request,$chatroomid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
+        // 相手の情報を取得
         $yourchat =  \App\Models\chat::where('chatroom' , $chatroomid)->where('user_id', $myid)->first();
         $userid = $yourchat->reply_id;
         list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
-        return view('person.chatroom',compact('name','fileName','chatroomid','yourname','yourimage'));
+
+        // トーク履歴の呼び出し
+        $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
+        return view('person.chatroom',compact('name','fileName','chatroomid','myid','chatroomtalk','yourname','yourimage'));
     }
     
 

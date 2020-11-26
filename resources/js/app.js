@@ -38,6 +38,7 @@ const app = new Vue({
             Loginactive: true,
             name: '',
             email: '',
+            message: '',
         };
     },
     methods: {
@@ -53,6 +54,14 @@ const app = new Vue({
         good: function() {
             this.Loginactive = !this.Loginactive;
         },
+        send() {
+            const chatroomid = document.getElementById('chat_submit_text').value;
+            const url = '/ajax/chatroom';
+            const params = { message: this.message };
+            axious.post(url , params).then((response) =>{
+                this.message = '';
+            });
+        }
     },
     computed: {
         isInValidName() {

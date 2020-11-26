@@ -49868,7 +49868,8 @@ var app = new Vue({
       showContent: false,
       Loginactive: true,
       name: '',
-      email: ''
+      email: '',
+      message: ''
     };
   },
   methods: {
@@ -49883,6 +49884,18 @@ var app = new Vue({
     },
     good: function good() {
       this.Loginactive = !this.Loginactive;
+    },
+    send: function send() {
+      var _this = this;
+
+      var chatroomid = document.getElementById('chat_submit_text').value;
+      var url = '/ajax/chatroom';
+      var params = {
+        message: this.message
+      };
+      axious.post(url, params).then(function (response) {
+        _this.message = '';
+      });
     }
   },
   computed: {
