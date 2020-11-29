@@ -19,6 +19,9 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Contracts\Auth\Authenticatable;
 use app\library\BaseClass;
 
+// event
+use App\Events\MessageCreated;
+
 class PersonController extends Controller
 {
     /**
@@ -428,7 +431,7 @@ class PersonController extends Controller
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         $chatrooms =  \DB::table('chat')
         ->join('user','chat.reply_id','=','user.userid')
-        ->where('chat.user_id',$myid)->get();
+        ->where('chat.user_id',$myid)->whereNull('message')->get();
         return view('person.chat',compact('name','fileName','chatrooms'));
     }
 
@@ -443,6 +446,42 @@ class PersonController extends Controller
         // トーク履歴の呼び出し
         $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
         return view('person.chatroom',compact('name','fileName','chatroomid','myid','chatroomtalk','yourname','yourimage'));
+    }
+
+    public function chatajax (Request  $request,$chatroomid)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        // 相手の情報を取得
+        $yourchat =  \App\Models\chat::where('chatroom' , $chatroomid)->where('user_id', $myid)->first();
+        $userid = $yourchat->reply_id;
+        list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
+        // トーク履歴の呼び出し
+        $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
+        return response()->json($chatroomtalk);
+    }
+
+
+    public function chatcreate (Request  $request,$chatroomid)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        // 相手の情報を取得
+        $yourchat =  \App\Models\chat::where('chatroom' , $chatroomid)->where('user_id', $myid)->first();
+        $userid = $yourchat->reply_id;
+        list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
+        $message = $request->message;
+        // メッセージ挿入
+        $chat = new chat;
+        $chat->chatroom = $chatroomid;
+        $chat->user_id = $myid;
+        $chat->reply_id = $userid;
+        $chat->message = $message;
+        $chat->save();
+        event(new MessageCreated($message));
+        // トーク履歴の呼び出し
+        // $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
+        
+
+        // return response()->json($chatroomtalk);
     }
     
 

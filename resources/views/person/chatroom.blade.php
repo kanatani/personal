@@ -75,32 +75,30 @@
             </div>
             <div class="row">
                 <div class="talkroom col-sm-12">
-                    <ul class="messages">
-                        @foreach ($chatroomtalk as $chatroomtalks)
-                        @if($myid == $chatroomtalks->user_id)
+                    <ul class="messages" v-for="m in messages">
+                       
                         <li class="right-side">
                             <div class="pic">
                             <img src="/uploads/{{ $fileName }}" alt="" class="chat_img">
                             </div>
                             <div class="text">
-                                {{ $chatroomtalks->message }}
+                               <span v-text="m.message"></span>
                             </div>
                         </li>
-                        @else
+                        
                         <li class="left-side">
                             <div class="pic">
                             <img src="/uploads/{{ $yourimage }}" alt="" class="chat_img">
                             </div>
                             <div class="text">
-                            {{ $chatroomtalks->message }}
+                           <span v-text="m.message"></span>
                             </div>
                         </li>
-                        @endif
-                        @endforeach
+                        
                     </ul>
                     <div class=chat_submit>
-                        <input type="hidden" name="chatroom" value="{{ $chatroomid }}">
-                            <textarea name="chat_submit_text" class="" id="chat_submit_text" cols="30" rows="3" v-model="message" ></textarea>
+                        <input type="hidden" id="chatroom" name="chatroom" value="{{ $chatroomid }}">
+                            <textarea  v-model="message"  name="chat_submit_text" class="" id="chat_submit_text" cols="30" rows="3"></textarea>
                             <button type="button" class="btn btn-outline-secondary" id="chat_submit_button" @click="send()">Secondary</button>
                         </form>
                     </div>
@@ -108,9 +106,4 @@
             </div>
         </div>
     </div>
-    <script>
-    $(function() {
-
-    });
-    </script>  
 @endsection

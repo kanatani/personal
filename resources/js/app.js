@@ -39,6 +39,7 @@ const app = new Vue({
             name: '',
             email: '',
             message: '',
+            messages: [],
         };
     },
     methods: {
@@ -54,14 +55,42 @@ const app = new Vue({
         good: function() {
             this.Loginactive = !this.Loginactive;
         },
-        send() {
-            const chatroomid = document.getElementById('chat_submit_text').value;
-            const url = '/ajax/chatroom';
-            const params = { message: this.message };
-            axious.post(url , params).then((response) =>{
-                this.message = '';
+        getMessages() {
+            const chatroomid = document.getElementById('chatroom').value;
+            axios({
+                method: 'GET',
+                url: '/person/chatroom/ajax/' + chatroomid,
+                data: chatroomid,
+                dataType: 'json',
+            }).then((response) => {
+               this.messages = response.data;
+            })
+            .catch(function(error) {
+                console.log(error);
             });
-        }
+        },
+        send() {
+            const chatroomid = document.getElementById('chatroom').value;
+            const message = this.message;
+            axios({
+                method: 'POST',
+                url: '/person/chatroom/' + chatroomid,
+                data: { message, chatroomid },
+                dataType: 'json',
+                validateStatus: () => true
+            }).then(res => {
+                this.message = '';
+                console.log('received a message');
+	            console.log(this.data);
+                console.log(res.status);
+            });  
+        },
+    },
+    mounted() {
+        this.getMessages();
+        Echo.channel('chat').listen('MessageCreated', (e) => {
+            this.getMessages();
+        });
     },
     computed: {
         isInValidName() {

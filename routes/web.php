@@ -67,6 +67,10 @@ Route::get('/person/user/{userid}','App\Http\Controllers\PersonController@uservi
 
 Route::get('/person/chatroom/{chatroomid}','App\Http\Controllers\PersonController@talkroom');
 
+Route::get('/person/chatroom/ajax/{chatroomid}','App\Http\Controllers\PersonController@chatajax');
+
+Route::post('/person/chatroom/{chatroomid}','App\Http\Controllers\PersonController@chatcreate');
+
 Route::post('/person/user/{userid}','App\Http\Controllers\PersonController@like');
 
 Route::post('/person/content_input','App\Http\Controllers\PersonController@store');
