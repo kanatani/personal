@@ -74,20 +74,17 @@
                 </div>
             </div>
             <div class="row">
-                
                 <div class="talkroom col-sm-12">
-                    <ul class="messages" v-for="m in messages" :key="m.user_id">
-                        <li class="right-side" >
+                    <ul class="messages" v-for="m in messages">
+                        <li class="right-side" v-if="m.user_id == <?php echo $myid ;?>">
                             <div class="pic">
                             <img src="/uploads/{{ $fileName }}" alt="" class="chat_img">
                             </div>
                             <div class="text">
                                <span v-text="m.message"></span>
-                            
                             </div>
                         </li>
-
-                        <li class="left-side">
+                        <li class="left-side" v-else>
                             <div class="pic">
                             <img src="/uploads/{{ $yourimage }}" alt="" class="chat_img">
                             </div>
@@ -97,7 +94,7 @@
                             </div>
                         </li>
                     </ul>
-                    <div class=chat_submit>
+                    <div class="chat_submit">
                         <input type="hidden" id="chatroom" name="chatroom" value="{{ $chatroomid }}">
                             <textarea  v-model="message"  name="chat_submit_text" class="" id="chat_submit_text" cols="30" rows="3"></textarea>
                             <button type="button" class="btn btn-outline-secondary" id="chat_submit_button" @click="send()">Secondary</button>
