@@ -56015,15 +56015,12 @@ var app = new Vue({
           message: message,
           chatroomid: chatroomid
         },
-        dataType: 'json',
-        validateStatus: function validateStatus() {
-          return true;
-        }
+        dataType: 'json'
       }).then(function (res) {
         _this2.message = '';
         console.log('received a message');
-        console.log(_this2.data);
         console.log(res.status);
+        _this2.messages = res.data;
       });
     }
   },

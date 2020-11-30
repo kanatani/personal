@@ -77,12 +77,11 @@ const app = new Vue({
                 url: '/person/chatroom/' + chatroomid,
                 data: { message, chatroomid },
                 dataType: 'json',
-                validateStatus: () => true
             }).then(res => {
                 this.message = '';
                 console.log('received a message');
-	            console.log(this.data);
                 console.log(res.status);
+                this.messages = res.data;
             });  
         },
     },

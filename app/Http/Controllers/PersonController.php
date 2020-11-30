@@ -435,6 +435,7 @@ class PersonController extends Controller
         return view('person.chat',compact('name','fileName','chatrooms'));
     }
 
+   // 初回チャットルーム
     public function talkroom (Request  $request,$chatroomid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
@@ -448,6 +449,7 @@ class PersonController extends Controller
         return view('person.chatroom',compact('name','fileName','chatroomid','myid','chatroomtalk','yourname','yourimage'));
     }
 
+    
     public function chatajax (Request  $request,$chatroomid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
@@ -461,6 +463,7 @@ class PersonController extends Controller
     }
 
 
+    // メッセージ送信時
     public function chatcreate (Request  $request,$chatroomid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
@@ -476,12 +479,12 @@ class PersonController extends Controller
         $chat->reply_id = $userid;
         $chat->message = $message;
         $chat->save();
+
         event(new MessageCreated($message));
         // トーク履歴の呼び出し
-        // $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
+        $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
         
-
-        // return response()->json($chatroomtalk);
+        return response()->json($chatroomtalk);
     }
     
 

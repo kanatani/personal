@@ -74,27 +74,28 @@
                 </div>
             </div>
             <div class="row">
+                
                 <div class="talkroom col-sm-12">
-                    <ul class="messages" v-for="m in messages">
-                       
-                        <li class="right-side">
+                    <ul class="messages" v-for="m in messages" :key="m.user_id">
+                        <li class="right-side" >
                             <div class="pic">
                             <img src="/uploads/{{ $fileName }}" alt="" class="chat_img">
                             </div>
                             <div class="text">
                                <span v-text="m.message"></span>
+                            
                             </div>
                         </li>
-                        
+
                         <li class="left-side">
                             <div class="pic">
                             <img src="/uploads/{{ $yourimage }}" alt="" class="chat_img">
                             </div>
                             <div class="text">
                            <span v-text="m.message"></span>
+                           <span></span>
                             </div>
                         </li>
-                        
                     </ul>
                     <div class=chat_submit>
                         <input type="hidden" id="chatroom" name="chatroom" value="{{ $chatroomid }}">
