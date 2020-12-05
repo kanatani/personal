@@ -28,9 +28,9 @@
                             </nav>
                             <div class="myaccount">
                                 <div class="out_form">
-                                    <form action="/person" method="get">
-                                    <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
-                                    </form>
+                                <form action="/person/logout" method="get">
+                                <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
+                                </form>
                                 </div>
                                 <div>
                                     <h3 class="myaccount_name">{{ $name }}

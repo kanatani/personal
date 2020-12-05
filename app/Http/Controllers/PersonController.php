@@ -344,11 +344,11 @@ class PersonController extends Controller
     }
 
     // ログアウト
-    public function  logout(Request $request)
+    public function logout (Request $request)
     {
-        Auth::logout();
         session()->flush();
-        return view('person');
+        \Auth::logout();
+        return redirect('person');
     }
 
     public function search (Request  $request)

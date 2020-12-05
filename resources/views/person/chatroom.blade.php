@@ -13,16 +13,16 @@
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="mypage">mypage</a>
+                                        <a href="{{ route('mypage') }}">mypage</a>
                                     </li>
                                     <li>
-                                        <a href="search">community</a>
+                                        <a href="{{ route('community') }}">community</a>
                                     </li>
                                     <li>
-                                        <a href="search">search</a>
+                                        <a href="{{ route('search') }}">search</a>
                                     </li>
                                     <li>
-                                        <a href="chat" class="current">chat</a>
+                                        <a href="{{ route('chat') }}" class="current">chat</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -47,7 +47,7 @@
                             <nav class="responsive" v-show="isActive">
                                     <ul>
                                         <li>
-                                            <a href="person/mypage">mypage</a>
+                                            <a href="mypage">mypage</a>
                                         </li>
                                         <li>
                                             <a href="search">community</a>
@@ -97,7 +97,7 @@
                     <div class="chat_submit">
                         <input type="hidden" id="chatroom" name="chatroom" value="{{ $chatroomid }}">
                             <textarea  v-model="message"  name="chat_submit_text" class="" id="chat_submit_text" cols="30" rows="3"></textarea>
-                            <button type="button" class="btn btn-outline-secondary" id="chat_submit_button" @click="send()">Secondary</button>
+                            <button type="button" class="btn btn-outline-secondary" id="chat_submit_button" @click="send()">submit</button>
                         </form>
                     </div>
                 </div>

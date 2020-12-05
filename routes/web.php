@@ -37,10 +37,7 @@ Route::get('person/loguin', function () {
     return view('person/loguin');
 });
 
-// Route::get('person/logout', function () {
-//     Auth::logout();
-//     return view('person.index');
-// });
+Route::get('person/logout', 'App\Http\Controllers\PersonController@logout');
 
 Route::get('person/extraversion', function () {
     return view('person/extraversion');
@@ -51,15 +48,18 @@ Route::get('/person/neuroticism', function () {
 });
 
 Route::get('/person', function () {
+       Auth::logout();
        session()->flush();
         return view('person.index');
 });
 
-Route::get('/person/chat', 'App\Http\Controllers\PersonController@chat');
+Route::get('/person/chat', 'App\Http\Controllers\PersonController@chat')->name('chat');
 
-Route::get('/person/mypage', 'App\Http\Controllers\PersonController@mypage');
+Route::get('/person/mypage', 'App\Http\Controllers\PersonController@mypage')->name('mypage');
 
-Route::get('/person/search','App\Http\Controllers\PersonController@search');
+Route::get('/person/search','App\Http\Controllers\PersonController@search')->name('search');
+
+Route::get('/person/community','App\Http\Controllers\PersonController@community')->name('community');
 
 Route::get('/person/search/{userid}','App\Http\Controllers\PersonController@look');
 

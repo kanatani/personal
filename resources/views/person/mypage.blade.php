@@ -167,7 +167,7 @@ switch (true) {
                                         <a href="mypage" class="current">mypage</a>
                                     </li>
                                     <li>
-                                        <a href="search">community</a>
+                                        <a href="community">community</a>
                                     </li>
                                     <li>
                                         <a href="search">search</a>
@@ -179,7 +179,7 @@ switch (true) {
                             </nav>
                         <div class="myaccount">
                             <div class="out_form">
-                                <form action="/person" method="get">
+                                <form action="/person/logout" method="get">
                                 <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
                                 </form>
                             </div>
@@ -221,7 +221,7 @@ switch (true) {
                     <div class="userid">
                         <h4>userid</h4>
                         <p>{{ $userid }}</p>
-                        <p> <?php echo Session::get('id');  ?></p>
+                        <p><?php echo Session::get('id');  ?></p>
                     </div>
                     <div>
                         <h1 class="your_page">your page</h1>
