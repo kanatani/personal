@@ -705,7 +705,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 }
 
 .bigcontent_text h1{
-    font-size: 50px;
+    font-size: 45px;
     color: rgb(247, 227, 55);
 }
 
@@ -763,7 +763,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 
 .character_box {
     margin: auto;
-    height: 150px;
+    height: 180px;
     width: 40%;
     box-sizing: border-box;
     margin-top: 30px;
@@ -783,7 +783,8 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 .special_text {
     background-color:rgba(255,255,255,0.6);
     border-radius: 20px;
-    width: 500px;
+    font-size: 27px;
+    width: 550px;
     color: rgb(247, 227, 55);
 }
 
@@ -1572,7 +1573,7 @@ li.right-side {
     }
 
     .character_box {
-        height: 250px;
+        height: 300px;
         width: 49%;
     }
 

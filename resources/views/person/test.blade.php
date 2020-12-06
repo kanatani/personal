@@ -96,7 +96,7 @@
                     <form action="/person/kind" method="get">
                         <button type="submit" class="btn btn-primary w-25">start</button>
                     </form>
-                    <form action="/person" method="post">
+                    <form action="/person" method="get">
                     <button type="submit" class="btn btn-info w-25">back</button>
                     </form>
                 </div>

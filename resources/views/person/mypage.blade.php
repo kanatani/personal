@@ -164,16 +164,16 @@ switch (true) {
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="mypage" class="current">mypage</a>
+                                        <a href="{{ route('mypage') }}" class="current">mypage</a>
                                     </li>
                                     <li>
-                                        <a href="community">community</a>
+                                        <a href="{{ route('community') }}">community</a>
                                     </li>
                                     <li>
-                                        <a href="search">search</a>
+                                        <a href="{{ route('search') }}">search</a>
                                     </li>
                                     <li>
-                                        <a href="chat">chat</a>
+                                        <a href="{{ route('chat') }}" >chat</a>
                                     </li>
                                 </ul>
                             </nav>

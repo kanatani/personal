@@ -486,9 +486,13 @@ class PersonController extends Controller
         
         return response()->json($chatroomtalk);
     }
-    
 
-
+    public function community (Request  $request)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        return view('person.community',compact('name','fileName'));
+       
+    }
 
     //  public function __construct()
     // {
