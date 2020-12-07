@@ -739,6 +739,11 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     margin: 60px 0px;
 }
 
+.character_msg p{
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+
 .character_subcontent p{
     margin: auto;
     width: 80%;
