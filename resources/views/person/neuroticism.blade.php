@@ -114,8 +114,6 @@
                                     <p>同意しない</p>
                                 </div>
                                 <div class="testborder">
-
-                                
                                 </div>
                             </div>
                         </div>

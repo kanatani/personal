@@ -225,7 +225,7 @@
                     <canvas id="myChart"></canvas>
                 </div>
                 <div class="big5_result_text row">
-                    <h1 id="big5_detail_title">big5 detail</h1>
+                    <h1 class="big5_detail_title">big5 detail</h1>
                     <div class="serious_result col-sm-12" id="bigfive_detail">
                         <p>勤勉性</p>
                         <div class="total_msg serious_message">
@@ -233,7 +233,6 @@
                             <div class="">
                                 <h3>{{ $serioussm }}</h3>
                                 <h1>{{ $serious }}</h1>
-                               
                             </div>
                         </div>
                     </div>
@@ -244,7 +243,6 @@
                             <div>
                                 <h3>{{ $kindsm }}</h3>
                                 <h1>{{ $kind }}</h1>
-                               
                             </div>
                         </div>
                     </div>
@@ -266,7 +264,6 @@
                             <div>
                                 <h3>{{ $extraversionsm }}</h3>
                                 <h1>{{ $extraversion }}</h1>
-                                
                             </div>
                         </div>
                     </div>
@@ -277,16 +274,23 @@
                             <div>
                                 <h3>{{ $neuroticismsm }}</h3>
                                 <h1>{{ $neuroticism }}</h1>
-                              
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="select_area">
-                    <a href="/person/loguin" class="badge badge-info">loguin</a>
-                    <br>
-                    <a href="/person" class="badge badge-dark">Dark</a>
+                    <form action="/person/loguin" method="get">
+                    <button type="submit" class="btn btn-outline-success" id="result_button">ログイン</button>
+                    </form>
+                    <form action="/person" method="get">
+                        <button type="submit" class="btn btn-outline-secondary" id="result_button">トップページ</button>
+                    </form>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer_title col-sm-12" id="footer_titles">
+                <p>© person 2020</p>
             </div>
         </div>
     </div>

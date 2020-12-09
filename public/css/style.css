@@ -254,7 +254,6 @@ p {
     margin: 20px auto;
 }
 .detail3 {
-    
     background-color: rgb(236, 224, 83);
     border-radius: 20px;
     margin: 20px auto;
@@ -272,28 +271,36 @@ p {
 }
 
 /* ログインページ */
+.login_parent {
+    display: table;
+}
+
+.enter_sub {
+    display: table-cell;
+}
+
 .enter_main {
+
     background-color: rgb(255, 246, 246);
-    height: 100%;
     text-align: center;
     z-index: 32;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 50%;
     height: 100%;
     background-color: rgba(214, 209, 209, 0.907);
-    display: flex;
+    display: table-cell;
     align-items: center;
     justify-content: center;
 }
 
 .sign_main {
-    width: 80%;
+   margin-top: 150px;
 }
 
 .login_main {
-    width: 80%;
+    margin-top: 200px;
 }
 
 /* 診断テスト説明 */
@@ -658,6 +665,7 @@ footer {
     margin: 20px;
     border-radius: 30px;
     height: 50px;
+    margin-left: 0px;
 }
 
 /* 勤勉テスト */
@@ -886,8 +894,9 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     text-align: center;
 }
 
-#big5_detail_title{
-    text-align: center;
+.big5_detail_title{
+
+    margin: 30px auto;
 }
 
 
@@ -896,7 +905,6 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     margin: auto;
 }
 
-/* 全体結果 */
 .serious_result p{
     color: white;
     padding: 0.5em;
@@ -913,20 +921,20 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 }
 
 .serious_message {
-    color: skyblue;
+    color: rgb(122, 211, 247);
 }
 
 .kind_message {
-    color: rgb(244, 247, 84);
+    color: rgb(236, 224, 83);
 }
 .openness_message {
-    color: rgb(151,247,200,0.6);;
+    color:rgb(147, 247, 147);
 }
 .extraversion_message {
-    color: rgb(244,104,104,0.6);;
+    color:rgb(247, 105, 105);
 }
 .neuroticism_message {
-    color: rgb(177,104,244,0.6);
+    color: rgb(240, 135, 240);
 }
 
 .kind_results p{
@@ -965,8 +973,12 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 }
 
 .select_area {
-    margin: auto;
+    margin-bottom: 40px;
     text-align: center;
+}
+#result_button {
+    border-radius: 20px;
+    width: 300px;
 }
 
 /* 新規登録 */

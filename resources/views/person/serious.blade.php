@@ -115,7 +115,7 @@
                         </div>
                     <?php } ?>
                     <input type="hidden" name="serious" value="serious">
-                    <input type="submit" class="btn btn-info w-50"  id="next-button" value="送信">
+                    <input type="submit" class="btn btn-info w-100"  id="next-button" value="送信">
                     </form>
                 </div>
             </div>
