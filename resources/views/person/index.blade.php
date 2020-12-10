@@ -98,11 +98,6 @@
           <p>自分でも知らない自分を知ってしまいましょう。</p>
         </div>
       </div>
-
-      <div class="social_button">
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="recommend" data-size="small" data-share="false"></div>
         <div class="row">
           <footer class="col-sm-12">
             <nav class="footer_nav">

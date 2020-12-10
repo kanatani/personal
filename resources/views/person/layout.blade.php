@@ -5,15 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>personality</title>
   <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
-  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
-  <link href="css/flat-ui.css" rel="stylesheet">
+  <!-- <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+  <link href="css/flat-ui.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
- 
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Sawarabi+Gothic&family=Sawarabi+Gothic&family=Sawarabi+Gothic&family=Grandstander:wght@100&family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link href="{{ url('/') }}/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><!-- Loading Bootstrap -->
+  <!-- <link href="{{ url('/') }}/dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">Loading Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

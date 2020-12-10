@@ -270,27 +270,63 @@ p {
     margin:20px  auto;
 }
 
+
+
 /* ログインページ */
 .login_parent {
-    display: table;
+    position: relative;
 }
 
 .enter_sub {
-    display: table-cell;
+    background-image: url('/images/shutterstock_653150977.jpg');
+    background-position: center center;
+    background-size:  cover;
+    position: fixed;
+    top: 0;
+    left:  0;
+    width: 60%;
+    height: 100%;
+    transition: 1.0s;
 }
 
-.enter_main {
+.sub-left-message {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 450;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 
-    background-color: rgb(255, 246, 246);
+#login-test-button
+{
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+/* .enter_sub:hover:after
+{
+    content: ' ';
+    background-color: rgba(82, 81, 81, 0.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 1.0s;
+} */
+
+.enter_main 
+{
     text-align: center;
     z-index: 32;
     position: fixed;
     top: 0;
     right: 0;
-    width: 50%;
+    width:40%;
     height: 100%;
-    background-color: rgba(214, 209, 209, 0.907);
-    display: table-cell;
+    background-color: rgba(216, 214, 214, 0.907);
     align-items: center;
     justify-content: center;
 }
@@ -301,6 +337,21 @@ p {
 
 .login_main {
     margin-top: 200px;
+}
+
+.login-title a{
+    color: rgb(12, 7, 1);
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
+    padding-bottom: 30px;
+    transition: all 1s;
+}
+
+.login-title a:hover{
+    text-decoration: none;
+    color: black;
+    opacity: 0.4;
 }
 
 /* 診断テスト説明 */
@@ -1612,6 +1663,45 @@ li.right-side {
         background-color:rgba(255,255,255,0.8);
         border-radius: 20px;
         width: 100%;
+    }
+
+    /* ログイン画面 */
+    .enter_sub,.enter_main {
+        position: relative;
+    }
+
+    .enter_subF
+    {
+        height: 600px;
+    }
+
+    .sub-left-message {
+        top: 300;
+    }
+
+    .enter_main{
+        height: 800px;
+    }
+
+    /* ログイン */
+    .login_parent {
+        position:relative;
+		width:100%;
+
+    }
+    .enter_sub,.enter_main {
+        position:relative;
+		width:100%;
+    }
+
+    .sign_main{
+        margin-top: 0px;
+        padding-top: 100px;
+    }
+
+    .login_main {
+        margin-top: 0px;
+        padding-top: 200px;
     }
 
     /* ログイン後のヘッダー */
