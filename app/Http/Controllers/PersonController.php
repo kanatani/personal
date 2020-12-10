@@ -251,20 +251,20 @@ class PersonController extends Controller
     }
 
     // サインアップ
-    public function signup (Request  $request)
-    {
-        $id = session()->get('id');
-        $loginuser = new loginuser;
-        $loginuser->userid = rand(); 
-        $loginuser->sessionid = $id;
-        $loginuser->name = $request->login_name; 
-        $loginuser->password = Hash::make($request->login_pass);
-        $loginuser->email = $request->login_mail; 
-        $loginuser->save(); 
-        $user =  loginuser::find($id);
-        Auth::loginUsingId($id);
-        return view('person.top');
-    }
+    // public function signup (Request  $request)
+    // {
+    //     $id = session()->get('id');
+    //     $loginuser = new loginuser;
+    //     $loginuser->userid = rand(); 
+    //     $loginuser->sessionid = $id;
+    //     $loginuser->name = $request->login_name; 
+    //     $loginuser->password = Hash::make($request->login_pass);
+    //     $loginuser->email = $request->login_mail; 
+    //     $loginuser->save(); 
+    //     $user =  loginuser::find($id);
+    //     Auth::loginUsingId($id);
+    //     return view('person.top');
+    // }
 
     // newuser登録画面
     public function start (Request  $request)
@@ -291,6 +291,22 @@ class PersonController extends Controller
         return view('person.mypage', compact('item','name','fileName','userid'));
     }
 
+
+    // サインアップ
+    // public function signup (Request  $request)
+    // {
+    //     $id = session()->get('id');
+    //     $loginuser = new loginuser;
+    //     $loginuser->userid = rand(); 
+    //     $loginuser->sessionid = $id;
+    //     $loginuser->name = $request->login_name; 
+    //     $loginuser->password = Hash::make($request->login_pass);
+    //     $loginuser->email = $request->login_mail; 
+    //     $loginuser->save(); 
+    //     $user =  loginuser::find($id);
+    //     Auth::loginUsingId($id);
+    //     return view('person.top');
+    // }
     // ログイン
     public function  login(Request $request)
     {
@@ -306,6 +322,17 @@ class PersonController extends Controller
         }
         else
         {
+            if(isset($request->login_name))
+            {
+                $id = session()->get('id');
+                $loginuser = new loginuser;
+                $loginuser->userid = rand(); 
+                $loginuser->sessionid = $id;
+                $loginuser->name = $request->login_name; 
+                $loginuser->password = Hash::make($request->login_pass);
+                $loginuser->email = $request->login_mail; 
+                $loginuser->save(); 
+            }
             $email = $request->login_mail;  
             $password = $request->login_pass;
             // アカウントチェック
@@ -320,11 +347,18 @@ class PersonController extends Controller
                     $users = session()->put('id', $user->sessionid);
                     $id = session()->get('id');
                 }
+                if(isset($request->login_name))
+                {
+                    return view('person.top');
+                }
+                else
+                {
                 $fileName= $user->image;
                 $item = test::find($id);
                 $name= $user->name;
                 $userid = $user->userid;
                 return view('person.mypage',compact('name','item','id','fileName','userid'));
+                }
             }
             else 
             {

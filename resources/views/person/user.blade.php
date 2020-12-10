@@ -149,15 +149,6 @@ switch (true) {
         $neuroticismsm = '鋼のメンタルの持ち主';
         break;
 }
-if(isset($yourlike))
-{
-    echo 'あるよ';
-    echo $yourlike;
-}
-else
-{
-    echo 'naiyo';
-}
 ?>
     <div class="container-fluid">
         <div id="app">       
@@ -171,16 +162,16 @@ else
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="/person/mypage">mypage</a>
+                                        <a href="{{ route('mypage') }}">mypage</a>
                                     </li>
                                     <li>
-                                        <a href="search">community</a>
+                                        <a href="{{ route('community') }}">community</a>
                                     </li>
                                     <li>
-                                        <a href="search" class="current">search</a>
+                                        <a href="{{ route('search') }}" class="current">search</a>
                                     </li>
                                     <li>
-                                        <a href="search">contact</a>
+                                        <a href="{{ route('chat') }}" >chat</a>
                                     </li>
                                 </ul>
                             </nav>

@@ -114,7 +114,6 @@
                 </ul>
             </nav>
           </footer>
-          
           <div class="footer_title col-sm-12" id="footer_titles">
               <p>© person 2020</p>
           </div>

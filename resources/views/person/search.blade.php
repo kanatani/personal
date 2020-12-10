@@ -16,10 +16,10 @@
                                         <a href="{{ route('mypage') }}">mypage</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('community') }}" class="current">community</a>
+                                        <a href="{{ route('community') }}">community</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('search') }}">search</a>
+                                        <a href="{{ route('search') }}" class="current">search</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('chat') }}" >chat</a>

@@ -26,6 +26,9 @@
             </header>
         </div>
         <div class="main_check">
+            <div class="main-check-title">
+                <h1>お問い合わせ</h1>
+            </div>
             <div class="card">
                 <div class="card_title">
                     <h3>Content Check</h3>
@@ -34,15 +37,15 @@
                     <blockquote class="blockquote mb-0">
                         <div class="check_detail">
                             <p class="check_detail_parts">お名前</p>
-                            <p>{{ $data1['name'] }}</p>
+                            <p class="check_detail_answer">{{ $data1['name'] }}</p>
                         </div>
                         <div class="check_detail">
                             <p class="check_detail_parts">メールアドレス</p>
-                            <p>{{ $data1['mail'] }}</p>
+                            <p class="check_detail_answer">{{ $data1['mail'] }}</p>
                         </div>
                         <div class="check_detail">
                             <p class="check_detail_parts">お問い合わせ内容</p>
-                            <p>{{ $data1['content'] }}</p>
+                            <p class="check_detail_answer">{{ $data1['content'] }}</p>
                         </div>
                     </blockquote>
                     <form action="/person/content_input" method="post">
@@ -56,6 +59,26 @@
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="row">
+          <footer class="col-sm-12">
+            <nav class="footer_nav">
+            <ul>
+                  <li>
+                    <a href="">top</a>
+                  </li>
+                  <li>
+                    <a href="">sign up</a>
+                  </li>
+                  <li>
+                    <a href="">お問い合わせ</a>
+                  </li>
+                </ul>
+            </nav>
+          </footer>
+          <div class="footer_title col-sm-12" id="footer_titles">
+              <p>© person 2020</p>
+          </div>
         </div>
     </div>
 </div>

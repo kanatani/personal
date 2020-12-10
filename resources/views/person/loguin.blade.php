@@ -7,10 +7,10 @@
                 <div class="login_parent">
                     <div class="enter_sub">
                         <div class="sub-left-message">
-                            <h2>If you have not start big5 test,lets start big5 test.</h2>
+                            <h2>If you have not started big5 test,lets start big5 test.</h2>
                             <br>
                             <h2>So you can get the application service.</h2>
-                            <form action="" method="get">
+                            <form action="/person/test" method="get">
                                 <button type="submit" class="btn  btn-outline-dark w-50" id="login-test-button">test</button>
                             </form>
                         </div>

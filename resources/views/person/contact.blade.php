@@ -45,17 +45,17 @@
             @csrf
              <div class="form-group">
                 <label for="simei">name</label>
-                <input v-model="name" class="form-control" id="simei" name="name"  type="text" placeholder="name">
+                <input v-model="name" class="form-control" id="simei" name="name"  type="text" placeholder="name" require>
                 <p v-if="isInValidName">名前を入力してください</p>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>
-                <input v-model="email" type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="email@example.com">
+                <input v-model="email" type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="email@example.com" require>
                 <p v-if="isInValidEmail">メールアドレスを入力してください</p>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="content"  rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="content"  rows="3" require></textarea>
             </div>
             <button type="submit" class="btn btn-primary w-25" id="contact_submit">Submit</button>
         </form>
