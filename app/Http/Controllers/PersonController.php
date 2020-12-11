@@ -528,6 +528,13 @@ class PersonController extends Controller
        
     }
 
+    public function make_community (Request  $request)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        return view('person.make-community',compact('name','fileName'));
+       
+    }
+
     //  public function __construct()
     // {
     //      $this->middleware('auth');

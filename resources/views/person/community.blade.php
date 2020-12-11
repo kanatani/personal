@@ -65,6 +65,36 @@
                     </header>
                 </div>
             </div>
+            <div class="row">
+                <div class="community">
+                    <div class="community-search">
+                        <form action="" method="get" id="community-form">
+                            <input type="text" class="community-word" name="community" placeholder="&#xf002; ">
+                            <button type="submit" class="btn btn-outline-info">検索</button>
+                        </form>
+                    </div>
+                    <div class="community-introduction">
+
+                    </div>
+                    <div class="my-community-images">
+                        mygroup
+                    </div>
+                    <div class="favorite-community-images">
+                        オススメ
+                    </div>
+                    <div class="community-button">
+                        <a href="{{ route('make') }}" class="btn btn-gradient"><span>PUSH！</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="footer_title col-sm-12" id="footer_titles">
+                    <p>© person 2020</p>
+                </div>
+            </div>
         </div>
     </div>
+    <script src="{{ asset('/js/jquery.bgswitcher.js') }}"></script>
+    <script src="{{ asset('/js/index.js') }}"></script>
+   
 @endsection
