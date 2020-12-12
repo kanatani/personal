@@ -5,27 +5,24 @@
         <div id="app">
             <div class="row fixed-top">
                 <header class="test_head col-sm-12">
-                    <div>
+                    <!-- <div> -->
                         <div class="header_title">
                             <h1>person</h1>
                         </div>
-                            <div :class="{'is-active':isActive}" class="btn-humburger" @click="toggleButton">
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <transition name="navi">
-                            <nav class="navi" v-show="isActive">
-                                    <ul>
-                                        <li><a href="{{ url('/person/') }}">トップページ</a></li>
-                                        <li><a href="{{ url('/person/contact') }}">お問い合わせ</a></li>
-                                        <li><a href="" v-on:click.prevent.stop="openModal">sign up</a></li>
-                                    </ul>
+                            <humburger-component></humburger-component>
+                            <!-- <transition name="navi">
+                                <nav class="navi" v-show="isActive">
+                                        <ul>
+                                            <li><a href="{{ url('/person/') }}">トップページ</a></li>
+                                            <li><a href="{{ url('/person/contact') }}">お問い合わせ</a></li>
+                                            <li><a href="" v-on:click.prevent.stop="openModal">sign up</a></li>
+                                        </ul>
                                 </nav>
                             </transition>
                     </div>
                 </header>
-            </div>
-            <div id="overlay" v-show="showContent">
+            </div> -->
+            <!-- <div id="overlay" v-show="showContent">
                       <div class="login_form">
                         <div>
                           <form  action="/person/top" method="post">
@@ -55,7 +52,7 @@
                           <button class="btn btn-info"id="login_submit" v-on:click="closeModal">close</button>
                         </div>
                       </div>
-               </div>
+               </div> -->
            </div>
          </div>
             <div class="row test_message" style="background:url({{ asset('/images/shutterstock_1471472060.jpg') }} ); background-size:cover;">
