@@ -77,7 +77,15 @@
 
                     </div>
                     <div class="my-community-images">
-                        mygroup
+                        @foreach ($my_community as $my_communitys)
+                            <?php $groupid = $my_communitys->groupid; ?>
+                            <div class="chat_room_info">
+                                <a href="chatroom/<?php echo $groupid; ?>" class="chat_room_enter">
+                                    <img src="/uploads/<?php echo $my_communitys->image; ?>" alt="" class="chat_room_img">
+                                    <h4 class="chat_user_name">{{ $my_communitys->name }}</h4>
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                     <div class="favorite-community-images">
                         オススメ

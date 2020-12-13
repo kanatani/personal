@@ -108,6 +108,7 @@ Route::post('/person/your_result/{$userid}', 'App\Http\Controllers\PersonControl
 
 // コミュニティ作成ページ
 Route::get('/person/community-make','App\Http\Controllers\PersonController@make_community')->name('make');
+Route::post('/person/community','App\Http\Controllers\PersonController@community')->name('maked-community');
 
 
 

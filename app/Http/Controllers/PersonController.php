@@ -11,6 +11,7 @@ use App\Models\test;
 use App\Models\loginuser;
 use App\Models\like;
 use App\Models\chat;
+use App\Models\Community;
 // hash
 use Illuminate\Support\Facades\Hash;
 // auth
@@ -250,21 +251,6 @@ class PersonController extends Controller
         return view('person.sum_result',compact('item'));
     }
 
-    // サインアップ
-    // public function signup (Request  $request)
-    // {
-    //     $id = session()->get('id');
-    //     $loginuser = new loginuser;
-    //     $loginuser->userid = rand(); 
-    //     $loginuser->sessionid = $id;
-    //     $loginuser->name = $request->login_name; 
-    //     $loginuser->password = Hash::make($request->login_pass);
-    //     $loginuser->email = $request->login_mail; 
-    //     $loginuser->save(); 
-    //     $user =  loginuser::find($id);
-    //     Auth::loginUsingId($id);
-    //     return view('person.top');
-    // }
 
     // newuser登録画面
     public function start (Request  $request)
@@ -338,15 +324,11 @@ class PersonController extends Controller
             // アカウントチェック
             if(Auth::attempt(['password' => $password, 'email' => $email])) {
                 if(session()->exists('id')) {
-                    $user =  \DB::table('user')->where('email', $email)->first();
-                    $id = session()->get('id');
+                    session()->flush();
                 }
-                else
-                {
-                    $user =  \DB::table('user')->where('email', $email)->first();
-                    $users = session()->put('id', $user->sessionid);
-                    $id = session()->get('id');
-                }
+                $user =  \DB::table('user')->where('email', $email)->first();
+                $users = session()->put('id', $user->sessionid);
+                $id = session()->get('id');
                 if(isset($request->login_name))
                 {
                     return view('person.top');
@@ -524,7 +506,20 @@ class PersonController extends Controller
     public function community (Request  $request)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
-        return view('person.community',compact('name','fileName'));
+        if(isset($request->community_name))
+        {
+            // コミュニティ作成
+            $community = new Community;
+            $community->groupid = rand(); 
+            $community->user_id= $myid; 
+            $community->member = 1;
+            $community->name = $request->community_name; 
+            $community->image = $request->file('image');
+            $community->category = $request->community_category; 
+            $community->save(); 
+        }
+        $my_community =  \App\Models\Community::where('user_id', $myid)->get();
+        return view('person.community',compact('name','fileName','my_community'));
        
     }
 

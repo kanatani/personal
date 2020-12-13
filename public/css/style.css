@@ -74,7 +74,7 @@ p {
 }
 
 .login_form {
-    height: 80%;
+    height: 60%;
     margin: 0px;
     padding: 0px;
     border-radius: 30px;
@@ -94,6 +94,7 @@ p {
 .login_title h3{
    vertical-align: middle; 
    line-height: 60px;
+   font-size: 30px;
    letter-spacing: 3px;
    font-family: 'Zilla Slab', serif;
 }
@@ -660,6 +661,7 @@ footer {
  }
  
  .test_footer {
+     width: 100%;
     padding: 0px;
     margin:  0px;
 }
@@ -1616,6 +1618,63 @@ li.right-side {
     box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
   }
 
+  /* コミュニティ作成 */
+  .make-community h3
+  {
+      padding-bottom: 15px;
+  }
+
+  .make-community-title {
+      padding-top: 150px;
+      padding-bottom: 10px;
+      text-align: center;
+  }
+
+  .make-community-title p{
+      padding-top: 15px;
+
+  }
+
+  .make-community-content {
+      text-align: center;
+      margin: auto;
+  }
+
+  .make-community-name {
+      margin: auto;
+      width: 500px;
+  }
+
+  .make-community-form {
+      border-radius: 10px;
+      width: 80%;
+      height: 40px;
+  }
+
+
+  .community-category {
+      width: 500px;
+      margin: auto;
+  }
+
+  #category {
+      font-size: 15px;
+      width: 500px;
+      border-radius: 15px;
+      height: 50px;
+      color: white;
+      background-color: teal;
+  }
+
+  .make-community-form,#category:focus {
+    outline: none;
+  }
+
+  #community-button {
+      margin-top: 20px;
+      width: 250px;
+      border-radius: 10px;
+  }
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {

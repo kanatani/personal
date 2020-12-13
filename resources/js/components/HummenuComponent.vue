@@ -4,7 +4,7 @@
       <ul>
         <li><a href="/person">トップページ</a></li>
         <li><a href="/person/contact">お問い合わせ</a></li>
-        <li><a href="" v-on:click.prevent.stop="openModal">sign up</a></li>
+        <li><a href="" v-on:click.prevent.stop="openModal">login</a></li>
       </ul>
     </nav>
     <div id="overlay" v-show="showContent">
@@ -12,20 +12,8 @@
         <div>
           <form action="/person/top" method="post">
             <input type="hidden" name="_token" :value="csrf">
-            <div class="login_title"><h3>sign up</h3></div>
+            <div class="login_title"><h3>login</h3></div>
             <div>
-              <div class="name_form">
-                <p class="form_text">name</p>
-                <input
-                  type="text"
-                  name="login_name"
-                  class="login_name"
-                  placeholder="&#xf007; yourname"
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >We'll never share your email with anyone else.</small
-                >
-              </div>
               <div class="email_form">
                 <p class="form_text">email</p>
                 <input

@@ -2035,18 +2035,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['isActive'],
   data: function data() {
@@ -43925,7 +43913,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("sign up")]
+              [_vm._v("login")]
             )
           ])
         ])
@@ -44005,7 +43993,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "login_title" }, [
-      _c("h3", [_vm._v("sign up")])
+      _c("h3", [_vm._v("login")])
     ])
   },
   function() {
@@ -44013,25 +44001,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("div", { staticClass: "name_form" }, [
-        _c("p", { staticClass: "form_text" }, [_vm._v("name")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "login_name",
-          attrs: {
-            type: "text",
-            name: "login_name",
-            placeholder: "&#xf007; yourname"
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "small",
-          { staticClass: "form-text text-muted", attrs: { id: "emailHelp" } },
-          [_vm._v("We'll never share your email with anyone else.")]
-        )
-      ]),
-      _vm._v(" "),
       _c("div", { staticClass: "email_form" }, [
         _c("p", { staticClass: "form_text" }, [_vm._v("email")]),
         _vm._v(" "),
