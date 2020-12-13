@@ -73,7 +73,7 @@
                     </div>
                     <div class="border_line"></div>
                     <div class="make-community-content"> 
-                        <form action="community" method="post">
+                        <form action="community" method="post" enctype="multipart/form-data">
                         @csrf
                             <div class="make-community-name">
                                 <h3>カードタイトル</h3>

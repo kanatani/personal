@@ -514,7 +514,13 @@ class PersonController extends Controller
             $community->user_id= $myid; 
             $community->member = 1;
             $community->name = $request->community_name; 
-            $community->image = $request->file('image');
+            $file = $request->file('image');
+            if($file->isValid()) {
+                $fileNames = time() . $file->getClientOriginalName();
+                $target_path = public_path('uploads');
+                $file->move($target_path, $fileNames);
+            }
+            $community->image = $fileNames;
             $community->category = $request->community_category; 
             $community->save(); 
         }

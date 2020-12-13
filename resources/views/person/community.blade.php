@@ -76,16 +76,26 @@
                     <div class="community-introduction">
 
                     </div>
-                    <div class="my-community-images">
+                    <div class="my-community-images-list">
+                        <div class="mygroup-title">
+                            <p>所属グループ</p>
+                        </div>
+                        <div class="community-room-group">
                         @foreach ($my_community as $my_communitys)
                             <?php $groupid = $my_communitys->groupid; ?>
-                            <div class="chat_room_info">
-                                <a href="chatroom/<?php echo $groupid; ?>" class="chat_room_enter">
-                                    <img src="/uploads/<?php echo $my_communitys->image; ?>" alt="" class="chat_room_img">
-                                    <h4 class="chat_user_name">{{ $my_communitys->name }}</h4>
+                            <div class="community-room-info">
+                                <a href="chatroom/<?php echo $groupid; ?>" class="community-room-enter">
+                                <div>
+                                    <img src="/uploads/<?php echo $my_communitys->image; ?>" alt="" class="my-community-image">
+                                </div>
+                                <br>
+                                <div>
+                                    <p class="community-name">{{ $my_communitys->name }}</p>
+                                </div>
                                 </a>
                             </div>
                         @endforeach
+                        </div>
                     </div>
                     <div class="favorite-community-images">
                         オススメ

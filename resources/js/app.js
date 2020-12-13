@@ -36,7 +36,6 @@ const app = new Vue({
     data() {
         return {
             isActive: false,
-            showContent: false,
             Loginactive: true,
             name: '',
             email: '',
@@ -47,12 +46,6 @@ const app = new Vue({
     methods: {
         toggleButton() {
             this.isActive = !this.isActive;
-        },
-        openModal: function(){
-            this.showContent = true
-        },
-        closeModal: function(){
-            this.showContent = false
         },
         good: function() {
             this.Loginactive = !this.Loginactive;

@@ -1568,7 +1568,8 @@ li.right-side {
   /* コミュニティ機能 */
   .community {
       padding-top: 150px;
-      width: 100%;
+      width: 90%;
+      margin: auto;
   }
 
   .community-search
@@ -1618,6 +1619,42 @@ li.right-side {
     box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
   }
 
+  .my-community-images-list {
+      margin: 30px 0px;
+  }
+
+.community-room-group 
+{
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+}
+
+  .community-room-info 
+  {
+      margin-right: 20px;
+      margin-top: 30px;
+      text-align: center;
+      display: inline-block;
+  }
+
+  .community-room-enter:hover
+  {
+      text-decoration: none;
+  }
+
+  .my-community-image
+  {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+  }
+
+  .community-name{
+      color: black;
+  }
+
   /* コミュニティ作成 */
   .make-community h3
   {
@@ -1635,14 +1672,14 @@ li.right-side {
 
   }
 
+  .make-community-name{
+    font-size: 10px;
+    padding-right: 10px;
+}
+
   .make-community-content {
       text-align: center;
       margin: auto;
-  }
-
-  .make-community-name {
-      margin: auto;
-      width: 500px;
   }
 
   .make-community-form {
@@ -1650,7 +1687,6 @@ li.right-side {
       width: 80%;
       height: 40px;
   }
-
 
   .community-category {
       width: 500px;
@@ -1675,6 +1711,7 @@ li.right-side {
       width: 250px;
       border-radius: 10px;
   }
+
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
