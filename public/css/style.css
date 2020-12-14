@@ -1655,6 +1655,19 @@ li.right-side {
       color: black;
   }
 
+  /* 画像クリック時 */
+
+  .community-fadein-content {
+    background-color: rgba(34, 31, 31, 0.671);
+    z-index: 60;
+    padding: 2rem 1rem;
+    position: fixed;
+    width: 100%;
+    height: 80rem;
+    top: 0;
+    right: 0;
+  }
+
   /* コミュニティ作成 */
   .make-community h3
   {

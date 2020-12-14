@@ -24,6 +24,7 @@ Vue.component('fadein-component', require('./components/FadeInComponent.vue').de
 Vue.component('image-component', require('./components/ImageComponent.vue').default);
 Vue.component('humburger-component', require('./components/HumburgerComponent.vue').default);
 Vue.component('menu-component', require('./components/HummenuComponent.vue').default);
+Vue.component('community-component', require('./components/CommunityComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,23 +33,32 @@ Vue.component('menu-component', require('./components/HummenuComponent.vue').def
  */
 
 const app = new Vue({
+    const chksjfa = document.getElementById('ch').value;
     el: '#app',
     data() {
         return {
             isActive: false,
             Loginactive: true,
+            isShow: false,
             name: '',
             email: '',
             message: '',
             messages: [],
+            CommunityName: document.getElementById('ch').value,
         };
     },
     methods: {
         toggleButton() {
             this.isActive = !this.isActive;
         },
+        opencommunity() {
+            this.isShow = !this.isShow;
+        },
         good: function() {
             this.Loginactive = !this.Loginactive;
+        },
+        tojiru: function() {
+            this.isShow = false;
         },
         getMessages() {
             const chatroomid = document.getElementById('chatroom').value;
