@@ -2,7 +2,7 @@
 @section('content')
 <body>
     <div class="container-fluid">
-        <div id="app">       
+        <div id="app">
             <div class="row">
                 <div  class="page_header">
                     <header>
@@ -13,16 +13,16 @@
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="{{ route('mypage') }}">mypage</a>
+                                        <a href="mypage">mypage</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('community') }}" class="current">community</a>
+                                        <a href="search" class="current">community</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('search') }}">search</a>
+                                        <a href="search">search</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('chat') }}">chat</a>
+                                        <a href="chat">chat</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -47,7 +47,7 @@
                             <nav class="responsive" v-show="isActive">
                                     <ul>
                                         <li>
-                                            <a href="mypage">mypage</a>
+                                            <a href="person/mypage">mypage</a>
                                         </li>
                                         <li>
                                             <a href="search">community</a>
@@ -64,16 +64,42 @@
                         </div>
                     </header>
                 </div>
-            </div>
-            <div class="row">
-            </div>
-            <div class="row">
-                <div class="footer_title col-sm-12" id="footer_titles">
-                    <p>© person 2020</p>
-                </div>
-            </div>
+             </div>
+             <div class="row make-community">
+                 <div class="col-sm-12">
+                    <div class="make-community-title">
+                        <h1>make community</h1>
+                        <p>自分があったらいいなと思う様なグループを作ることができます。同じ分野に興味を持っている人達と仲間を作ってconnectionを構築していきましょう。</p>
+                    </div>
+                    <div class="border_line"></div>
+                    <div class="make-community-content"> 
+                        <form action="community" method="post" enctype="multipart/form-data">
+                        @csrf
+                            <div class="make-community-name">
+                                <h3>カードタイトル</h3>
+                                <input type="text" class="make-community-form" name="community_name"placeholder="コミュニティ名を入力" require>
+                            </div>
+                            <div class="make-community-image">
+                                <image-component></image-component>
+                            </div>
+                            <div class="community-category">
+                                <h3>カテゴリー選択</h3>
+                                <select name="community_category" id="category">
+                                    <option value="音楽">音楽</option>
+                                    <option value="運動">運動</option>
+                                    <option value="ゲーム">ゲーム</option>
+                                    <option value="読書">読書</option>
+                                    <option value="アウトドア">アウトドア</option>
+                                    <option value="仕事">仕事</option>
+                                </select>
+                            </div>
+                            <div class="make-button">
+                                <button type="submit" class="btn btn-outline-info" id="community-button">コミュニティを作成</button>
+                            </div>
+                        </form>
+                    </div>
+                 </div>
+             </div>
         </div>
     </div>
-    <script src="{{ asset('/js/jquery.bgswitcher.js') }}"></script>
-    <script src="{{ asset('/js/index.js') }}"></script>
 @endsection

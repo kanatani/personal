@@ -80,11 +80,9 @@
                         <div class="mygroup-title">
                             <p>所属グループ</p>
                         </div>
+                        <input type="hidden" name="data" id="communitydata" value="<?php $my_community ?>">
                         <div class="community-room-group">
                         @foreach ($my_community as $my_communitys)
-                            <?php $groupid = $my_communitys->groupid; ?>
-                            <?php $name = $my_communitys->name; ?>
-                            <?php $image = $my_communitys->image; ?>
                             <div class="community-room-info">
                                 <a href="" v-on:click.prevent.stop="opencommunity" class="community-room-enter">
                                 <div>
@@ -96,9 +94,11 @@
                                 </a>
                             </div>
                             <div  :class="{'community-fadein-content':isShow}">
-                            <community-component :isShow="isShow" @close="tojiru"></community-component>
+                            <community-component 
+                            :community="{{ $my_communitys }}"
+                            :isShow="isShow" 
+                            @close="tojiru"></community-component>
                             </div>
-                            
                         @endforeach
                         </div>
                     </div>

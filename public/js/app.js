@@ -1915,8 +1915,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['isshow'],
+  props: {
+    'isshow': {
+      type: Boolean
+    },
+    'community': {
+      type: Object,
+      required: true
+    }
+  },
   data: function data() {
     return {//   isShow: false,
     };
@@ -1924,9 +1933,6 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     CommunityClose: function CommunityClose() {
       this.$emit('close');
-    },
-    closeModal: function closeModal() {
-      this.showContent = false;
     }
   }
 });
@@ -2098,6 +2104,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -43823,11 +43843,14 @@ var render = function() {
           value: _vm.isshow,
           expression: "isshow"
         }
-      ]
+      ],
+      staticClass: "community-detail"
     },
     [
       _c("div", { on: { click: _vm.CommunityClose } }, [
-        _vm._v("\n        dfhoajfkjapfk@afklajp\n    ")
+        _c("h3", [_vm._v(_vm._s(_vm.community.name))]),
+        _vm._v(" "),
+        _c("h3", [_vm._v(_vm._s(_vm.community))])
       ])
     ]
   )
@@ -44123,9 +44146,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { staticClass: "new_file" }, [
+    _c("h3", { staticClass: "profile_image_text" }, [
+      _vm._v("プロフィール画像")
+    ]),
+    _vm._v(" "),
+    _c("label", { staticClass: "file" }, [
+      _c("input", {
+        ref: "preview",
+        attrs: { type: "file", name: "image" },
+        on: { change: _vm.uploadFile }
+      }),
+      _vm._v("\n            ファイルを選択\n        ")
+    ]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _vm.url
+      ? _c("div", { staticClass: "preview-item" }, [
+          _c(
+            "div",
+            {
+              staticClass: "x_button",
+              staticStyle: { position: "absolute" },
+              on: { click: _vm.deletePreview }
+            },
+            [_vm._v("x")]
+          ),
+          _vm._v(" "),
+          _c("img", { attrs: { src: _vm.url, alt: "" } }),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      : _vm._e()
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("p", { staticClass: "preview-item-name" })])
+  }
+]
 render._withStripped = true
 
 
@@ -56341,7 +56404,8 @@ var app = new Vue({
       name: '',
       email: '',
       message: '',
-      messages: []
+      messages: [],
+      communiitydata: document.getElementById('communitydata').value
     };
   },
   methods: {
@@ -56391,7 +56455,21 @@ var app = new Vue({
         console.log(res.status);
         _this2.messages = res.data;
       });
-    }
+    } // community() {
+    //     const communitydata = document.getElementById('communitydata').value;
+    //     axios({
+    //         method: 'GET',
+    //         url: '/person/chatroom/ajax/' + chatroomid,
+    //         data: chatroomid,
+    //         dataType: 'json',
+    //     }).then((response) => {
+    //        this.messages = response.data;
+    //     })
+    //     .catch(function(error) {
+    //         console.log(error);
+    //     });
+    // },
+
   },
   mounted: function mounted() {
     var _this3 = this;

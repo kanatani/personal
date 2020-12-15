@@ -33,7 +33,6 @@ Vue.component('community-component', require('./components/CommunityComponent.vu
  */
 
 const app = new Vue({
-    const chksjfa = document.getElementById('ch').value;
     el: '#app',
     data() {
         return {
@@ -44,7 +43,7 @@ const app = new Vue({
             email: '',
             message: '',
             messages: [],
-            CommunityName: document.getElementById('ch').value,
+            communiitydata: document.getElementById('communitydata').value,
         };
     },
     methods: {
@@ -89,6 +88,20 @@ const app = new Vue({
                 this.messages = res.data;
             });  
         },
+        // community() {
+        //     const communitydata = document.getElementById('communitydata').value;
+        //     axios({
+        //         method: 'GET',
+        //         url: '/person/chatroom/ajax/' + chatroomid,
+        //         data: chatroomid,
+        //         dataType: 'json',
+        //     }).then((response) => {
+        //        this.messages = response.data;
+        //     })
+        //     .catch(function(error) {
+        //         console.log(error);
+        //     });
+        // },
     },
     mounted() {
         this.getMessages();

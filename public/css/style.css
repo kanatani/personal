@@ -1668,6 +1668,15 @@ li.right-side {
     right: 0;
   }
 
+  .community-detail {
+      margin: auto;
+      background-color: white;
+      margin-top: 150px;
+      width: 75%;
+      height: 40%;
+      border-radius: 30px;
+  }
+
   /* コミュニティ作成 */
   .make-community h3
   {
