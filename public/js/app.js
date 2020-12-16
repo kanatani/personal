@@ -1916,23 +1916,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    'isshow': {
+    isshow: {
       type: Boolean
     },
-    'community': {
+    community: {
       type: Object,
       required: true
     }
   },
   data: function data() {
-    return {//   isShow: false,
-    };
+    return {};
   },
   methods: {
     CommunityClose: function CommunityClose() {
-      this.$emit('close');
+      this.$emit("close");
     }
   }
 });
@@ -43848,14 +43862,44 @@ var render = function() {
     },
     [
       _c("div", { on: { click: _vm.CommunityClose } }, [
-        _c("h3", [_vm._v(_vm._s(_vm.community.name))]),
+        _c("div", { staticClass: "community-detail-title" }, [
+          _c("h3", [_vm._v(_vm._s(_vm.community.name))])
+        ]),
         _vm._v(" "),
-        _c("h3", [_vm._v(_vm._s(_vm.community))])
+        _c("div", { staticClass: "community-detail-image-list" }, [
+          _c("img", {
+            staticClass: "community-detail-image",
+            attrs: { src: "/uploads/" + _vm.community.image, alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
       ])
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "community-detail-menu" }, [
+      _c("div", { staticClass: "community-detail-menu-list" }, [
+        _c("div", { staticClass: "community-detail-menu-parts" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v("トーク")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "community-detail-menu-parts" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v("メンバー")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "community-detail-menu-parts" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v("退会")])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -56405,15 +56449,16 @@ var app = new Vue({
       email: '',
       message: '',
       messages: [],
-      communiitydata: document.getElementById('communitydata').value
+      communityinfo: ''
     };
   },
   methods: {
     toggleButton: function toggleButton() {
       this.isActive = !this.isActive;
     },
-    opencommunity: function opencommunity() {
-      this.isShow = !this.isShow;
+    opencommunity: function opencommunity(community) {
+      this.communityinfo = community;
+      this.isShow = true;
     },
     good: function good() {
       this.Loginactive = !this.Loginactive;
@@ -56455,21 +56500,7 @@ var app = new Vue({
         console.log(res.status);
         _this2.messages = res.data;
       });
-    } // community() {
-    //     const communitydata = document.getElementById('communitydata').value;
-    //     axios({
-    //         method: 'GET',
-    //         url: '/person/chatroom/ajax/' + chatroomid,
-    //         data: chatroomid,
-    //         dataType: 'json',
-    //     }).then((response) => {
-    //        this.messages = response.data;
-    //     })
-    //     .catch(function(error) {
-    //         console.log(error);
-    //     });
-    // },
-
+    }
   },
   mounted: function mounted() {
     var _this3 = this;

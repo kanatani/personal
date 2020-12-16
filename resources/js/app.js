@@ -43,15 +43,16 @@ const app = new Vue({
             email: '',
             message: '',
             messages: [],
-            communiitydata: document.getElementById('communitydata').value,
-        };
+            communityinfo: '',
+        }
     },
     methods: {
         toggleButton() {
             this.isActive = !this.isActive;
         },
-        opencommunity() {
-            this.isShow = !this.isShow;
+        opencommunity(community) {
+            this.communityinfo = community;
+            this.isShow = true;
         },
         good: function() {
             this.Loginactive = !this.Loginactive;
@@ -88,20 +89,6 @@ const app = new Vue({
                 this.messages = res.data;
             });  
         },
-        // community() {
-        //     const communitydata = document.getElementById('communitydata').value;
-        //     axios({
-        //         method: 'GET',
-        //         url: '/person/chatroom/ajax/' + chatroomid,
-        //         data: chatroomid,
-        //         dataType: 'json',
-        //     }).then((response) => {
-        //        this.messages = response.data;
-        //     })
-        //     .catch(function(error) {
-        //         console.log(error);
-        //     });
-        // },
     },
     mounted() {
         this.getMessages();
