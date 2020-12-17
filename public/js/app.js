@@ -43873,7 +43873,21 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _c("div", { staticClass: "community-detail-menu" }, [
+          _c("div", { staticClass: "community-detail-menu-list" }, [
+            _c("div", { staticClass: "community-detail-menu-parts" }, [
+              _c(
+                "a",
+                { attrs: { href: "/groupchat/" + _vm.community.groupid } },
+                [_vm._v("トーク")]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1)
+          ])
+        ])
       ])
     ]
   )
@@ -43883,20 +43897,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "community-detail-menu" }, [
-      _c("div", { staticClass: "community-detail-menu-list" }, [
-        _c("div", { staticClass: "community-detail-menu-parts" }, [
-          _c("a", { attrs: { href: "" } }, [_vm._v("トーク")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "community-detail-menu-parts" }, [
-          _c("a", { attrs: { href: "" } }, [_vm._v("メンバー")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "community-detail-menu-parts" }, [
-          _c("a", { attrs: { href: "" } }, [_vm._v("退会")])
-        ])
-      ])
+    return _c("div", { staticClass: "community-detail-menu-parts" }, [
+      _c("a", { attrs: { href: "" } }, [_vm._v("メンバー")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "community-detail-menu-parts" }, [
+      _c("a", { attrs: { href: "" } }, [_vm._v("退会")])
     ])
   }
 ]
@@ -56500,14 +56510,31 @@ var app = new Vue({
         console.log(res.status);
         _this2.messages = res.data;
       });
+    },
+    join: function join() {
+      var _this3 = this;
+
+      var grouplike = document.getElementById('grouplike').value;
+      axios({
+        method: 'POST',
+        url: '/person/group_detail',
+        data: {
+          grouplike: grouplike
+        },
+        dataType: 'json'
+      }).then(function (res) {
+        console.log(grouplike);
+        console.log(res.status);
+        _this3.messages = res.data;
+      });
     }
   },
   mounted: function mounted() {
-    var _this3 = this;
+    var _this4 = this;
 
     this.getMessages();
     Echo.channel('chat').listen('MessageCreated', function (e) {
-      _this3.getMessages();
+      _this4.getMessages();
     });
   },
   computed: {

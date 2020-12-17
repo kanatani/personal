@@ -35,6 +35,15 @@ class BaseClass {
         return [$item,$yourname,$yourimage];
     }
 
+    public static function look_groupuser($group) {
+        $loginuser = \DB::table('')->where('userid', $userid)->first();
+        $yourid = $loginuser->sessionid;
+        $yourname = $loginuser->name;
+        $yourimage = $loginuser->image;
+        $item = test::find($yourid);
+        return [$item,$yourname,$yourimage];
+    }
+
     
 
 

@@ -103,7 +103,24 @@
                         </div>
                     </div>
                     <div class="favorite-community-images">
-                        オススメ
+                        <div class="mygroup-title">
+                            <p>おすすめ</p>
+                        </div>
+                        <input type="hidden" name="data" id="communitydata" value="{{ $my_community }}">
+                        <div class="community-room-group">
+                        @foreach ($communities as $communitylist)
+                            <div class="community-room-info">
+                                <a href="group_detail/<?php echo $communitylist->groupid; ?>"  class="community-room-enter">
+                                <div>
+                                    <img src="/uploads/<?php echo $communitylist->image; ?>" alt="" class="my-community-image">
+                                </div>
+                                <div>
+                                    <p class="community-name">{{ $communitylist->name }}</p>
+                                </div>
+                                </a>
+                            </div>
+                        @endforeach
+                        </div>
                     </div>
                     <div class="community-button">
                         <a href="{{ route('make') }}" class="btn btn-gradient"><span>PUSH！</span></a>

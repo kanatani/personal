@@ -65,11 +65,18 @@ Route::get('/person/search/{userid}','App\Http\Controllers\PersonController@look
 
 Route::get('/person/user/{userid}','App\Http\Controllers\PersonController@userview');
 
+// トークルーム
 Route::get('/person/chatroom/{chatroomid}','App\Http\Controllers\PersonController@talkroom');
 
 Route::get('/person/chatroom/ajax/{chatroomid}','App\Http\Controllers\PersonController@chatajax');
 
 Route::post('/person/chatroom/{chatroomid}','App\Http\Controllers\PersonController@chatcreate');
+
+Route::get('/person/group/{groupchat}','App\Http\Controllers\PersonController@communitychat');
+
+Route::get('/person/group_detail/{groupid}','App\Http\Controllers\PersonController@communitydetail');
+
+Route::post('/person/group_detail','App\Http\Controllers\PersonController@community_join');
 
 Route::post('/person/user/{userid}','App\Http\Controllers\PersonController@like');
 

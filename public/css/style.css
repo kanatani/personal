@@ -1785,6 +1785,75 @@ li.right-side {
     opacity: 0.5;
 }
 
+/* グループ詳細 */
+
+.group-detail {
+    height: 1500px;
+    padding-top: 100px;
+}
+
+.group-detail-info {
+    width: 75%;
+    margin: auto;
+}
+
+.group-detail-info-list {
+    float: left;
+    margin-right: 20px;
+}
+
+.group-detail-info-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.group-detail-info-detail {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.group-detail-info-like {
+    width: 40%;
+    border-radius: 30px;
+    position: fixed;
+    z-index: 50;
+    bottom: 70;
+    left: 650;
+}
+
+#group-detail-info-button {
+    border-radius: 20px;
+    width: 50%;
+}
+
+.group-detail-border {
+    padding-top: 20px;
+}
+
+.group-detail-member-list {
+    width: 75%;
+    margin: auto;
+}
+
+.group-detail-member-info {
+    list-style: none;
+   margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.group-detail-member-info li{
+    width: 100%;
+    text-align: center;
+}
+
+.group-detail-member-image {
+    width: 150px;
+    border-radius: 30px;
+}
+
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
       /* ハンバーガー */

@@ -89,6 +89,19 @@ const app = new Vue({
                 this.messages = res.data;
             });  
         },
+        join() {
+            const grouplike = document.getElementById('grouplike').value;
+            axios({
+                method: 'POST',
+                url: '/person/group_detail',
+                data: { grouplike},
+                dataType: 'json',
+            }).then(res => {
+                console.log(grouplike);
+                console.log(res.status);
+                this.messages = res.data;
+            });  
+        },
     },
     mounted() {
         this.getMessages();

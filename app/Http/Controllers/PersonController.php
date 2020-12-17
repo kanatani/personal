@@ -451,6 +451,26 @@ class PersonController extends Controller
         return view('person.chat',compact('name','fileName','chatrooms'));
     }
 
+    public function communitychat (Request  $request,$groupchat)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        // 相手の情報を取得
+        $yourchat =  \App\Models\chat::where('chatroom' , $groupchat)->where('user_id', $myid)->first();
+        // トーク履歴の呼び出し
+        $chatroomtalk =  \App\Models\chat::where('chatroom', $groupchat)->whereNotNull('message')->get();
+        if(isset($chatroomtalk))
+        {
+            // 互いにいいねでチャットルーム作成
+            // 自分用
+            $chat = new chat;
+            $chat->chatroom = $groupid;
+            $chat->user_id = $myid;
+            $chat->reply_id = $groupid;
+            $chat->save();
+        }
+        return view('person.chatroom',compact('name','fileName','chatroomid','myid','chatroomtalk','yourname','yourimage'));
+    }
+
    // 初回チャットルーム
     public function talkroom (Request  $request,$chatroomid)
     {
@@ -524,8 +544,11 @@ class PersonController extends Controller
             $community->category = $request->community_category; 
             $community->save(); 
         }
+        // 自分のグループ
         $my_community =  \App\Models\Community::where('user_id', $myid)->get();
-        return view('person.community',compact('name','fileName','my_community'));
+        // 自分以外のグループ
+        $communities =  \App\Models\Community::where('user_id','<>', $myid)->get();
+        return view('person.community',compact('name','fileName','my_community','communities'));
        
     }
 
@@ -533,7 +556,37 @@ class PersonController extends Controller
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         return view('person.make-community',compact('name','fileName'));
-       
+    }
+
+    public function communitydetail (Request  $request,$groupid)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        // グループ情報
+        $communities =  \App\Models\Community::where('groupid', $groupid)->first();
+        // メンバー
+        $communitymember =  \DB::table('community')
+        ->join('user','community.user_id','=','user.userid')
+        ->where('community.groupid',$groupid)->get();
+
+        return view('person.group_detail',compact('name','fileName','communities','communitymember'));
+    }
+    
+    public function community_join (Request  $request)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        $joingroup =  \App\Models\Community::where('groupid', $request->grouplike)->first();
+        // グループ情報
+        $community = new Community;
+        $community->groupid = $joingroup->groupid; 
+        $community->user_id= $myid; 
+        $community->member += 1;
+        $community->name = $joingroup->name; 
+        $file = $request->file('image');
+        $community->image = $joingroup->image;
+        $community->category = $joingroup->category; 
+        $community->save(); 
+
+        return response()->json();
     }
 
     //  public function __construct()
