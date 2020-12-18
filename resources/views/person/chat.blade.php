@@ -19,10 +19,10 @@
                                         <a href="{{ route('community') }}">community</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('search') }}" class="current">search</a>
+                                        <a href="{{ route('search') }}">search</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('chat') }}" >chat</a>
+                                        <a href="{{ route('chat') }}"class="current">chat</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -71,14 +71,26 @@
                     <div class="border_line"></div>
                     <div>
                         <div class="chat_room">
+                            <div>
+                                {{ $chatrooms }}
+                            </div>
                             @foreach ($chatrooms as $chatroom)
                             <?php $chatroomid = $chatroom->chatroom; ?>
+                            @if(isset($chatroom->user_name))
                             <div class="chat_room_info">
                                 <a href="chatroom/<?php echo $chatroomid; ?>" class="chat_room_enter">
-                                    <img src="/uploads/<?php echo $chatroom->image; ?>" alt="" class="chat_room_img">
-                                    <h4 class="chat_user_name">{{ $chatroom->name }}</h4>
+                                    <img src="/uploads/<?php echo $chatroom->user_image; ?>" alt="" class="chat_room_img">
+                                    <h4 class="chat_user_name">{{ $chatroom->user_name }}</h4>
                                 </a>
                             </div>
+                            @else
+                            <div class="chat_room_info">
+                                <a href="chatroom/<?php echo $chatroomid; ?>" class="chat_room_enter">
+                                    <img src="/uploads/<?php echo $chatroom->community_image; ?>" alt="" class="chat_room_img">
+                                    <h4 class="chat_user_name">{{ $chatroom->community_name }}</h4>
+                                </a>
+                            </div>
+                            @endif
                             @endforeach
                         </div>
                     </div>

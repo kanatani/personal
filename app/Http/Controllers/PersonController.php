@@ -445,8 +445,11 @@ class PersonController extends Controller
     public function chat (Request  $request)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
+        // チャット一覧
         $chatrooms =  \DB::table('chat')
-        ->join('user','chat.reply_id','=','user.userid')
+        ->leftjoin('community','chat.chatroom','=','community.groupid')
+        ->leftjoin('user','chat.reply_id','=','user.userid')
+        ->select('chat.chatroom','user.name as user_name','user.image as user_image','community.image as community_image','community.name as community_name')
         ->where('chat.user_id',$myid)->whereNull('message')->get();
         return view('person.chat',compact('name','fileName','chatrooms'));
     }
@@ -572,6 +575,7 @@ class PersonController extends Controller
     }
     
 
+    // グループ参加
     public function community_join (Request  $request)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
@@ -585,6 +589,7 @@ class PersonController extends Controller
         }
         else
         {
+            // コミュニティ参加登録
             $community = new Community;
             $community->groupid = $joingroup->groupid; 
             $community->user_id= $myid; 
@@ -594,10 +599,17 @@ class PersonController extends Controller
             $community->image = $joingroup->image;
             $community->category = $joingroup->category; 
             $community->save(); 
+            // チャットルーム作成
+            $chat = new chat;
+            $chat->chatroom = $joingroup->groupid;
+            $chat->user_id = $myid;
+            $chat->reply_id = $joingroup->groupid;
+            $chat->save();
         }
         return response()->json($mygroupjoin);
     }
 
+    // グループ参加状態
     public function joinstatus (Request  $request,$grouplike)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
