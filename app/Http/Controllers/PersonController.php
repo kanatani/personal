@@ -571,22 +571,39 @@ class PersonController extends Controller
         return view('person.group_detail',compact('name','fileName','communities','communitymember'));
     }
     
+
     public function community_join (Request  $request)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
+        // 自分が入っているかどうか
+        $mygroupjoin =  \App\Models\Community::where('groupid', $request->grouplike)->where('user_id', $myid)->first();
         $joingroup =  \App\Models\Community::where('groupid', $request->grouplike)->first();
         // グループ情報
-        $community = new Community;
-        $community->groupid = $joingroup->groupid; 
-        $community->user_id= $myid; 
-        $community->member += 1;
-        $community->name = $joingroup->name; 
-        $file = $request->file('image');
-        $community->image = $joingroup->image;
-        $community->category = $joingroup->category; 
-        $community->save(); 
+        if(isset($mygroupjoin))
+        {
+            \App\Models\Community::where('groupid', $request->grouplike)->where('user_id', $myid)->delete();
+        }
+        else
+        {
+            $community = new Community;
+            $community->groupid = $joingroup->groupid; 
+            $community->user_id= $myid; 
+            $community->member += 1;
+            $community->name = $joingroup->name; 
+            $file = $request->file('image');
+            $community->image = $joingroup->image;
+            $community->category = $joingroup->category; 
+            $community->save(); 
+        }
+        return response()->json($mygroupjoin);
+    }
 
-        return response()->json();
+    public function joinstatus (Request  $request,$grouplike)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+        // 自分が入っているかどうか
+        $mygroup =  \App\Models\Community::where('groupid', $grouplike)->where('user_id', $myid)->first();
+        return response()->json($mygroup);
     }
 
     //  public function __construct()

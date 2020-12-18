@@ -44,6 +44,7 @@ const app = new Vue({
             message: '',
             messages: [],
             communityinfo: '',
+            myjoin: '',
         }
     },
     methods: {
@@ -89,21 +90,52 @@ const app = new Vue({
                 this.messages = res.data;
             });  
         },
+        // グループ参加
         join() {
             const grouplike = document.getElementById('grouplike').value;
             axios({
                 method: 'POST',
                 url: '/person/group_detail',
-                data: { grouplike},
+                data: {grouplike},
                 dataType: 'json',
             }).then(res => {
                 console.log(grouplike);
                 console.log(res.status);
-                this.messages = res.data;
+                console.log(res.data['groupid']);
+                if(res.data['groupid'] === undefined)
+                {
+                    this.myjoin = "join";
+                }
+                else
+                {
+                    this.myjoin = "nojoin";
+                }
+            });  
+        },
+        joinstatus() {
+            const grouplike = document.getElementById('grouplike').value;
+            axios({
+                method: 'get',
+                url: '/person/axios/group_detail/' + grouplike,
+                data: grouplike,
+                dataType: 'json',
+            }).then(res => {
+                console.log(grouplike);
+                console.log(res.status);
+                console.log(res.data['groupid']);
+                if(res.data['groupid'] === undefined)
+                {
+                    this.myjoin = "nojoin";
+                }
+                else
+                {
+                    this.myjoin = "join";
+                }
             });  
         },
     },
     mounted() {
+        this.joinstatus();
         this.getMessages();
         Echo.channel('chat').listen('MessageCreated', (e) => {
             this.getMessages();

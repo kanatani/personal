@@ -76,7 +76,10 @@ Route::get('/person/group/{groupchat}','App\Http\Controllers\PersonController@co
 
 Route::get('/person/group_detail/{groupid}','App\Http\Controllers\PersonController@communitydetail');
 
+Route::get('/person/axios/group_detail/{grouplike}','App\Http\Controllers\PersonController@joinstatus');
+
 Route::post('/person/group_detail','App\Http\Controllers\PersonController@community_join');
+
 
 Route::post('/person/user/{userid}','App\Http\Controllers\PersonController@like');
 

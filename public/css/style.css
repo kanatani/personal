@@ -1838,19 +1838,31 @@ li.right-side {
 }
 
 .group-detail-member-info {
+    width: 100%;
     list-style: none;
    margin: 0;
     padding: 0;
-    float: left;
+    transition: 1.0;
 }
 
 .group-detail-member-info li{
-    width: 100%;
+    width: 33.3%;
     text-align: center;
+    float: left;
+    margin: 40px 0px;
+}
+
+.group-detail-member-info a{
+   color: darkturquoise;
+}
+
+.group-detail-member-info a:hover{
+   text-decoration: none;
 }
 
 .group-detail-member-image {
     width: 150px;
+    height: 150px;
     border-radius: 30px;
 }
 
@@ -2066,7 +2078,31 @@ li.right-side {
         left: 110;
         bottom: 30;
     }
-    
+
+    /* グループメンバー */
+
+    .group-detail-member-list {
+        width: 100%;
+    }
+
+    .group-detail-member-image {
+        width: 110px;
+        height: 120px;
+    } 
+
+    .group-detail-info-like {
+        bottom: 70;
+        left: 115;
+        width: 100%;
+    }
+
+    .group-detail-info-title{
+        padding: 20px 0px;
+    }
+
+    .group-detail-info-title h2{
+        font-size: 25px;
+    }
   }
 
 

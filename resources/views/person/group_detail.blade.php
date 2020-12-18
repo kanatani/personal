@@ -67,7 +67,7 @@
             </div>
             <div class="group-detail">
                 <div class="group-detail-info">
-                    <div>
+                    <div class="group-detail-info-title">
                         <h2>{{ $communities->name }}</h2>
                     </div>
                     <div class="group-detail-info-list">
@@ -79,7 +79,8 @@
                     </div>
                     <div class="group-detail-info-like">
                         <input type="hidden" name="grouplike" id="grouplike" value="{{ $communities->groupid }}">
-                        <button type="button" class="btn btn-outline-info" id="group-detail-info-button" @click="join" >参加する!</button>
+                        <button v-if="myjoin === 'nojoin'" type="button" class="btn btn-outline-info" id="group-detail-info-button" @click="join" >参加する!</button>
+                        <button v-else type="button" class="btn btn-outline-info" id="group-detail-info-button" @click="join" >解除する!</button>
                     </div>
                 </div>
                 <div class="group-detail-border">
@@ -90,13 +91,20 @@
                         <ul class="group-detail-member-info">
                         @foreach ($communitymember as $communitymembers)
                         <li>
-                            <img class="group-detail-member-image" src="/uploads/{{ $communitymembers->image }}" alt="">
-                            <br>
-                            {{ $communitymembers->name }}
+                            <a href="/person/user/{{ $communitymembers->user_id }}" >
+                                <img class="group-detail-member-image" src="/uploads/{{ $communitymembers->image }}" alt="">
+                                <br>
+                                {{ $communitymembers->name }}
+                            </a>
                         </li>
                         @endforeach
                         </ul>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="footer_title col-sm-12" id="footer_titles">
+                    <p>© person 2020</p>
                 </div>
             </div>
         </div>

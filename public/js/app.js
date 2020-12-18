@@ -43878,14 +43878,20 @@ var render = function() {
             _c("div", { staticClass: "community-detail-menu-parts" }, [
               _c(
                 "a",
-                { attrs: { href: "/groupchat/" + _vm.community.groupid } },
+                { attrs: { href: "groupchat/" + _vm.community.groupid } },
                 [_vm._v("トーク")]
               )
             ]),
             _vm._v(" "),
-            _vm._m(0),
+            _c("div", { staticClass: "community-detail-menu-parts" }, [
+              _c(
+                "a",
+                { attrs: { href: "group_detail/" + _vm.community.groupid } },
+                [_vm._v("メンバー")]
+              )
+            ]),
             _vm._v(" "),
-            _vm._m(1)
+            _vm._m(0)
           ])
         ])
       ])
@@ -43893,14 +43899,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "community-detail-menu-parts" }, [
-      _c("a", { attrs: { href: "" } }, [_vm._v("メンバー")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -56459,7 +56457,8 @@ var app = new Vue({
       email: '',
       message: '',
       messages: [],
-      communityinfo: ''
+      communityinfo: '',
+      myjoin: ''
     };
   },
   methods: {
@@ -56511,6 +56510,7 @@ var app = new Vue({
         _this2.messages = res.data;
       });
     },
+    // グループ参加
     join: function join() {
       var _this3 = this;
 
@@ -56525,16 +56525,44 @@ var app = new Vue({
       }).then(function (res) {
         console.log(grouplike);
         console.log(res.status);
-        _this3.messages = res.data;
+        console.log(res.data['groupid']);
+
+        if (res.data['groupid'] === undefined) {
+          _this3.myjoin = "join";
+        } else {
+          _this3.myjoin = "nojoin";
+        }
+      });
+    },
+    joinstatus: function joinstatus() {
+      var _this4 = this;
+
+      var grouplike = document.getElementById('grouplike').value;
+      axios({
+        method: 'get',
+        url: '/person/axios/group_detail/' + grouplike,
+        data: grouplike,
+        dataType: 'json'
+      }).then(function (res) {
+        console.log(grouplike);
+        console.log(res.status);
+        console.log(res.data['groupid']);
+
+        if (res.data['groupid'] === undefined) {
+          _this4.myjoin = "nojoin";
+        } else {
+          _this4.myjoin = "join";
+        }
       });
     }
   },
   mounted: function mounted() {
-    var _this4 = this;
+    var _this5 = this;
 
+    this.joinstatus();
     this.getMessages();
     Echo.channel('chat').listen('MessageCreated', function (e) {
-      _this4.getMessages();
+      _this5.getMessages();
     });
   },
   computed: {
