@@ -25,6 +25,7 @@ Vue.component('image-component', require('./components/ImageComponent.vue').defa
 Vue.component('humburger-component', require('./components/HumburgerComponent.vue').default);
 Vue.component('menu-component', require('./components/HummenuComponent.vue').default);
 Vue.component('community-component', require('./components/CommunityComponent.vue').default);
+// Vue.component('community-component', require('./components/GroupComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -44,7 +45,6 @@ const app = new Vue({
             message: '',
             messages: [],
             communityinfo: '',
-            myjoin: '',
         }
     },
     methods: {
@@ -104,38 +104,18 @@ const app = new Vue({
                 console.log(res.data['groupid']);
                 if(res.data['groupid'] === undefined)
                 {
-                    this.myjoin = "join";
+                    let button = document.getElementById('group-detail-info-button');
+                    button.innerHTML = '解除する!';
                 }
                 else
                 {
-                    this.myjoin = "nojoin";
-                }
-            });  
-        },
-        joinstatus() {
-            const grouplike = document.getElementById('grouplike').value;
-            axios({
-                method: 'get',
-                url: '/person/axios/group_detail/' + grouplike,
-                data: grouplike,
-                dataType: 'json',
-            }).then(res => {
-                console.log(grouplike);
-                console.log(res.status);
-                console.log(res.data['groupid']);
-                if(res.data['groupid'] === undefined)
-                {
-                    this.myjoin = "nojoin";
-                }
-                else
-                {
-                    this.myjoin = "join";
+                    let button = document.getElementById('group-detail-info-button');
+                    button.innerHTML = '参加する!';
                 }
             });  
         },
     },
     mounted() {
-        this.joinstatus();
         this.getMessages();
         Echo.channel('chat').listen('MessageCreated', (e) => {
             this.getMessages();

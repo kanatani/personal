@@ -79,8 +79,11 @@
                     </div>
                     <div class="group-detail-info-like">
                         <input type="hidden" name="grouplike" id="grouplike" value="{{ $communities->groupid }}">
-                        <button v-if="myjoin === 'nojoin'" type="button" class="btn btn-outline-info" id="group-detail-info-button" @click="join" >参加する!</button>
-                        <button v-else type="button" class="btn btn-outline-info" id="group-detail-info-button" @click="join" >解除する!</button>
+                        @if(!isset($mygroupjoin))
+                        <button  type="button" class="btn btn-outline-info" id="group-detail-info-button" @click="join" >参加する!</button>
+                        @else
+                        <button type="button" class="btn btn-outline-info" id="group-detail-info-button" @click="join" >解除する!</button>
+                        @endif
                     </div>
                 </div>
                 <div class="group-detail-border">

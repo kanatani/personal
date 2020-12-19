@@ -450,7 +450,7 @@ class PersonController extends Controller
         ->leftjoin('community','chat.chatroom','=','community.groupid')
         ->leftjoin('user','chat.reply_id','=','user.userid')
         ->select('chat.chatroom','user.name as user_name','user.image as user_image','community.image as community_image','community.name as community_name')
-        ->where('chat.user_id',$myid)->whereNull('message')->get();
+        ->where('chat.user_id',$myid)->whereNull('message')->distinct()->get();
         return view('person.chat',compact('name','fileName','chatrooms'));
     }
 
@@ -566,12 +566,14 @@ class PersonController extends Controller
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         // グループ情報
         $communities =  \App\Models\Community::where('groupid', $groupid)->first();
+        // 自分が入っているかどうか
+        $mygroupjoin =  \App\Models\Community::where('groupid', $groupid)->where('user_id', $myid)->first();
         // メンバー
         $communitymember =  \DB::table('community')
         ->join('user','community.user_id','=','user.userid')
         ->where('community.groupid',$groupid)->get();
 
-        return view('person.group_detail',compact('name','fileName','communities','communitymember'));
+        return view('person.group_detail',compact('name','fileName','communities','communitymember','mygroupjoin'));
     }
     
 

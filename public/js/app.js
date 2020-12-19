@@ -56439,7 +56439,8 @@ Vue.component('fadein-component', __webpack_require__(/*! ./components/FadeInCom
 Vue.component('image-component', __webpack_require__(/*! ./components/ImageComponent.vue */ "./resources/js/components/ImageComponent.vue")["default"]);
 Vue.component('humburger-component', __webpack_require__(/*! ./components/HumburgerComponent.vue */ "./resources/js/components/HumburgerComponent.vue")["default"]);
 Vue.component('menu-component', __webpack_require__(/*! ./components/HummenuComponent.vue */ "./resources/js/components/HummenuComponent.vue")["default"]);
-Vue.component('community-component', __webpack_require__(/*! ./components/CommunityComponent.vue */ "./resources/js/components/CommunityComponent.vue")["default"]);
+Vue.component('community-component', __webpack_require__(/*! ./components/CommunityComponent.vue */ "./resources/js/components/CommunityComponent.vue")["default"]); // Vue.component('community-component', require('./components/GroupComponent.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -56457,8 +56458,7 @@ var app = new Vue({
       email: '',
       message: '',
       messages: [],
-      communityinfo: '',
-      myjoin: ''
+      communityinfo: ''
     };
   },
   methods: {
@@ -56512,8 +56512,6 @@ var app = new Vue({
     },
     // グループ参加
     join: function join() {
-      var _this3 = this;
-
       var grouplike = document.getElementById('grouplike').value;
       axios({
         method: 'POST',
@@ -56528,41 +56526,22 @@ var app = new Vue({
         console.log(res.data['groupid']);
 
         if (res.data['groupid'] === undefined) {
-          _this3.myjoin = "join";
+          var button = document.getElementById('group-detail-info-button');
+          button.innerHTML = '解除する!';
         } else {
-          _this3.myjoin = "nojoin";
-        }
-      });
-    },
-    joinstatus: function joinstatus() {
-      var _this4 = this;
+          var _button = document.getElementById('group-detail-info-button');
 
-      var grouplike = document.getElementById('grouplike').value;
-      axios({
-        method: 'get',
-        url: '/person/axios/group_detail/' + grouplike,
-        data: grouplike,
-        dataType: 'json'
-      }).then(function (res) {
-        console.log(grouplike);
-        console.log(res.status);
-        console.log(res.data['groupid']);
-
-        if (res.data['groupid'] === undefined) {
-          _this4.myjoin = "nojoin";
-        } else {
-          _this4.myjoin = "join";
+          _button.innerHTML = '参加する!';
         }
       });
     }
   },
   mounted: function mounted() {
-    var _this5 = this;
+    var _this3 = this;
 
-    this.joinstatus();
     this.getMessages();
     Echo.channel('chat').listen('MessageCreated', function (e) {
-      _this5.getMessages();
+      _this3.getMessages();
     });
   },
   computed: {
