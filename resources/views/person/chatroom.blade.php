@@ -68,10 +68,17 @@
             <div class="row">
                 <div class="top_chat">
                     <div class="your_info_region">
-                        <h2 class="top_chat_name">{{ $yourname }}</h2>
-                        <img src="/uploads/{{ $yourimage }}" alt="" class="your_chat_img">
+                        @if(isset( $groupinfo->community_name))
+                        <h2 class="top_chat_name">{{ $groupinfo->community_name}}</h2>
+                        <img src="/uploads/{{ $groupinfo->community_image }}" alt="" class="your_chat_img">
+                        @else
+                        <h2 class="top_chat_name">{{ $yourinfo->name}}</h2>
+                        <img src="/uploads/{{ $yourinfo->image }}" alt="" class="your_chat_img">
+                        @endif
                     </div>
                 </div>
+            </div>
+            <div>
             </div>
             <div class="row">
                 <div class="talkroom col-sm-12">
@@ -86,7 +93,7 @@
                         </li>
                         <li class="left-side" v-else>
                             <div class="pic">
-                            <img src="/uploads/{{ $yourimage }}" alt="" class="chat_img">
+                            <img :src="'/uploads/' + m.user_image" alt="" class="chat_img">
                             </div>
                             <div class="text">
                            <span v-text="m.message"></span>

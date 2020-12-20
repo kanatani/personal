@@ -474,30 +474,54 @@ class PersonController extends Controller
         return view('person.chatroom',compact('name','fileName','chatroomid','myid','chatroomtalk','yourname','yourimage'));
     }
 
-   // 初回チャットルーム
+//    // 初回チャットルーム
+//     public function talkroom (Request  $request,$chatroomid)
+//     {
+//         list($name,$fileName,$myid) = BaseClass::look_myuser();
+//         // 相手の情報を取得
+//         $yourchat =  \App\Models\chat::where('chatroom' , $chatroomid)->where('user_id', $myid)->first();
+//         $userid = $yourchat->reply_id;
+//         list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
+
+//         // トーク履歴の呼び出し
+//         $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
+//         return view('person.chatroom',compact('name','fileName','chatroomid','myid','chatroomtalk','yourname','yourimage'));
+//     }
+
     public function talkroom (Request  $request,$chatroomid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
-        // 相手の情報を取得
-        $yourchat =  \App\Models\chat::where('chatroom' , $chatroomid)->where('user_id', $myid)->first();
-        $userid = $yourchat->reply_id;
-        list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
+        // 相手の情報
+        $groupinfo =  \DB::table('chat')
+        ->leftjoin('community','chat.chatroom','=','community.groupid')
+        ->leftjoin('user','chat.user_id','=','user.userid')
+        ->select('user.name as user_name','user.image as user_image','community.image as community_image','community.name as community_name')
+        ->where('chat.chatroom',$chatroomid)->first();
 
-        // トーク履歴の呼び出し
-        $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
-        return view('person.chatroom',compact('name','fileName','chatroomid','myid','chatroomtalk','yourname','yourimage'));
+        if(!isset($groupinfo->community_name))
+        {
+            $yourinfo = \DB::table('chat')
+            ->leftjoin('user','chat.reply_id','=','user.userid')
+            ->select('user.name as name','user.image as image')
+            ->where('chat.chatroom',$chatroomid)->where('chat.user_id',$myid)->first();
+            return view('person.chatroom',compact('name','fileName','chatroomid','myid','yourinfo'));
+        }
+        else
+        {
+            return view('person.chatroom',compact('name','fileName','chatroomid','myid','groupinfo'));
+        }
+        
     }
 
-    
     public function chatajax (Request  $request,$chatroomid)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         // 相手の情報を取得
-        $yourchat =  \App\Models\chat::where('chatroom' , $chatroomid)->where('user_id', $myid)->first();
-        $userid = $yourchat->reply_id;
-        list($item,$yourname,$yourimage) = BaseClass::look_youruser($userid);
-        // トーク履歴の呼び出し
-        $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
+        $chatroomtalk =  \DB::table('chat')
+        ->leftjoin('community','chat.chatroom','=','community.groupid')
+        ->leftjoin('user','chat.user_id','=','user.userid')
+        ->select('chat.chatroom','chat.id as id','user.name as user_name','user.userid as user_id','user.image as user_image','community.image as community_image','community.name as community_name','chat.message as message')
+        ->where('chat.chatroom',$chatroomid)->whereNotNull('message')->orderBy('id', 'asc')->get();
         return response()->json($chatroomtalk);
     }
 
@@ -521,10 +545,14 @@ class PersonController extends Controller
 
         event(new MessageCreated($message));
         // トーク履歴の呼び出し
-        $chatroomtalk =  \App\Models\chat::where('chatroom', $chatroomid)->whereNotNull('message')->get();
-        
+        $chatroomtalk =  \DB::table('chat')
+        ->leftjoin('community','chat.chatroom','=','community.groupid')
+        ->leftjoin('user','chat.user_id','=','user.userid')
+        ->select('chat.chatroom','user.name as user_name','user.userid as user_id','user.image as user_image','community.image as community_image','community.name as community_name','chat.message as message','chat.id as id')
+        ->where('chat.chatroom',$chatroomid)->whereNotNull('message')->orderBy('id', 'asc')->get();
         return response()->json($chatroomtalk);
     }
+
 
     public function community (Request  $request)
     {

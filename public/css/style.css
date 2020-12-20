@@ -1454,14 +1454,14 @@ input[type="file"] {
 }
 
 .your_info_region {
-    width: 200px;
+    width: 400px;
     margin: auto;
     text-align: center;
 }
 
 .top_chat_name {
     padding-top: 35px;
-    width: 30px;
+    width: 300px;
    float: left;
 }
 
