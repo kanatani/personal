@@ -72,7 +72,7 @@ Route::get('/person/chatroom/ajax/{chatroomid}','App\Http\Controllers\PersonCont
 
 Route::post('/person/chatroom/{chatroomid}','App\Http\Controllers\PersonController@chatcreate');
 
-Route::get('/person/group/{groupchat}','App\Http\Controllers\PersonController@communitychat');
+Route::get('/person/groupchat/{groupchat}','App\Http\Controllers\PersonController@communitychat');
 
 Route::get('/person/group_detail/{groupid}','App\Http\Controllers\PersonController@communitydetail');
 

@@ -1476,7 +1476,8 @@ input[type="file"] {
 
 /* 自分のトーク */
 .messages {
-    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 0px;
     list-style: none;
 }
