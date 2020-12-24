@@ -22,6 +22,10 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('fadein-component', require('./components/FadeInComponent.vue').default);
 Vue.component('image-component', require('./components/ImageComponent.vue').default);
+Vue.component('humburger-component', require('./components/HumburgerComponent.vue').default);
+Vue.component('menu-component', require('./components/HummenuComponent.vue').default);
+Vue.component('community-component', require('./components/CommunityComponent.vue').default);
+// Vue.component('community-component', require('./components/GroupComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -34,26 +38,28 @@ const app = new Vue({
     data() {
         return {
             isActive: false,
-            showContent: false,
             Loginactive: true,
+            isShow: false,
             name: '',
             email: '',
             message: '',
             messages: [],
-        };
+            communityinfo: '',
+        }
     },
     methods: {
         toggleButton() {
             this.isActive = !this.isActive;
         },
-        openModal: function(){
-            this.showContent = true
-        },
-        closeModal: function(){
-            this.showContent = false
+        opencommunity(community) {
+            this.communityinfo = community;
+            this.isShow = true;
         },
         good: function() {
             this.Loginactive = !this.Loginactive;
+        },
+        tojiru: function() {
+            this.isShow = false;
         },
         getMessages() {
             const chatroomid = document.getElementById('chatroom').value;
@@ -82,6 +88,30 @@ const app = new Vue({
                 console.log('received a message');
                 console.log(res.status);
                 this.messages = res.data;
+            });  
+        },
+        // グループ参加
+        join() {
+            const grouplike = document.getElementById('grouplike').value;
+            axios({
+                method: 'POST',
+                url: '/person/group_detail',
+                data: {grouplike},
+                dataType: 'json',
+            }).then(res => {
+                console.log(grouplike);
+                console.log(res.status);
+                console.log(res.data['groupid']);
+                if(res.data['groupid'] === undefined)
+                {
+                    let button = document.getElementById('group-detail-info-button');
+                    button.innerHTML = '解除する!';
+                }
+                else
+                {
+                    let button = document.getElementById('group-detail-info-button');
+                    button.innerHTML = '参加する!';
+                }
             });  
         },
     },

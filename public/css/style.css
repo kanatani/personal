@@ -74,7 +74,7 @@ p {
 }
 
 .login_form {
-    height: 80%;
+    height: 60%;
     margin: 0px;
     padding: 0px;
     border-radius: 30px;
@@ -94,6 +94,7 @@ p {
 .login_title h3{
    vertical-align: middle; 
    line-height: 60px;
+   font-size: 30px;
    letter-spacing: 3px;
    font-family: 'Zilla Slab', serif;
 }
@@ -660,6 +661,7 @@ footer {
  }
  
  .test_footer {
+     width: 100%;
     padding: 0px;
     margin:  0px;
 }
@@ -1452,14 +1454,14 @@ input[type="file"] {
 }
 
 .your_info_region {
-    width: 200px;
+    width: 400px;
     margin: auto;
     text-align: center;
 }
 
 .top_chat_name {
     padding-top: 35px;
-    width: 30px;
+    width: 300px;
    float: left;
 }
 
@@ -1474,7 +1476,8 @@ input[type="file"] {
 
 /* 自分のトーク */
 .messages {
-    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 0px;
     list-style: none;
 }
@@ -1563,6 +1566,306 @@ li.right-side {
       bottom: 3;
   }
 
+  /* コミュニティ機能 */
+  .community {
+      padding-top: 150px;
+      width: 90%;
+      margin: auto;
+  }
+
+  .community-search
+  {
+      width: 80%;
+      text-align: center;
+      margin: auto;
+      background-color: rgb(218, 214, 218);
+      border-radius: 20px;
+  }
+
+  .community-word {
+      border-radius: 10px;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 501;
+  }
+
+  .community-introduction {
+      margin: auto;
+      width: 100%;
+      background-size: contain;
+      height: 300px;
+      background-position: center center;
+      background-size:  cover;
+  }
+
+  .community-button {
+      margin: auto;
+      text-align: center;
+  }
+
+  a.btn-gradient {
+      width: 60%;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 20px;
+      background-image: -webkit-linear-gradient(left, #fa709a 0%, #fee140 100%);
+      background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+  }
+  
+  a.btn-gradient:hover {
+    -webkit-transform: translate(0, -2px);
+    transform: translate(0, -2px);
+    color: #fff;
+    -webkit-box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+  }
+
+  .my-community-images-list {
+      margin: 30px 0px;
+  }
+
+.community-room-group 
+{
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+}
+
+  .community-room-info 
+  {
+      margin-right: 20px;
+      margin-top: 30px;
+      text-align: center;
+      display: inline-block;
+  }
+
+  .community-room-enter:hover
+  {
+      text-decoration: none;
+  }
+
+  .my-community-image
+  {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+  }
+
+  .community-name{
+      color: black;
+  }
+
+  /* 画像クリック時 */
+
+  .community-fadein-content {
+    background-color: rgba(34, 31, 31, 0.671);
+    z-index: 60;
+    padding: 2rem 1rem;
+    position: fixed;
+    width: 100%;
+    height: 90rem;
+    top: 0;
+    right: 0;
+  }
+
+  .community-detail {
+      margin: auto;
+      background-color: white;
+      margin-top: 150px;
+      width: 75%;
+      height: 40%;
+      border-radius: 30px;
+  }
+
+  /* コミュニティ作成 */
+  .make-community h3
+  {
+      padding-bottom: 15px;
+  }
+
+  .make-community-title {
+      padding-top: 150px;
+      padding-bottom: 10px;
+      text-align: center;
+  }
+
+  .make-community-title p{
+      padding-top: 15px;
+
+  }
+
+  .make-community-name{
+    font-size: 10px;
+    padding-right: 10px;
+}
+
+  .make-community-content {
+      text-align: center;
+      margin: auto;
+  }
+
+  .make-community-form {
+      border-radius: 10px;
+      width: 80%;
+      height: 40px;
+  }
+
+  .community-category {
+      width: 500px;
+      margin: auto;
+  }
+
+  #category {
+      font-size: 15px;
+      width: 500px;
+      border-radius: 15px;
+      height: 50px;
+      color: white;
+      background-color: teal;
+  }
+
+  .make-community-form,#category:focus {
+    outline: none;
+  }
+
+  #community-button {
+      margin-top: 20px;
+      width: 250px;
+      border-radius: 10px;
+  }
+
+.community-detail {
+    position: relative;
+}
+
+.community-detail-title {
+    padding-top: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.community-detail-image-list {
+    margin: auto;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.community-detail-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 40px;
+}
+
+.community-detail-menu {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+.community-detail-menu-list{
+    margin: auto;
+   text-align: center;
+    display: flex;
+}
+
+.community-detail-menu-parts {
+    text-align: center;
+    margin: auto;
+    padding: 35px;
+}
+.community-detail-menu-parts a{
+    color: white;
+}
+
+.community-detail-menu-parts a:hover{
+    color: white;
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+/* グループ詳細 */
+
+.group-detail {
+    height: 1500px;
+    padding-top: 100px;
+}
+
+.group-detail-info {
+    width: 75%;
+    margin: auto;
+}
+
+.group-detail-info-list {
+    float: left;
+    margin-right: 20px;
+}
+
+.group-detail-info-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.group-detail-info-detail {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.group-detail-info-like {
+    width: 40%;
+    border-radius: 30px;
+    position: fixed;
+    z-index: 50;
+    bottom: 70;
+    left: 650;
+}
+
+#group-detail-info-button {
+    border-radius: 20px;
+    width: 50%;
+}
+
+.group-detail-border {
+    padding-top: 20px;
+}
+
+.group-detail-member-list {
+    width: 75%;
+    margin: auto;
+}
+
+.group-detail-member-info {
+    width: 100%;
+    list-style: none;
+   margin: 0;
+    padding: 0;
+    transition: 1.0;
+}
+
+.group-detail-member-info li{
+    width: 33.3%;
+    text-align: center;
+    float: left;
+    margin: 40px 0px;
+}
+
+.group-detail-member-info a{
+   color: darkturquoise;
+}
+
+.group-detail-member-info a:hover{
+   text-decoration: none;
+}
+
+.group-detail-member-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+}
 
 /* レスポンシブ */
   @media screen and (max-width : 768px) {
@@ -1776,7 +2079,31 @@ li.right-side {
         left: 110;
         bottom: 30;
     }
-    
+
+    /* グループメンバー */
+
+    .group-detail-member-list {
+        width: 100%;
+    }
+
+    .group-detail-member-image {
+        width: 110px;
+        height: 120px;
+    } 
+
+    .group-detail-info-like {
+        bottom: 70;
+        left: 115;
+        width: 100%;
+    }
+
+    .group-detail-info-title{
+        padding: 20px 0px;
+    }
+
+    .group-detail-info-title h2{
+        font-size: 25px;
+    }
   }
 
 

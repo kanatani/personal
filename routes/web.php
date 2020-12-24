@@ -65,11 +65,21 @@ Route::get('/person/search/{userid}','App\Http\Controllers\PersonController@look
 
 Route::get('/person/user/{userid}','App\Http\Controllers\PersonController@userview');
 
+// トークルーム
 Route::get('/person/chatroom/{chatroomid}','App\Http\Controllers\PersonController@talkroom');
 
 Route::get('/person/chatroom/ajax/{chatroomid}','App\Http\Controllers\PersonController@chatajax');
 
 Route::post('/person/chatroom/{chatroomid}','App\Http\Controllers\PersonController@chatcreate');
+
+Route::get('/person/groupchat/{groupchat}','App\Http\Controllers\PersonController@communitychat');
+
+Route::get('/person/group_detail/{groupid}','App\Http\Controllers\PersonController@communitydetail');
+
+Route::get('/person/axios/group_detail/{grouplike}','App\Http\Controllers\PersonController@joinstatus');
+
+Route::post('/person/group_detail','App\Http\Controllers\PersonController@community_join');
+
 
 Route::post('/person/user/{userid}','App\Http\Controllers\PersonController@like');
 
@@ -106,7 +116,9 @@ Route::post('/person/your_result/{$userid}', 'App\Http\Controllers\PersonControl
 
 //Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
-
+// コミュニティ作成ページ
+Route::get('/person/community-make','App\Http\Controllers\PersonController@make_community')->name('make');
+Route::post('/person/community','App\Http\Controllers\PersonController@community')->name('maked-community');
 
 
 

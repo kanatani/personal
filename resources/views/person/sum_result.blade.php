@@ -102,7 +102,6 @@
                 $openness= '器用タイプ';
                 $opennessimg= "/images/shutterstock_670192495.jpg";
                 $opennesssm = 'ルールと刺激をコントロールする';
-                $opennessmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                  break;
 
                 case $item['openness'] >= -13.5 && $item['openness'] <= -4.9;
@@ -123,33 +122,32 @@
         switch (true) {
             case $item['extraversion'] >= 13.6;
                $extraversion = 'カリスマタイプ';
-               $extraversionimg = "/images/shutterstock_1586081839.jpg";
+               $extraversionimg = "/images/shutterstock_640536037.jpg";
                $extraversionsm = '多くの人を魅了する';
                  break;
 
             case $item['extraversion'] >= 4.9 && $item['extraversion'] <= 13.5;
                  $extraversion = '外交官タイプ';
-                 $extraversionimg = "/images/shutterstock_1692488656.jpg";
+                 $extraversionimg ="/images/shutterstock_1571369995.jpg";
                 $extraversionsm = '人と会うのがが大好きな';
                  break;
  
 
             case $item['extraversion'] >= -4.8 && $item['extraversion'] <= 4.8;
                 $extraversion = '八方美人タイプ';
-                $extraversionimg = "/images/shutterstock_478518385.jpg";
+                $extraversionimg = "/images/shutterstock_1253308768.jpg";
                $extraversionsm = '内向と外向を使い分ける';
-               $extraversionmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                 break;
 
                 case $item['extraversion'] >= -13.5 && $item['extraversion'] <= -4.9;
                 $extraversion = '人見知りタイプ';
-                $extraversionimg = "/images/shutterstock_603829727.jpg";
+                $extraversionimg = "/images/shutterstock_1204875721.jpg";
                $extraversionsm = '緊張するけど人が好きな';
                 break;
 
             case $item['extraversion'] <= -13.6;
                 $extraversion = 'オタクタイプ';
-                $extraversionimg = "/images/shutterstock_1080828530.jpg";
+                $extraversionimg ="/images/shutterstock_1319513894.jpg";
                $extraversionsm = '自分の興味を追求する';
                 break;
         }
@@ -159,32 +157,31 @@
         switch (true) {
             case $item['neuroticism'] >= 13.6;
                $neuroticism = '芸術家タイプ';
-               $neuroticismimg= "/images/shutterstock_1080828530.jpg";
+               $neuroticismimg= "/images/shutterstock_703964362.jpg";
                $neuroticismsm = '周りの刺激を表現に変える';
                 break;
 
             case $item['neuroticism'] >= 4.9 && $item['neuroticism'] <= 13.5;
                 $neuroticism = '石橋叩くタイプ';
-                $neuroticismimg= "/images/shutterstock_603829727.jpg";
+                $neuroticismimg= "/images/shutterstock_653150977.jpg";
                 $neuroticismsm = '潜在的な危機を回避する';
                 break;
 
             case $item['neuroticism'] >= -4.8 && $item['neuroticism'] <= 4.8;
                 $neuroticism = 'コントロールタイプ';
-                $neuroticismimg= "/images/shutterstock_478518385.jpg";
+                $neuroticismimg= "/images/shutterstock_676026622.jpg";
                 $neuroticismsm = '弱さと強さを兼ね備える';
-                $neuroticismmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                 break;
 
                 case $item['neuroticism'] >= -13.5 && $item['neuroticism'] <= -4.9;
                 $neuroticism = '頼れるお兄さんタイプ';
-                 $neuroticismimg= "/images/shutterstock_1692488656.jpg";
+                 $neuroticismimg= "/images/shutterstock_373621933.jpg";
                  $neuroticismsm = '困難な場所でも冷静に動ける';
                 break;
 
             case $item['neuroticism'] <= -13.6;
                 $neuroticism = '騎士タイプ';
-                $neuroticismimg= "/images/shutterstock_1586081839.jpg";
+                $neuroticismimg= "/images/shutterstock_246130534.jpg";
                 $neuroticismsm = '鋼のメンタルの持ち主';
                 break;
         }
@@ -199,19 +196,7 @@
                             <div class="header_title">
                                 <h1>person</h1>
                             </div>
-                                <div :class="{'is-active':isActive}" class="btn-humburger" @click="toggleButton">
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <transition name="navi">
-                                <nav class="navi" v-show="isActive">
-                                        <ul>
-                                            <li><a href=" {{ url('/person') }} ">トップページ</a></li>
-                                            <li><a href="">お問い合わせ</a></li>
-                                            <li><a href="">ログイン</a></li>
-                                        </ul>
-                                    </nav>
-                                </transition>
+                            <humburger-component></humburger-component>
                         </div>
                     </header>
                 </div>
