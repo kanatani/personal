@@ -58,6 +58,19 @@ p {
     text-decoration: none;
   }
 
+  .top-intro-text {
+      margin-top: 100px;
+  }
+
+  #intro-test-button {
+      width: 50%;
+      border-radius: 20px;
+  }
+
+  .top-intro-form {
+      margin-top: 30px;
+  }
+
 /* ログイン画面 */
 
 #overlay {
@@ -1307,7 +1320,6 @@ input[type="file"] {
 }
 
 /* searchページ */
-
 .search_head {
     padding-top: 200px;
     margin: auto;
@@ -1323,8 +1335,9 @@ input[type="file"] {
     margin: 30px 0px;
 }
 
-.search_title {
-    padding-top: 30px;
+.search_title h1{
+    padding: 20px 0px;
+    font-size: 35px;
 }
 
 .searchtext {
@@ -1333,6 +1346,10 @@ input[type="file"] {
     border-radius: 30px;
     height: 40px;
     width: 250px;
+}
+
+.searchtext:focus {
+   outline: none;
 }
 
 #search_submit {
@@ -1355,6 +1372,13 @@ input[type="file"] {
 .userlist {
     margin-top: 30px;
     text-align: center;
+}
+
+#search_footer
+{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 /* youserlist */
@@ -1448,9 +1472,18 @@ input[type="file"] {
 }
 
 .talkroom {
-    height: 1000px;
-    background-color: rgb(184, 247, 252);
     padding-top: 250px;
+    background-color: rgb(184, 247, 252);
+    height: 1000px;
+    width: 100%;
+}
+
+#MessageArea
+{
+    overflow-y: scroll;
+    padding-bottom: 60px;
+    background-color: rgb(184, 247, 252);
+   
 }
 
 .your_info_region {
@@ -1569,23 +1602,53 @@ li.right-side {
   /* コミュニティ機能 */
   .community {
       padding-top: 150px;
-      width: 90%;
+      width: 75%;
       margin: auto;
+  }
+
+  .community-head-title {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 40px;
+  }
+
+  .community-title-message {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .community-title-message h2{
+      font-size: 30px;
+      padding: 20px 0px;
+  }
+
+  .community-title-message p{
+      margin: 0;
+      padding: 5px;
   }
 
   .community-search
   {
-      width: 80%;
+      width: 100%;
+      height: 50px;
       text-align: center;
       margin: auto;
+      margin-bottom: 20px;
       background-color: rgb(218, 214, 218);
       border-radius: 20px;
+      padding-top: 8px;
+  }
+
+  #community-search-button {
+      border-radius: 20px;
+      width: 100px;
   }
 
   .community-word {
       border-radius: 10px;
       font-family: "Font Awesome 5 Free";
       font-weight: 501;
+      width: 50%;
   }
 
   .community-introduction {
@@ -1598,7 +1661,7 @@ li.right-side {
   }
 
   .community-button {
-      margin: auto;
+      margin: 20px auto;
       text-align: center;
   }
 
@@ -2080,6 +2143,49 @@ li.right-side {
         bottom: 30;
     }
 
+    /* ユーザー検索 */
+    .search_head
+    {
+        padding-top: 100px;
+    }
+
+    .search_title h1{
+        font-size: 25px;
+    }
+
+    /* チャット一覧 */
+    
+
+    .chat_room{
+        margin-left: 10px;
+    }
+
+    /* チャット機能 */
+
+    .top_chat_name {
+       width: 150px;
+    }
+
+    .your_info_region {
+        width: 280px;
+    }
+
+    .left-side .pic{
+        margin-left: 10px;
+    }
+    
+    .right-side .pic{
+        margin-right: 10px;
+    }
+
+    #chat_submit_text {
+        width: 70%;
+    }
+  
+    #chat_submit_button{
+        width: 15%;
+    }
+
     /* グループメンバー */
 
     .group-detail-member-list {
@@ -2104,6 +2210,9 @@ li.right-side {
     .group-detail-info-title h2{
         font-size: 25px;
     }
+
+
+
   }
 
 

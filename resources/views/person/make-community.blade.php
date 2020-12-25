@@ -65,8 +65,8 @@
                     </header>
                 </div>
              </div>
-             <div class="row make-community">
-                 <div class="col-sm-12">
+            <div class="row make-community">
+                <div class="col-sm-12">
                     <div class="make-community-title">
                         <h1>make community</h1>
                         <p>自分があったらいいなと思う様なグループを作ることができます。同じ分野に興味を持っている人達と仲間を作ってconnectionを構築していきましょう。</p>
@@ -99,7 +99,12 @@
                         </form>
                     </div>
                  </div>
-             </div>
+            </div>
+            <div class="row">
+                <div class="footer_title col-sm-12" id="footer_titles">
+                    <p>© person 2020</p>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

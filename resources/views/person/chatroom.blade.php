@@ -78,37 +78,37 @@
                     </div>
                 </div>
             </div>
-            <div>
-            </div>
             <div class="row">
-                <div class="talkroom col-sm-12">
-                    <ul class="messages" v-for="m in messages">
-                        <li class="right-side" v-if="m.user_id == <?php echo $myid ;?>">
-                            <div class="pic">
-                            <img src="/uploads/{{ $fileName }}" alt="" class="chat_img">
-                            </div>
-                            <div class="text">
-                               <span v-text="m.message"></span>
-                            </div>
-                        </li>
-                        <li class="left-side" v-else>
-                            <div class="pic">
-                            <img :src="'/uploads/' + m.user_image" alt="" class="chat_img">
-                            </div>
-                            <div class="text">
-                           <span v-text="m.message"></span>
-                           <span></span>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="talkroom">
+                    <div ref='messageDisplay' id="MessageArea">
+                        <ul class="messages" v-for="m in messages">
+                            <li class="right-side" v-if="m.user_id == <?php echo $myid ;?>">
+                                <div class="pic">
+                                <img src="/uploads/{{ $fileName }}" alt="" class="chat_img">
+                                </div>
+                                <div class="text">
+                                <span v-text="m.message"></span>
+                                </div>
+                            </li>
+                            <li class="left-side" v-else>
+                                <div class="pic">
+                                <img :src="'/uploads/' + m.user_image" alt="" class="chat_img">
+                                </div>
+                                <div class="text">
+                            <span v-text="m.message"></span>
+                            <span></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="chat_submit">
                         <input type="hidden" id="chatroom" name="chatroom" value="{{ $chatroomid }}">
                             <textarea  v-model="message"  name="chat_submit_text" class="" id="chat_submit_text" cols="30" rows="3"></textarea>
                             <button type="button" class="btn btn-outline-secondary" id="chat_submit_button" @click="send()">submit</button>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="{{ asset('/js/chatscroll.js') }}"></script>
 @endsection

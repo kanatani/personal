@@ -221,8 +221,6 @@ switch (true) {
                     <div class="userid">
                         <h4>userid</h4>
                         <p>{{ $userid }}</p>
-                        <p><?php echo Session::get('id');  ?></p>
-                        <p><?php echo Auth::user();  ?></p>
                     </div>
                     <div>
                         <h1 class="your_page">your page</h1>

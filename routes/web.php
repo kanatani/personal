@@ -82,7 +82,7 @@ Route::post('/person/top','App\Http\Controllers\UserloguinController@login');
 
 Route::post('/person/mypage', 'App\Http\Controllers\UserloguinController@login');
 
-Route::get('person/logout', 'App\Http\Controllers\UserloguinController@logout');
+Route::get('person/logout', 'App\Http\Controllers\UserloguinController@logout')->name('logout');
 
 // 自分のページ
 Route::get('/person/mypage', 'App\Http\Controllers\PersonController@mypage')->name('mypage');
@@ -120,16 +120,6 @@ Route::get('/person/group_detail/{groupid}','App\Http\Controllers\GroupControlle
 Route::get('/person/axios/group_detail/{grouplike}','App\Http\Controllers\GroupController@joinstatus');
 
 Route::post('/person/group_detail','App\Http\Controllers\GroupController@community_join');
-
-
-
-
-
-
-// Route::post('/person/serious_result','App\Http\Controllers\PersonController@content');
-
-
-
 
 Route::resource('person', 'App\Http\Controllers\PersonController');
 

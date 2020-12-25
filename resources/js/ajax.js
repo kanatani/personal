@@ -25,7 +25,8 @@ $(function() {
             let username = $(`<p class="username">${name}</p>`);
            let userimage = $(`<a href="/person/user/${userid}" class="userimage" ><img src="/uploads/${image}" alt=""></a>`);
             if(data.name === undefined) {
-                $('.userlist').append('<p>useridが見つからなかったです</p>');
+                $('.userlist').append('<p>user情報が見つからなかったです。</p>');
+                $('.userlist').append('<p>useridをもう一度ご確認してください。</p>');
             }
             else {
                 $('.userlist').empty();

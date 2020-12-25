@@ -64,7 +64,7 @@ class GroupController extends Controller
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         // グループ情報
-        $communities =  \App\Models\Community::where('groupid', $groupid)->first();
+        $communities =  \App\Models\Community::where('groupid', $groupid)->latest()->first();
         // 自分が入っているかどうか
         $mygroupjoin =  \App\Models\Community::where('groupid', $groupid)->where('user_id', $myid)->first();
         // メンバー
@@ -83,6 +83,7 @@ class GroupController extends Controller
         // 自分が入っているかどうか
         $mygroupjoin =  \App\Models\Community::where('groupid', $request->grouplike)->where('user_id', $myid)->first();
         $joingroup =  \App\Models\Community::where('groupid', $request->grouplike)->first();
+        $member = $joingroup->member;
         // グループ情報
         if(isset($mygroupjoin))
         {
@@ -95,7 +96,7 @@ class GroupController extends Controller
             $community = new Community;
             $community->groupid = $joingroup->groupid; 
             $community->user_id= $myid; 
-            $community->member += 1;
+            $community->member = $member + 1;
             $community->name = $joingroup->name; 
             $file = $request->file('image');
             $community->image = $joingroup->image;

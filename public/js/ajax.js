@@ -122,7 +122,8 @@ $(function () {
       var userimage = $("<a href=\"/person/user/".concat(userid, "\" class=\"userimage\" ><img src=\"/uploads/").concat(image, "\" alt=\"\"></a>"));
 
       if (data.name === undefined) {
-        $('.userlist').append('<p>useridが見つからなかったです</p>');
+        $('.userlist').append('<p>user情報が見つからなかったです。</p>');
+        $('.userlist').append('<p>useridをもう一度ご確認してください。</p>');
       } else {
         $('.userlist').empty();
         $('.userlist').append(userimage);

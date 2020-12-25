@@ -83,14 +83,13 @@
             </div>
             <div class="userlist">
                 <div class="userlist_detail">
-
                 </div>
             </div>
-            <!-- <div class="row">
+            <div class="row" id="search_footer">
                 <div class="footer_title col-sm-12" id="footer_titles">
                     <p>© person 2020</p>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     <script src="{{ asset('/js/ajax.js') }}"></script>

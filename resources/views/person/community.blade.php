@@ -67,10 +67,21 @@
             </div>
             <div class="row">
                 <div class="community">
+                    <div class="community-head-title">
+                        <h1>community</h1>
+                    </div>
+                    <div id="community-border">
+                        <div class="border_line"></div>
+                    </div>
+                    <div class="community-title-message">
+                        <h2>コミュニティ機能を使ってみよう！</h2>
+                        <p>コミュニティに参加したり、自分で作ってみましょう。</p>
+                        <p>自分と気が合う友達と多く出会えることができます。</p>
+                    </div>
                     <div class="community-search">
                         <form action="" method="get" id="community-form">
                             <input type="text" class="community-word" name="community" placeholder="&#xf002; ">
-                            <button type="submit" class="btn btn-outline-info">検索</button>
+                            <button type="submit" class="btn btn-outline-info" id="community-search-button">検索</button>
                         </form>
                     </div>
                     <div class="community-introduction">
@@ -123,7 +134,7 @@
                         </div>
                     </div>
                     <div class="community-button">
-                        <a href="{{ route('make') }}" class="btn btn-gradient"><span>PUSH！</span></a>
+                        <a href="{{ route('make') }}" class="btn btn-gradient"><span>グループ作成！</span></a>
                     </div>
                 </div>
             </div>

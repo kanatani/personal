@@ -96,29 +96,36 @@
           <h3>person</h3>
           <p>このアプリはそのようなお客様をサポートするアプリ。</p>
           <p>自分でも知らない自分を知ってしまいましょう。</p>
-        </div>
-      </div>
-        <div class="row">
-          <footer class="col-sm-12">
-            <nav class="footer_nav">
-            <ul>
-                  <li>
-                    <a href="">top</a>
-                  </li>
-                  <li>
-                    <a href="">sign up</a>
-                  </li>
-                  <li>
-                    <a href="">お問い合わせ</a>
-                  </li>
-                </ul>
-            </nav>
-          </footer>
-          <div class="footer_title col-sm-12" id="footer_titles">
-              <p>© person 2020</p>
+          <div class="top-intro-text">
+            <h2>まずはテストを受けてみてください!</h2>
+            <form action="/person/test" method="GET" class="top-intro-form">
+              <button type="submit" class="btn btn-outline-info" id="intro-test-button">big5 test</button>
+            </form>
           </div>
         </div>
+      </div>
+      <div class="row">
+                <footer class="test_footer">
+                    <nav class="footer_nav">
+                        <ul>
+                            <li>
+                                <a href="">top</a>
+                            </li>
+                            <li>
+                                <a href="">sign up</a>
+                            </li>
+                            <li>
+                                <a href="">お問い合わせ</a>
+                            </li>
+                        </ul>
+                    </nav> 
+                </footer>
+                <div class="footer_title col-sm-12" id="footer_titles">
+                    <p>© person 2020</p>
+                </div>
+            </div>
     </div>
+
     <script src="{{ asset('/js/jquery.bgswitcher.js') }}"></script>
     <script src="{{ asset('/js/index.js') }}"></script>
     <script src="{{ asset('/js/head.js') }}"></script>

@@ -69,11 +69,8 @@
                 <div class="chat_header_text">
                     <h1 class="chat_header_title">chatroom</h1>
                     <div class="border_line"></div>
-                    <div>
+                    <div class="chat">
                         <div class="chat_room">
-                            <div>
-                                {{ $chatrooms }}
-                            </div>
                             @foreach ($chatrooms as $chatroom)
                             <?php $chatroomid = $chatroom->chatroom; ?>
                             @if(isset($chatroom->user_name))

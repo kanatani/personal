@@ -47,6 +47,10 @@ const app = new Vue({
             communityinfo: '',
         }
     },
+    updated() {
+        var elem = this.$el;
+        elem.scrollTop = elem.clientHeight;
+    },
     methods: {
         toggleButton() {
             this.isActive = !this.isActive;
@@ -61,6 +65,7 @@ const app = new Vue({
         tojiru: function() {
             this.isShow = false;
         },
+        // メッセージ取得
         getMessages() {
             const chatroomid = document.getElementById('chatroom').value;
             axios({
@@ -75,6 +80,7 @@ const app = new Vue({
                 console.log(error);
             });
         },
+        // メッセージ送信
         send() {
             const chatroomid = document.getElementById('chatroom').value;
             const message = this.message;

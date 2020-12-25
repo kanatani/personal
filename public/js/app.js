@@ -56461,6 +56461,10 @@ var app = new Vue({
       communityinfo: ''
     };
   },
+  updated: function updated() {
+    var elem = this.$el;
+    elem.scrollTop = elem.clientHeight;
+  },
   methods: {
     toggleButton: function toggleButton() {
       this.isActive = !this.isActive;
@@ -56475,6 +56479,7 @@ var app = new Vue({
     tojiru: function tojiru() {
       this.isShow = false;
     },
+    // メッセージ取得
     getMessages: function getMessages() {
       var _this = this;
 
@@ -56490,6 +56495,7 @@ var app = new Vue({
         console.log(error);
       });
     },
+    // メッセージ送信
     send: function send() {
       var _this2 = this;
 
