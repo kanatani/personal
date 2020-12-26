@@ -137,4 +137,9 @@ class GroupController extends Controller
         $lookgroup = $query->distinct()->get();
         return view('person.community_search',compact('name','fileName','lookgroup'));
     }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

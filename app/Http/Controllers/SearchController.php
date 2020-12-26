@@ -91,4 +91,9 @@ class SearchController extends Controller
          return response()->json($user);
      }
 
+      public function __construct()
+        {
+            $this->middleware('auth');
+        }
+
 }

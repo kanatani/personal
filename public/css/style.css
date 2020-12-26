@@ -333,6 +333,7 @@ p {
     justify-content: center;
 }
 
+
 .sign_main {
    margin-top: 150px;
 }
@@ -2102,7 +2103,7 @@ li.right-side {
         position: relative;
     }
 
-    .enter_subF
+    .enter_sub
     {
         height: 600px;
     }

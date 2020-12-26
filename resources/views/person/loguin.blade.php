@@ -17,6 +17,15 @@
                     </div>
                     <div class="enter_main">      
                         <div class="sign_main" v-if="Loginactive">
+                        @if (session('flash_message'))
+                            <div class="flash_message">
+                                {{ session('flash_message') }}
+                            </div>
+                        @elseif (session('no_message'))
+                            <div class="flash_message">
+                                {{ session('no_message') }}
+                            </div>
+                        @endif
                             <div>
                                 <h1 class="login-title"><a href="/person">person</a></h1>
                             </div>

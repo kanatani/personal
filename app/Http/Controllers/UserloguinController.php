@@ -40,8 +40,8 @@ class UserloguinController extends Controller
             if(isset($request->login_name))
             {
                 if(empty($email) && empty($password)){
-                    return redirect('person/loguin');
                     
+                    return redirect('person/loguin')->with('flash_message', '＊メーアドかパスワード欄に空欄があります。');
                 }
                 $id = session()->get('id');
                 $loginuser = new loginuser;
@@ -77,7 +77,7 @@ class UserloguinController extends Controller
             }
             else 
             {
-                return redirect('person/loguin');
+                return redirect('person/loguin')->with('no_message', '＊パスワードかメーアドをもう一度ご確認お願いします。');
             }
         }
     }
@@ -89,4 +89,5 @@ class UserloguinController extends Controller
          \Auth::logout();
          return redirect('person');
      }
+
 }

@@ -143,4 +143,9 @@ class ChatController extends Controller
          ->where('chat.chatroom',$chatroomid)->whereNotNull('message')->orderBy('id', 'asc')->distinct()->get();
          return response()->json($chatroomtalk);
      }
+
+     public function __construct()
+    {
+        $this->middleware('auth');
+     }
 }

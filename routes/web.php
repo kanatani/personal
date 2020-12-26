@@ -90,11 +90,11 @@ Route::get('/person/mypage', 'App\Http\Controllers\PersonController@mypage')->na
 // search機能
 Route::get('/person/search','App\Http\Controllers\SearchController@search')->name('search');
 
-Route::get('/person/search/{userid}','App\Http\Controllers\SearchController@look');
+Route::get('/person/search/{userid}','App\Http\Controllers\SearchController@look')->name('search.look');
 
-Route::get('/person/user/{userid}','App\Http\Controllers\SearchController@userview');
+Route::get('/person/user/{userid}','App\Http\Controllers\SearchController@userview')->name('search.user');
 
-Route::post('/person/user/{userid}','App\Http\Controllers\SearchController@like');
+Route::post('/person/user/{userid}','App\Http\Controllers\SearchController@like')->name('search.good');
 
 // トークルーム
 Route::get('/person/chat', 'App\Http\Controllers\ChatController@chat')->name('chat');
