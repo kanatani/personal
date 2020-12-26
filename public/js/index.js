@@ -95,7 +95,7 @@
 
 jQuery(function ($) {
   $('.header').bgSwitcher({
-    images: ['images/shutterstock_622200797.jpg', 'images/768013045-huge.jpg', 'images/shutterstock_762804607.jpg'],
+    images: ['images/shutterstock_622200797.jpg', 'images/shutterstock_1188379606.jpg', 'images/shutterstock_762804607.jpg'],
     // 切り替え画像
     Interval: 5000,
     //切り替えの間隔 1000=1秒
@@ -112,7 +112,7 @@ jQuery(function ($) {
     easing: "swing" //エフェクトのイージング "swing" "linear"
 
   }), $('.community-introduction').bgSwitcher({
-    images: ['/images/img1.jpg', '/images/shutterstock_699712699.jpg', '/images/shutterstock_1716129895.jpg'],
+    images: ['/images/shutterstock_1678138090.jpg', '/images/shutterstock_1262915317.jpg', '/images/shutterstock_634861250.jpg'],
     // 切り替え画像
     Interval: 5000,
     //切り替えの間隔 1000=1秒

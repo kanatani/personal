@@ -120,4 +120,21 @@ class GroupController extends Controller
         $mygroup =  \App\Models\Community::where('groupid', $grouplike)->where('user_id', $myid)->first();
         return response()->json($mygroup);
     }
+
+    // グループ検索
+    public function search (Request  $request)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+
+        $keyword = $request->community_search;
+
+        $query = Community::query();
+
+        if(!empty($keyword)){
+            $query->where('name', 'LIKE', "%{$keyword}%")
+            ->where('user_id','<>', $myid);
+        }
+        $lookgroup = $query->distinct()->get();
+        return view('person.community_search',compact('name','fileName','lookgroup'));
+    }
 }

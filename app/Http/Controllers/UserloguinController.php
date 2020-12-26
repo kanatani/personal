@@ -35,8 +35,14 @@ class UserloguinController extends Controller
         }
         else
         {
+            $email = $request->login_mail;  
+            $password = $request->login_pass;
             if(isset($request->login_name))
             {
+                if(empty($email) && empty($password)){
+                    return redirect('person/loguin');
+                    
+                }
                 $id = session()->get('id');
                 $loginuser = new loginuser;
                 $loginuser->userid = rand(); 

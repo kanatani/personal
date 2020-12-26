@@ -198,16 +198,21 @@ switch (true) {
                             <nav class="responsive" v-show="isActive">
                                     <ul>
                                         <li>
-                                            <a href="search">mypage</a>
+                                            <a href="{{ route('mypage') }}" >mypage</a>
                                         </li>
                                         <li>
-                                            <a href="search">community</a>
+                                            <a href="{{ route('community') }}" >community</a>
                                         </li>
                                         <li>
-                                            <a href="search">search</a>
+                                            <a href="{{ route('search') }}" >search</a>
                                         </li>
                                         <li>
-                                            <a href="search">contact</a>
+                                            <a href="{{ route('chat') }}" >chat</a>
+                                        </li>
+                                        <li>
+                                        <form action="/person/logout" method="get">
+                                        <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
+                                        </form>
                                         </li>
                                     </ul>
                                 </nav>

@@ -26,17 +26,17 @@
                             @csrf
                                     <div class="form-group">
                                         <p class="form_text">name</p>
-                                        <input type="text" name="login_name" class="login_name" placeholder="&#xf007; yourname">
+                                        <input type="text" name="login_name" class="login_name" placeholder="&#xf007; yourname" require>
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     </div>
                                     <div class="form-group">
                                         <p class="form_text">email</p>
-                                        <input type="email" name="login_mail" class="login_mail" placeholder="&#xf0e0; your@emal">
+                                        <input type="email" name="login_mail" class="login_mail" placeholder="&#xf0e0; your@emal" require>
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     </div>
                                     <div class="form-group">
                                         <p class="form_text">password</p>
-                                        <input type="password" name="login_pass" class="login_pass" placeholder="&#xf3c1; password">
+                                        <input type="password" name="login_pass" class="login_pass" placeholder="&#xf3c1; password" require>
                                     </div>
                                     <div class="form-group form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1">

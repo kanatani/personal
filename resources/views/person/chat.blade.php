@@ -5,7 +5,7 @@
         <div id="app">       
             <div class="row">
                 <div  class="page_header">
-                    <header>
+                <header>
                         <div>
                             <div class="header_title login_header_title">
                                 <h1>person</h1>
@@ -13,7 +13,7 @@
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="{{ route('mypage') }}">mypage</a>
+                                        <a href="{{ route('mypage') }}" >mypage</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('community') }}">community</a>
@@ -22,13 +22,13 @@
                                         <a href="{{ route('search') }}">search</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('chat') }}"class="current">chat</a>
+                                        <a href="{{ route('chat') }}" class="current">chat</a>
                                     </li>
                                 </ul>
                             </nav>
                         <div class="myaccount">
                             <div class="out_form">
-                                <form action="/person" method="get">
+                                <form action="/person/logout" method="get">
                                 <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
                                 </form>
                             </div>
@@ -47,16 +47,21 @@
                             <nav class="responsive" v-show="isActive">
                                     <ul>
                                         <li>
-                                            <a href="person/mypage">mypage</a>
+                                            <a href="{{ route('mypage') }}" >mypage</a>
                                         </li>
                                         <li>
-                                            <a href="search">community</a>
+                                            <a href="{{ route('community') }}" >community</a>
                                         </li>
                                         <li>
-                                            <a href="search">search</a>
+                                            <a href="{{ route('search') }}" >search</a>
                                         </li>
                                         <li>
-                                            <a href="search">contact</a>
+                                            <a href="{{ route('chat') }}" >chat</a>
+                                        </li>
+                                        <li>
+                                        <form action="/person/logout" method="get">
+                                        <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
+                                        </form>
                                         </li>
                                     </ul>
                                 </nav>
@@ -91,6 +96,11 @@
                             @endforeach
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="footer_title col-sm-12" id="footer_titles">
+                    <p>© person 2020</p>
                 </div>
             </div>
         </div>

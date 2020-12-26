@@ -5,7 +5,7 @@
         <div id="app">       
             <div class="row">
                 <div  class="page_header">
-                    <header>
+                <header>
                         <div>
                             <div class="header_title login_header_title">
                                 <h1>person</h1>
@@ -26,42 +26,47 @@
                                     </li>
                                 </ul>
                             </nav>
-                            <div class="myaccount">
-                                <div class="out_form">
+                        <div class="myaccount">
+                            <div class="out_form">
                                 <form action="/person/logout" method="get">
                                 <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
                                 </form>
-                                </div>
-                                <div>
-                                    <h3 class="myaccount_name">{{ $name }}
-                                    <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
-                                    </h3>
-                                </div>
                             </div>
-                            <div class="responsive_navi">
-                                <div :class="{'is-active':isActive}" class="btn-humburger" @click="toggleButton">
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <transition name="navi">
-                                <nav class="responsive" v-show="isActive">
-                                        <ul>
-                                            <li>
-                                                <a href="search">mypage</a>
-                                            </li>
-                                            <li>
-                                                <a href="search">community</a>
-                                            </li>
-                                            <li>
-                                                <a href="search">search</a>
-                                            </li>
-                                            <li>
-                                                <a href="search">contact</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </transition>
+                            <div>
+                                <h3 class="myaccount_name">{{ $name }}
+                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                </h3>
                             </div>
+                        </div>
+                        <div class="responsive_navi">
+                            <div :class="{'is-active':isActive}" class="btn-humburger" @click="toggleButton">
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <transition name="navi">
+                            <nav class="responsive" v-show="isActive">
+                                    <ul>
+                                        <li>
+                                            <a href="{{ route('mypage') }}" >mypage</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('community') }}" >community</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('search') }}" >search</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('chat') }}" >chat</a>
+                                        </li>
+                                        <li>
+                                        <form action="/person/logout" method="get">
+                                        <button type="submit" class="btn btn-outline-info" id="out_button">logout</button>
+                                        </form>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </transition>
+                        </div>
                     </header>
                 </div>
             </div>
