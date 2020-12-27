@@ -2009,6 +2009,15 @@ li.right-side {
        background-size: cover;
       }
 
+      .top_nav {
+          width: 100%;
+      }
+
+      .top_nav ul li{
+         
+          width: 33%;
+      }
+
       .back-font h1 {
        text-align: center;
        margin-left: 75px;
@@ -2019,7 +2028,7 @@ li.right-side {
     }
 
     .fadeIn {
-        height: 950px;
+        height: 1000px;
         background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(250, 248, 248, 0) 100%);
         background-blend-mode: screen;
     }
@@ -2037,6 +2046,10 @@ li.right-side {
         border-bottom: 2px solid;
     }
 
+    .text_means {
+        padding-top: 100px;
+    }
+
     /* お問い合わせ入力 */
 
 
@@ -2050,6 +2063,10 @@ li.right-side {
     
 
     /* テスト説明 */
+
+    .lead {
+        text-align: left;
+    }
 
     .test_message {
         height: 1000px;
@@ -2109,12 +2126,10 @@ li.right-side {
     }
 
     /* トータル結果 */
-    #myChart {
-        height: 500px;
-        width: 500px;
+    .totalchart {
+        text-align: center;
+        width: 100%;
     }
-
-
     /* ログイン画面 */
     .enter_sub,.enter_main {
         position: relative;
@@ -2265,8 +2280,16 @@ li.right-side {
         width: 300px;
     }
 
+    .make-community {
+        height: 900px;
+    }
+
     #category {
         width: 300px;
+    }
+
+    .make-button {
+        margin-top: 40px;
     }
 
    
@@ -2305,6 +2328,13 @@ li.right-side {
     .community-introduction-text p{
         font-size: 15px;
     }
+
+    /* 所属グループ */
+
+    .community-detail {
+        width: 97%;
+    }
+  
 
     /* グループ検索 */
 

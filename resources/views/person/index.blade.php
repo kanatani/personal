@@ -7,7 +7,7 @@
             <div class="header col-sm-12">
               <div class="back-font">
                 <h1>person</h1>
-                <nav class=top_nav>
+                <nav class="top_nav">
                   <ul>
                     <li>
                       <a href=" {{ url('/person/test') }}">test</a>
@@ -16,7 +16,7 @@
                       <a href=" {{ url('/person/loguin') }}">sign up & login</a>
                     </li>
                     <li>
-                      <a href="{{ url('/person/contact') }}">お問い合わせ</a>
+                      <a href="{{ url('/person/contact') }}">contact</a>
                     </li>
                   </ul>
                 </nav>

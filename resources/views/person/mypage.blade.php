@@ -371,7 +371,6 @@ switch (true) {
             });
         }
      </script>
-    
 @endsection
 
 

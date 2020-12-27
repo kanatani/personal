@@ -41,9 +41,9 @@
                         <input type="hidden" name="name" value="{{ $data1['name'] }}">
                         <input type="hidden" name="mail" value="{{ $data1['mail'] }}">
                         <input type="hidden" name="content" value="{{ $data1['content'] }}">
-                        <button type="button" onclick="history.back()" class="btn btn-primary w-50" id="content_submit">戻る</button>
-                        <br>
                         <button type="submit" class="btn btn-info w-50" id="content_submit">送信</button>
+                        <br>
+                        <button type="button" onclick="history.back()" class="btn btn-primary w-50" id="content_submit">戻る</button>
                     </form>
                 </div>
             </div>

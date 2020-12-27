@@ -45,7 +45,7 @@
                 <label for="exampleFormControlTextarea1">お問い合わせ内容</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="content"  rows="3" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary w-25" id="contact_submit">Submit</button>
+            <button type="submit" class="btn btn-primary w-50" id="contact_submit">Submit</button>
         </form>
     </div>
     <div class="row">

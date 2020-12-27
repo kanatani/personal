@@ -27,7 +27,6 @@
                             <div  class="icon_text">
                                 <i class="fas fa-user-circle  fa-4x"></i>
                                 <p>自分の直感で決めてもらっても大丈夫です。</p>
-                                <p>あまり深く考えないで答えてください。</p>
                             </div>
                         </div>
                         <div class="test_box">
@@ -42,7 +41,7 @@
             <div class="row test_start">
                 <div class="jumbotron col-sm-12 bg-white">
                     <h1 class="display-4">Test start!</h1>
-                    <p class="lead">big5に基づいたテストを受けてみよう！自分の性格をより客観的にみることができるよ！</p>
+                    <p class="lead">big5に基づいたテストを受けてみましょう！自分の性格をより客観的にみることができます！</p>
                     <hr class="my-4">
                     <form action="/person/kind" method="get">
                         <button type="submit" class="btn btn-primary w-25">start</button>
