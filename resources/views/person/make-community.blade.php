@@ -78,11 +78,16 @@
                     </div>
                     <div class="border_line"></div>
                     <div class="make-community-content"> 
+                        @if(isset($message))
+                        <div class="make-message">
+                            {{ $message }}
+                        </div>
+                        @endif
                         <form action="community" method="post" enctype="multipart/form-data">
                         @csrf
                             <div class="make-community-name">
                                 <h3>カードタイトル</h3>
-                                <input type="text" class="make-community-form" name="community_name"placeholder="コミュニティ名を入力" require>
+                                <input type="text" class="make-community-form" name="community_name"placeholder="コミュニティ名を入力" required>
                             </div>
                             <div class="make-community-image">
                                 <image-component></image-component>

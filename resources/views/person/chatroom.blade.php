@@ -13,7 +13,7 @@
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="{{ route('mypage') }}" class="current">mypage</a>
+                                        <a href="{{ route('mypage') }}" >mypage</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('community') }}">community</a>
@@ -22,7 +22,7 @@
                                         <a href="{{ route('search') }}">search</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('chat') }}" >chat</a>
+                                        <a href="{{ route('chat') }}" class="current">chat</a>
                                     </li>
                                 </ul>
                             </nav>

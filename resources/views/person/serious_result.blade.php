@@ -249,7 +249,7 @@
                             @else
                             <div class="submit">
                                 <form action="/person/openness" method="get">
-                                <button type="submit" class="btn btn-outline-light w-50" id="next_button">開放性テスト</button>
+                                <button type="submit" class="btn btn-outline-dark w-50" id="next_button">開放性テスト</button>
                                 </form>
                             </div>
                             @endif                        

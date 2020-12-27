@@ -33,17 +33,17 @@
             @csrf
              <div class="form-group">
                 <label for="simei">name</label>
-                <input v-model="name" class="form-control" id="simei" name="name"  type="text" placeholder="name" require>
+                <input v-model="name" class="form-control" id="simei" name="name"  type="text" placeholder="name" required>
                 <p v-if="isInValidName">名前を入力してください</p>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>
-                <input v-model="email" type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="email@example.com" require>
+                <input v-model="email" type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="email@example.com" required>
                 <p v-if="isInValidEmail">メールアドレスを入力してください</p>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="content"  rows="3" require></textarea>
+                <label for="exampleFormControlTextarea1">お問い合わせ内容</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="content"  rows="3" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary w-25" id="contact_submit">Submit</button>
         </form>
@@ -53,13 +53,13 @@
             <nav class="footer_nav">
                 <ul>
                     <li>
-                        <a href="">top</a>
+                        <a href=" {{ url('/person/test') }}">top</a>
                     </li>
                     <li>
-                        <a href="">sign up</a>
+                        <a href=" {{ url('/person/loguin') }}">sign up</a>
                     </li>
                     <li>
-                        <a href="">お問い合わせ</a>
+                        <a href="{{ url('/person/contact') }}">お問い合わせ</a>
                     </li>
                 </ul>
             </nav> 

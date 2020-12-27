@@ -122,7 +122,7 @@ jQuery(function ($) {
     //切り替えをループする
     shuffle: false,
     //背景画像の順番をシャッフルする
-    effect: "slide",
+    effect: "fade",
     //エフェクトの種類 "fade" "blind" "clip" "slide" "drop" "hide"
     duration: 3000,
     //エフェクトの時間 1000=1秒

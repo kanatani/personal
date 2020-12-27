@@ -13,10 +13,10 @@
                             <nav id="global_navi">
                                 <ul>
                                     <li>
-                                        <a href="{{ route('mypage') }}" class="current">mypage</a>
+                                        <a href="{{ route('mypage') }}" >mypage</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('community') }}">community</a>
+                                        <a href="{{ route('community') }}" class="current">community</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('search') }}">search</a>

@@ -20,7 +20,7 @@
                   type="email"
                   name="login_mail"
                   class="login_mail"
-                  placeholder="&#xf0e0; your@emal"
+                  placeholder="your@emal"
                 />
                 <small id="emailHelp" class="form-text text-muted"
                   >We'll never share your email with anyone else.</small
@@ -32,7 +32,7 @@
                   type="password"
                   name="login_pass"
                   class="login_pass"
-                  placeholder="&#xf3c1; password"
+                  placeholder="password"
                 />
                 <small id="emailHelp" class="form-text text-muted"
                   >We'll never share your password with anyone else.</small

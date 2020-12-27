@@ -15,7 +15,7 @@
         <div class="community-detail-menu-list">
           <div class=community-detail-menu-parts><a :href="'groupchat/' + community.groupid">トーク</a></div>
           <div class=community-detail-menu-parts><a :href="'group_detail/' + community.groupid">メンバー</a></div>
-          <div class=community-detail-menu-parts><a href="">退会</a></div>
+          <div class=community-detail-menu-parts><a :href="'group_leave/' + community.groupid">退会</a></div>
         </div>
       </div>
     </div>

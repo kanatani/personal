@@ -249,7 +249,7 @@
                             <div class="submit">
                                 <form action="/person/neuroticism" method="get">
                                 @csrf
-                                <button type="submit" class="btn btn-outline-light w-50" id="next_button">神経症的傾向テスト</button>
+                                <button type="submit" class="btn btn-outline-dark w-50" id="next_button">神経症的傾向テスト</button>
                                 </form>
                             </div>
                             @endif              

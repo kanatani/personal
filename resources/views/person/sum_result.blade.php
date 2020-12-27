@@ -207,7 +207,7 @@
                     <h1>your character</h1>
                 </div>
                 <div class="totalchart">
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart" class="chart-detail"></canvas>
                 </div>
                 <div class="big5_result_text row">
                     <h1 class="big5_detail_title">big5 detail</h1>
@@ -267,7 +267,7 @@
                     <form action="/person/loguin" method="get">
                     <button type="submit" class="btn btn-outline-success" id="result_button">ログイン</button>
                     </form>
-                    <form action="/person" method="get">
+                    <form action="/person/logout" method="get">
                         <button type="submit" class="btn btn-outline-secondary" id="result_button">トップページ</button>
                     </form>
                 </div>

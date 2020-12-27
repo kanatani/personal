@@ -109,13 +109,13 @@
                     <nav class="footer_nav">
                         <ul>
                             <li>
-                                <a href="">top</a>
+                                <a href=" {{ url('/person/test') }}">top</a>
                             </li>
                             <li>
-                                <a href="">sign up</a>
+                                <a href=" {{ url('/person/loguin') }}">sign up</a>
                             </li>
                             <li>
-                                <a href="">お問い合わせ</a>
+                                <a href="{{ url('/person/contact') }}">お問い合わせ</a>
                             </li>
                         </ul>
                     </nav> 

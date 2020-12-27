@@ -248,7 +248,7 @@
                             @else
                             <div class="submit">
                                 <form action="/person/extraversion" method="get">
-                                <button type="submit" class="btn btn-outline-light w-50" id="next_button">外向性テスト</button>
+                                <button type="submit" class="btn btn-outline-dark w-50" id="next_button">外向性テスト</button>
                                 </form>
                             </div>
                             @endif

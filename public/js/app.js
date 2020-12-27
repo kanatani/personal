@@ -43891,23 +43891,20 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(0)
+            _c("div", { staticClass: "community-detail-menu-parts" }, [
+              _c(
+                "a",
+                { attrs: { href: "group_leave/" + _vm.community.groupid } },
+                [_vm._v("退会")]
+              )
+            ])
           ])
         ])
       ])
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "community-detail-menu-parts" }, [
-      _c("a", { attrs: { href: "" } }, [_vm._v("退会")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -44142,11 +44139,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("input", {
           staticClass: "login_mail",
-          attrs: {
-            type: "email",
-            name: "login_mail",
-            placeholder: "&#xf0e0; your@emal"
-          }
+          attrs: { type: "email", name: "login_mail", placeholder: "your@emal" }
         }),
         _vm._v(" "),
         _c(
@@ -44164,7 +44157,7 @@ var staticRenderFns = [
           attrs: {
             type: "password",
             name: "login_pass",
-            placeholder: "&#xf3c1; password"
+            placeholder: "password"
           }
         }),
         _vm._v(" "),

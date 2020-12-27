@@ -21,7 +21,6 @@
                             <div class="icon_text">
                                 <i class="fab fa-facebook-messenger fa-4x"></i>
                                 <p>できるだけ率直に答えてください。</p>
-                                <p>より</p>
                             </div>
                         </div>
                         <div class="test_box">
@@ -35,7 +34,6 @@
                             <div  class="icon_text">
                                 <i class="fas fa-times-circle  fa-4x"></i>
                                 <p>できるだけ中立の答えはやめましょう。</p>
-                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -57,17 +55,17 @@
             <div class="row">
                 <footer class="test_footer">
                     <nav class="footer_nav">
-                        <ul>
-                            <li>
-                                <a href="">top</a>
-                            </li>
-                            <li>
-                                <a href="">sign up</a>
-                            </li>
-                            <li>
-                                <a href="">お問い合わせ</a>
-                            </li>
-                        </ul>
+                    <ul>
+                        <li>
+                            <a href=" {{ url('/person/test') }}">top</a>
+                        </li>
+                        <li>
+                            <a href=" {{ url('/person/loguin') }}">sign up</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/person/contact') }}">お問い合わせ</a>
+                        </li>
+                    </ul>
                     </nav> 
                 </footer>
                 <div class="footer_title col-sm-12" id="footer_titles">

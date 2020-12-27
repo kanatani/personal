@@ -25,6 +25,11 @@ class GroupController extends Controller
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         if(isset($request->community_name))
         {
+            if(!isset($request->image))
+            {
+                $message="＊画像が選択されていません。";
+                return view('person.make-community',compact('name','fileName','message'));
+            }
             // コミュニティ作成
             $community = new Community;
             $community->groupid = rand(); 
@@ -130,12 +135,29 @@ class GroupController extends Controller
 
         $query = Community::query();
 
-        if(!empty($keyword)){
+        if(!empty($keyword))
+        {
             $query->where('name', 'LIKE', "%{$keyword}%")
             ->where('user_id','<>', $myid);
         }
+        else
+        {
+            return redirect()->action('App\Http\Controllers\GroupController@community');
+        }
+
+
         $lookgroup = $query->distinct()->get();
         return view('person.community_search',compact('name','fileName','lookgroup'));
+    }
+    
+    // グループ退会
+    public function leave (Request  $request,$groupid)
+    {
+        list($name,$fileName,$myid) = BaseClass::look_myuser();
+
+        \App\Models\Community::where('groupid', $groupid)->where('user_id', $myid)->delete();
+        
+        return redirect()->action('App\Http\Controllers\GroupController@community');
     }
 
     public function __construct()

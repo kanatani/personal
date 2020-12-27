@@ -140,6 +140,11 @@
                         @endforeach
                         </div>
                     </div>
+                    @if (session('message'))
+                        <div class="alert alert-danger">
+                            {{ session('message') }}
+                        </div>
+                    @endif
                     <div class="community-button">
                         <a href="{{ route('make') }}" class="btn btn-gradient"><span>グループ作成！</span></a>
                     </div>

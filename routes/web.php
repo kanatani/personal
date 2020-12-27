@@ -121,6 +121,8 @@ Route::get('/person/axios/group_detail/{grouplike}','App\Http\Controllers\GroupC
 
 Route::post('/person/group_detail','App\Http\Controllers\GroupController@community_join');
 
+Route::get('/person/group_leave/{groupid}','App\Http\Controllers\GroupController@leave');
+
 Route::get('/person/community_search', 'App\Http\Controllers\GroupController@search')->name('community_search');
 
 Route::resource('person', 'App\Http\Controllers\PersonController');
