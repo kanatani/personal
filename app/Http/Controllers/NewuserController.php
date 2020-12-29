@@ -21,18 +21,24 @@ class NewuserController extends Controller
         $name = $user->name;
         $userid = $user->userid;
         $file =  $request->file('image');
-
-        if($file->isValid()) {
-            $fileName = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads');
-            $file->move($target_path, $fileName);
-            \DB::table('user')->where('sessionid', $id) ->update([
-                'image' => $fileName
-            ]);
+        if (empty($file))
+        {
+            return redirect('person/top')->with('image_message', '＊画像が選択されていません。');
         }
-        else {
-            $fileName="rtrt";
+        else
+        {
+            if($file->isValid()) {
+                $fileName = time() . $file->getClientOriginalName();
+                $target_path = public_path('uploads');
+                $file->move($target_path, $fileName);
+                \DB::table('user')->where('sessionid', $id) ->update([
+                    'image' => $fileName
+                ]);
+            }
+            else {
+                $fileName="rtrt";
+            }
+            return view('person.mypage', compact('item','name','fileName','userid'));
         }
-        return view('person.mypage', compact('item','name','fileName','userid'));
     }
 }

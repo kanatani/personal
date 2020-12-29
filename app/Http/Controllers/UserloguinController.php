@@ -23,18 +23,6 @@ class UserloguinController extends Controller
     // ログイン
     public function  login(Request $request)
     {
-        // ログインチェック
-        if(Auth::check()) {
-            $id = session()->get('id');
-            $user =  \DB::table('user')->where('sessionid', $id)->first();
-            $name= $user->name;
-            $fileName= $user->image;
-            $userid = $user->userid;
-            $item = test::find($id);
-            return view('person.mypage',compact('name','item','userid','fileName'));
-        }
-        else
-        {
             $email = $request->login_mail;  
             $password = $request->login_pass;
             if(isset($request->login_name))
@@ -42,6 +30,10 @@ class UserloguinController extends Controller
                 if(empty($email) && empty($password)){
                     
                     return redirect('person/loguin')->with('flash_message', '＊メーアドかパスワード欄に空欄があります。');
+                }
+                else if(!session()->exists('id'))
+                {
+                    return redirect('person/loguin')->with('test_message', '＊テストを受けてください。');
                 }
                 $id = session()->get('id');
                 $loginuser = new loginuser;
@@ -56,9 +48,6 @@ class UserloguinController extends Controller
             $password = $request->login_pass;
             // アカウントチェック
             if(Auth::attempt(['password' => $password, 'email' => $email])) {
-                if(session()->exists('id')) {
-                    session()->flush();
-                }
                 $user =  \DB::table('user')->where('email', $email)->first();
                 $users = session()->put('id', $user->sessionid);
                 $id = session()->get('id');
@@ -79,7 +68,6 @@ class UserloguinController extends Controller
             {
                 return redirect('person/loguin')->with('no_message', '＊パスワードかメーアドをもう一度ご確認お願いします。');
             }
-        }
     }
 
      // ログアウト

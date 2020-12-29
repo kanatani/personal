@@ -25,6 +25,13 @@
                             <div class="flash_message">
                                 {{ session('no_message') }}
                             </div>
+                        @elseif (session('test_message'))
+                            <div class="flash_message">
+                                {{ session('test_message') }}
+                                <form action="/person/test" method="get">
+                                <button type="submit" class="btn btn-outline-info w-50" id="loguin-flash-button">test</button>
+                            </form>
+                            </div>
                         @endif
                             <div>
                                 <h1 class="login-title"><a href="/person">person</a></h1>

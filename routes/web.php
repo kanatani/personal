@@ -78,6 +78,10 @@ Route::post('/person/your_result/{$userid}', 'App\Http\Controllers\TestControlle
 // 新規登録とログイン
 Route::post('/person/newmypage', 'App\Http\Controllers\NewuserController@start');
 
+Route::get('/person/top', function () {
+    return view('/person/top');
+});
+
 Route::post('/person/top','App\Http\Controllers\UserloguinController@login');
 
 Route::post('/person/mypage', 'App\Http\Controllers\UserloguinController@login');

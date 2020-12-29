@@ -357,6 +357,11 @@ p {
     opacity: 0.4;
 }
 
+#loguin-flash-button {
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
 /* 診断テスト説明 */
 .top_text {
     height: 600px;
@@ -1059,7 +1064,7 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
 
 /* 新規登録 */
 .newuser {
-    padding-top: 80px;
+    padding-top: 180px;
     text-align: center;
 }
 
@@ -1079,8 +1084,9 @@ background: linear-gradient(0deg, rgba(244,247,178,1) 0%, rgba(255,255,255,1) 88
     width: 350px;
     line-height: 1.5;
     background-color: transparent;
+    padding: 30px 10px;
     margin: auto;
-    padding: 30px 0px;
+    padding-left: 10px;
 }
 
 .file{
@@ -2167,6 +2173,12 @@ li.right-side {
     .login_main {
         margin-top: 0px;
         padding-top: 200px;
+    }
+
+    /* 新規登録 */
+
+    .new_file {
+        padding-right: 40px;
     }
 
     /* ログイン後のヘッダー */
