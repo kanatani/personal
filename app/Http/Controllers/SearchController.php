@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 // model
 use App\Models\loginuser;
 use App\Models\like;
+use App\Models\chat;
 
 // auth
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ use app\library\BaseClass;
 
 class SearchController extends Controller
 {
+    
     public function search (Request  $request)
     {
         list($name,$fileName) = BaseClass::header();
@@ -85,7 +87,6 @@ class SearchController extends Controller
                  $yourchats->user_id = $userid;
                  $yourchats->reply_id = $myid;
                  $yourchats->save();
- 
              }
          }
          return response()->json($user);

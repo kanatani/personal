@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class like extends Model
 {
     use HasFactory;
-    protected $table = 'like';
+    protected $table = 'favorite';
     protected $fillable = ['user_id','reply_id'];
 }

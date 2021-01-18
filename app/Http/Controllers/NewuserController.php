@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Request as PostRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 // model
 use App\Models\test;
 use App\Models\loginuser;
