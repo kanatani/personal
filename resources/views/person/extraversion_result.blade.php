@@ -239,7 +239,7 @@
                                 </div>
                                 @else
                                 <div class="submit">
-                                    <form action="/person/mypage" method="post">
+                                    <form action="/person/mypage" method="get">
                                     @csrf
                                     <button type="submit" class="btn btn-outline-info w-50" id="next_button">mypage</button>
                                     </form>

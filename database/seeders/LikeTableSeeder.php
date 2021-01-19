@@ -13,7 +13,7 @@ class LikeTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('like')->insert([
+        DB::table('favorite')->insert([
             [
                 'user_id' => 2,
                 'reply_id' => 1
