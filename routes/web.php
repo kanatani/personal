@@ -132,7 +132,7 @@ Route::get('/person/community_search', 'App\Http\Controllers\GroupController@sea
 Route::resource('person', 'App\Http\Controllers\PersonController');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('person.index');
 });
 
 Auth::routes(['register' => false]);

@@ -34,7 +34,7 @@
                             </div>
                             <div>
                                 <h3 class="myaccount_name">{{ $name }}
-                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                <img src="<?php echo $fileName; ?>" alt="" class="myaccount_img">
                                 </h3>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                         <h2>{{ $communities->name }}</h2>
                     </div>
                     <div class="group-detail-info-list">
-                        <img class="group-detail-info-image" src="/uploads/{{ $communities->image }}" alt="">
+                        <img class="group-detail-info-image" src="{{ $communities->image }}" alt="">
                     </div>
                     <div class="group-detail-info-detail">
                         <p>カテゴリー:{{ $communities->category }}</p>
@@ -100,7 +100,7 @@
                         @foreach ($communitymember as $communitymembers)
                         <li>
                             <a href="/person/user/{{ $communitymembers->user_id }}" >
-                                <img class="group-detail-member-image" src="/uploads/{{ $communitymembers->image }}" alt="">
+                                <img class="group-detail-member-image" src="{{ $communitymembers->image }}" alt="">
                                 <br>
                                 {{ $communitymembers->name }}
                             </a>

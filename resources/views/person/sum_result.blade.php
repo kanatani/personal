@@ -7,37 +7,32 @@
             // 勤勉性
             case $item['conscientiousness'] >= 13.6;
                 $serious = '計画タイプ';
-                $seriousimg = "/images/shutterstock_403187164.jpg";
+                $seriousimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_403187164.jpg";
                 $serioussm = '自分の計画を乱さない';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
-                break;
+		break;
 
             case $item['conscientiousness'] >= 4.9 && $item['conscientiousness'] <= 13.5;
                 $serious = 'コツコツタイプ';
-                $seriousimg = "/images/shutterstock_1692488656.jpg";
-                $serioussm = '積み上げ型';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
+                $seriousimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_699712699.jpg";
+                $serioussm = '積み上げ型'; 
                 break;
 
             case $item['conscientiousness'] >= -4.8 && $item['conscientiousness'] <= 4.8;
                 $serious = 'スイッチタイプ';
-                $seriousimg = "/images/shutterstock_1716129895.jpg";
+                $seriousimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1716129895.jpg";
                 $serioussm = 'ON/OFF切替できる';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
                 break;
 
                 case $item['conscientiousness'] >= -13.5 && $item['conscientiousness'] <= -4.9;
                 $serious = '素直タイプ';
-                $seriousimg = "/images/shutterstock_603829727.jpg";
+                $seriousimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1466073518.jpg";
                 $serioussm = '自分の本能に素直な';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
                 break;
 
             case $item['conscientiousness'] <= -13.6;
                 $serious = '速攻行動力タイプ';
-                $seriousimg = "/images/shutterstock_1080828530.jpg";
+                $seriousimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1502561861.jpg";
                 $serioussm = '思い立ったら即行動';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
                 break;
          
         }
@@ -46,39 +41,32 @@
                 // 協調性
                 case $item['kind'] >= 13.6;
                 $kind = 'キリストタイプ';
-                $kindimg = "/images/shutterstock_1586081839.jpg";
+                $kindimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1586081839.jpg";
                  $kindsm = '他人を愛してやまない';
-                 $kindmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                  break;
  
              case $item['kind'] >= 4.9 && $item['kind'] <= 13.5;
                   $kind = 'ボランティアタイプ';
-                  $kindimg = "/images/shutterstock_1692488656.jpg";
+                  $kindimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1692488656.jpg";
                   $kindsm = '第一印象から良い';
-                  $kindmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
-                
                   break;
  
              case $item['kind'] >= -4.8 && $item['kind'] <= 4.8;
                  $kind = 'バランスタイプ';
-                 $kindimg = "/images/shutterstock_478518385.jpg";
-                 $kindsm = '共感と客観を兼ね備えた';
-                 $kindmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
-                
+                 $kindimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_478518385.jpg";
+                 $kindsm = '共感と客観を兼ね備えた';                
                  break;
  
                  case $item['kind'] >= -13.5 && $item['kind'] <= -4.9;
                  $kind = '客観性重視タイプ';
-                 $kindimg = "/images/shutterstock_603829727.jpg";
+                 $kindimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_603829727.jpg";
                  $kindsm = '合理的な答えを見つけやすい';
-                 $kindmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                  break;
  
              case $item['kind'] <= -13.6;
                  $kind = '独自性タイプ';
-                 $kindimg = "/images/shutterstock_1080828530.jpg";
+                 $kindimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1080828530.jpg";
                  $kindsm = '一人で物事を遂行する';
-                 $kindmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                  break;
         }
 
@@ -87,32 +75,32 @@
         switch (true) {
             case $item['openness'] >= 13.6;
                $openness= 'ナポレオンタイプ';
-               $opennessimg= "/images/shutterstock_1586081839.jpg";
+               $opennessimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_205554184.jpg";
                 $opennesssm = '新しいことが大好きな';
                  break;
 
             case $item['openness'] >= 4.9 && $item['openness'] <= 13.5;
                  $openness= '冒険家タイプ';
-                 $opennessimg= "/images/shutterstock_1692488656.jpg";
+                 $opennessimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_443840548.jpg";
                  $opennesssm = '幅広い興味がある';
                  break;
  
 
             case $item['openness'] >= -4.8 && $item['openness'] <= 4.8;
                 $openness= '器用タイプ';
-                $opennessimg= "/images/shutterstock_670192495.jpg";
+                $opennessimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_670192495.jpg";
                 $opennesssm = 'ルールと刺激をコントロールする';
                  break;
 
                 case $item['openness'] >= -13.5 && $item['openness'] <= -4.9;
                 $openness= '慎重タイプ';
-                $opennessimg= "/images/shutterstock_603829727.jpg";
+                $opennessimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1767680240.jpg";
                 $opennesssm = 'ルールで安全策を練る';
                 break;
 
             case $item['openness'] <= -13.6;
                 $openness= 'こだわりタイプ';
-                $opennessimg= "/images/shutterstock_1080828530.jpg";
+                $opennessimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_198973802.jpg";
                 $opennesssm = '慣れ親しんだ物が大好きな';
                 break;
         }
@@ -122,32 +110,32 @@
         switch (true) {
             case $item['extraversion'] >= 13.6;
                $extraversion = 'カリスマタイプ';
-               $extraversionimg = "/images/shutterstock_640536037.jpg";
+               $extraversionimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_640536037.jpg";
                $extraversionsm = '多くの人を魅了する';
                  break;
 
             case $item['extraversion'] >= 4.9 && $item['extraversion'] <= 13.5;
                  $extraversion = '外交官タイプ';
-                 $extraversionimg ="/images/shutterstock_1571369995.jpg";
+                 $extraversionimg ="http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1571369995.jpg";
                 $extraversionsm = '人と会うのがが大好きな';
                  break;
  
 
             case $item['extraversion'] >= -4.8 && $item['extraversion'] <= 4.8;
                 $extraversion = '八方美人タイプ';
-                $extraversionimg = "/images/shutterstock_1253308768.jpg";
+                $extraversionimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1253308768.jpg";
                $extraversionsm = '内向と外向を使い分ける';
                 break;
 
                 case $item['extraversion'] >= -13.5 && $item['extraversion'] <= -4.9;
                 $extraversion = '人見知りタイプ';
-                $extraversionimg = "/images/shutterstock_1204875721.jpg";
+                $extraversionimg = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1204875721.jpg";
                $extraversionsm = '緊張するけど人が好きな';
                 break;
 
             case $item['extraversion'] <= -13.6;
                 $extraversion = 'オタクタイプ';
-                $extraversionimg ="/images/shutterstock_1319513894.jpg";
+                $extraversionimg ="http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1319513894.jpg";
                $extraversionsm = '自分の興味を追求する';
                 break;
         }
@@ -157,31 +145,31 @@
         switch (true) {
             case $item['neuroticism'] >= 13.6;
                $neuroticism = '芸術家タイプ';
-               $neuroticismimg= "/images/shutterstock_703964362.jpg";
+               $neuroticismimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_703964362.jpg";
                $neuroticismsm = '周りの刺激を表現に変える';
                 break;
 
             case $item['neuroticism'] >= 4.9 && $item['neuroticism'] <= 13.5;
                 $neuroticism = '石橋叩くタイプ';
-                $neuroticismimg= "/images/shutterstock_653150977.jpg";
+                $neuroticismimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_653150977.jpg";
                 $neuroticismsm = '潜在的な危機を回避する';
                 break;
 
             case $item['neuroticism'] >= -4.8 && $item['neuroticism'] <= 4.8;
                 $neuroticism = 'コントロールタイプ';
-                $neuroticismimg= "/images/shutterstock_676026622.jpg";
+                $neuroticismimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_676026622.jpg";
                 $neuroticismsm = '弱さと強さを兼ね備える';
                 break;
 
                 case $item['neuroticism'] >= -13.5 && $item['neuroticism'] <= -4.9;
                 $neuroticism = '頼れるお兄さんタイプ';
-                 $neuroticismimg= "/images/shutterstock_373621933.jpg";
+                 $neuroticismimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_373621933.jpg";
                  $neuroticismsm = '困難な場所でも冷静に動ける';
                 break;
 
             case $item['neuroticism'] <= -13.6;
                 $neuroticism = '騎士タイプ';
-                $neuroticismimg= "/images/shutterstock_246130534.jpg";
+                $neuroticismimg= "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_246130534.jpg";
                 $neuroticismsm = '鋼のメンタルの持ち主';
                 break;
         }

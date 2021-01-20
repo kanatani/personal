@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DropChat extends Migration
+class DropsLikeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class DropChat extends Migration
      */
     public function up()
     {
-        Schema::table('chat', function (Blueprint $table) {
-            Schema::drop('chat');
-        });
+        Schema::table('like', function (Blueprint $table) {
+    	   Schema::drop('like');
+	 });
     }
 
     /**
@@ -25,8 +25,6 @@ class DropChat extends Migration
      */
     public function down()
     {
-        Schema::table('chat', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('like');
     }
 }

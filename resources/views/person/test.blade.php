@@ -11,7 +11,7 @@
                     <humburger-component></humburger-component>
            </div>
          </div>
-            <div class="row test_message" style="background:url({{ asset('/images/shutterstock_1471472060.jpg') }} ); background-size:cover;">
+            <div class="row test_message" style="background:url('http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1471472060.jpg'); background-size:cover;">
                 <div class="test_title">
                     <h1>無料診断テスト</h1>
                 </div>

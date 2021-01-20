@@ -670,7 +670,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/jquery.bgswitcher.js */"./resources/js/jquery.bgswitcher.js");
+module.exports = __webpack_require__(/*! /var/www/personal/resources/js/jquery.bgswitcher.js */"./resources/js/jquery.bgswitcher.js");
 
 
 /***/ })

@@ -34,7 +34,7 @@
                             </div>
                             <div>
                                 <h3 class="myaccount_name">{{ $name }}
-                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                <img src="<?php echo $fileName; ?>" alt="" class="myaccount_img">
                                 </h3>
                             </div>
                         </div>
@@ -81,14 +81,14 @@
                             @if(isset($chatroom->user_name))
                             <div class="chat_room_info">
                                 <a href="chatroom/<?php echo $chatroomid; ?>" class="chat_room_enter">
-                                    <img src="/uploads/<?php echo $chatroom->user_image; ?>" alt="" class="chat_room_img">
+                                    <img src="<?php echo $chatroom->user_image; ?>" alt="" class="chat_room_img">
                                     <h4 class="chat_user_name">{{ $chatroom->user_name }}</h4>
                                 </a>
                             </div>
                             @else
                             <div class="chat_room_info">
                                 <a href="chatroom/<?php echo $chatroomid; ?>" class="chat_room_enter">
-                                    <img src="/uploads/<?php echo $chatroom->community_image; ?>" alt="" class="chat_room_img">
+                                    <img src="<?php echo $chatroom->community_image; ?>" alt="" class="chat_room_img">
                                     <h4 class="chat_user_name">{{ $chatroom->community_name }}</h4>
                                 </a>
                             </div>

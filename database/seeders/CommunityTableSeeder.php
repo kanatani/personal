@@ -17,6 +17,7 @@ class CommunityTableSeeder extends Seeder
         DB::table('community')->insert([
             [
                 'groupid' => 2,
+		'user_id' =>2,
                 'member' => 1,
                 'name' => '空手',
                 'image' => 'fhfh.jpg',

@@ -156,7 +156,7 @@ ScrollReveal().reveal('.detail5', {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/head.js */"./resources/js/head.js");
+module.exports = __webpack_require__(/*! /var/www/personal/resources/js/head.js */"./resources/js/head.js");
 
 
 /***/ })

@@ -136,7 +136,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/like.js */"./resources/js/like.js");
+module.exports = __webpack_require__(/*! /var/www/personal/resources/js/like.js */"./resources/js/like.js");
 
 
 /***/ })

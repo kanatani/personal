@@ -106,7 +106,7 @@ window.scroll(0, bottom);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/chatscroll.js */"./resources/js/chatscroll.js");
+module.exports = __webpack_require__(/*! /var/www/personal/resources/js/chatscroll.js */"./resources/js/chatscroll.js");
 
 
 /***/ })

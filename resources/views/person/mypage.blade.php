@@ -185,7 +185,7 @@ switch (true) {
                             </div>
                             <div>
                                 <h3 class="myaccount_name">{{ $name }}
-                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                <img src="<?php echo $fileName; ?>" alt="" class="myaccount_img">
                                 </h3>
                             </div>
                         </div>

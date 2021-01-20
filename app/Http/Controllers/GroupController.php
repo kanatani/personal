@@ -10,8 +10,10 @@ use App\Models\test;
 use App\Models\loginuser;
 use App\Models\chat;
 use App\Models\Community;
+use App\File;
 // hash
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 // auth
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -38,11 +40,11 @@ class GroupController extends Controller
             $community->name = $request->community_name; 
             $file = $request->file('image');
             if($file->isValid()) {
-                $fileNames = time() . $file->getClientOriginalName();
-                $target_path = public_path('uploads');
-                $file->move($target_path, $fileNames);
+		$fileNames = Storage::disk('s3')->putFile('uploads', $file, 'public');
+		$fileNameurl = Storage::disk('s3')->url($fileNames);
             }
-            $community->image = $fileNames;
+	    $target = Storage::disk('s3')->putFile('/uploads',$request->file('image'), 'public');
+            $community->image = $fileNameurl;
             $community->category = $request->community_category; 
             $community->save(); 
         }

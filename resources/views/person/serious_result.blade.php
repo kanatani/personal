@@ -6,7 +6,7 @@
         switch (true) {
             case $sum >= 13.6;
                $msg = '計画屋タイプ';
-               $img = "/images/shutterstock_403187164.jpg";
+               $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_403187164.jpg";
                 $ssg = '自分の計画を乱さない';
                $detail1 = '鬼ストイック';
                $sbmsg1 = '勤勉性がとても高いあなたは、自分が決めた目標に対して決まった手順を自分で考えて実行していくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、粘り強く行動する諦めが悪いタイプです。そんな仕事に対する対応を見て、周りの人たちからは仕事ができる人と思われているかもしれませんね。';
@@ -38,7 +38,7 @@
 
             case $sum >= 4.9 && $sum <= 13.5;
                  $msg = 'コツコツタイプ';
-                 $img = "/images/shutterstock_699712699.jpg";
+                 $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_699712699.jpg";
                  $ssg = '積み上げ型';
                 $detail1 = '着実に取り組む';
                 $sbmsg1 = '勤勉性がかなり高いあなたは仕事や目標をコツコツと積み上げていき、長期的に実績を上げていくタイプです。長い時間を費やす資格試験や仕事でも、うまく習慣化することで実行することができる人です。また、責任感が強いので丁寧で粘り強く物事を取り組むことができます。プライベートにおいて、勤勉性が高い人の傾向として浮気をする可能性が低くなります。なので、長期的なパートナーとして向いています。';
@@ -71,7 +71,7 @@
 
             case $sum >= -4.8 && $sum <= 4.8;
                 $msg = 'スイッチタイプ';
-                $img = "/images/shutterstock_1716129895.jpg";
+                $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1716129895.jpg";
                 $ssg = 'ON/OFF切替できる';
                $detail1 = '自分のペースを重視する';
                $sbmsg1 = '勤勉性が標準なあなたは、仕事とプライベートをうまく両立できるタイプです。例えば、仕事では仕事を真面目に取り組むことができるし、プライベートでは思い切って遊んだり上手く休憩することができます。この様に仕事とプライベートの区別をしっかりとつけることができます。また、仕事の中でも力を抜く部分と力をいれる部分を明確に分けることができるとても器用なタイプでもあります。';
@@ -103,7 +103,7 @@
 
                 case $sum >= -13.5 && $sum <= -4.9;
                 $msg = '衝動タイプ';
-                $img = "/images/shutterstock_1466073518.jpg";
+                $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1466073518.jpg";
                 $ssg = '自分の本能に素直な';
                $detail1 = '自分に素直';
                $sbmsg1 = '勤勉性が少し低いあなたは、思い立ったら考える前に行動することができるタイプです。例えば、やりたいことがあった場合にすぐ必要な物を揃えて行動することができます。また、何か問題が起こっても臨機応変に対応することができます。しかし、計画が全くできないタイプではないので、やるべきことは実行することができます。';
@@ -135,7 +135,7 @@
 
             case $sum <= -13.6;
                 $msg = 'ハンタータイプ';
-                $img = "/images/shutterstock_1502561861.jpg";
+                $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1502561861.jpg";
                 $ssg = '思い立ったら即行動';
                $detail1 = '素早い行動力';
                $sbmsg1 = '勤勉性がとても低いあなたは、素晴らしい行動力を持っています。自分の感情に素直で、やりたい事があったら躊躇なく飛びつく事ができます。なので、多くの出来事を経験することができます。また、複雑な状況下でもやることを決めて素早い対応することができます。なので、アドリブが求められる分野においては大きな力を発揮することができるでしょう。';
@@ -240,7 +240,7 @@
                                 </div>
                                 @else
                                 <div class="submit">
-                                    <form action="/person/mypage" method="post">
+                                    <form action="/person/mypage" method="get">
                                     @csrf
                                     <button type="submit" class="btn btn-outline-info w-50" id="next_button">mypage</button>
                                     </form>

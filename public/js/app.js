@@ -43869,7 +43869,7 @@ var render = function() {
         _c("div", { staticClass: "community-detail-image-list" }, [
           _c("img", {
             staticClass: "community-detail-image",
-            attrs: { src: "/uploads/" + _vm.community.image, alt: "" }
+            attrs: { src: _vm.community.image, alt: "" }
           })
         ]),
         _vm._v(" "),
@@ -56597,8 +56597,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 window.Pusher = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
-  key: "4c9dbbbe7f721f3caed7",
-  cluster: "ap3",
+  key: "",
+  cluster: "mt1",
   forceTLS: true
 });
 
@@ -56999,8 +56999,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/personal/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/personal/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

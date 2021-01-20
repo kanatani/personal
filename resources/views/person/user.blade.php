@@ -183,7 +183,7 @@ switch (true) {
                             </div>
                             <div>
                                 <h3 class="myaccount_name">{{ $name }}
-                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                <img src="<?php echo $fileName; ?>" alt="" class="myaccount_img">
                                 </h3>
                             </div>
                         </div>
@@ -227,7 +227,7 @@ switch (true) {
                             <p>{{ $userid }}</p>
                             <h4>username</h4>
                             <p>{{ $yourname}}</p>
-                            <img src="/uploads/<?php echo $yourimage; ?>" alt="" class="youraccount_img">
+                            <img src="<?php echo $yourimage; ?>" alt="" class="youraccount_img">
                         </div>
                         <div class="like_data">
                             <input type="hidden" name="userid" value="<?php echo $userid; ?>" class="userid">

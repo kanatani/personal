@@ -34,7 +34,7 @@
                             </div>
                             <div>
                                 <h3 class="myaccount_name">{{ $name }}
-                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                <img src="<?php echo $fileName; ?>" alt="" class="myaccount_img">
                                 </h3>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                        @foreach($lookgroup as $lookgroups)
                         <li>
                             <a href="group_detail/<?php echo $lookgroups->groupid; ?>">
-                                <img class="group-detail-community-image" src="/uploads/{{ $lookgroups->image }}" alt="">
+                                <img class="group-detail-community-image" src="{{ $lookgroups->image }}" alt="">
                                 <br>
                                 {{ $lookgroups->name }}
                                 <br>

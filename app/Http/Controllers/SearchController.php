@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 // model
 use App\Models\loginuser;
 use App\Models\like;
-
+use App\Models\chat;
 // auth
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;

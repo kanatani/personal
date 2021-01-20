@@ -6,7 +6,7 @@
       </div>
       <div class="community-detail-image-list">
         <img
-          :src="'/uploads/' + community.image"
+          :src="community.image"
           alt=""
           class="community-detail-image"
         />

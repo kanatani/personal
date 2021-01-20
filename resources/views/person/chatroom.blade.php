@@ -34,7 +34,7 @@
                             </div>
                             <div>
                                 <h3 class="myaccount_name">{{ $name }}
-                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                <img src="<?php echo $fileName; ?>" alt="" class="myaccount_img">
                                 </h3>
                             </div>
                         </div>
@@ -75,10 +75,10 @@
                     <div class="your_info_region">
                         @if(isset( $groupinfo->community_name))
                         <h2 class="top_chat_name">{{ $groupinfo->community_name}}</h2>
-                        <img src="/uploads/{{ $groupinfo->community_image }}" alt="" class="your_chat_img">
+                        <img src="{{ $groupinfo->community_image }}" alt="" class="your_chat_img">
                         @else
                         <h2 class="top_chat_name">{{ $yourinfo->name}}</h2>
-                        <img src="/uploads/{{ $yourinfo->image }}" alt="" class="your_chat_img">
+                        <img src="{{ $yourinfo->image }}" alt="" class="your_chat_img">
                         @endif
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                         <ul class="messages" v-for="m in messages">
                             <li class="right-side" v-if="m.user_id == <?php echo $myid ;?>">
                                 <div class="pic">
-                                <img src="/uploads/{{ $fileName }}" alt="" class="chat_img">
+                                <img src="{{ $fileName }}" alt="" class="chat_img">
                                 </div>
                                 <div class="text">
                                 <span v-text="m.message"></span>
@@ -97,7 +97,7 @@
                             </li>
                             <li class="left-side" v-else>
                                 <div class="pic">
-                                <img :src="'/uploads/' + m.user_image" alt="" class="chat_img">
+                                <img :src="m.user_image" alt="" class="chat_img">
                                 </div>
                                 <div class="text">
                             <span v-text="m.message"></span>

@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(PersonSeeder::class);
+	$this->call(favoriteTableSeeder::class);
         $this->call(ContactSeeder::class);
         $this->call(TestTableSeeder::class);
         $this->call(userSeeder::class);
-        $this->call(LikeTableSeeder::class);
         $this->call(ChatTableSeeder::class);
         $this->call(CommunityTableSeeder::class);
     }

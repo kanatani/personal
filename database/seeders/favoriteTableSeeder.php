@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-class LikeTableSeeder extends Seeder
+
+class favoriteTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +14,7 @@ class LikeTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('like')->insert([
+       DB::table('favorite')->insert([
             [
                 'user_id' => 2,
                 'reply_id' => 1

@@ -292,7 +292,7 @@ p {
 }
 
 .enter_sub {
-    background-image: url('/images/shutterstock_653150977.jpg');
+    background-image: url('http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_653150977.jpg');
     background-position: center center;
     background-size:  cover;
     position: fixed;

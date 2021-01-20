@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Request as PostRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 // model
 use App\Models\test;
 use App\Models\loginuser;
@@ -28,9 +29,8 @@ class NewuserController extends Controller
         else
         {
             if($file->isValid()) {
-                $fileName = time() . $file->getClientOriginalName();
-                $target_path = public_path('uploads');
-                $file->move($target_path, $fileName);
+		$fileNames = Storage::disk('s3')->putFile('uploads', $file, 'public');
+		$fileName = Storage::disk('s3')->url($fileNames);
                 \DB::table('user')->where('sessionid', $id) ->update([
                     'image' => $fileName
                 ]);

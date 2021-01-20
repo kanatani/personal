@@ -119,7 +119,7 @@ $(function () {
       var image = data.image;
       var id = data.userid;
       var username = $("<p class=\"username\">".concat(name, "</p>"));
-      var userimage = $("<a href=\"/person/user/".concat(userid, "\" class=\"userimage\" ><img src=\"/uploads/").concat(image, "\" alt=\"\"></a>"));
+      var userimage = $("<a href=\"/person/user/".concat(userid, "\" class=\"userimage\" ><img src=\"").concat(image, "\" alt=\"\"></a>"));
 
       if (data.name === undefined) {
         $('.userlist').append('<p>user情報が見つからなかったです。</p>');
@@ -144,7 +144,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/ajax.js */"./resources/js/ajax.js");
+module.exports = __webpack_require__(/*! /var/www/personal/resources/js/ajax.js */"./resources/js/ajax.js");
 
 
 /***/ })

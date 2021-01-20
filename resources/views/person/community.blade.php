@@ -34,7 +34,7 @@
                             </div>
                             <div>
                                 <h3 class="myaccount_name">{{ $name }}
-                                <img src="/uploads/<?php echo $fileName; ?>" alt="" class="myaccount_img">
+                                <img src="<?php echo $fileName; ?>" alt="" class="myaccount_img">
                                 </h3>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                             <div class="community-room-info">
                                 <a href="" v-on:click.prevent.stop="opencommunity( {{ $my_communitys }} )" class="community-room-enter">
                                 <div>
-                                    <img src="/uploads/<?php echo $my_communitys->image; ?>" alt="" class="my-community-image">
+                                    <img src="<?php echo $my_communitys->image; ?>" alt="" class="my-community-image">
                                 </div>
                                 <div>
                                     <p class="community-name">{{ $my_communitys->name }}</p>
@@ -130,7 +130,7 @@
                             <div class="community-room-info">
                                 <a href="group_detail/<?php echo $communitylist->groupid; ?>"  class="community-room-enter">
                                 <div>
-                                    <img src="/uploads/<?php echo $communitylist->image; ?>" alt="" class="my-community-image">
+                                    <img src="<?php echo $communitylist->image; ?>" alt="" class="my-community-image">
                                 </div>
                                 <div>
                                     <p class="community-name">{{ $communitylist->name }}</p>

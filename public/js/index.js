@@ -95,7 +95,7 @@
 
 jQuery(function ($) {
   $('.header').bgSwitcher({
-    images: ['images/shutterstock_622200797.jpg', 'images/shutterstock_1188379606.jpg', 'images/shutterstock_762804607.jpg'],
+    images: ['http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_622200797.jpg', 'http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1188379606.jpg', 'http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_762804607.jpg'],
     // 切り替え画像
     Interval: 5000,
     //切り替えの間隔 1000=1秒
@@ -112,7 +112,7 @@ jQuery(function ($) {
     easing: "swing" //エフェクトのイージング "swing" "linear"
 
   }), $('.community-introduction').bgSwitcher({
-    images: ['/images/shutterstock_1678138090.jpg', '/images/shutterstock_1262915317.jpg', '/images/shutterstock_634861250.jpg'],
+    images: ['http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1678138090.jpg', 'http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1262915317.jpg', 'http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_634861250.jpg'],
     // 切り替え画像
     Interval: 5000,
     //切り替えの間隔 1000=1秒
@@ -140,7 +140,7 @@ jQuery(function ($) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/personal/resources/js/index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! /var/www/personal/resources/js/index.js */"./resources/js/index.js");
 
 
 /***/ })
