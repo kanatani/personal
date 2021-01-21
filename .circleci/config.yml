@@ -2,6 +2,29 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/php7.3-node-browsers
+      - image: circleci/php:7.3-node-browsers
+      - image: circleci/mysql:8.0
+
+jobs:
+  build:
+    << *defaults
     steps:
-      - run:echo "Hello World"
+      -  checkout
+      -  run:
+        name:  install pdo_mysql
+        command:  |
+          sudo apt  update
+          sudo docker-php-ext-install pdo_mysql
+          sudo docker-php-ext-enable pdo_mysql
+      -  restore_cache:
+            keys:
+                - v1-dependencies-{{ checksum "composer.json" }}
+                  - v1-dependencies-
+      -  run:  composer install  -n --prefer-dist
+      -  save_cache:
+            paths:
+              - ./vendor
+            key:  v1-dependencies-{{ checksum "composer.json" }}
+
+      -  run:  php artisan migrate
+      -  run:  php artisan db:seed
