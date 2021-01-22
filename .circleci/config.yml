@@ -23,14 +23,16 @@ jobs:
 
         -  restore_cache:
             keys:
-                -  v1-dependencies-{{ chesum "composer.json" }} 
+                -  v1-dependencies-{{ checksum "composer.json" }} 
                 -  v1-dependencies-
         -  run: composer install -n --prefer-dist 
 
         -  save_cache:
-              key: v1-dependencies-{{ chesum "composer.json" }}
+              key: v1-dependencies-{{ checksum "composer.json" }}
               paths:
                   -  ./vendor
                     
         -  run:  php artisan migrate
         -  run:  php artisan db:seed
+
+        - run: ./vendor/bin/phpunit
