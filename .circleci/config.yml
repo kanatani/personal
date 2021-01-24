@@ -16,9 +16,11 @@ jobs:
       environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
       - MYSQL_DATABASE:  personal
+      - MYSQL_ROOT_PASSWORD: kanaya19980616
+
     environment:
       - DB_HOST: 127.0.0.1
-      
+
     steps:
         -  checkout
 
