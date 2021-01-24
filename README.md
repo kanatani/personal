@@ -18,8 +18,20 @@ URL : <a href="https://http://www.awspersonalityapp.com/">my application</a>
 また、自分の性格を客観的に知って行くのは今後の人生の選択(就活や生活スタイルの確率)に役立てるのではないかと考えたことも影響しています。
 
 ## 使用した技術
-- ** フロントエンド
-     
+-  フロントエンド
+    - HTML / CSS / Bootstrap
+    - jquery 3.1.0
+    - vue.js 2.5.17
+
+- バックエンド
+     - php 7.3
+     - laravel 8.0
+     - PHPUnit 9.3
+
+- インフラ
+    - AWS (EC2, RDS, S3(画像アップロード用),Route53,VPC,IAM,CloudFront)
+    
+
 
 
 ### Premium Partners
