@@ -79,4 +79,7 @@ URL : <a href="https://http://www.awspersonalityapp.com/">my application</a>
     - ハンバーガーメニュー(vue.js)
 
 ### DB設計
-|テーブル名|説明|
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
