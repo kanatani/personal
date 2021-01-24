@@ -10,10 +10,12 @@ jobs:
       - DB_DATABASE: default
       - DB_USERNAME: default
 
-    - image: circleci/mysql:8.0
+    - image: circleci/mysql:8.0.13-ram
+      command: |
+           mysqld --default-authentication-plugin=mysql_native_password
       environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
-      - MYSQL_DATABASE:  default
+      - MYSQL_DATABASE:  personal
       
     steps:
         -  checkout
