@@ -4,7 +4,7 @@ jobs:
     docker:
     - image: circleci/php:7.3-node-browsers
       environment:
-      - DB_HOST: mysql
+      - DB_HOST: 127.0.0.1
       - APP_DEBUG: true
       - APP_ENV: testing
       - DB_CONNECTION: mysql
