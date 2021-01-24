@@ -77,9 +77,14 @@ URL : <a href="https://http://www.awspersonalityapp.com/">my application</a>
 - その他
     - レスポンシブデザイン
     - ハンバーガーメニュー(vue.js)
+    - お問い合わせ機能
 
 ### DB設計
 |テーブル名|概要|
 |------------|-------------------------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|test|性格診断テスト情報|
+|user|登録ユーザー情報|
+|contact|お問い合わせ内容の情報|
+|chat|チャットルーム情報|
+|community|グループ情報|
+|favorite|ユーザーのいいね情報|
