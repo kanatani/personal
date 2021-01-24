@@ -19,7 +19,7 @@ jobs:
       - MYSQL_ROOT_PASSWORD: kanaya19980616
 
     environment:
-      - DB_HOST: mysql
+      - DB_HOST: 127.0.0.1
 
     steps:
         -  checkout
