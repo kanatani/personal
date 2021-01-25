@@ -6,9 +6,11 @@ jobs:
       environment:
       - APP_DEBUG: true
       - APP_ENV: testing
+      - APP_KEY: base64:Bpmdn5HgX5c/k3IeuAEkhjc99cZMwm75HQNvgw5vWWo=
       - DB_CONNECTION: circle_test
       - DB_DATABASE: personal
       - DB_USERNAME: kanatani
+      - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     - image: circleci/mysql:8.0.13-ram
       command: |
@@ -17,9 +19,6 @@ jobs:
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
       - MYSQL_DATABASE:  personal
       - MYSQL_ROOT_PASSWORD: kanataninaoki616
-
-    environment:
-      - DB_HOST: 127.0.0.1
 
     steps:
         -  checkout
