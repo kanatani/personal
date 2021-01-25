@@ -18,6 +18,9 @@ jobs:
       - MYSQL_DATABASE:  personal
       - MYSQL_ROOT_PASSWORD: kanaya19980616
 
+    environment:
+      - DB_HOST: localhost
+
     steps:
         -  checkout
 
