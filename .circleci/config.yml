@@ -33,7 +33,7 @@ jobs:
               paths:
                   -  ./vendor
                     
-        -  run:  php artisan migrate 
+        -  run:  php artisan migrate --force
         -  run:  php artisan db:seed
 
         -  run: ./vendor/bin/phpunit

@@ -56,6 +56,7 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
+            'unix_socket' => '/var/run/mysqld/mysqld.sock',
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
@@ -101,6 +102,7 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
+            'unix_socket' => '/var/run/mysqld/mysqld.sock',
             'strict' => true,
             'engine' => null,
         ],
