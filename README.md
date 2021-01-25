@@ -20,8 +20,9 @@ URL : <a href="https://http://www.awspersonalityapp.com/">my application</a>
 ## 使用した技術
 -  フロントエンド
     - HTML / CSS / Bootstrap
-    - jquery 3.1.0
+    - jquery 3.2
     - vue.js 2.5.17
+    - chart.js 2.8.0
 
 - バックエンド
      - php 7.3
