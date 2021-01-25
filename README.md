@@ -89,3 +89,5 @@ URL : <a href="https://http://www.awspersonalityapp.com/">my application</a>
 |chat|チャットルーム情報|
 |community|グループ情報|
 |favorite|ユーザーのいいね情報|
+
+jj
