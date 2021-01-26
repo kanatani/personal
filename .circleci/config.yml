@@ -11,7 +11,8 @@ jobs:
       - APP_ENV: testing
       - APP_KEY: base64:Bpmdn5HgX5c/k3IeuAEkhjc99cZMwm75HQNvgw5vWWo=
       - DB_CONNECTION: circle_test
-      - DB_DATABASE: 
+      - DB_DATABASE: default
+      - DB_HOST: 127.0.0.1
       - DB_USERNAME: root
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
