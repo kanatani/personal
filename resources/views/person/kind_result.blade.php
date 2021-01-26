@@ -173,6 +173,7 @@
                         <div class="header_title">
                             <h1>person</h1>
                         </div>
+                        <humburger-component></humburger-component>
                     </div>
                 </header>
             </div>

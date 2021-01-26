@@ -1154,8 +1154,8 @@ input[type="file"] {
 #global_navi ul{
     list-style: none;
     margin-top: 35px;
-    margin-left: 300px;
-    margin-right: 50px;
+    margin-left: 250px;
+    margin-right: 10px;
 }
 
 #global_navi ul li{
