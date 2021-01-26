@@ -13,7 +13,7 @@ jobs:
       - DB_CONNECTION: circle_test
       - DB_DATABASE: personal
       - DB_HOST: 127.0.0.1
-      - DB_USERNAME: root
+      - DB_USERNAME: naoki
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
       working_directory: ~/repo
