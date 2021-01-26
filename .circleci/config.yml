@@ -19,6 +19,8 @@ jobs:
       - run: sudo docker-php-ext-install zip pdo_mysql
       - run: npm ci
       - run: npm run dev
+      - run: echo "APP_KEY=" > .env.testing
+      - run: php artisan migrate
       - run:
           name: php test
           command: vendor/bin/phpunit
