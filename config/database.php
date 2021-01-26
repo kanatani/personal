@@ -103,6 +103,8 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'unix_socket' => '/var/run/mysqld/mysqld.sock',
+
         ],
 
     ],
