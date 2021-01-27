@@ -7,7 +7,8 @@ jobs:
           environment:
               - MYSQL_DATABASE: personal
               - MYSQL_ROOT_PASSWORD: root 
-   
+    environment:
+      - DB_HOST: 127.0.0.1
     steps:
       - run: echo "Hello World"
 
