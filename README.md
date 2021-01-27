@@ -10,7 +10,7 @@
 ## Person
 
 心理学で最も信頼されているbig5に基づいた性格診断アプリです。
-URL : <a href="https://http://www.awspersonalityapp.com/">my application</a>
+URL : <a href="http://www.awspersonalityapp.com/">my application</a>
 
 ## アプリ開発の背景
 私が心理学科を専攻していて、心理学の知識を活かしてアプリ開発をしてみたいと考えたのがきっかけです。
@@ -90,4 +90,3 @@ URL : <a href="https://http://www.awspersonalityapp.com/">my application</a>
 |community|グループ情報|
 |favorite|ユーザーのいいね情報|
 
-jj

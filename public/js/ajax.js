@@ -144,7 +144,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/personal/resources/js/ajax.js */"./resources/js/ajax.js");
+module.exports = __webpack_require__(/*! /Users/kanayanaoki/Desktop/mylaravel/personal/resources/js/ajax.js */"./resources/js/ajax.js");
 
 
 /***/ })
