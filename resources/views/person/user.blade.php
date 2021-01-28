@@ -58,7 +58,7 @@ switch (true) {
          break;
 
      case $item['kind'] <= -13.6;
-         $kind = '独自性タイプ';
+         $kind = '独自タイプ';
          $kindimg = "/images/shutterstock_1080828530.jpg";
          $kindsm = '一人で物事を遂行する';
          break;
