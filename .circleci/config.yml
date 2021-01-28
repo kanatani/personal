@@ -32,7 +32,7 @@ jobs:
          - add_ssh_keys:
                SHA256:
                   - "1RFKU5jwzNTfJnPPvnGrbhv8AIrC/84ed88bE8NrBlI"
-         - run: ssh naoki@54.64.86.93 'cd /var/www/personal/ && git pull origin master'
+         - run: ssh naoki@10.0.0.128 'cd /var/www/personal/ && git pull origin master'
     
 
 workflows:
