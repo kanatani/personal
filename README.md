@@ -37,6 +37,7 @@ URL : <a href="http://www.awspersonalityapp.com/">my application</a>
     - mysql 8.0.23
     - nginx （開発環境)
     - apache (本番環境)
+    - circleci
 
 - その他
     - Visual Studio Code 
