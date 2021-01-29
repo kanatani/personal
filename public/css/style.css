@@ -2008,6 +2008,13 @@ li.right-side {
        .navi {
             width: 200px;
         }
+        
+    /* シングルページログイン */
+    .login_form {
+        width: 90%;
+        height: 70%;
+    }
+
       /* トップページ */
       .header {
         background-repeat: no-repeat;
@@ -2056,17 +2063,10 @@ li.right-side {
         padding-top: 100px;
     }
 
-    /* お問い合わせ入力 */
-
-
-
-
     /* サンクスページ */
     .display-4 {
         padding-top: 30px;
     } 
-
-    
 
     /* テスト説明 */
 
