@@ -11,6 +11,8 @@
 
 心理学で最も信頼されているbig5に基づいた性格診断アプリです。
 URL : <a href="http://www.awspersonalityapp.com/">my application</a>
+<br>
+<br>
 <img width="1440" alt="スクリーンショット 2021-01-31 20 18 15" src="https://user-images.githubusercontent.com/64293493/106382311-1336c200-6402-11eb-985d-4994149493f9.png">
 
 
