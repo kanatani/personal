@@ -21,6 +21,11 @@ URL : <a href="http://www.awspersonalityapp.com/">my application</a>
 私が心理学科を専攻していて、心理学の知識を活かしてアプリ開発をしてみたいと考えたのがきっかけです。
 
 また、自分の性格を客観的に知って行くのは今後の人生の選択(就活や生活スタイルの確率)に役立てるのではないかと考えたことも影響しています。
+<br>
+<img width="1440" alt="スクリーンショット 2021-01-31 20 18 33" src="https://user-images.githubusercontent.com/64293493/106382394-b556aa00-6402-11eb-9ecd-6abd051a5c1f.png">
+<br>
+<img width="1440" alt="スクリーンショット 2021-01-31 20 20 18" src="https://user-images.githubusercontent.com/64293493/106382422-dc14e080-6402-11eb-8255-e972f5aec699.png">
+
 
 ## 使用した技術
 -  フロントエンド
