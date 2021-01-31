@@ -24,7 +24,7 @@ URL : <a href="http://www.awspersonalityapp.com/">my application</a>
 <br>
 <img width="1440" alt="スクリーンショット 2021-01-31 20 18 33" src="https://user-images.githubusercontent.com/64293493/106382394-b556aa00-6402-11eb-9ecd-6abd051a5c1f.png">
 <br>
-<img width="1440" alt="スクリーンショット 2021-01-31 20 20 18" src="https://user-images.githubusercontent.com/64293493/106382422-dc14e080-6402-11eb-8255-e972f5aec699.png">
+<img width="1440" alt="スクリーンショット 2021-01-31 20 29 28" src="https://user-images.githubusercontent.com/64293493/106382459-18e0d780-6403-11eb-84f3-2da8b4a3c756.png">
 
 
 ## 使用した技術
