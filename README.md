@@ -81,6 +81,10 @@ URL : <a href="http://www.awspersonalityapp.com/">my application</a>
     - ハンバーガーメニュー(vue.js)
     - お問い合わせ機能
 
+### インフラ設計図
+![Untitled Diagram](https://user-images.githubusercontent.com/64293493/106382015-ee414f80-63ff-11eb-9695-64c3b351e43e.png)
+
+
 ### DB設計
 |テーブル名|概要|
 |------------|-------------------------|
