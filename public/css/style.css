@@ -1155,11 +1155,11 @@ input[type="file"] {
     list-style: none;
     margin-top: 35px;
     margin-left: 250px;
-    margin-right: 10px;
+
 }
 
 #global_navi ul li{
-    width: 150px;
+    width: 140px;
     float: left;
     text-align: center;
 }
