@@ -1400,7 +1400,7 @@ input[type="file"] {
     border-radius: 30px;
     position: fixed;
     bottom: 100;
-    right: 600;
+    right: 500;
     z-index: 40;
 }
 
