@@ -1154,7 +1154,7 @@ input[type="file"] {
 #global_navi ul{
     list-style: none;
     margin-top: 35px;
-    margin-left: 250px;
+    margin-left: 200px;
 
 }
 
@@ -1182,7 +1182,7 @@ input[type="file"] {
 }
 
 .myaccount {
-    width: 100px;
+    width: 500px;
     float: right;
 }
 
