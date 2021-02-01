@@ -1328,7 +1328,7 @@ input[type="file"] {
 
 /* searchページ */
 .search_head {
-    padding-top: 200px;
+    padding-top: 150px;
     margin: auto;
     text-align: center;
 }
@@ -2290,10 +2290,11 @@ li.right-side {
 
     .community-category {
         width: 300px;
+       margin-left: 30px;
     }
 
     .make-community {
-        height: 900px;
+        height: 1000px;
     }
 
     #category {
