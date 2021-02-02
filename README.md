@@ -11,7 +11,7 @@
 
 性格診断をテーマにしたマッチングアプリです。
 <br>
-アプリのURL : <a href="http://www.awspersonalityapp.com/">my application</a>
+アプリのURL : <a href="https://www.awspersonalityapp.com/">my application</a>
 <br>
 <br>
 <img width="1440" alt="スクリーンショット 2021-01-31 20 18 15" src="https://user-images.githubusercontent.com/64293493/106382311-1336c200-6402-11eb-985d-4994149493f9.png">
