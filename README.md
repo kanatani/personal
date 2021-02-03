@@ -44,7 +44,7 @@ Personは５つの性格特性(外向性、協調性、開放性、神経症的�
      - PHPUnit 9.3
 
 - インフラ
-    - AWS (EC2, RDS, S3(画像アップロード用),Route53,VPC,IAM,CloudFront)
+    - AWS (EC2, RDS, S3(画像アップロード用),Route53,VPC,IAM,CloudFront,ACM,ALB)
     - Docker 19.03.12 
     - docker-compose 1.26.2
     - laradock
@@ -96,7 +96,7 @@ Personは５つの性格特性(外向性、協調性、開放性、神経症的�
     - お問い合わせ機能
 
 ### インフラ設計
-![Untitled Diagram (1)](https://user-images.githubusercontent.com/64293493/106382098-a40c9e00-6400-11eb-99a1-2c5ea7e85086.png)
+![Untitled Diagram (2)](https://user-images.githubusercontent.com/64293493/106711775-592a9a80-663b-11eb-9362-ef21ad606548.png)
 
 
 ### DB設計
