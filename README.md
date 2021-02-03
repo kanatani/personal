@@ -51,7 +51,7 @@ Personは５つの性格特性(外向性、協調性、開放性、神経症的�
     - mysql 8.0.23
     - nginx （開発環境)
     - apache (本番環境)
-    - circleciでのCI/CD
+    - CI/CD
 
 - その他
     - Visual Studio Code 
