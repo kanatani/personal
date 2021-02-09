@@ -35,6 +35,7 @@ class TestController extends Controller
             }
             $user =  \DB::table('test')->where('id', $id)->first();
             switch(true) {
+                // 協調性テスト
                 case isset($insert['kind']):
                     $sum = $user->kind;
                     if(isset($insert['userid'])){
@@ -45,7 +46,7 @@ class TestController extends Controller
                         return view('person.kind_result',compact('sum'));
                     }
                     break;
-
+                //勤勉性テスト
                 case isset($insert['serious']):
                     $sum = $user->conscientiousness;
                     if(isset($insert['userid'])){
@@ -56,7 +57,7 @@ class TestController extends Controller
                         return view('person.serious_result',compact('sum'));
                     }
                     break;
-
+                //開放性テスト
                 case isset($insert['openness']):
                     $sum = $user->openness;
                     if(isset($insert['userid'])){
@@ -67,7 +68,7 @@ class TestController extends Controller
                         return view('person.openness_result',compact('sum'));
                     }
                     break;
-
+                //外向性テスト
                 case isset($insert['extraversion']):
                     $sum = $user->extraversion;
                     if(isset($insert['userid'])){
@@ -78,7 +79,7 @@ class TestController extends Controller
                         return view('person.extraversion_result',compact('sum'));
                     }
                     break;
-
+                // 神経症的傾向テスト
                 case isset($insert['neuroticism']):
                     $sum = $user->neuroticism;
                     if(isset($insert['userid'])){
@@ -102,7 +103,6 @@ class TestController extends Controller
                 $test = new test;
                 $test->kind = $sum; 
                 $test->save(); 
-                
                 $user = DB::table('test')->latest()->first();
                 $users= $user->id;
                 session()->put(['id' => $users]);

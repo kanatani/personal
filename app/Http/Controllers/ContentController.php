@@ -18,7 +18,7 @@ class ContentController extends Controller
         return view('person.check',compact('data1'));
     }
 
-    // 保存
+    // お問い合わせ内容を保存
     public function store(Request $request)
     {
         $contact = new Contact;

@@ -35,7 +35,7 @@ class ChatController extends Controller
          return view('person.chat',compact('name','fileName','chatrooms'));
      }
  
-    //  コミュニティチャット
+    //  コミュニティチャットルーム
      public function communitychat (Request  $request,$groupchat)
      {
          list($name,$fileName,$myid) = BaseClass::look_myuser();
@@ -51,7 +51,8 @@ class ChatController extends Controller
              $chat->reply_id = $chatroomid;
              $chat->save();
          }
- 
+
+         //所属メンバー名とグループ名を取得
          $groupinfo =  \DB::table('chat')
          ->leftjoin('community','chat.chatroom','=','community.groupid')
          ->leftjoin('user','chat.user_id','=','user.userid')
@@ -114,7 +115,8 @@ class ChatController extends Controller
          ->where('chat.chatroom',$chatroomid)->where('chat.user_id',$myid)->first();
  
          $message = $request->message;
- 
+
+         //グループチャットか個人チャットを区別
          if(!isset($yourchat->community_name))
          {
              $chat = new chat;

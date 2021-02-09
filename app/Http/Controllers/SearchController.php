@@ -18,13 +18,14 @@ use app\library\BaseClass;
 
 class SearchController extends Controller
 {
+    //search-topページ
     public function search (Request  $request)
     {
         list($name,$fileName) = BaseClass::header();
         return view('person.search',compact('name','fileName'));
     }
 
-    // ajax
+    // ユーザーをajaxで検索
     public function look ($userid)
     {
         $user =  \DB::table('user')->where('userid', $userid)->first();
@@ -50,12 +51,13 @@ class SearchController extends Controller
         }
     }
 
-     // like機能
+     // ajaxでお気に入り機能
      public function like ($userid)
      {
          list($name,$fileName,$myid) = BaseClass::look_myuser();
          $user =  \App\Models\like::where('user_id' , $myid)->where('reply_id',$userid)->first();
          $yourlike = \App\Models\like::where('user_id' , $userid)->where('reply_id',$myid)->first();
+         //チャット削除
          if(isset($user)) 
          {
              \App\Models\like::where('user_id' , $myid)->where('reply_id',$userid)->delete();
@@ -71,14 +73,14 @@ class SearchController extends Controller
              if(isset($yourlike))
              {
                  // 互いにいいねでチャットルーム作成
-                 // 自分用
+                 // 自分用チャット
                  $chat = new chat;
                  $chat->chatroom = rand();
                  $chat->user_id = $myid;
                  $chat->reply_id = $userid;
                  $chat->save();
  
-                 // 相手用
+                 // 相手用チャット
                  $yourchat =  \App\Models\chat::where('user_id' , $myid)->where('reply_id',$userid)->first();
                  $yourchats = new chat;
                  $yourchats->chatroom = $yourchat->chatroom;

@@ -22,11 +22,19 @@ use app\library\BaseClass;
 
 class GroupController extends Controller
 {
+     // コミュニティ作成ページ
+     public function make_community (Request  $request)
+     {
+         list($name,$fileName,$myid) = BaseClass::look_myuser();
+         return view('person.make-community',compact('name','fileName'));
+     }
+
     public function community (Request  $request)
     {
         list($name,$fileName,$myid) = BaseClass::look_myuser();
         if(isset($request->community_name))
         {
+            //画像の確認
             if(!isset($request->image))
             {
                 $message="＊画像が選択されていません。";
@@ -40,31 +48,22 @@ class GroupController extends Controller
             $community->name = $request->community_name; 
             $file = $request->file('image');
             if($file->isValid()) {
-		$fileNames = Storage::disk('s3')->putFile('uploads', $file, 'public');
-		$fileNameurl = Storage::disk('s3')->url($fileNames);
+		      $fileNames = Storage::disk('s3')->putFile('uploads', $file, 'public');
+		      $fileNameurl = Storage::disk('s3')->url($fileNames);
             }
-	    $target = Storage::disk('s3')->putFile('/uploads',$request->file('image'), 'public');
+	        $target = Storage::disk('s3')->putFile('/uploads',$request->file('image'), 'public');
             $community->image = $fileNameurl;
             $community->category = $request->community_category; 
             $community->save(); 
         }
-        // 自分のグループ
+        // 所属グループ
         $my_community =  \App\Models\Community::where('user_id', $myid)->distinct()->get();
-        // 自分以外のグループ
+        // 他ののグループ
         $communities =  \DB::table('community')
         ->select('groupid','name','image')
         ->where('user_id','<>', $myid)->distinct()->get();
         return view('person.community',compact('name','fileName','my_community','communities'));
-       
     }
-
-    // コミュニティ作成ページ
-    public function make_community (Request  $request)
-    {
-        list($name,$fileName,$myid) = BaseClass::look_myuser();
-        return view('person.make-community',compact('name','fileName'));
-    }
-
 
     // コミュニティメンバー
     public function communitydetail (Request  $request,$groupid)
@@ -137,6 +136,7 @@ class GroupController extends Controller
 
         $query = Community::query();
 
+        //検索欄が空欄か確認
         if(!empty($keyword))
         {
             $query->where('name', 'LIKE', "%{$keyword}%")
@@ -146,8 +146,7 @@ class GroupController extends Controller
         {
             return redirect()->action('App\Http\Controllers\GroupController@community');
         }
-
-
+        //検索グループを取得
         $lookgroup = $query->distinct()->get();
         return view('person.community_search',compact('name','fileName','lookgroup'));
     }

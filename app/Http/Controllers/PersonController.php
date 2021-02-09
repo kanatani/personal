@@ -20,15 +20,14 @@ class PersonController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //トップページ
     public function index()
     {
         session()->flush();
         return view('person/index');
     }
 
-
-
-    // mypage
+    // 自分のページ
     public function  mypage(Request $request)
     {
         $id = session()->get('id');
@@ -37,8 +36,6 @@ class PersonController extends Controller
         $userid = $myid;
         return view('person.mypage',compact('name','item','userid','fileName'));
     }
-
-    
 
     //  public function __construct()
     // {

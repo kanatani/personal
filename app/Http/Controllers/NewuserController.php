@@ -22,6 +22,7 @@ class NewuserController extends Controller
         $name = $user->name;
         $userid = $user->userid;
         $file =  $request->file('image');
+        //画像が確認
         if (empty($file))
         {
             return redirect('person/top')->with('image_message', '＊画像が選択されていません。');
@@ -29,8 +30,8 @@ class NewuserController extends Controller
         else
         {
             if($file->isValid()) {
-		$fileNames = Storage::disk('s3')->putFile('uploads', $file, 'public');
-		$fileName = Storage::disk('s3')->url($fileNames);
+		      $fileNames = Storage::disk('s3')->putFile('uploads', $file, 'public');
+		      $fileName = Storage::disk('s3')->url($fileNames);
                 \DB::table('user')->where('sessionid', $id) ->update([
                     'image' => $fileName
                 ]);

@@ -1,190 +1,315 @@
 <?php
 namespace App\library;
 
-class common{
-    public static function total ($total) {
+class Common{
+    public static function serious ($total) {
         
         switch (true) {
             //勤勉性
             case $total['conscientiousness'] >= 13.6;
-                $serious = '計画タイプ';
-                $seriousimg = "/images/shutterstock_403187164.jpg";
-                $serioussm = '自分の計画を乱さない';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
+                $msg = '計画屋タイプ';
+                $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_403187164.jpg";
+                $ssg = '自分の計画を乱さない';
+                $detail1 = '鬼ストイック';
+                $sbmsg1 = '勤勉性がとても高いあなたは、自分が決めた目標に対して決まった手順を自分で考えて実行していくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、粘り強く行動する諦めが悪いタイプです。そんな仕事に対する対応を見て、周りの人たちからは仕事ができる人と思われているかもしれませんね。';
+
+                $detail2 = '一点集中';
+                $sbmsg2 = '一方で勤勉性が高い人は、一つのことに高い集中力を持って取り組んでいきます。そのため、マルチタスクな仕事に着くと少しストレスが溜まっていくかもしれません。また、環境によって臨機応変に行動するのが苦手なタイプでもあります。プライベートでも仕事や目標に取り組む傾向があります。なので、恋人や友人の距離を少し取って仕事を優先してしまう事があるかもしれません。';
+
+                $detail3 = '視野を広げる';
+                $sbmsg3 = '仕事や目標を全力で取り組むことは人生をより充実してくれることですし、人間関係でもあなたを頼りにしてくれる人は多いでしょう。しかし、計画通りに行動しても解決できない問題に遭遇したときには、一旦立ち止まって休憩して友人や恋人と遊ぶのをおすすめします。一旦立ち止まる事で新たな仕事のアイデアや取り組み方を思いつくかもしれませんよ。';
+
+                $boxmain1 ='自己鍛錬';
+                $boxdetail1='勤勉性が高い人は目標達成に全力で取り組む傾向があります。なので、自分を鍛え上げて成長や目標達成することに大きな喜びを感じます。必然的に成功がついてくるタイプですね。';
+
+                $boxmain2 ='一点集中';
+                $boxdetail2='一つの物事に対して高い集中力を発揮します。丁寧で適切な努力をすることができるので、学業や仕事での成功を掴める可能性が高いでしょう。また、長期的な活動においても安定した成果を残すことができます。';
+
+                $boxmain3 ='計画屋';
+                $boxdetail3='長期的な目標に対してしっかりとした計画を立てることができます。そして、持ち前の集中力や衝動抑制で計画通りに実行することができます。旅行でも計画を立てながら準備をするタイプです。';
+
+                $boxmain4='マルチタスクが苦手';
+                $boxdetail4='高い集中力が故に複数の仕事を行う際に戸惑う可能性があります。もし仕事でマルチタスクが前提の場面が出てきたら、予め優先順位を決めて一個ずつ取り組むことで解決することができます。';
+
+                $boxmain5='信頼性';
+                $boxdetail5='高い勤勉性で仕事を行うがために、部下や上司から高い信頼感を得ることができます。この信頼感が大きな仕事に繋がる可能性があるため、結果的に大きな成功を掴むことができる様になります。';
+
+                $boxmain6='衝動に強い';
+                $boxdetail6='目の前の誘惑に耐えて我慢することが得意です。このタイプは自分の衝動をコントロールするのが上手なため、仕事のミスや約束を破ることが滅多になく物事を遂行することができるでしょう。';
                 break;
 
             case $total['conscientiousness'] >= 4.9 && $total['conscientiousness'] <= 13.5;
-                $serious = 'コツコツタイプ';
-                $seriousimg = "/images/shutterstock_1692488656.jpg";
-                $serioussm = '積み上げ型';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
-                break;
+                $msg = 'コツコツタイプ';
+                $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_699712699.jpg";
+                $ssg = '積み上げ型';
+                $detail1 = '着実に取り組む';
+                $sbmsg1 = '勤勉性がかなり高いあなたは仕事や目標をコツコツと積み上げていき、長期的に実績を上げていくタイプです。長い時間を費やす資格試験や仕事でも、うまく習慣化することで実行することができる人です。また、責任感が強いので丁寧で粘り強く物事を取り組むことができます。プライベートにおいて、勤勉性が高い人の傾向として浮気をする可能性が低くなります。なので、長期的なパートナーとして向いています。';
+
+                $detail2 = '同時進行が苦手';
+                $sbmsg2 = 'ただ、仕事や目標に熱中するあまりにプライベートの時間を少し犠牲にしてしまう傾向もあります。仕事に熱中して休みの日にも仕事の事を考えてしまう傾向があります。また、臨機応変に対応することが苦手な傾向があります。計画通りに行かないと少し戸惑ってしまったり、イライラしてしまったりすることがあるかもしれません。';
+
+                $detail3 = 'バランスを重視する';
+                $sbmsg3 = 'もし自分が仕事に集中しすぎているなと思ったら、一旦仕事を程々にしてプライベートの時間を取ってみるのもいいかもしれません。また、優先順位を明確にして見たり計画通りに行かなかった場合の対処法を考えてみるのもいい方法でしょう。是非短い休憩を取り込みながら長期的な成功をつかんでください。';
+
+                $boxmain1 ='自己鍛錬';
+                $boxdetail1='勤勉性が高い人は目標達成に全力で取り組む傾向があります。なので、自分を鍛え上げて成長や目標達成することに大きな喜びを感じます。必然的に成功がついてくるタイプですね。';
+
+                $boxmain2 ='一点集中';
+                $boxdetail2='一つの物事に対して高い集中力を発揮します。丁寧で適切な努力をすることができるので、学業や仕事での成功を掴める可能性が高いでしょう。また、長期的な活動においても安定した成果を残すことができます。';
+
+                $boxmain3 ='計画屋';
+                $boxdetail3='長期的な目標に対してしっかりとした計画を立てることができます。そして、持ち前の集中力や衝動抑制で計画通りに実行することができます。旅行でも計画を立てながら準備をするタイプです。';
+
+                $boxmain4='マルチタスクが苦手';
+                $boxdetail4='高い集中力が故に複数の仕事を行う際に戸惑う可能性があります。もし仕事でマルチタスクが前提の場面が出てきたら、予め優先順位を決めて一個ずつ取り組むことで解決することができます。';
+
+                $boxmain5='信頼性';
+                $boxdetail5='高い勤勉性で仕事を行うがために、部下や上司から高い信頼感を得ることができます。この信頼感が大きな仕事に繋がる可能性があるため、結果的に大きな成功を掴むことができる様になります。';
+
+                $boxmain6='衝動に強い';
+                $boxdetail6='目の前の誘惑に耐えて我慢することが得意です。このタイプは自分の衝動をコントロールするのが上手なため、仕事のミスや約束を破ることが滅多になく物事を遂行することができるでしょう。';
+                    break;
 
             case $total['conscientiousness'] >= -4.8 && $total['conscientiousness'] <= 4.8;
-                $serious = 'スイッチタイプ';
-                $seriousimg = "/images/shutterstock_1716129895.jpg";
-                $serioussm = 'ON/OFF切替できる';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
-                break;
+                $msg = 'スイッチタイプ';
+                $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1716129895.jpg";
+                $ssg = 'ON/OFF切替できる';
+                $detail1 = '自分のペースを重視する';
+                $sbmsg1 = '勤勉性が標準なあなたは、仕事とプライベートをうまく両立できるタイプです。例えば、仕事では仕事を真面目に取り組むことができるし、プライベートでは思い切って遊んだり上手く休憩することができます。この様に仕事とプライベートの区別をしっかりとつけることができます。また、仕事の中でも力を抜く部分と力をいれる部分を明確に分けることができるとても器用なタイプでもあります。';
+
+                $detail2 = '関係の変化';
+                $sbmsg2 = 'この器用さは人間関係でも現れます。例えば、初対面の人や仕事相手対してはとても気を使って誠実に対応します。しかし仲の良い友達や付き合いが長くなると、少し対応が雑になったり仕事では見せない一面を出します。恋人関係でも同じことがあります。';
+
+                $detail3 = '器用さを生かす';
+                $sbmsg3 = '持ち前の器用さは、どんな環境や分野においても自分のペースを保って継続的に作業することができるでしょう。積極的に新しいことをチャレンジしてもバランスよく活動することができるので、結果的に満足度が高い人生を送ることが出来るでしょう。';
+
+                $boxmain1 ='自己鍛錬';
+                $boxdetail1='勤勉性が高い人は目標達成に全力で取り組む傾向があります。なので、自分を鍛え上げて成長や目標達成することに大きな喜びを感じます。必然的に成功がついてくるタイプですね。';
+
+                $boxmain2 ='一点集中';
+                $boxdetail2='一つの物事に対して高い集中力を発揮します。丁寧で適切な努力をすることができるので、学業や仕事での成功を掴める可能性が高いでしょう。また、長期的な活動においても安定した成果を残すことができます。';
+
+                $boxmain3 ='計画屋';
+                $boxdetail3='長期的な目標に対してしっかりとした計画を立てることができます。そして、持ち前の集中力や衝動抑制で計画通りに実行することができます。旅行でも計画を立てながら準備をするタイプです。';
+
+                $boxmain4='マルチタスクが苦手';
+                $boxdetail4='高い集中力が故に複数の仕事を行う際に戸惑う可能性があります。もし仕事でマルチタスクが前提の場面が出てきたら、予め優先順位を決めて一個ずつ取り組むことで解決することができます。';
+
+                $boxmain5='信頼性';
+                $boxdetail5='高い勤勉性で仕事を行うがために、部下や上司から高い信頼感を得ることができます。この信頼感が大きな仕事に繋がる可能性があるため、結果的に大きな成功を掴むことができる様になります。';
+
+                $boxmain6='衝動に強い';
+                $boxdetail6='目の前の誘惑に耐えて我慢することが得意です。このタイプは自分の衝動をコントロールするのが上手なため、仕事のミスや約束を破ることが滅多になく物事を遂行することができるでしょう。';
+                    break;
 
                 case $total['conscientiousness'] >= -13.5 && $total['conscientiousness'] <= -4.9;
-                $serious = '素直タイプ';
-                $seriousimg = "/images/shutterstock_603829727.jpg";
-                $serioussm = '自分の本能に素直な';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
-                break;
+                $msg = '衝動タイプ';
+                $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1466073518.jpg";
+                $ssg = '自分の本能に素直な';
+                $detail1 = '自分に素直';
+                $sbmsg1 = '勤勉性が少し低いあなたは、思い立ったら考える前に行動することができるタイプです。例えば、やりたいことがあった場合にすぐ必要な物を揃えて行動することができます。また、何か問題が起こっても臨機応変に対応することができます。しかし、計画が全くできないタイプではないので、やるべきことは実行することができます。';
+
+                $detail2 = '衝動性の弱さ';
+                $sbmsg2 = 'しかし、多少の勤勉性があるにしも衝動に少し弱い傾向があります。「ダイエットしてたのに飴玉を食べたから今日は食べる日にしよう!]という経験はありませんか？また行動力が高い反面、物事を継続することが苦手な傾向があります。勉強や趣味に飽きてしまって途中で投げ出してしまう傾向が高いです。';
+
+                $detail3 = '行動力を生かす';
+                $sbmsg3 = '持ち前の行動力はどんな状況下に置かれても素早く対応することができるので、営業やサービス業などその特性を生かせる仕事や趣味を選ぶとその特性を行かせます。それでも物事を継続したい場合は、ハードルをできるだけ小さくしてから徐々に習慣化するとうまくいく継続することができます。';
+
+                $boxmain1 ='行動力';
+                $boxdetail1='物事を次から次へと取り組むことができるタイプは、必然的に行動をすることが増えます。「行動力がすごいね！」と周りから言われたことはありませんか？';
+
+                $boxmain2 ='浮気性';
+                $boxdetail2='行動力の高さは逆にいうと一つのことにあまり集中できないタイプでもあります。これは恋愛や人間関係でも同じことが起こるかもしれません。';
+
+                $boxmain3 ='旅行好き';
+                $boxdetail3='旅行は新しい物や出来事に溢れています。なので新しい事が好きな人や行動が好きな人は旅行をする事で気持ちが満たされるでしょう。';
+
+                $boxmain4='多趣味';
+                $boxdetail4='趣味の幅が広い傾向があります。多くのことにチャレンジして行動をすることができるタイプなので、より広い分野を経験することができる人です。';
+
+                $boxmain5='慣れが早い';
+                $boxdetail5='状況に応じて素早く対応することができます。新しい環境に置かれても無理なく活動することができるので、今の時代で非常に生きやすい人かもしれませんね。';
+
+                $boxmain6='衝動に弱い';
+                $boxdetail6='目の前にあったお菓子を無意識に食べてしまった経験を一日に多く経験したことがありませんか？衝動に弱いタイプなので、健康や物事を継続する上では少し気を使ったり誘惑が多い環境から抜け出す方が良いかもしれませんね。';
+                    break;
 
             case $total['conscientiousness'] <= -13.6;
-                $serious = '速攻行動力タイプ';
-                $seriousimg = "/images/shutterstock_1080828530.jpg";
-                $serioussm = '思い立ったら即行動';
-                $seriousmsg = '勤勉性がとても高いあなたは、自分が決めた目標に大して決まった手順を自分で考えて実行していくくタイプです。なので目標達成する可能性が非常に高い人物であります。また、滅多なことがない限り、途中で仕事を放り出すことはありません。むしろ、諦めが悪いタイプです。周りの人たちからは仕事ができる人と思われているかもしれませんね。';
+                $msg = 'ハンタータイプ';
+                $img = "http://d1lndi27iqd683.cloudfront.net/personimage/shutterstock_1502561861.jpg";
+                $ssg = '思い立ったら即行動';
+                $detail1 = '素早い行動力';
+                $sbmsg1 = '勤勉性がとても低いあなたは、素晴らしい行動力を持っています。自分の感情に素直で、やりたい事があったら躊躇なく飛びつく事ができます。なので、多くの出来事を経験することができます。また、複雑な状況下でもやることを決めて素早い対応することができます。なので、アドリブが求められる分野においては大きな力を発揮することができるでしょう。';
+
+                $detail2 = '我慢が苦手';
+                $sbmsg2 = '一方、継続することでしかできない仕事や資格試験、スキルを身に着けることが苦手なタイプでもあります。「その仕事には興味があるけど、途中でやめてしまいそう。」と思ったことはありませんか？また、その行動力が高いが故に多くの問題に当たってしまう可能性もあります。例えば、人間関係で自分の感情を元に行動したら問題が起こった様なことがあるかもしれません。';
+
+                $detail3 = '衝動のコントロール';
+                $sbmsg3 = '行動力があることは人生をより良い方向へ導いてくれたり、幅広い経験をもたらしてくれるでしょう。しかし、行動する前に失敗に対して十分考えたり耐え抜くところは我慢すると、より多い経験や成功を得ることができるようになるかもしれません。自分にあった方法で衝動をコントロールすることを学んでみましょう。';
+
+                $boxmain1 ='行動力';
+                $boxdetail1='物事を次から次へと取り組むことができるタイプは、必然的に行動をすることが増えます。「行動力がすごいね！」と周りから言われたことはありませんか？';
+
+                $boxmain2 ='浮気性';
+                $boxdetail2='行動力の高さは逆にいうと一つのことにあまり集中できないタイプでもあります。これは恋愛や人間関係でも同じことが起こるかもしれません。';
+
+                $boxmain3 ='旅行好き';
+                $boxdetail3='旅行は新しい物や出来事に溢れています。なので新しい事が好きな人や行動が好きな人は旅行をする事で気持ちが満たされるでしょう。';
+
+                $boxmain4='多趣味';
+                $boxdetail4='趣味の幅が広い傾向があります。多くのことにチャレンジして行動をすることができるタイプなので、より広い分野を経験することができる人です。';
+
+                $boxmain5='慣れが早い';
+                $boxdetail5='状況に応じて素早く対応することができます。新しい環境に置かれても無理なく活動することができるので、今の時代で非常に生きやすい人かもしれませんね。';
+
+                $boxmain6='衝動に弱い';
+                $boxdetail6='目の前にあったお菓子を無意識に食べてしまった経験を一日に多く経験したことがありませんか？衝動に弱いタイプなので、健康や物事を継続する上では少し気を使ったり誘惑が多い環境から抜け出す方が良いかもしれませんね。';
                 break;
-         
+            return [$msg,$img,$ssg,$detail1,$sbmsg1, $detail2, $sbmsg2, $detail3, $sbmsg3,$boxmain1,$boxdetail1,$boxmain2,$boxdetail2,$boxmain3,$boxdetail3,$boxmain4,$boxdetail4,$boxmain5,$boxdetail5,$boxmain6,$boxdetail6];
         }
 
-        switch (true) {
-                // 協調性
-                case $total['kind'] >= 13.6;
-                $kind = 'キリストタイプ';
-                $kindimg = "/images/shutterstock_1586081839.jpg";
-                 $kindsm = '他人を愛してやまない';
-                 break;
+        // switch (true) {
+        //         // 協調性
+        //         case $total['kind'] >= 13.6;
+        //         $kind = 'キリストタイプ';
+        //         $kindimg = "/images/shutterstock_1586081839.jpg";
+        //          $kindsm = '他人を愛してやまない';
+        //          break;
  
-             case $total['kind'] >= 4.9 && $total['kind'] <= 13.5;
-                  $kind = 'ボランティアタイプ';
-                  $kindimg = "/images/shutterstock_1692488656.jpg";
-                  $kindsm = '第一印象から良い';
+        //      case $total['kind'] >= 4.9 && $total['kind'] <= 13.5;
+        //           $kind = 'ボランティアタイプ';
+        //           $kindimg = "/images/shutterstock_1692488656.jpg";
+        //           $kindsm = '第一印象から良い';
                 
-                  break;
+        //           break;
  
-             case $total['kind'] >= -4.8 && $total['kind'] <= 4.8;
-                 $kind = 'バランスタイプ';
-                 $kindimg = "/images/shutterstock_478518385.jpg";
-                 $kindsm = '共感と客観を兼ね備えた';
-                 $kindmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
+        //      case $total['kind'] >= -4.8 && $total['kind'] <= 4.8;
+        //          $kind = 'バランスタイプ';
+        //          $kindimg = "/images/shutterstock_478518385.jpg";
+        //          $kindsm = '共感と客観を兼ね備えた';
+        //          $kindmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
                 
-                 break;
+        //          break;
  
-                 case $total['kind'] >= -13.5 && $total['kind'] <= -4.9;
-                 $kind = '客観性重視タイプ';
-                 $kindimg = "/images/shutterstock_603829727.jpg";
-                 $kindsm = '合理的な答えを見つけやすい';
-                 break;
+        //          case $total['kind'] >= -13.5 && $total['kind'] <= -4.9;
+        //          $kind = '客観性重視タイプ';
+        //          $kindimg = "/images/shutterstock_603829727.jpg";
+        //          $kindsm = '合理的な答えを見つけやすい';
+        //          break;
  
-             case $total['kind'] <= -13.6;
-                 $kind = '独自性タイプ';
-                 $kindimg = "/images/shutterstock_1080828530.jpg";
-                 $kindsm = '一人で物事を遂行する';
-                 break;
-        }
+        //      case $total['kind'] <= -13.6;
+        //          $kind = '独自性タイプ';
+        //          $kindimg = "/images/shutterstock_1080828530.jpg";
+        //          $kindsm = '一人で物事を遂行する';
+        //          break;
+        // }
 
-        // 開放性
+        // // 開放性
 
-        switch (true) {
-            case $total['openness'] >= 13.6;
-               $openness= 'ナポレオンタイプ';
-               $opennessimg= "/images/shutterstock_1586081839.jpg";
-                $opennesssm = '新しいことが大好きな';
-                 break;
+        // switch (true) {
+        //     case $total['openness'] >= 13.6;
+        //        $openness= 'ナポレオンタイプ';
+        //        $opennessimg= "/images/shutterstock_1586081839.jpg";
+        //         $opennesssm = '新しいことが大好きな';
+        //          break;
 
-            case $total['openness'] >= 4.9 && $total['openness'] <= 13.5;
-                 $openness= '冒険家タイプ';
-                 $opennessimg= "/images/shutterstock_1692488656.jpg";
-                 $opennesssm = '幅広い興味がある';
-                 break;
- 
-
-            case $total['openness'] >= -4.8 && $total['openness'] <= 4.8;
-                $openness= '器用タイプ';
-                $opennessimg= "/images/shutterstock_670192495.jpg";
-                $opennesssm = 'ルールと刺激をコントロールする';
-                $opennessmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
-                 break;
-
-                case $total['openness'] >= -13.5 && $total['openness'] <= -4.9;
-                $openness= '慎重タイプ';
-                $opennessimg= "/images/shutterstock_603829727.jpg";
-                $opennesssm = 'ルールで安全策を練る';
-                break;
-
-            case $total['openness'] <= -13.6;
-                $openness= 'こだわりタイプ';
-                $opennessimg= "/images/shutterstock_1080828530.jpg";
-                $opennesssm = '慣れ親しんだ物が大好きな';
-                break;
-        }
-
-        // 外交性
-
-        switch (true) {
-            case $total['extraversion'] >= 13.6;
-               $extraversion = 'カリスマタイプ';
-               $extraversionimg = "/images/shutterstock_1586081839.jpg";
-               $extraversionsm = '多くの人を魅了する';
-                 break;
-
-            case $total['extraversion'] >= 4.9 && $total['extraversion'] <= 13.5;
-                 $extraversion = '外交官タイプ';
-                 $extraversionimg = "/images/shutterstock_1692488656.jpg";
-                $extraversionsm = '人と会うのがが大好きな';
-                 break;
+        //     case $total['openness'] >= 4.9 && $total['openness'] <= 13.5;
+        //          $openness= '冒険家タイプ';
+        //          $opennessimg= "/images/shutterstock_1692488656.jpg";
+        //          $opennesssm = '幅広い興味がある';
+        //          break;
  
 
-            case $total['extraversion'] >= -4.8 && $total['extraversion'] <= 4.8;
-                $extraversion = '八方美人タイプ';
-                $extraversionimg = "/images/shutterstock_478518385.jpg";
-               $extraversionsm = '内向と外向を使い分ける';
-               $extraversionmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
-                break;
+        //     case $total['openness'] >= -4.8 && $total['openness'] <= 4.8;
+        //         $openness= '器用タイプ';
+        //         $opennessimg= "/images/shutterstock_670192495.jpg";
+        //         $opennesssm = 'ルールと刺激をコントロールする';
+        //         $opennessmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
+        //          break;
 
-                case $total['extraversion'] >= -13.5 && $total['extraversion'] <= -4.9;
-                $extraversion = '人見知りタイプ';
-                $extraversionimg = "/images/shutterstock_603829727.jpg";
-               $extraversionsm = '緊張するけど人が好きな';
-                break;
+        //         case $total['openness'] >= -13.5 && $total['openness'] <= -4.9;
+        //         $openness= '慎重タイプ';
+        //         $opennessimg= "/images/shutterstock_603829727.jpg";
+        //         $opennesssm = 'ルールで安全策を練る';
+        //         break;
 
-            case $total['extraversion'] <= -13.6;
-                $extraversion = 'オタクタイプ';
-                $extraversionimg = "/images/shutterstock_1080828530.jpg";
-               $extraversionsm = '自分の興味を追求する';
-                break;
-        }
+        //     case $total['openness'] <= -13.6;
+        //         $openness= 'こだわりタイプ';
+        //         $opennessimg= "/images/shutterstock_1080828530.jpg";
+        //         $opennesssm = '慣れ親しんだ物が大好きな';
+        //         break;
+        // }
+
+        // // 外交性
+
+        // switch (true) {
+        //     case $total['extraversion'] >= 13.6;
+        //        $extraversion = 'カリスマタイプ';
+        //        $extraversionimg = "/images/shutterstock_1586081839.jpg";
+        //        $extraversionsm = '多くの人を魅了する';
+        //          break;
+
+        //     case $total['extraversion'] >= 4.9 && $total['extraversion'] <= 13.5;
+        //          $extraversion = '外交官タイプ';
+        //          $extraversionimg = "/images/shutterstock_1692488656.jpg";
+        //         $extraversionsm = '人と会うのがが大好きな';
+        //          break;
+ 
+
+        //     case $total['extraversion'] >= -4.8 && $total['extraversion'] <= 4.8;
+        //         $extraversion = '八方美人タイプ';
+        //         $extraversionimg = "/images/shutterstock_478518385.jpg";
+        //        $extraversionsm = '内向と外向を使い分ける';
+        //        $extraversionmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
+        //         break;
+
+        //         case $total['extraversion'] >= -13.5 && $total['extraversion'] <= -4.9;
+        //         $extraversion = '人見知りタイプ';
+        //         $extraversionimg = "/images/shutterstock_603829727.jpg";
+        //        $extraversionsm = '緊張するけど人が好きな';
+        //         break;
+
+        //     case $total['extraversion'] <= -13.6;
+        //         $extraversion = 'オタクタイプ';
+        //         $extraversionimg = "/images/shutterstock_1080828530.jpg";
+        //        $extraversionsm = '自分の興味を追求する';
+        //         break;
+        // }
 
 
-        // 神経症的傾向
-        switch (true) {
-            case $total['neuroticism'] >= 13.6;
-               $neuroticism = '芸術家タイプ';
-               $neuroticismimg= "/images/shutterstock_1080828530.jpg";
-               $neuroticismsm = '周りの刺激を表現に変える';
-                break;
+        // // 神経症的傾向
+        // switch (true) {
+        //     case $total['neuroticism'] >= 13.6;
+        //        $neuroticism = '芸術家タイプ';
+        //        $neuroticismimg= "/images/shutterstock_1080828530.jpg";
+        //        $neuroticismsm = '周りの刺激を表現に変える';
+        //         break;
 
-            case $total['neuroticism'] >= 4.9 && $total['neuroticism'] <= 13.5;
-                $neuroticism = '石橋叩くタイプ';
-                $neuroticismimg= "/images/shutterstock_603829727.jpg";
-                $neuroticismsm = '潜在的な危機を回避する';
-                break;
+        //     case $total['neuroticism'] >= 4.9 && $total['neuroticism'] <= 13.5;
+        //         $neuroticism = '石橋叩くタイプ';
+        //         $neuroticismimg= "/images/shutterstock_603829727.jpg";
+        //         $neuroticismsm = '潜在的な危機を回避する';
+        //         break;
 
-            case $total['neuroticism'] >= -4.8 && $total['neuroticism'] <= 4.8;
-                $neuroticism = 'コントロールタイプ';
-                $neuroticismimg= "/images/shutterstock_478518385.jpg";
-                $neuroticismsm = '弱さと強さを兼ね備える';
-                $neuroticismmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
-                break;
+        //     case $total['neuroticism'] >= -4.8 && $total['neuroticism'] <= 4.8;
+        //         $neuroticism = 'コントロールタイプ';
+        //         $neuroticismimg= "/images/shutterstock_478518385.jpg";
+        //         $neuroticismsm = '弱さと強さを兼ね備える';
+        //         $neuroticismmsg = '協調性が標準なあなたは、客観性と協調性を兼ね備えたバランスが良いタイプです。グループ活動にもある程度馴染むことができ、自分一人でも物事を実行することができます。この特性はグループ活動で問題が起こったときに共感と客観を用いて問題をスムーズに解決することができる特性です。なのでグループに一人は欲しい人材ですね。';
+        //         break;
 
-                case $total['neuroticism'] >= -13.5 && $total['neuroticism'] <= -4.9;
-                $neuroticism = '頼れるお兄さんタイプ';
-                 $neuroticismimg= "/images/shutterstock_1692488656.jpg";
-                 $neuroticismsm = '困難な場所でも冷静に動ける';
-                break;
+        //         case $total['neuroticism'] >= -13.5 && $total['neuroticism'] <= -4.9;
+        //         $neuroticism = '頼れるお兄さんタイプ';
+        //          $neuroticismimg= "/images/shutterstock_1692488656.jpg";
+        //          $neuroticismsm = '困難な場所でも冷静に動ける';
+        //         break;
 
-            case $total['neuroticism'] <= -13.6;
-                $neuroticism = '騎士タイプ';
-                $neuroticismimg= "/images/shutterstock_1586081839.jpg";
-                $neuroticismsm = '鋼のメンタルの持ち主';
-                break;
-        }
+        //     case $total['neuroticism'] <= -13.6;
+        //         $neuroticism = '騎士タイプ';
+        //         $neuroticismimg= "/images/shutterstock_1586081839.jpg";
+        //         $neuroticismsm = '鋼のメンタルの持ち主';
+        //         break;
+        // }
     }
 }
 

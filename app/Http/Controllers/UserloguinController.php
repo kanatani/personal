@@ -25,16 +25,18 @@ class UserloguinController extends Controller
     {
             $email = $request->login_mail;  
             $password = $request->login_pass;
+            //newuserか既存userかを確認
             if(isset($request->login_name))
             {
+                //パスワードとメーアド確認
                 if(empty($email) && empty($password)){
-                    
                     return redirect('person/loguin')->with('flash_message', '＊メーアドかパスワード欄に空欄があります。');
                 }
                 else if(!session()->exists('id'))
                 {
                     return redirect('person/loguin')->with('test_message', '＊テストを受けてください。');
                 }
+                //新規ユーザー登録
                 $id = session()->get('id');
                 $loginuser = new loginuser;
                 $loginuser->userid = rand(); 
@@ -44,24 +46,25 @@ class UserloguinController extends Controller
                 $loginuser->email = $request->login_mail; 
                 $loginuser->save(); 
             }
-            $email = $request->login_mail;  
-            $password = $request->login_pass;
             // アカウントチェック
             if(Auth::attempt(['password' => $password, 'email' => $email])) {
                 $user =  \DB::table('user')->where('email', $email)->first();
                 $users = session()->put('id', $user->sessionid);
                 $id = session()->get('id');
+                //新規登録ページ
                 if(isset($request->login_name))
                 {
+                     //新規登録ページ
                     return view('person.top');
                 }
                 else
                 {
-                $fileName= $user->image;
-                $item = test::find($id);
-                $name= $user->name;
-                $userid = $user->userid;
-                return view('person.mypage',compact('name','item','id','fileName','userid'));
+                    //既存ログインユーザー
+                    $fileName= $user->image;
+                    $item = test::find($id);
+                    $name= $user->name;
+                    $userid = $user->userid;
+                    return view('person.mypage',compact('name','item','id','fileName','userid'));
                 }
             }
             else 
@@ -69,7 +72,6 @@ class UserloguinController extends Controller
                 return redirect('person/loguin')->with('no_message', '＊パスワードかメーアドをもう一度ご確認お願いします。');
             }
     }
-
      // ログアウト
      public function logout (Request $request)
      {
