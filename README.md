@@ -55,6 +55,7 @@ Personは５つの性格特性(外向性、協調性、開放性、神経症的�
 
 - その他
     - Visual Studio Code 
+    - draw.io
 
 ## 機能一覧
 - 性格診断
