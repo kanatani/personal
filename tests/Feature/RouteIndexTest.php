@@ -36,21 +36,6 @@ class RouteIndexTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_kind_result_page()
-    {
-
-            if(isset($insert['kind']))  {
-                $test = new test;
-                $test->kind = 4; 
-                $test->save(); 
-                $user = DB::table('test')->latest()->first();
-                $users= 5;
-                session()->put(['id' => $users]);
-                $response = $this->get('/person/serious');
-                $response->assertStatus(200);
-            }
-    }
-
     public function test_open_page()
     {
         $response = $this->get('person/openness');
