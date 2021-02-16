@@ -22,4 +22,11 @@ class chatroomtext extends TestCase
         $chat->save();
         $this->assertTrue(true);
     }
+    
+    public function test_neuroticism_page()
+    {
+        $response = $this->get('/person/neuroticism');
+
+        $response->assertStatus(200);
+    }
 }
