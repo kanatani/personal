@@ -15,5 +15,46 @@ class RouteIndexTest extends TestCase
      *
      * @return void
      */
-    
+    public function test_example()
+    {
+        $response = $this->get('/person');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_page()
+    {
+        $response = $this->get('person/test');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_kind_page()
+    {
+        $response = $this->get('/person/kind');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_open_page()
+    {
+        $response = $this->get('person/openness');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_serious_page()
+    {
+        $response = $this->get('person/serious');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_neuroticism_page()
+    {
+        $response = $this->get('/person/neuroticism');
+
+        $response->assertStatus(200);
+    }
+
 }
