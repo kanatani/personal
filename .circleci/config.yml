@@ -22,6 +22,8 @@ jobs:
       - run: npm ci
       - run: npm run dev
       - run: echo "APP_KEY=" > .env.testing
+      - run: php artisan route:cache
+      - run: php artisan config:cache
       - run: php artisan migrate --force
       - run:
           name: php test
