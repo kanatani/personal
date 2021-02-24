@@ -9,9 +9,6 @@ use app\library\BaseClass;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
-
-
-
 class chatTest extends TestCase
 {
     /**
