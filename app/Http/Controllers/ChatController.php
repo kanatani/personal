@@ -35,7 +35,7 @@ class ChatController extends Controller
          return view('person.chat',compact('name','fileName','chatrooms'));
      }
  
-    //  コミュニティチャットルーム
+    //  初回コミュニティチャットルーム
      public function communitychat (Request  $request,$groupchat)
      {
          list($name,$fileName,$myid) = BaseClass::look_myuser();
@@ -63,7 +63,7 @@ class ChatController extends Controller
      }
  
 
-    //  個人チャット
+    //  個人とグループチャット
      public function talkroom (Request  $request,$chatroomid)
      {
          list($name,$fileName,$myid) = BaseClass::look_myuser();

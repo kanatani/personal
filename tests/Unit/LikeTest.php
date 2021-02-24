@@ -15,6 +15,7 @@ class LikeTest extends TestCase
      *
      * @return void
      */
+    
     public function testExample()
     {
         $like = new like;
