@@ -21,7 +21,7 @@ jobs:
       - run: sudo docker-php-ext-install zip pdo_mysql
       - run: npm ci
       - run: npm run dev
-      - run: echo "APP_KEY=" > .env
+      - run: echo $ENV | base64 --decode > .env
       - run: php artisan route:cache
       - run: php artisan config:cache
       - run: php artisan migrate --force
