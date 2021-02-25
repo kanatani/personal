@@ -22,7 +22,6 @@ class chatTest extends TestCase
         $this->assertTrue(true);
     }
 
-
    //チャットルーム作成
     public function test_chat_make()
     {
