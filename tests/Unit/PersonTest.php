@@ -32,6 +32,7 @@ class PersonTest extends TestCase
     }
 
      //協調性テスト結果ページ 
+      //mis
     public function test_kind_result()
     {
         $response=$this->post('person/kind_result');

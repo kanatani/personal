@@ -31,6 +31,7 @@ class LoginuserTest extends TestCase
     }
 
     //ログイン
+     //mis
     public function test_login()
     {
         $this->assertGuest();
@@ -44,6 +45,7 @@ class LoginuserTest extends TestCase
     }
 
     //ログアウト
+     //mis
     public function test_logout()
     {
         $response = $this->test_login();

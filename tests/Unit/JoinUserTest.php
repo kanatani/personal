@@ -30,6 +30,7 @@ class JoinUserTest extends TestCase
     }
 
     // ユーザーの登録ページ
+    //mis
     public function test_new_user_upload()
     {
         $response=$this->post( '/person/top');
@@ -37,6 +38,7 @@ class JoinUserTest extends TestCase
     }
 
     //ユーザーのログインページ
+     //mis
     public function test_new_user_page()
     {
         $response=$this->post( '/person/newmypage');

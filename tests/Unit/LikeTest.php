@@ -19,7 +19,6 @@ class LikeTest extends TestCase
     public function testExample()
     {
         $like = new like;
-        $like->id = 12;
         $like->user_id = 123;
         $like->reply_id = 321;
         $like->save();
